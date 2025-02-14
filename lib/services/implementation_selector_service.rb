@@ -1,7 +1,7 @@
 require 'tty-prompt'
 
 class ImplementationSelectorService
-  RUN_ALL_OPTION = { name: 'Run all implementations', value: :all }
+  RUN_ALL_OPTION = { name: 'Run all implementations', value: :all }.freeze
 
   def initialize(implementations_dir)
     @implementations_dir = implementations_dir
@@ -64,7 +64,7 @@ class ImplementationSelectorService
     choices = [RUN_ALL_OPTION] + implementations.map { |impl| { name: impl, value: impl } }
 
     @prompt.select(
-      "Choose an implementation:",
+      'Choose an implementation:',
       choices,
       per_page: 20,
       filter: true,

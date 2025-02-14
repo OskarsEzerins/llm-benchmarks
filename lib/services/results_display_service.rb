@@ -9,8 +9,8 @@ class ResultsDisplayService
   end
 
   def initialize(results, current_implementation, benchmark_id)
-    @best_results = results["best_results"] || calculate_best_results_by_implementation(results["results"] || [])
-    @averages = results["averages"]
+    @best_results = results['best_results'] || calculate_best_results_by_implementation(results['results'] || [])
+    @averages = results['averages']
     @current_implementation = current_implementation
     @benchmark_id = benchmark_id
   end
@@ -26,31 +26,34 @@ class ResultsDisplayService
     table = Terminal::Table.new do |t|
       t.title = format_title
       t.headings = ['Rank', 'Implementation', 'Best Time (s)', 'Avg Time (s)', 'Runs', 'Date', 'Status']
-
-      sorted_results = @best_results.sort_by do |result|
-        avg_metrics = @averages[result['implementation']]
-        avg_metrics ? avg_metrics['metrics']['execution_time'] : Float::INFINITY
-      end
-
-      sorted_results.each_with_index do |result, index|
-        implementation = result['implementation']
-        status = implementation == @current_implementation ? '🆕' : ' '
-        avg_metrics = @averages[implementation]
-        avg_time = avg_metrics ? avg_metrics['metrics']['execution_time'].round(4) : 'N/A'
-
-        t.add_row [
-          index + 1,
-          implementation,
-          result['metrics']['execution_time'],
-          avg_time,
-          avg_metrics ? avg_metrics['run_count'] : 'N/A',
-          format_time(result['timestamp']),
-          status
-        ]
-      end
+      sorted_results.each_with_index { |result, index| t.add_row(create_ranking_row(result, index)) }
     end
 
     puts "\n#{table}"
+  end
+
+  def create_ranking_row(result, index)
+    implementation = result['implementation']
+    status = implementation == @current_implementation ? '🆕' : ' '
+    avg_metrics = @averages[implementation]
+    avg_time = avg_metrics ? avg_metrics['metrics']['execution_time'].round(4) : 'N/A'
+
+    [
+      index + 1,
+      implementation,
+      result['metrics']['execution_time'],
+      avg_time,
+      avg_metrics ? avg_metrics['run_count'] : 'N/A',
+      format_time(result['timestamp']),
+      status
+    ]
+  end
+
+  def sorted_results
+    @best_results.sort_by do |result|
+      avg_metrics = @averages[result['implementation']]
+      avg_metrics ? avg_metrics['metrics']['execution_time'] : Float::INFINITY
+    end
   end
 
   def display_details_table
@@ -70,7 +73,7 @@ class ResultsDisplayService
   end
 
   def format_time(timestamp)
-    Time.parse(timestamp).strftime("%Y-%m-%d %H:%M:%S")
+    Time.parse(timestamp).strftime('%Y-%m-%d %H:%M:%S')
   end
 
   def format_title

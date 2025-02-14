@@ -1,6 +1,7 @@
 require_relative '../../config'
 require_relative 'results_display_service'
 require_relative 'results_service'
+require 'json'
 
 class BenchmarkRunnerService
   NUM_ITERATIONS = 5
@@ -38,13 +39,13 @@ class BenchmarkRunnerService
     pid = fork do
       read.close
       result = run_single_benchmark(implementation)
-      write.write(Marshal.dump(result))
+      write.write(result.to_json)
       write.close
       exit!(0)
     end
 
     write.close
-    result = Marshal.load(read.read)
+    result = JSON.parse(read.read).to_f
     read.close
     Process.wait(pid)
 
@@ -57,7 +58,7 @@ class BenchmarkRunnerService
     require_relative File.join('../..', benchmark_file)
     implementation_path = File.join('..', '..', implementation[:file])
 
-    benchmark_class = Object.const_get("#{format_name(@benchmark_id).gsub(' ', '')}Benchmark")
+    benchmark_class = Object.const_get("#{format_name(@benchmark_id).delete(' ')}Benchmark")
     benchmark_class.run(implementation_path)
   end
 

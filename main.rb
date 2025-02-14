@@ -16,7 +16,7 @@ class BenchmarkRunner
 
   def run
     benchmark = select_benchmark
-    return puts "No benchmark selected." unless benchmark
+    return puts 'No benchmark selected.' unless benchmark
 
     implementations = select_implementations(benchmark)
     BenchmarkRunnerService.new(benchmark, implementations).run

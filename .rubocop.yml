@@ -1,0 +1,30 @@
+require:
+  - rubocop-performance
+  - rubocop-thread_safety
+
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  Exclude:
+    - bin/**/*
+    - implementations/**/*
+    - results/**/*
+    - vendor/**/*
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - benchmarks/**/*
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - benchmarks/**/*

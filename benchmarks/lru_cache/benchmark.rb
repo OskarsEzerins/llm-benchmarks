@@ -17,12 +17,12 @@ class LruCacheBenchmark
 
     puts "Starting heavy workload simulation with #{NUM_OPERATIONS} operations..."
     time = Benchmark.realtime do
-      NUM_OPERATIONS.times do |i|
-        if rand < HOT_KEY_PROBABILITY
-          key = rand(1..HOT_KEY_RANGE)
-        else
-          key = rand(HOT_KEY_RANGE + 1..KEY_RANGE)
-        end
+      NUM_OPERATIONS.times do |_i|
+        key = if rand < HOT_KEY_PROBABILITY
+                rand(1..HOT_KEY_RANGE)
+              else
+                rand(HOT_KEY_RANGE + 1..KEY_RANGE)
+              end
 
         if rand < GET_PROBABILITY
           cache.get(key)
