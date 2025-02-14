@@ -4,6 +4,8 @@ GEM
     benchmark (0.4.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
+    terminal-table (4.0.0)
+      unicode-display_width (>= 1.1.1, < 4)
     tty-color (0.6.0)
     tty-cursor (0.7.1)
     tty-prompt (0.23.1)
@@ -14,6 +16,9 @@ GEM
       tty-screen (~> 0.8)
       wisper (~> 2.0)
     tty-screen (0.8.2)
+    unicode-display_width (3.1.4)
+      unicode-emoji (~> 4.0, >= 4.0.4)
+    unicode-emoji (4.0.4)
     wisper (2.0.1)
 
 PLATFORMS
@@ -22,6 +27,7 @@ PLATFORMS
 
 DEPENDENCIES
   benchmark
+  terminal-table
   tty-prompt
 
 BUNDLED WITH

@@ -2,8 +2,17 @@
 
 require 'bundler/setup'
 Bundler.require
-
 require 'benchmark'
+require 'terminal-table'
+require_relative 'lib/services/results_display_service'
+require_relative 'lib/services/results_service'
+
+RESULTS_FILE = "results/lru_cache.json"
+CACHE_CAPACITY = 10_000
+NUM_OPERATIONS = 1_000_000
+GET_PROBABILITY = 0.7
+KEY_RANGE = 20_000
+PROGRESS_INTERVAL = 100_000
 
 implementations_dir = "implementations/lru_cache"
 implementations = Dir.glob("#{implementations_dir}/*.rb").map { |f| File.basename(f, '.rb') }
@@ -28,12 +37,6 @@ end
 
 require_relative implementation_file
 
-CACHE_CAPACITY = 10_000
-NUM_OPERATIONS = 1_000_000
-GET_PROBABILITY = 0.7
-KEY_RANGE = 20_000
-PROGRESS_INTERVAL = 100_000
-
 cache = LRUCache.new(CACHE_CAPACITY)
 
 (1..(CACHE_CAPACITY / 2)).each { |i| cache.put(i, i) }
@@ -52,4 +55,16 @@ time = Benchmark.realtime do
   end
 end
 
-puts "Completed #{NUM_OPERATIONS} operations in #{time.round(2)} seconds."
+execution_time = time.round(4)
+puts "Completed #{NUM_OPERATIONS} operations in #{execution_time} seconds."
+
+results_service = ResultsService.new(RESULTS_FILE)
+parameters = {
+  "operations" => NUM_OPERATIONS,
+  "cache_capacity" => CACHE_CAPACITY,
+  "get_probability" => GET_PROBABILITY,
+  "key_range" => KEY_RANGE
+}
+
+results = results_service.add_result(implementation, execution_time, parameters)
+ResultsDisplayService.display(results, implementation)

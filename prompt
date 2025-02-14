@@ -6,7 +6,6 @@ Implement an LRU Cache library in Ruby. The cache should be initialized with a m
 Requirements:
 • Use only Ruby’s standard library.
 • Aim for O(1) time complexity for both get and put operations.
-• Write unit tests using RSpec covering basic functionality, eviction behavior, and edge cases (e.g., updating existing keys).
 • Provide documentation explaining how to use the cache and the LRU mechanism.
 • You are allowed to provide as a response to this prompt only the code for the LRUCache class, without any other text.
 
@@ -29,7 +28,7 @@ puts "Completed #{NUM_OPERATIONS} operations in #{time.round(2)} seconds."
 ```
 
 Evaluation criteria:
+• Most important: Performance testing using the heavy workload simulation provided.
 • Automated testing via RSpec to verify correctness and eviction behavior.
 • Static code analysis (e.g., rubocop) for style and quality.
-• Performance testing using the heavy workload simulation provided.
 • Code readability, documentation, and modular design.
