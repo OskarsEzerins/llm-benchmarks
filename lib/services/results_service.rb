@@ -20,14 +20,13 @@ class ResultsService
     File.write(@results_file, JSON.pretty_generate(data))
   end
 
-  def add_result(implementation, execution_time, parameters)
+  def add_result(implementation, execution_time)
     data = load
     current_result = {
       "implementation" => implementation,
       "timestamp" => Time.now.iso8601,
       "metrics" => {
-        "execution_time" => execution_time,
-        **parameters
+        "execution_time" => execution_time
       }
     }
 
@@ -52,8 +51,8 @@ class ResultsService
     grouped.transform_values do |impl_results|
       metrics = impl_results.first["metrics"].keys
       avg_metrics = metrics.each_with_object({}) do |metric, acc|
-        values = impl_results.map { |r| r["metrics"][metric] }
-        acc[metric] = (values.sum / values.size.to_f).round(6)
+        values = impl_results.map { |r| r["metrics"][metric] }.compact
+        acc[metric] = values.any? ? (values.sum / values.size.to_f).round(6) : nil
       end
       {
         "run_count" => impl_results.size,

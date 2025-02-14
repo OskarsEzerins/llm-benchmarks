@@ -1,0 +1,28 @@
+Implement a highly optimized Ruby class GraphShortestPaths that computes shortest path distances from a given source node using Dijkstra’s algorithm on a weighted directed graph. The graph will be provided as a Hash where each key is an integer node identifier and its value is an Array of [neighbor, weight] pairs (with weights as positive integers). The graph may have up to 100,000 nodes and 1,000,000 edges, so performance is critical.
+
+Your implementation must adhere to the following constraints:
+• Use only Ruby’s standard libraries (Ruby v3.4.1).
+• Create your own efficient priority queue (e.g., a binary heap) from scratch since no standard one is available.
+• Optimize for speed—minimize overhead and ensure the algorithm runs as fast as possible. (Note: the correctness of the output is secondary to performance.)
+• The solution should reside in a single Ruby file that can be loaded via require_relative.
+
+Do not use any external gems or libraries.
+Don't give example usage code.
+Don't explain the code.
+
+Example input:
+
+```
+graph = {
+  0 => [[1, 10], [2, 3]],
+  1 => [[2, 1]],
+  2 => []
+}
+source = 0
+```
+
+Class invocation:
+
+```
+GraphShortestPaths.compute(graph, source)
+```

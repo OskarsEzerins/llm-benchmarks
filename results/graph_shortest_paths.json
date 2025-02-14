@@ -1,0 +1,334 @@
+{
+  "results": [
+    {
+      "implementation": "openai_o3_high_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:33:38+02:00",
+      "metrics": {
+        "execution_time": 0.2706
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:33:45+02:00",
+      "metrics": {
+        "execution_time": 0.2837
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-14T23:33:52+02:00",
+      "metrics": {
+        "execution_time": 0.306
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:33:58+02:00",
+      "metrics": {
+        "execution_time": 0.2707
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:34:05+02:00",
+      "metrics": {
+        "execution_time": 0.268
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-14T23:34:52+02:00",
+      "metrics": {
+        "execution_time": 8.3698
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:34:59+02:00",
+      "metrics": {
+        "execution_time": 0.3084
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:35:05+02:00",
+      "metrics": {
+        "execution_time": 0.2921
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:35:24+02:00",
+      "metrics": {
+        "execution_time": 0.3361
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:35:31+02:00",
+      "metrics": {
+        "execution_time": 0.3176
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:35:37+02:00",
+      "metrics": {
+        "execution_time": 0.2931
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-14T23:35:44+02:00",
+      "metrics": {
+        "execution_time": 0.3302
+      }
+    },
+    {
+      "implementation": "openai_o3_high_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:35:51+02:00",
+      "metrics": {
+        "execution_time": 0.3041
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:35:58+02:00",
+      "metrics": {
+        "execution_time": 0.3057
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:36:05+02:00",
+      "metrics": {
+        "execution_time": 0.2929
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-14T23:36:53+02:00",
+      "metrics": {
+        "execution_time": 8.4369
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-14T23:37:48+02:00",
+      "metrics": {
+        "execution_time": 8.3529
+      }
+    },
+    {
+      "implementation": "openai_o3_high_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:37:54+02:00",
+      "metrics": {
+        "execution_time": 0.27
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:38:01+02:00",
+      "metrics": {
+        "execution_time": 0.291
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:38:08+02:00",
+      "metrics": {
+        "execution_time": 0.27
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:38:15+02:00",
+      "metrics": {
+        "execution_time": 0.2711
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:38:22+02:00",
+      "metrics": {
+        "execution_time": 0.2929
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-14T23:38:28+02:00",
+      "metrics": {
+        "execution_time": 0.3025
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:38:35+02:00",
+      "metrics": {
+        "execution_time": 0.3089
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:50:51+02:00",
+      "metrics": {
+        "execution_time": 0.2662
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:50:58+02:00",
+      "metrics": {
+        "execution_time": 0.3049
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:51:04+02:00",
+      "metrics": {
+        "execution_time": 0.2901
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-14T23:51:52+02:00",
+      "metrics": {
+        "execution_time": 8.3283
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:51:58+02:00",
+      "metrics": {
+        "execution_time": 0.2663
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-14T23:52:05+02:00",
+      "metrics": {
+        "execution_time": 0.2991
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:52:12+02:00",
+      "metrics": {
+        "execution_time": 0.2819
+      }
+    },
+    {
+      "implementation": "openai_o3_high_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:52:18+02:00",
+      "metrics": {
+        "execution_time": 0.2673
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:52:57+02:00",
+      "metrics": {
+        "execution_time": 0.3178
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-14T23:53:44+02:00",
+      "metrics": {
+        "execution_time": 8.3143
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-14T23:53:51+02:00",
+      "metrics": {
+        "execution_time": 0.3331
+      }
+    },
+    {
+      "implementation": "openai_o3_high_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:53:57+02:00",
+      "metrics": {
+        "execution_time": 0.2952
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:54:04+02:00",
+      "metrics": {
+        "execution_time": 0.3005
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:54:11+02:00",
+      "metrics": {
+        "execution_time": 0.2925
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:54:18+02:00",
+      "metrics": {
+        "execution_time": 0.292
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-14T23:54:25+02:00",
+      "metrics": {
+        "execution_time": 0.3342
+      }
+    }
+  ],
+  "averages": {
+    "openai_o3_high_web_chat_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.28144
+      }
+    },
+    "openai_o1_web_chat_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.29256
+      }
+    },
+    "claude_sonet_3_5_cursor_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.31418
+      }
+    },
+    "deepseek_r1_web_chat_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.27838
+      }
+    },
+    "gemini_2_0_flash_web_chat_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.27818
+      }
+    },
+    "qwen_2_5_plus_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 8.36044
+      }
+    },
+    "openai_4o_web_chat_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.3185
+      }
+    },
+    "openai_o3_mini_web_chat_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.3021
+      }
+    }
+  }
+}

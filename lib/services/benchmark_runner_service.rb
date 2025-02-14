@@ -29,7 +29,7 @@ class BenchmarkRunnerService
       results << run_in_subprocess(implementation)
     end
 
-    best_result = results.min_by { |r| r[:execution_time] }
+    best_result = results.min
     save_and_display_results(implementation, best_result)
   end
 
@@ -48,7 +48,7 @@ class BenchmarkRunnerService
     read.close
     Process.wait(pid)
 
-    puts "Execution time: #{result[:execution_time]} seconds"
+    puts "Execution time: #{result} seconds"
     result
   end
 
@@ -65,8 +65,7 @@ class BenchmarkRunnerService
     results_service = ResultsService.new(Config.results_file(@benchmark_id))
     results = results_service.add_result(
       implementation[:name],
-      result[:execution_time],
-      result[:parameters]
+      result
     )
 
     ResultsDisplayService.display(results, implementation[:name])

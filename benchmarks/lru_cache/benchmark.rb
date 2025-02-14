@@ -1,11 +1,13 @@
 require 'benchmark'
 
 class LruCacheBenchmark
-  CACHE_CAPACITY = 10_000
-  NUM_OPERATIONS = 1_000_000
-  GET_PROBABILITY = 0.7
-  KEY_RANGE = 20_000
-  PROGRESS_INTERVAL = 100_000
+  CACHE_CAPACITY = 100_000
+  NUM_OPERATIONS = 5_000_000
+  GET_PROBABILITY = 0.8
+  KEY_RANGE = 500_000
+  HOT_KEY_RANGE = 1000
+  HOT_KEY_PROBABILITY = 0.6
+  PROGRESS_INTERVAL = 500_000
 
   def self.run(implementation_path)
     require_relative implementation_path
@@ -16,24 +18,21 @@ class LruCacheBenchmark
     puts "Starting heavy workload simulation with #{NUM_OPERATIONS} operations..."
     time = Benchmark.realtime do
       NUM_OPERATIONS.times do |i|
-        key = rand(1..KEY_RANGE)
-        rand < GET_PROBABILITY ? cache.get(key) : cache.put(key, rand(1..100_000))
+        if rand < HOT_KEY_PROBABILITY
+          key = rand(1..HOT_KEY_RANGE)
+        else
+          key = rand(HOT_KEY_RANGE + 1..KEY_RANGE)
+        end
 
-        if (i + 1) % PROGRESS_INTERVAL == 0
-          progress = ((i + 1).to_f / NUM_OPERATIONS * 100).round(1)
-          puts "Progress: #{progress}% (#{i + 1} operations)"
+        if rand < GET_PROBABILITY
+          cache.get(key)
+        else
+          value = rand(1..1_000_000)
+          cache.put(key, value)
         end
       end
     end
 
-    {
-      execution_time: time.round(4),
-      parameters: {
-        "operations" => NUM_OPERATIONS,
-        "cache_capacity" => CACHE_CAPACITY,
-        "get_probability" => GET_PROBABILITY,
-        "key_range" => KEY_RANGE
-      }
-    }
+    time.round(4)
   end
 end
