@@ -45,7 +45,6 @@ class ResultsDisplayService
       t.add_row ['Implementation', @current_implementation]
       t.add_separator
       current_result['metrics'].each do |metric, value|
-        next if metric == 'execution_time'
         t.add_row [metric.split('_').map(&:capitalize).join(' '), value]
       end
     end

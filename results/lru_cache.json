@@ -1,9 +1,9 @@
 [
   {
-    "implementation": "deepseek_r1_web_chat_02_2025",
-    "timestamp": "2025-02-14T20:06:37+02:00",
+    "implementation": "gemini_2_0_flash_web_chat_02_2025",
+    "timestamp": "2025-02-14T20:23:14+02:00",
     "metrics": {
-      "execution_time": 0.334,
+      "execution_time": 0.3163,
       "operations": 1000000,
       "cache_capacity": 10000,
       "get_probability": 0.7,
@@ -11,10 +11,43 @@
     }
   },
   {
-    "implementation": "openai_4o_02_2025",
-    "timestamp": "2025-02-14T20:07:29+02:00",
+    "implementation": "deepseek_r1_web_chat_02_2025",
+    "timestamp": "2025-02-14T20:25:15+02:00",
     "metrics": {
-      "execution_time": 27.512,
+      "execution_time": 0.3165,
+      "operations": 1000000,
+      "cache_capacity": 10000,
+      "get_probability": 0.7,
+      "key_range": 20000
+    }
+  },
+  {
+    "implementation": "claude_sonet_3_5_cursor_02_2025",
+    "timestamp": "2025-02-14T20:22:57+02:00",
+    "metrics": {
+      "execution_time": 0.3194,
+      "operations": 1000000,
+      "cache_capacity": 10000,
+      "get_probability": 0.7,
+      "key_range": 20000
+    }
+  },
+  {
+    "implementation": "openai_o1_web_chat_02_2025",
+    "timestamp": "2025-02-14T20:25:37+02:00",
+    "metrics": {
+      "execution_time": 0.3308,
+      "operations": 1000000,
+      "cache_capacity": 10000,
+      "get_probability": 0.7,
+      "key_range": 20000
+    }
+  },
+  {
+    "implementation": "openai_4o_web_chat_02_2025",
+    "timestamp": "2025-02-14T20:22:21+02:00",
+    "metrics": {
+      "execution_time": 29.2809,
       "operations": 1000000,
       "cache_capacity": 10000,
       "get_probability": 0.7,

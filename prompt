@@ -29,6 +29,5 @@ puts "Completed #{NUM_OPERATIONS} operations in #{time.round(2)} seconds."
 
 Evaluation criteria:
 • Most important: Performance testing using the heavy workload simulation provided.
-• Automated testing via RSpec to verify correctness and eviction behavior.
 • Static code analysis (e.g., rubocop) for style and quality.
 • Code readability, documentation, and modular design.
