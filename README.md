@@ -1,18 +1,3 @@
-<div align="center">
-
-```ascii
-  _     _     __  __
- | |   | |   |  \/  |
- | |   | |   | |\/| |
- | |___| |___| |  | |
- |_____|_____|_|  |_|
- | '_ \ / _ \/ __| | | |
- | |_) |  __/\__ \ |_| |
- | .__/ \___||___/\__,_|
- | |     BENCHMARKS
- |_|
-```
-
 ```ruby
 def measure_ai_skills
   puts "We don't just test AI..."
@@ -20,8 +5,10 @@ def measure_ai_skills
 end
 ```
 
+<div align="center">
+
 [![MIT License](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
-[![Ruby](https://img.shields.io/badge/Ruby-3.0+-red.svg)](https://www.ruby-lang.org)
+[![Ruby](https://img.shields.io/badge/Ruby-3.4+-red.svg)](https://www.ruby-lang.org)
 
 </div>
 
