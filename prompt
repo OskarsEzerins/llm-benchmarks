@@ -1,0 +1,35 @@
+Implement an LRU Cache library in Ruby. The cache should be initialized with a maximum capacity and support the following operations:
+
+• get(key): Return the value associated with key (or nil if not found) and mark the key as most recently used.
+• put(key, value): Insert a new key-value pair or update an existing key’s value. If inserting a new key causes the cache to exceed its capacity, automatically evict the least recently used key.
+
+Requirements:
+• Use only Ruby’s standard library.
+• Aim for O(1) time complexity for both get and put operations.
+• Write unit tests using RSpec covering basic functionality, eviction behavior, and edge cases (e.g., updating existing keys).
+• Provide documentation explaining how to use the cache and the LRU mechanism.
+• You are allowed to provide as a response to this prompt only the code for the LRUCache class, without any other text.
+
+Additionally, ensure that the implemented LRUCache class is callable in the following manner:
+
+```ruby
+cache = LRUCache.new(CACHE_CAPACITY)
+
+(1..(CACHE_CAPACITY / 2)).each { |i| cache.put(i, i) }
+
+puts "Starting heavy workload simulation with #{NUM_OPERATIONS} operations..."
+time = Benchmark.realtime do
+  NUM_OPERATIONS.times do
+    key = rand(1..KEY_RANGE)
+    rand < GET_PROBABILITY ? cache.get(key) : cache.put(key, rand(1..100_000))
+  end
+end
+
+puts "Completed #{NUM_OPERATIONS} operations in #{time.round(2)} seconds."
+```
+
+Evaluation criteria:
+• Automated testing via RSpec to verify correctness and eviction behavior.
+• Static code analysis (e.g., rubocop) for style and quality.
+• Performance testing using the heavy workload simulation provided.
+• Code readability, documentation, and modular design.
