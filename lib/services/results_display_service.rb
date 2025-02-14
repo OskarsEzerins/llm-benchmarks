@@ -6,7 +6,8 @@ class ResultsDisplayService
   end
 
   def initialize(results, current_implementation)
-    @results = results
+    @best_results = results["best_results"]
+    @averages = results["averages"]
     @current_implementation = current_implementation
   end
 
@@ -20,14 +21,25 @@ class ResultsDisplayService
   def display_rankings_table
     table = Terminal::Table.new do |t|
       t.title = "LRU Cache Implementation Benchmarks"
-      t.headings = ['Rank', 'Implementation', 'Time (s)', 'Date', 'Status']
+      t.headings = ['Rank', 'Implementation', 'Best Time (s)', 'Avg Time (s)', 'Runs', 'Date', 'Status']
 
-      @results.each_with_index do |result, index|
-        status = result['implementation'] == @current_implementation ? '🆕' : ' '
+      sorted_results = @best_results.sort_by do |result|
+        avg_metrics = @averages[result['implementation']]
+        avg_metrics ? avg_metrics['metrics']['execution_time'] : Float::INFINITY
+      end
+
+      sorted_results.each_with_index do |result, index|
+        implementation = result['implementation']
+        status = implementation == @current_implementation ? '🆕' : ' '
+        avg_metrics = @averages[implementation]
+        avg_time = avg_metrics ? avg_metrics['metrics']['execution_time'].round(4) : 'N/A'
+
         t.add_row [
           index + 1,
-          result['implementation'],
+          implementation,
           result['metrics']['execution_time'],
+          avg_time,
+          avg_metrics ? avg_metrics['run_count'] : 'N/A',
           format_time(result['timestamp']),
           status
         ]
@@ -38,8 +50,10 @@ class ResultsDisplayService
   end
 
   def display_details_table
-    current_result = @results.find { |r| r['implementation'] == @current_implementation }
-    puts "\nLatest Run Details:"
+    current_result = @best_results.find { |r| r['implementation'] == @current_implementation }
+    return unless current_result
+
+    puts "\nLatest Best Run Details:"
     details_table = Terminal::Table.new do |t|
       t.style = { width: 80 }
       t.add_row ['Implementation', @current_implementation]

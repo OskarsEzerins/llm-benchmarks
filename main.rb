@@ -43,7 +43,8 @@ class BenchmarkRunner
   end
 
   def run_benchmarks(benchmark_id, implementations)
-    implementations.each do |implementation|
+    puts "\nRunning benchmarks in random order..."
+    implementations.shuffle.each do |implementation|
       run_single_benchmark(benchmark_id, implementation)
     end
   end
