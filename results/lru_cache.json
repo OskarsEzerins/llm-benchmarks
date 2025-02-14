@@ -22,6 +22,17 @@
     }
   },
   {
+    "implementation": "qwen_2_5_plus_02_2025",
+    "timestamp": "2025-02-14T20:51:17+02:00",
+    "metrics": {
+      "execution_time": 0.3174,
+      "operations": 1000000,
+      "cache_capacity": 10000,
+      "get_probability": 0.7,
+      "key_range": 20000
+    }
+  },
+  {
     "implementation": "claude_sonet_3_5_cursor_02_2025",
     "timestamp": "2025-02-14T20:22:57+02:00",
     "metrics": {
@@ -37,6 +48,17 @@
     "timestamp": "2025-02-14T20:25:37+02:00",
     "metrics": {
       "execution_time": 0.3308,
+      "operations": 1000000,
+      "cache_capacity": 10000,
+      "get_probability": 0.7,
+      "key_range": 20000
+    }
+  },
+  {
+    "implementation": "localai_gpt_4o_phi_2_02_2025",
+    "timestamp": "2025-02-14T20:43:57+02:00",
+    "metrics": {
+      "execution_time": 0.4205,
       "operations": 1000000,
       "cache_capacity": 10000,
       "get_probability": 0.7,
