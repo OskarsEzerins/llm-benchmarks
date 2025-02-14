@@ -16,7 +16,7 @@ class ResultsViewer
     Config.benchmarks.each do |benchmark|
       results_service = ResultsService.new(Config.results_file(benchmark))
       results = results_service.load
-      ResultsDisplayService.display(results, nil)
+      ResultsDisplayService.display(results, nil, benchmark)
       puts "\n"
     end
   end

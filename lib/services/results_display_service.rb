@@ -4,14 +4,15 @@ require_relative '../helpers/results_helper'
 class ResultsDisplayService
   include ResultsHelper
 
-  def self.display(results, current_implementation)
-    new(results, current_implementation).display
+  def self.display(results, current_implementation, benchmark_id)
+    new(results, current_implementation, benchmark_id).display
   end
 
-  def initialize(results, current_implementation)
+  def initialize(results, current_implementation, benchmark_id)
     @best_results = results["best_results"] || calculate_best_results_by_implementation(results["results"] || [])
     @averages = results["averages"]
     @current_implementation = current_implementation
+    @benchmark_id = benchmark_id
   end
 
   def display
@@ -23,7 +24,7 @@ class ResultsDisplayService
 
   def display_rankings_table
     table = Terminal::Table.new do |t|
-      t.title = "LRU Cache Implementation Benchmarks"
+      t.title = format_title
       t.headings = ['Rank', 'Implementation', 'Best Time (s)', 'Avg Time (s)', 'Runs', 'Date', 'Status']
 
       sorted_results = @best_results.sort_by do |result|
@@ -70,5 +71,10 @@ class ResultsDisplayService
 
   def format_time(timestamp)
     Time.parse(timestamp).strftime("%Y-%m-%d %H:%M:%S")
+  end
+
+  def format_title
+    formatted_name = @benchmark_id.split('_').map(&:capitalize).join(' ')
+    "#{formatted_name} Implementation Benchmarks"
   end
 end

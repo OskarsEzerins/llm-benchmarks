@@ -68,7 +68,7 @@ class BenchmarkRunnerService
       result
     )
 
-    ResultsDisplayService.display(results, implementation[:name])
+    ResultsDisplayService.display(results, implementation[:name], @benchmark_id)
   end
 
   def format_name(benchmark_id)
