@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+Bundler.require
+require 'terminal-table'
+require_relative '../config'
+require_relative '../lib/services/results_display_service'
+require_relative '../lib/services/results_service'
+
+class ResultsViewer
+  def self.show_all
+    new.show_all
+  end
+
+  def show_all
+    Config.benchmarks.each do |benchmark|
+      results_service = ResultsService.new(Config.results_file(benchmark))
+      results = results_service.load
+      ResultsDisplayService.display(results, nil)
+      puts "\n"
+    end
+  end
+end
+
+ResultsViewer.show_all

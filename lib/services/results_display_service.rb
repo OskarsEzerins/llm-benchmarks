@@ -1,12 +1,15 @@
 require 'time'
+require_relative '../helpers/results_helper'
 
 class ResultsDisplayService
+  include ResultsHelper
+
   def self.display(results, current_implementation)
     new(results, current_implementation).display
   end
 
   def initialize(results, current_implementation)
-    @best_results = results["best_results"]
+    @best_results = results["best_results"] || calculate_best_results_by_implementation(results["results"] || [])
     @averages = results["averages"]
     @current_implementation = current_implementation
   end

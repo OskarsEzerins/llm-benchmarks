@@ -1,7 +1,10 @@
 require 'json'
 require 'fileutils'
+require_relative '../helpers/results_helper'
 
 class ResultsService
+  include ResultsHelper
+
   def initialize(results_file)
     @results_file = results_file
   end
@@ -30,7 +33,7 @@ class ResultsService
 
     data["results"] << current_result
     data["averages"] = calculate_averages(data["results"])
-    best_results = keep_fastest_results(data["results"])
+    best_results = calculate_best_results_by_implementation(data["results"])
 
     save(data)
     { "best_results" => best_results, "averages" => data["averages"] }
@@ -38,7 +41,7 @@ class ResultsService
 
   private
 
-  def keep_fastest_results(results)
+  def calculate_best_results_by_implementation(results)
     results.group_by { |r| r["implementation"] }
            .map { |_, impl_results| impl_results.min_by { |r| r["metrics"]["execution_time"] } }
            .sort_by { |r| r["metrics"]["execution_time"] }

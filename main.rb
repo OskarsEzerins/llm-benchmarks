@@ -3,13 +3,12 @@
 require 'bundler/setup'
 Bundler.require
 require 'terminal-table'
+require_relative 'config'
 require_relative 'lib/services/results_display_service'
 require_relative 'lib/services/results_service'
 require_relative 'lib/services/implementation_selector_service'
 
 class BenchmarkRunner
-  BENCHMARKS = ['lru_cache']
-
   def initialize
     @prompt = TTY::Prompt.new
   end
@@ -27,7 +26,7 @@ class BenchmarkRunner
   def select_benchmark
     @prompt.select(
       "\nSelect benchmark:",
-      BENCHMARKS.map { |id| { name: format_name(id), value: id } },
+      Config.benchmarks.map { |id| { name: format_name(id), value: id } },
       per_page: 20,
       filter: true,
       show_help: :always,
@@ -37,7 +36,7 @@ class BenchmarkRunner
   end
 
   def select_implementations(benchmark_id)
-    selector = ImplementationSelectorService.new(implementations_dir(benchmark_id))
+    selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id))
     implementations = selector.select
     implementations.is_a?(Array) ? implementations : [implementations]
   end
@@ -52,7 +51,7 @@ class BenchmarkRunner
   def run_single_benchmark(benchmark_id, implementation)
     puts "\nRunning benchmark with implementation: #{implementation[:name]}"
 
-    require_relative benchmark_file(benchmark_id)
+    require_relative Config.benchmark_file(benchmark_id)
     implementation_path = File.join('..', '..', implementation[:file])
 
     benchmark_class = Object.const_get("#{format_name(benchmark_id).gsub(' ', '')}Benchmark")
@@ -62,7 +61,7 @@ class BenchmarkRunner
   end
 
   def save_and_display_results(benchmark_id, implementation, result)
-    results_service = ResultsService.new(results_file(benchmark_id))
+    results_service = ResultsService.new(Config.results_file(benchmark_id))
     results = results_service.add_result(
       implementation[:name],
       result[:execution_time],
@@ -74,18 +73,6 @@ class BenchmarkRunner
 
   def format_name(benchmark_id)
     benchmark_id.split('_').map(&:capitalize).join(' ')
-  end
-
-  def implementations_dir(benchmark_id)
-    "implementations/#{benchmark_id}"
-  end
-
-  def results_file(benchmark_id)
-    "results/#{benchmark_id}.json"
-  end
-
-  def benchmark_file(benchmark_id)
-    "benchmarks/#{benchmark_id}/benchmark"
   end
 end
 
