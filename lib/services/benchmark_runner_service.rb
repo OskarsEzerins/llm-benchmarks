@@ -1,11 +1,24 @@
 require_relative '../../config'
 require_relative 'results_display_service'
 require_relative 'results_service'
+require_relative 'format_name_service'
 require 'json'
 require 'rubocop'
 
 class BenchmarkRunnerService
+  extend FormatNameService
+  include FormatNameService
+
   NUM_ITERATIONS = 5
+
+  def self.run_all
+    Config.benchmarks.each do |benchmark_id|
+      puts "\nRunning #{format_name(benchmark_id)}..."
+      selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id))
+      implementations = selector.list_all
+      new(benchmark_id, implementations).run
+    end
+  end
 
   def initialize(benchmark_id, implementations)
     @benchmark_id = benchmark_id
@@ -74,9 +87,5 @@ class BenchmarkRunnerService
     )
 
     ResultsDisplayService.display(@benchmark_id)
-  end
-
-  def format_name(benchmark_id)
-    benchmark_id.split('_').map(&:capitalize).join(' ')
   end
 end

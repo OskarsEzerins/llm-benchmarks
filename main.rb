@@ -10,8 +10,13 @@ require_relative 'lib/services/results_service'
 require_relative 'lib/services/implementation_selector_service'
 require_relative 'lib/services/rubocop_evaluation_service'
 require_relative 'lib/services/benchmark_runner_service'
+require_relative 'lib/services/format_name_service'
 
 class BenchmarkRunner
+  include FormatNameService
+
+  RUN_ALL_OPTION = { name: 'Run all benchmarks with all models', value: :all }.freeze
+
   def initialize
     @prompt = TTY::Prompt.new
   end
@@ -20,8 +25,12 @@ class BenchmarkRunner
     benchmark = select_benchmark
     return puts 'No benchmark selected.' unless benchmark
 
-    implementations = select_implementations(benchmark)
-    BenchmarkRunnerService.new(benchmark, implementations).run
+    if benchmark == :all
+      BenchmarkRunnerService.run_all
+    else
+      implementations = select_implementations(benchmark)
+      BenchmarkRunnerService.new(benchmark, implementations).run
+    end
   end
 
   private
@@ -29,7 +38,7 @@ class BenchmarkRunner
   def select_benchmark
     @prompt.select(
       "\nSelect benchmark:",
-      Config.benchmarks.map { |id| { name: format_name(id), value: id } },
+      [RUN_ALL_OPTION] + Config.benchmarks.map { |id| { name: format_name(id), value: id } },
       per_page: 20,
       filter: true,
       show_help: :always,
@@ -42,10 +51,6 @@ class BenchmarkRunner
     selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id))
     implementations = selector.select
     implementations.is_a?(Array) ? implementations : [implementations]
-  end
-
-  def format_name(benchmark_id)
-    benchmark_id.split('_').map(&:capitalize).join(' ')
   end
 end
 
