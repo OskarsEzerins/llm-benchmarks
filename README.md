@@ -119,10 +119,13 @@ cd llm-benchmarks
 bundle install
 
 # Time to make AI models nervous
-ruby main.rb
+bin/benchmark
 
 # See who survived
-ruby bin/show_all_results
+bin/show_all_results
+
+# See the total rankings
+bin/show_total_rankings
 ```
 
 ## 🏗️ Project Anatomy
