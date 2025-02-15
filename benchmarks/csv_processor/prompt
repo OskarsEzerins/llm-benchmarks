@@ -1,0 +1,41 @@
+Create a CSV data processor in Ruby v3.4.1 that can transform and analyze CSV data. The processor should handle basic operations efficiently.
+
+Requirements:
+
+- Process CSV data provided as an array of strings
+- Support basic transformations like filtering and aggregation
+- Handle data in a memory-efficient way
+- Process data in chunks for better performance
+- No external gems or libraries allowed
+- Do not give me example usage, nor any other text, just the code
+
+Example input:
+data = [
+"name,age,city",
+"John,25,New York",
+"Alice,30,San Francisco",
+"Bob,28,Chicago"
+]
+
+Example transformations:
+transformations = {
+filter: ->(row) { row["age"].to_i > 25 },
+select: ["name", "city"],
+aggregate: {
+avg_age: ->(rows) { rows.sum { |row| row["age"].to_i } / rows.length.to_f }
+}
+}
+
+Expected output:
+{
+filtered_data: [
+{ "name" => "Alice", "city" => "San Francisco" },
+{ "name" => "Bob", "city" => "Chicago" }
+],
+aggregations: {
+avg_age: 29.0
+}
+}
+
+Class invocation:
+CsvProcessor.process(input_data, transformations)
