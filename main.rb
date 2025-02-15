@@ -3,10 +3,12 @@
 require 'bundler/setup'
 Bundler.require
 require 'terminal-table'
+require 'pry'
 require_relative 'config'
 require_relative 'lib/services/results_display_service'
 require_relative 'lib/services/results_service'
 require_relative 'lib/services/implementation_selector_service'
+require_relative 'lib/services/rubocop_evaluation_service'
 require_relative 'lib/services/benchmark_runner_service'
 
 class BenchmarkRunner

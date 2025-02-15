@@ -2,6 +2,7 @@ require_relative '../../config'
 require_relative 'results_display_service'
 require_relative 'results_service'
 require 'json'
+require 'rubocop'
 
 class BenchmarkRunnerService
   NUM_ITERATIONS = 5
@@ -31,7 +32,9 @@ class BenchmarkRunnerService
     end
 
     best_result = results.min
-    save_and_display_results(implementation, best_result)
+    rubocop_offenses_count = RubocopEvaluationService.count_offenses(implementation[:file])
+
+    save_and_display_results(implementation, best_result, rubocop_offenses_count)
   end
 
   def run_in_subprocess(implementation)
@@ -62,14 +65,15 @@ class BenchmarkRunnerService
     benchmark_class.run(implementation_path)
   end
 
-  def save_and_display_results(implementation, result)
+  def save_and_display_results(implementation, result, rubocop_offenses_count)
     results_service = ResultsService.new(Config.results_file(@benchmark_id))
-    results = results_service.add_result(
+    results_service.add_result(
       implementation[:name],
-      result
+      result,
+      rubocop_offenses_count
     )
 
-    ResultsDisplayService.display(results, implementation[:name], @benchmark_id)
+    ResultsDisplayService.display(@benchmark_id)
   end
 
   def format_name(benchmark_id)

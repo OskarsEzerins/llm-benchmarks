@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'benchmark'
+gem 'pry'
 gem 'terminal-table'
 gem 'tty-prompt'
 
