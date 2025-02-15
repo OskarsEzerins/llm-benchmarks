@@ -2,7 +2,7 @@ module Config
   module_function
 
   def benchmarks
-    ['lru_cache', 'graph_shortest_paths']
+    ['lru_cache', 'graph_shortest_paths', 'run_length_encoding']
   end
 
   def results_dir

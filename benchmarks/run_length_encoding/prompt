@@ -1,0 +1,16 @@
+Implement a function in Ruby that performs run-length encoding (RLE) and decoding efficiently. The function should accept a string as input and return the RLE encoded string.  Another function should accept an RLE encoded string and return the decoded string. Optimize for speed, especially for long strings. The implementation should use only Ruby's standard libraries (no external gems).  Handle various edge cases correctly, including empty strings and strings with only repeating characters.
+
+Do not use any external gems or libraries.
+Don't give example usage code.
+Don't explain the code.
+
+Example function invocations:
+
+```ruby
+RLE.rle_encode("AAABBCDDD") # returns "A3B2C1D3"
+RLE.rle_decode("A3B2C1D3") # returns "AAABBCDDD"
+RLE.rle_encode("") # returns ""
+RLE.rle_decode("") # returns ""
+RLE.rle_encode("AAAAAAA") # returns "A7"
+RLE.rle_decode("A7") # returns "AAAAAAA"
+```

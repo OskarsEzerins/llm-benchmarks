@@ -49,7 +49,7 @@ class ResultsDisplayService
     [
       index + 1,
       implementation,
-      score,
+      score.round(2),
       result['metrics']['execution_time'].round(4),
       avg_time,
       rubocop_offenses,

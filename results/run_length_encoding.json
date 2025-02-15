@@ -1,0 +1,277 @@
+{
+  "results": [
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-15T10:39:02+02:00",
+      "metrics": {
+        "execution_time": 0.5879,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-15T10:40:26+02:00",
+      "metrics": {
+        "execution_time": 1.3828,
+        "rubocop_offenses": 2
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:41:20+02:00",
+      "metrics": {
+        "execution_time": 0.7925,
+        "rubocop_offenses": 1
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-15T10:48:29+02:00",
+      "metrics": {
+        "execution_time": 1.5092,
+        "rubocop_offenses": 2
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-15T10:48:36+02:00",
+      "metrics": {
+        "execution_time": 0.5912,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:48:50+02:00",
+      "metrics": {
+        "execution_time": 1.2199,
+        "rubocop_offenses": 4
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:49:05+02:00",
+      "metrics": {
+        "execution_time": 1.1378,
+        "rubocop_offenses": 1
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:50:00+02:00",
+      "metrics": {
+        "execution_time": 1.278,
+        "rubocop_offenses": 4
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-15T10:50:08+02:00",
+      "metrics": {
+        "execution_time": 0.6301,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:50:20+02:00",
+      "metrics": {
+        "execution_time": 1.0807,
+        "rubocop_offenses": 9
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:50:32+02:00",
+      "metrics": {
+        "execution_time": 1.0216,
+        "rubocop_offenses": 3
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-15T10:50:47+02:00",
+      "metrics": {
+        "execution_time": 1.1298,
+        "rubocop_offenses": 2
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-15T10:52:27+02:00",
+      "metrics": {
+        "execution_time": 1.5546,
+        "rubocop_offenses": 2
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:52:39+02:00",
+      "metrics": {
+        "execution_time": 1.0822,
+        "rubocop_offenses": 9
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:52:55+02:00",
+      "metrics": {
+        "execution_time": 1.1743,
+        "rubocop_offenses": 1
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:53:09+02:00",
+      "metrics": {
+        "execution_time": 1.2509,
+        "rubocop_offenses": 4
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:53:19+02:00",
+      "metrics": {
+        "execution_time": 0.8224,
+        "rubocop_offenses": 1
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:53:30+02:00",
+      "metrics": {
+        "execution_time": 1.0341,
+        "rubocop_offenses": 3
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-15T10:53:38+02:00",
+      "metrics": {
+        "execution_time": 0.6227,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-02-15T10:53:57+02:00",
+      "metrics": {
+        "execution_time": 0.6193,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:54:13+02:00",
+      "metrics": {
+        "execution_time": 1.6031,
+        "rubocop_offenses": 1
+      }
+    },
+    {
+      "implementation": "qwen_2_5_plus_02_2025",
+      "timestamp": "2025-02-15T10:54:28+02:00",
+      "metrics": {
+        "execution_time": 1.6003,
+        "rubocop_offenses": 2
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:54:40+02:00",
+      "metrics": {
+        "execution_time": 1.0331,
+        "rubocop_offenses": 3
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:54:50+02:00",
+      "metrics": {
+        "execution_time": 0.8285,
+        "rubocop_offenses": 1
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:55:07+02:00",
+      "metrics": {
+        "execution_time": 1.3215,
+        "rubocop_offenses": 4
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-02-15T10:55:20+02:00",
+      "metrics": {
+        "execution_time": 1.1582,
+        "rubocop_offenses": 9
+      }
+    }
+  ],
+  "aggregates": {
+    "claude_sonet_3_5_cursor_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.61024,
+        "rubocop_offenses": 6.0
+      },
+      "rubocop_offenses": 6,
+      "score": 99.26666666666667
+    },
+    "qwen_2_5_plus_02_2025": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 1.43534,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 54.379999999999995
+    },
+    "gemini_2_0_flash_web_chat_02_2025": {
+      "run_count": 3,
+      "metrics": {
+        "execution_time": 0.814467,
+        "rubocop_offenses": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 85.84333333333332
+    },
+    "openai_4o_web_chat_02_2025": {
+      "run_count": 4,
+      "metrics": {
+        "execution_time": 1.267575,
+        "rubocop_offenses": 4.0
+      },
+      "rubocop_offenses": 4,
+      "score": 56.93333333333334
+    },
+    "deepseek_r1_web_chat_02_2025": {
+      "run_count": 3,
+      "metrics": {
+        "execution_time": 1.305067,
+        "rubocop_offenses": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 58.39666666666667
+    },
+    "openai_o1_web_chat_02_2025": {
+      "run_count": 3,
+      "metrics": {
+        "execution_time": 1.107033,
+        "rubocop_offenses": 9.0
+      },
+      "rubocop_offenses": 9,
+      "score": 33.44
+    },
+    "openai_o3_mini_web_chat_02_2025": {
+      "run_count": 3,
+      "metrics": {
+        "execution_time": 1.0296,
+        "rubocop_offenses": 3.0
+      },
+      "rubocop_offenses": 3,
+      "score": 71.25666666666667
+    }
+  }
+}
