@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+Bundler.require
+require_relative '../config'
+require_relative '../lib/services/total_results_display_service'
+
+TotalResultsDisplayService.display
