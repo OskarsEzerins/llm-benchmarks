@@ -1,7 +1,15 @@
 ```ruby
-def measure_ai_skills
-  puts "We don't just test AI..."
-  puts "We make it SWEAT! 💦"
+class Reality < Exception
+  def initialize
+    super("Your model may be hallucinating benchmarks")
+  end
+end
+
+begin
+  puts "Running AI-generated code..."
+  raise Reality if performance != promised_performance
+rescue Reality => e
+  puts "Welcome to our benchmarks!"
 end
 ```
 
@@ -42,21 +50,6 @@ end
 | 12   | deepseek_r1_distill_qwen_32b_web_chat_02_2025 | 23.49       | 1/4       | 0         | 0                    | 0                   | 93.94         |
 | 13   | localai_gpt_4o_phi_2_02_2025                  | 1.91        | 1/4       | 7.64      | 0                    | 0                   | 0             |
 +------+-----------------------------------------------+-------------+-----------+-----------+----------------------+---------------------+---------------+
-```
-
-```ruby
-class Reality < Exception
-  def initialize
-    super("Your model may be hallucinating benchmarks")
-  end
-end
-
-begin
-  puts "Running AI-generated code..."
-  raise Reality if performance != promised_performance
-rescue Reality => e
-  puts "Welcome to our benchmarks!"
-end
 ```
 
 ## 🔧 Requirements
