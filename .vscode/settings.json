@@ -1,3 +1,4 @@
 {
-  "rubyLsp.formatter": "auto"
+  "rubyLsp.formatter": "auto",
+  "cSpell.words": ["localai"]
 }
