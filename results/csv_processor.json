@@ -1847,179 +1847,382 @@
         "execution_time": 0.3382,
         "rubocop_offenses": 8
       }
+    },
+    {
+      "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:16:46+03:00",
+      "metrics": {
+        "execution_time": 0.3185,
+        "rubocop_offenses": 10
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:16:49+03:00",
+      "metrics": {
+        "execution_time": 0.5179,
+        "rubocop_offenses": 24
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_7_sonnet_vscode_03_2025",
+      "timestamp": "2025-04-16T23:16:52+03:00",
+      "metrics": {
+        "execution_time": 0.437,
+        "rubocop_offenses": 0
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_5_cursor_02_2025",
+      "timestamp": "2025-04-16T23:16:54+03:00",
+      "metrics": {
+        "execution_time": 0.3337,
+        "rubocop_offenses": 5
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_03_2025",
+      "timestamp": "2025-04-16T23:16:56+03:00",
+      "metrics": {
+        "execution_time": 0.3468,
+        "rubocop_offenses": 9
+      }
+    },
+    {
+      "implementation": "openai_o3_high_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:16:59+03:00",
+      "metrics": {
+        "execution_time": 0.3642,
+        "rubocop_offenses": 5
+      }
+    },
+    {
+      "implementation": "openai_o4_high_web_chat_04_2025",
+      "timestamp": "2025-04-16T23:17:01+03:00",
+      "metrics": {
+        "execution_time": 0.3091,
+        "rubocop_offenses": 10
+      }
+    },
+    {
+      "implementation": "openai_o3_mini_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:17:03+03:00",
+      "metrics": {
+        "execution_time": 0.3957,
+        "rubocop_offenses": 8
+      }
+    },
+    {
+      "implementation": "openai_4_1_openai_api_04_2025",
+      "timestamp": "2025-04-16T23:17:08+03:00",
+      "metrics": {
+        "execution_time": 0.8044,
+        "rubocop_offenses": 7
+      }
+    },
+    {
+      "implementation": "gemini_2_0_pro_exp_cursor_chat_02_2025",
+      "timestamp": "2025-04-16T23:17:10+03:00",
+      "metrics": {
+        "execution_time": 0.335,
+        "rubocop_offenses": 2
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_7_sonnet_thinking_vscode_03_2025",
+      "timestamp": "2025-04-16T23:17:13+03:00",
+      "metrics": {
+        "execution_time": 0.438,
+        "rubocop_offenses": 19
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_7_sonnet_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:17:18+03:00",
+      "metrics": {
+        "execution_time": 0.9867,
+        "rubocop_offenses": 16
+      }
+    },
+    {
+      "implementation": "openai_4o_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:17:21+03:00",
+      "metrics": {
+        "execution_time": 0.3139,
+        "rubocop_offenses": 3
+      }
+    },
+    {
+      "implementation": "openai_4_1_mini_openai_api_04_2025",
+      "timestamp": "2025-04-16T23:17:23+03:00",
+      "metrics": {
+        "execution_time": 0.3314,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "openai_o1_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:17:25+03:00",
+      "metrics": {
+        "execution_time": 0.3086,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "deepseek_v3_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:17:27+03:00",
+      "metrics": {
+        "execution_time": 0.3098,
+        "rubocop_offenses": 8
+      }
+    },
+    {
+      "implementation": "openai_o3_high_web_chat_03_2025",
+      "timestamp": "2025-04-16T23:17:29+03:00",
+      "metrics": {
+        "execution_time": 0.3248,
+        "rubocop_offenses": 8
+      }
+    },
+    {
+      "implementation": "gemini_2_5_pro_exp_chat_03_2025",
+      "timestamp": "2025-04-16T23:17:31+03:00",
+      "metrics": {
+        "execution_time": 0.3151,
+        "rubocop_offenses": 7
+      }
+    },
+    {
+      "implementation": "qwen_2_5_max_02_2025",
+      "timestamp": "2025-04-16T23:17:33+03:00",
+      "metrics": {
+        "execution_time": 0.3126,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "mistral_web_03_2025",
+      "timestamp": "2025-04-16T23:17:50+03:00",
+      "metrics": {
+        "execution_time": 3.2687,
+        "rubocop_offenses": 6
+      }
+    },
+    {
+      "implementation": "claude_sonet_3_7_sonnet_thinking_cursor_02_2025",
+      "timestamp": "2025-04-16T23:17:56+03:00",
+      "metrics": {
+        "execution_time": 0.9041,
+        "rubocop_offenses": 12
+      }
+    },
+    {
+      "implementation": "deepseek_r1_web_chat_02_2025",
+      "timestamp": "2025-04-16T23:17:59+03:00",
+      "metrics": {
+        "execution_time": 0.5178,
+        "rubocop_offenses": 16
+      }
     }
   ],
   "aggregates": {
     "gemini_2_0_flash_web_chat_02_2025": {
-      "run_count": 20,
+      "run_count": 21,
       "metrics": {
-        "execution_time": 0.491035,
+        "execution_time": 0.492314,
         "rubocop_offenses": 24.0
       },
       "rubocop_offenses": 24,
-      "score": 62.666666666666664
+      "score": 62.88333333333333
     },
     "openai_o1_web_chat_02_2025": {
-      "run_count": 20,
+      "run_count": 21,
       "metrics": {
-        "execution_time": 0.324385,
+        "execution_time": 0.323633,
         "rubocop_offenses": 6.0
       },
       "rubocop_offenses": 6,
-      "score": 99.74666666666667
+      "score": 99.77
     },
     "openai_o3_high_web_chat_02_2025": {
-      "run_count": 20,
+      "run_count": 21,
       "metrics": {
-        "execution_time": 0.326895,
+        "execution_time": 0.328671,
         "rubocop_offenses": 5.0
       },
       "rubocop_offenses": 5,
-      "score": 99.62666666666667
+      "score": 99.63
     },
     "openai_4o_web_chat_02_2025": {
-      "run_count": 20,
+      "run_count": 21,
       "metrics": {
-        "execution_time": 0.32939,
+        "execution_time": 0.328652,
         "rubocop_offenses": 3.0
       },
       "rubocop_offenses": 3,
-      "score": 99.61666666666667
+      "score": 99.64666666666666
     },
     "claude_sonet_3_5_cursor_02_2025": {
-      "run_count": 20,
+      "run_count": 21,
       "metrics": {
-        "execution_time": 0.334615,
+        "execution_time": 0.334571,
         "rubocop_offenses": 5.0
       },
       "rubocop_offenses": 5,
-      "score": 99.39666666666666
+      "score": 99.43333333333334
     },
     "deepseek_r1_web_chat_02_2025": {
-      "run_count": 20,
+      "run_count": 21,
       "metrics": {
-        "execution_time": 0.52876,
+        "execution_time": 0.528238,
         "rubocop_offenses": 16.0
       },
       "rubocop_offenses": 16,
-      "score": 94.84333333333332
+      "score": 95.14666666666666
     },
     "openai_o3_mini_web_chat_02_2025": {
-      "run_count": 20,
+      "run_count": 21,
       "metrics": {
-        "execution_time": 0.41037,
+        "execution_time": 0.409671,
         "rubocop_offenses": 8.0
       },
       "rubocop_offenses": 8,
-      "score": 97.66666666666667
+      "score": 97.81
     },
     "qwen_2_5_max_02_2025": {
-      "run_count": 20,
+      "run_count": 21,
       "metrics": {
-        "execution_time": 0.32817,
+        "execution_time": 0.327429,
         "rubocop_offenses": 6.0
       },
       "rubocop_offenses": 6,
-      "score": 99.67666666666666
+      "score": 99.70333333333333
     },
     "deepseek_v3_web_chat_02_2025": {
-      "run_count": 15,
+      "run_count": 16,
       "metrics": {
-        "execution_time": 0.333687,
+        "execution_time": 0.332194,
         "rubocop_offenses": 8.0
       },
       "rubocop_offenses": 8,
-      "score": 99.53666666666668
+      "score": 99.59666666666665
     },
     "deepseek_r1_distill_qwen_32b_web_chat_02_2025": {
-      "run_count": 13,
+      "run_count": 14,
       "metrics": {
-        "execution_time": 0.334,
+        "execution_time": 0.332893,
         "rubocop_offenses": 10.0
       },
       "rubocop_offenses": 10,
-      "score": 99.41333333333334
+      "score": 99.49333333333334
     },
     "gemini_2_0_pro_exp_cursor_chat_02_2025": {
-      "run_count": 10,
+      "run_count": 11,
       "metrics": {
-        "execution_time": 0.35291,
+        "execution_time": 0.351282,
         "rubocop_offenses": 2.0
       },
       "rubocop_offenses": 2,
-      "score": 99.03666666666668
+      "score": 99.11
     },
     "claude_sonet_3_7_sonnet_web_chat_02_2025": {
-      "run_count": 7,
+      "run_count": 8,
       "metrics": {
-        "execution_time": 1.045086,
+        "execution_time": 1.037788,
         "rubocop_offenses": 16.0
       },
       "rubocop_offenses": 16,
-      "score": 82.63666666666667
+      "score": 84.06
     },
     "claude_sonet_3_7_sonnet_thinking_cursor_02_2025": {
-      "run_count": 7,
+      "run_count": 8,
       "metrics": {
-        "execution_time": 0.909571,
+        "execution_time": 0.908888,
         "rubocop_offenses": 12.0
       },
       "rubocop_offenses": 12,
-      "score": 86.10333333333334
+      "score": 86.91000000000001
     },
     "claude_sonet_3_7_sonnet_thinking_vscode_03_2025": {
-      "run_count": 4,
+      "run_count": 5,
       "metrics": {
-        "execution_time": 0.484325,
+        "execution_time": 0.47506,
         "rubocop_offenses": 19.0
       },
       "rubocop_offenses": 19,
-      "score": 96.10000000000001
+      "score": 96.55
     },
     "openai_o3_mini_web_chat_03_2025": {
-      "run_count": 4,
+      "run_count": 5,
       "metrics": {
-        "execution_time": 0.35725,
+        "execution_time": 0.35516,
         "rubocop_offenses": 9.0
       },
       "rubocop_offenses": 9,
-      "score": 99.06
+      "score": 99.13666666666666
     },
     "openai_o3_high_web_chat_03_2025": {
-      "run_count": 4,
+      "run_count": 5,
       "metrics": {
-        "execution_time": 0.358825,
+        "execution_time": 0.35202,
         "rubocop_offenses": 8.0
       },
       "rubocop_offenses": 8,
-      "score": 99.00999999999999
+      "score": 99.20666666666666
     },
     "claude_sonet_3_7_sonnet_vscode_03_2025": {
-      "run_count": 4,
+      "run_count": 5,
       "metrics": {
-        "execution_time": 0.483725,
+        "execution_time": 0.47438,
         "rubocop_offenses": 0.0
       },
       "rubocop_offenses": 0,
-      "score": 96.07000000000001
+      "score": 96.56666666666666
     },
     "mistral_web_03_2025": {
-      "run_count": 2,
+      "run_count": 3,
       "metrics": {
-        "execution_time": 3.0391,
+        "execution_time": 3.115633,
         "rubocop_offenses": 6.0
       },
       "rubocop_offenses": 6,
-      "score": 35.45666666666667
+      "score": 38.303333333333335
     },
     "gemini_2_5_pro_exp_chat_03_2025": {
-      "run_count": 1,
+      "run_count": 2,
       "metrics": {
-        "execution_time": 0.3243,
+        "execution_time": 0.3197,
         "rubocop_offenses": 7.0
       },
       "rubocop_offenses": 7,
-      "score": 99.49333333333334
+      "score": 99.67999999999999
+    },
+    "openai_o4_high_web_chat_04_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.3091,
+        "rubocop_offenses": 10.0
+      },
+      "rubocop_offenses": 10,
+      "score": 99.86666666666667
+    },
+    "openai_4_1_openai_api_04_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.8044,
+        "rubocop_offenses": 7.0
+      },
+      "rubocop_offenses": 7,
+      "score": 88.73333333333333
+    },
+    "openai_4_1_mini_openai_api_04_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.3314,
+        "rubocop_offenses": 6.0
+      },
+      "rubocop_offenses": 6,
+      "score": 99.36666666666667
     }
   }
 }
