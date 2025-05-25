@@ -2007,6 +2007,14 @@
         "execution_time": 1.242,
         "rubocop_offenses": 4
       }
+    },
+    {
+      "implementation": "claude_opus_4_openrouter_05_2025",
+      "timestamp": "2025-05-25T15:32:43+03:00",
+      "metrics": {
+        "execution_time": 1.92,
+        "rubocop_offenses": 14
+      }
     }
   ],
   "aggregates": {
@@ -2198,6 +2206,15 @@
       },
       "rubocop_offenses": 4,
       "score": 83.44
+    },
+    "claude_opus_4_openrouter_05_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 1.92,
+        "rubocop_offenses": 14.0
+      },
+      "rubocop_offenses": 14,
+      "score": 74.39999999999999
     }
   }
 }
