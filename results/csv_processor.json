@@ -2751,6 +2751,14 @@
         "execution_time": 0.4661,
         "rubocop_offenses": 19
       }
+    },
+    {
+      "implementation": "deepseek_v3_free_openrouter_05_2025",
+      "timestamp": "2025-05-25T14:48:09+03:00",
+      "metrics": {
+        "execution_time": 0.4899,
+        "rubocop_offenses": 10
+      }
     }
   ],
   "aggregates": {
@@ -2960,6 +2968,15 @@
       },
       "rubocop_offenses": 27,
       "score": 83.91333333333334
+    },
+    "deepseek_v3_free_openrouter_05_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.4899,
+        "rubocop_offenses": 10.0
+      },
+      "rubocop_offenses": 10,
+      "score": 93.46666666666665
     }
   }
 }
