@@ -2404,6 +2404,14 @@
         "execution_time": 0.2819,
         "rubocop_offenses": 21
       }
+    },
+    {
+      "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+      "timestamp": "2025-05-25T16:14:50+03:00",
+      "metrics": {
+        "execution_time": 0.3409,
+        "rubocop_offenses": 17
+      }
     }
   ],
   "averages": {
@@ -2686,6 +2694,15 @@
       },
       "rubocop_offenses": 21,
       "score": 96.43333333333334
+    },
+    "gemma_3_27b_it_free_openrouter_05_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.3409,
+        "rubocop_offenses": 17.0
+      },
+      "rubocop_offenses": 17,
+      "score": 95.45333333333333
     }
   }
 }
