@@ -29,7 +29,13 @@ module Implementations
     end
 
     def model_name
-      RubyLLM.models.find(@model_id).name.split(":").last.strip.tr('-.:() ', '_').downcase
+      name = if ['deepseek'].any? { |provider| @model_id.include?(provider) }
+               RubyLLM.models.find(@model_id).name.split(":").last.strip.tr('-.:() ', '_').downcase
+             else
+               @model_id.split('/').last.tr('-.:() ', '_').downcase
+             end
+
+      @model_id.include?('openai') ? name.tr('gpt', 'openai') : name
     end
   end
 end
