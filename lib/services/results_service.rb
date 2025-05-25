@@ -5,6 +5,16 @@ require_relative '../helpers/results_helper'
 class ResultsService
   include ResultsHelper
 
+  MAX_BENCHMARK_RUN_TIME_SECONDS = 5
+  MIN_BENCHMARK_RUN_TIME_SECONDS = 0.0001
+  MAX_RUBOCOP_OFFENSES = 50
+
+  METRICS_BOUNDS = {
+    max_time: MAX_BENCHMARK_RUN_TIME_SECONDS,
+    min_time: MIN_BENCHMARK_RUN_TIME_SECONDS,
+    max_rubocop: MAX_RUBOCOP_OFFENSES
+  }.freeze
+
   def initialize(results_file)
     @results_file = results_file
   end
@@ -49,28 +59,18 @@ class ResultsService
 
   def calculate_aggregates(results)
     grouped = results.group_by { |r| r['implementation'] }
-    metrics_bounds = calculate_metrics_bounds(results)
 
     grouped.transform_values do |impl_results|
-      calculate_implementation_metrics(impl_results, metrics_bounds)
+      calculate_implementation_metrics(impl_results)
     end
   end
 
-  def calculate_metrics_bounds(results)
-    best_times = results.map { |r| r['metrics']['execution_time'] }
-    {
-      max_time: best_times.max,
-      min_time: best_times.min,
-      max_rubocop: results.filter_map { |r| r['metrics']['rubocop_offenses'] }.max || 0
-    }
-  end
-
-  def calculate_implementation_metrics(impl_results, bounds)
+  def calculate_implementation_metrics(impl_results)
     metrics = calculate_average_metrics(impl_results)
     best_time = impl_results.map { |r| r['metrics']['execution_time'] }.min
     rubocop_offenses = impl_results.filter_map { |r| r['metrics']['rubocop_offenses'] }.max || 0
 
-    scores = calculate_scores(best_time, metrics['execution_time'], rubocop_offenses, bounds)
+    scores = calculate_scores(best_time, metrics['execution_time'], rubocop_offenses)
 
     {
       'run_count' => impl_results.size,
@@ -80,11 +80,11 @@ class ResultsService
     }
   end
 
-  def calculate_scores(best_time, avg_time, rubocop_offenses, bounds)
+  def calculate_scores(best_time, avg_time, rubocop_offenses)
     [
-      normalize_inverse_score(best_time, bounds[:min_time], bounds[:max_time]),
-      normalize_inverse_score(avg_time, bounds[:min_time], bounds[:max_time]),
-      normalize_inverse_score(rubocop_offenses, 0, bounds[:max_rubocop])
+      normalize_inverse_score(best_time, METRICS_BOUNDS[:min_time], METRICS_BOUNDS[:max_time]),
+      normalize_inverse_score(avg_time, METRICS_BOUNDS[:min_time], METRICS_BOUNDS[:max_time]),
+      normalize_inverse_score(rubocop_offenses, 0, METRICS_BOUNDS[:max_rubocop])
     ].map { |score| score.round(2) }
   end
 
@@ -97,6 +97,7 @@ class ResultsService
 
   def calculate_average_metrics(impl_results)
     metrics = impl_results.first['metrics'].keys
+
     metrics.each_with_object({}) do |metric, acc|
       values = impl_results.filter_map { |r| r['metrics'][metric] }
       acc[metric] = values.any? ? (values.sum / values.size.to_f).round(6) : nil
