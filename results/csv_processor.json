@@ -2759,6 +2759,14 @@
         "execution_time": 0.4899,
         "rubocop_offenses": 10
       }
+    },
+    {
+      "implementation": "claude_3_5_haiku_openrouter_05_2025",
+      "timestamp": "2025-05-25T15:25:17+03:00",
+      "metrics": {
+        "execution_time": 0.5121,
+        "rubocop_offenses": 4
+      }
     }
   ],
   "aggregates": {
@@ -2977,6 +2985,15 @@
       },
       "rubocop_offenses": 10,
       "score": 93.46666666666665
+    },
+    "claude_3_5_haiku_openrouter_05_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.5121,
+        "rubocop_offenses": 4.0
+      },
+      "rubocop_offenses": 4,
+      "score": 93.17333333333333
     }
   }
 }
