@@ -35,7 +35,7 @@ module Implementations
                @model_id.split('/').last.tr('-.:() ', '_').downcase
              end
 
-      @model_id.include?('openai') ? name.tr('gpt', 'openai') : name
+      @model_id.include?('openai') ? "openai_#{name.gsub('gpt', '')}" : name
     end
   end
 end

@@ -2372,6 +2372,38 @@
         "execution_time": 1.0493,
         "rubocop_offenses": 11
       }
+    },
+    {
+      "implementation": "openai_o4_mini_high_openrouter_05_2025",
+      "timestamp": "2025-05-25T15:51:38+03:00",
+      "metrics": {
+        "execution_time": 0.2678,
+        "rubocop_offenses": 21
+      }
+    },
+    {
+      "implementation": "openai_o4_mini_high_openrouter_05_2025",
+      "timestamp": "2025-05-25T15:54:40+03:00",
+      "metrics": {
+        "execution_time": 0.2762,
+        "rubocop_offenses": 21
+      }
+    },
+    {
+      "implementation": "openai_o4_mini_high_openrouter_05_2025",
+      "timestamp": "2025-05-25T15:57:54+03:00",
+      "metrics": {
+        "execution_time": 0.2631,
+        "rubocop_offenses": 21
+      }
+    },
+    {
+      "implementation": "openai_o4_mini_high_openrouter_05_2025",
+      "timestamp": "2025-05-25T15:59:43+03:00",
+      "metrics": {
+        "execution_time": 0.2819,
+        "rubocop_offenses": 21
+      }
     }
   ],
   "averages": {
@@ -2645,6 +2677,15 @@
       },
       "rubocop_offenses": 11,
       "score": 86.0
+    },
+    "openai_o4_mini_high_openrouter_05_2025": {
+      "run_count": 4,
+      "metrics": {
+        "execution_time": 0.27225,
+        "rubocop_offenses": 21.0
+      },
+      "rubocop_offenses": 21,
+      "score": 96.43333333333334
     }
   }
 }
