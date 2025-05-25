@@ -2023,6 +2023,14 @@
         "execution_time": 0.8408,
         "rubocop_offenses": 3
       }
+    },
+    {
+      "implementation": "grok_3_beta_openrouter_05_2025",
+      "timestamp": "2025-05-25T16:33:15+03:00",
+      "metrics": {
+        "execution_time": 0.863,
+        "rubocop_offenses": 8
+      }
     }
   ],
   "aggregates": {
@@ -2232,6 +2240,15 @@
       },
       "rubocop_offenses": 3,
       "score": 88.79333333333334
+    },
+    "grok_3_beta_openrouter_05_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.863,
+        "rubocop_offenses": 8.0
+      },
+      "rubocop_offenses": 8,
+      "score": 88.49333333333334
     }
   }
 }
