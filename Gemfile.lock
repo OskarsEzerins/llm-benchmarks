@@ -1,13 +1,46 @@
+GIT
+  remote: https://github.com/crmne/ruby_llm.git
+  revision: 87a86f70cb64e23d5b76994edf8080618f07e071
+  ref: 87a86f70cb64e23d5b76994edf8080618f07e071
+  specs:
+    ruby_llm (1.3.0rc1)
+      base64
+      event_stream_parser (~> 1)
+      faraday (>= 1.10.0)
+      faraday-multipart (>= 1)
+      faraday-net_http (>= 1)
+      faraday-retry (>= 1)
+      marcel (~> 1.0)
+      zeitwerk (~> 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    base64 (0.2.0)
     benchmark (0.4.0)
     coderay (1.1.3)
-    json (2.10.1)
+    dotenv (3.1.8)
+    event_stream_parser (1.0.0)
+    faraday (2.13.1)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-multipart (1.1.0)
+      multipart-post (~> 2.0)
+    faraday-net_http (3.4.0)
+      net-http (>= 0.5.0)
+    faraday-retry (2.3.1)
+      faraday (~> 2.0)
+    json (2.12.2)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
+    logger (1.7.0)
+    marcel (1.0.4)
     method_source (1.1.0)
+    multipart-post (2.4.1)
+    net-http (0.6.0)
+      uri
     parallel (1.26.3)
     parser (3.3.7.1)
       ast (~> 2.4.1)
@@ -54,7 +87,9 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
+    uri (1.0.3)
     wisper (2.0.1)
+    zeitwerk (2.7.3)
 
 PLATFORMS
   arm64-darwin-24
@@ -62,10 +97,12 @@ PLATFORMS
 
 DEPENDENCIES
   benchmark
+  dotenv
   pry
   rubocop (= 1.72.0)
   rubocop-performance (= 1.23.1)
   rubocop-thread_safety (= 0.6.0)
+  ruby_llm!
   terminal-table
   tty-prompt
 

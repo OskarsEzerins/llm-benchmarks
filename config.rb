@@ -1,3 +1,5 @@
+require_relative 'config/ruby_llm'
+
 module Config
   module_function
 

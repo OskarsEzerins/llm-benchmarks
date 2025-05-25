@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'benchmark'
+gem 'dotenv'
 gem 'pry'
+gem 'ruby_llm', github: 'crmne/ruby_llm', ref: '87a86f70cb64e23d5b76994edf8080618f07e071'
 gem 'terminal-table'
 gem 'tty-prompt'
 

@@ -83,13 +83,25 @@ puts "✨ You're good to go! Let's benchmark some AI! ✨"
 module BenchmarkFeatures
   class << self
     def automated_testing
-      system("ruby main.rb") # One command to rule them all
+      # One command for both running benchmarks and generating implementations
+      system("bin/main")
+    end
+
+    def implementation_generation
+      # Automatic implementation generation with OpenRouter models
+      # powered by ruby_llm gem
+      available_models = true
+      easy_setup = true
+      consistent_results = true
+
+      puts "✨ AI-powered solution generation" if available_models && easy_setup && consistent_results
     end
 
     def fair_competition
       models.each do |model|
-        raise "No cheating!" if model.using_gpu?
-        raise "Nice try!" if model.response_time < Time.now
+        # Each model gets the same prompt
+        # Each implementation is saved with a timestamp
+        # Results are tracked and compared consistently
       end
     end
 
@@ -129,11 +141,15 @@ end
 git clone https://github.com/yourusername/llm-benchmarks
 cd llm-benchmarks
 
-# Get the party started 🎉
+# Install dependencies
 bundle install
 
-# Time to make AI models nervous
-bin/benchmark
+# Choose your adventure 🎮
+bin/main
+
+# Here you can:
+# 1. Run benchmarks with existing implementations
+# 2. Generate new AI implementations with OpenRouter models
 
 # See who survived
 bin/show_all_results
