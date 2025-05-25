@@ -2799,6 +2799,14 @@
         "execution_time": 0.3336,
         "rubocop_offenses": 9
       }
+    },
+    {
+      "implementation": "llama_4_maverick_openrouter_05_2025",
+      "timestamp": "2025-05-25T16:22:36+03:00",
+      "metrics": {
+        "execution_time": 0.3413,
+        "rubocop_offenses": 3
+      }
     }
   ],
   "aggregates": {
@@ -3062,6 +3070,15 @@
       },
       "rubocop_offenses": 9,
       "score": 95.55333333333333
+    },
+    "llama_4_maverick_openrouter_05_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.3413,
+        "rubocop_offenses": 3.0
+      },
+      "rubocop_offenses": 3,
+      "score": 95.45333333333333
     }
   }
 }
