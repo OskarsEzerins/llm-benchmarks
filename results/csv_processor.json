@@ -2815,6 +2815,14 @@
         "execution_time": 1.0475,
         "rubocop_offenses": 8
       }
+    },
+    {
+      "implementation": "openai_4_1_openrouter_05_2025",
+      "timestamp": "2025-05-25T16:43:36+03:00",
+      "metrics": {
+        "execution_time": 0.9311,
+        "rubocop_offenses": 14
+      }
     }
   ],
   "aggregates": {
@@ -3096,6 +3104,15 @@
       },
       "rubocop_offenses": 8,
       "score": 86.03333333333335
+    },
+    "openai_4_1_openrouter_05_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.9311,
+        "rubocop_offenses": 14.0
+      },
+      "rubocop_offenses": 14,
+      "score": 87.58666666666666
     }
   }
 }
