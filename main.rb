@@ -58,12 +58,12 @@ class Main
 
     case benchmark
     when :all
-      MainService.run_all
+      BenchmarkRunnerService.run_all
     when :single_model
       SingleModelBenchmarkService.new(@prompt).run
     else
       implementations = select_implementations(benchmark)
-      MainService.new(benchmark, implementations).run
+      BenchmarkRunnerService.new(benchmark, implementations).run
     end
   end
 
