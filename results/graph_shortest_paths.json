@@ -2452,6 +2452,14 @@
         "execution_time": 1.4137,
         "rubocop_offenses": 13
       }
+    },
+    {
+      "implementation": "gemini_2_5_pro_preview_openrouter_05_2025",
+      "timestamp": "2025-05-25T16:54:18+03:00",
+      "metrics": {
+        "execution_time": 0.3074,
+        "rubocop_offenses": 21
+      }
     }
   ],
   "averages": {
@@ -2770,6 +2778,15 @@
       },
       "rubocop_offenses": 13,
       "score": 81.99333333333333
+    },
+    "gemini_2_5_pro_preview_openrouter_05_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.3074,
+        "rubocop_offenses": 21.0
+      },
+      "rubocop_offenses": 21,
+      "score": 95.89999999999999
     }
   }
 }
