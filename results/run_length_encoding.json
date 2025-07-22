@@ -2703,6 +2703,14 @@
         "execution_time": 2.55,
         "rubocop_offenses": 13
       }
+    },
+    {
+      "implementation": "claude_sonnet_4_openrouter_07_2025",
+      "timestamp": "2025-07-22T21:11:09+03:00",
+      "metrics": {
+        "execution_time": 1.2376,
+        "rubocop_offenses": 14
+      }
     }
   ],
   "aggregates": {
@@ -2993,6 +3001,15 @@
       },
       "rubocop_offenses": 13,
       "score": 66.0
+    },
+    "claude_sonnet_4_openrouter_07_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 1.2376,
+        "rubocop_offenses": 14.0
+      },
+      "rubocop_offenses": 14,
+      "score": 83.5
     }
   }
 }
