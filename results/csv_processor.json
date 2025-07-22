@@ -3703,6 +3703,14 @@
         "execution_time": 1.0344,
         "rubocop_offenses": 8
       }
+    },
+    {
+      "implementation": "kimi_k2_openrouter_07_2025",
+      "timestamp": "2025-07-22T21:03:46+03:00",
+      "metrics": {
+        "execution_time": 0.5874,
+        "rubocop_offenses": 21
+      }
     }
   ],
   "aggregates": {
@@ -4083,6 +4091,15 @@
       },
       "rubocop_offenses": 7,
       "score": 95.45333333333333
+    },
+    "kimi_k2_openrouter_07_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 0.5874,
+        "rubocop_offenses": 21.0
+      },
+      "rubocop_offenses": 21,
+      "score": 92.16666666666667
     }
   }
 }

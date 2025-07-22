@@ -25,6 +25,8 @@ module Implementations
     private
 
     def chat_models
+      RubyLLM.models.refresh!
+
       RubyLLM.models.chat_models.filter do |model|
         model.id.include?('/')
       end
