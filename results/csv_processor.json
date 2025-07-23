@@ -3719,6 +3719,14 @@
         "execution_time": 0.5414,
         "rubocop_offenses": 20
       }
+    },
+    {
+      "implementation": "qwen3_coder_openrouter_07_2025",
+      "timestamp": "2025-07-24T00:11:08+03:00",
+      "metrics": {
+        "execution_time": 1.3574,
+        "rubocop_offenses": 11
+      }
     }
   ],
   "aggregates": {
@@ -4117,6 +4125,15 @@
       },
       "rubocop_offenses": 20,
       "score": 92.78000000000002
+    },
+    "qwen3_coder_openrouter_07_2025": {
+      "run_count": 1,
+      "metrics": {
+        "execution_time": 1.3574,
+        "rubocop_offenses": 11.0
+      },
+      "rubocop_offenses": 11,
+      "score": 81.89999999999999
     }
   }
 }
