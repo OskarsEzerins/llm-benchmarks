@@ -1,6 +1,9 @@
 require 'time'
 require 'json'
+require 'terminal-table'
 require_relative '../helpers/results_helper'
+require_relative '../display_handlers/display_handler_factory'
+require_relative 'results_service'
 
 class ResultsDisplayService
   include ResultsHelper
@@ -14,6 +17,11 @@ class ResultsDisplayService
     results_data = load_results
     @best_results = calculate_best_results_by_implementation(results_data['results'] || [])
     @aggregates = results_data['aggregates'] || {}
+    @display_handler = DisplayHandlers::DisplayHandlerFactory.create_handler(
+      @benchmark_id,
+      @best_results,
+      @aggregates
+    )
   end
 
   def display
@@ -29,44 +37,23 @@ class ResultsDisplayService
     { 'results' => [], 'aggregates' => {} }
   end
 
+  def calculate_best_results_by_implementation(results)
+    # Use the results service to get best results properly
+    results_service = ResultsService.new("results/#{@benchmark_id}.json", @benchmark_id)
+    results_service.calculate_best_results_by_implementation(results)
+  end
+
   def display_rankings_table
     table = Terminal::Table.new do |t|
       t.title = format_title
-      t.headings = ['Rank', 'Implementation', 'Score', 'Best Time (s)', 'Avg Time (s)', 'Rubocop', 'Runs', 'Date']
-      sorted_results.each_with_index { |result, index| t.add_row(create_ranking_row(result, index)) }
+      t.headings = @display_handler.table_headings
+      @display_handler.sorted_results.each_with_index do |result, index|
+        t.add_row(@display_handler.create_ranking_row(result, index))
+      end
     end
 
     puts "\n#{table}"
-  end
-
-  def create_ranking_row(result, index)
-    implementation = result['implementation']
-    aggregates = @aggregates[implementation]
-    avg_time = aggregates ? aggregates['metrics']['execution_time'].round(4) : 'N/A'
-    rubocop_offenses = aggregates ? aggregates['rubocop_offenses'] : 'N/A'
-    score = aggregates ? aggregates['score'] : 'N/A'
-
-    [
-      index + 1,
-      implementation,
-      score.round(2),
-      result['metrics']['execution_time'].round(4),
-      avg_time,
-      rubocop_offenses,
-      aggregates ? aggregates['run_count'] : 'N/A',
-      format_time(result['timestamp'])
-    ]
-  end
-
-  def sorted_results
-    @best_results.sort_by do |result|
-      aggregates = @aggregates[result['implementation']]
-      -(aggregates ? aggregates['score'] : -Float::INFINITY)
-    end
-  end
-
-  def format_time(timestamp)
-    Time.parse(timestamp).strftime('%Y-%m-%d %H:%M:%S')
+    @display_handler.display_summary if @best_results.any?
   end
 
   def format_title

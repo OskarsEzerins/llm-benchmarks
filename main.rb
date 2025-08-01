@@ -14,6 +14,7 @@ require_relative 'lib/services/benchmark_runner_service'
 require_relative 'lib/services/format_name_service'
 require_relative 'lib/services/single_model_benchmark_service'
 require_relative 'lib/services/implementations/adder'
+require_relative 'lib/services/implementations/benchmark_type_selector_service'
 
 class Main
   include FormatNameService
@@ -53,12 +54,19 @@ class Main
   end
 
   def run_benchmarks
-    benchmark = select_benchmark
+    benchmark_type = Implementations::BenchmarkTypeSelectorService.new.select
+    return puts 'No benchmark type selected.' unless benchmark_type
+
+    benchmark = select_benchmark(benchmark_type)
     return puts 'No benchmark selected.' unless benchmark
 
     case benchmark
     when :all
-      BenchmarkRunnerService.run_all
+      if benchmark_type == :all_types
+        BenchmarkRunnerService.run_all
+      else
+        run_all_benchmarks_of_type(benchmark_type)
+      end
     when :single_model
       SingleModelBenchmarkService.new(@prompt).run
     else
@@ -67,10 +75,12 @@ class Main
     end
   end
 
-  def select_benchmark
+  def select_benchmark(benchmark_type)
+    available_benchmarks = get_benchmarks_for_type(benchmark_type)
+
     @prompt.select(
       "\nSelect benchmark:",
-      [RUN_ALL_OPTION, RUN_SINGLE_MODEL_ALL_BENCHMARKS] + Config.benchmarks.map do |id|
+      [RUN_ALL_OPTION, RUN_SINGLE_MODEL_ALL_BENCHMARKS] + available_benchmarks.map do |id|
         { name: format_name(id), value: id }
       end,
       per_page: 20,
@@ -85,6 +95,29 @@ class Main
     selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id))
     implementations = selector.select
     implementations.is_a?(Array) ? implementations : [implementations]
+  end
+
+  def get_benchmarks_for_type(benchmark_type)
+    case benchmark_type
+    when :all_types
+      Config.benchmarks
+    when :performance
+      Config.benchmarks_by_type(:performance)
+    when :program_fixer
+      Config.benchmarks_by_type(:program_fixer)
+    else
+      Config.benchmarks
+    end
+  end
+
+  def run_all_benchmarks_of_type(benchmark_type)
+    benchmarks = get_benchmarks_for_type(benchmark_type)
+    benchmarks.each do |benchmark_id|
+      puts "\nRunning #{format_name(benchmark_id)}..."
+      selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id))
+      implementations = selector.list_all
+      BenchmarkRunnerService.new(benchmark_id, implementations).run
+    end
   end
 end
 

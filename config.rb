@@ -4,7 +4,26 @@ module Config
   module_function
 
   def benchmarks
-    ['lru_cache', 'graph_shortest_paths', 'run_length_encoding', 'csv_processor']
+    benchmark_configs.keys
+  end
+
+  def benchmark_configs
+    {
+      'lru_cache' => { type: :performance, class_name: 'LruCacheBenchmark' },
+      'graph_shortest_paths' => { type: :performance, class_name: 'GraphShortestPathsBenchmark' },
+      'run_length_encoding' => { type: :performance, class_name: 'RunLengthEncodingBenchmark' },
+      'csv_processor' => { type: :performance, class_name: 'CsvProcessorBenchmark' },
+      'vending_machine' => { type: :program_fixer, class_name: 'VendingMachineBenchmark' }
+    }
+  end
+
+  def benchmark_config(benchmark_id)
+    benchmark_configs[benchmark_id] || { type: :performance,
+                                         class_name: "#{format_benchmark_name(benchmark_id)}Benchmark" }
+  end
+
+  def benchmarks_by_type(type)
+    benchmark_configs.select { |_, config| config[:type] == type }.keys
   end
 
   def results_dir
@@ -21,5 +40,11 @@ module Config
 
   def benchmark_file(benchmark_id)
     "benchmarks/#{benchmark_id}/benchmark"
+  end
+
+  private
+
+  def format_benchmark_name(benchmark_id)
+    benchmark_id.split('_').map(&:capitalize).join
   end
 end

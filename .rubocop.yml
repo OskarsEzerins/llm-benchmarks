@@ -27,6 +27,9 @@ Metrics/AbcSize:
   Exclude:
     - benchmarks/**/*
 
+Metrics/ClassLength:
+  Max: 200
+
 Metrics/MethodLength:
   Max: 15
   Exclude:
