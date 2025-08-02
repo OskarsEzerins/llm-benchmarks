@@ -38,6 +38,7 @@ GEM
     logger (1.7.0)
     marcel (1.0.4)
     method_source (1.1.0)
+    minitest (5.25.5)
     multipart-post (2.4.1)
     net-http (0.6.0)
       uri
@@ -98,6 +99,7 @@ PLATFORMS
 DEPENDENCIES
   benchmark
   dotenv
+  minitest
   pry
   rubocop (= 1.72.0)
   rubocop-performance (= 1.23.1)

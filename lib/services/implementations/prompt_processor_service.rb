@@ -28,6 +28,9 @@ module Implementations
         puts "\nProcessing prompt from: #{prompt_file}"
         prompt_content = File.read(prompt_file)
 
+        # For ProgramFixer benchmarks, append test suite content if available
+        # prompt_content = append_test_content_if_program_fixer(prompt_content, benchmark_id)
+
         response = RubyLLM.chat(model: @model_id).ask(prompt_content)
         content = extract_ruby_code(response.content)
 
@@ -48,6 +51,22 @@ module Implementations
       else
         Config.benchmarks
       end
+    end
+
+    def append_test_content_if_program_fixer(prompt_content, benchmark_id)
+      benchmark_config = Config.benchmark_config(benchmark_id)
+      return prompt_content unless benchmark_config[:type] == :program_fixer
+
+      test_suite_file = File.join('benchmarks', benchmark_id, 'test_suite.rb')
+      return prompt_content unless File.exist?(test_suite_file)
+
+      test_content = File.read(test_suite_file)
+
+      "#{prompt_content}\n\n" \
+        "#{'=' * 50}\n" \
+        "TEST SUITE (test_suite.rb):\n" \
+        "#{'=' * 50}\n\n" \
+        "#{test_content}"
     end
 
     def extract_ruby_code(response)

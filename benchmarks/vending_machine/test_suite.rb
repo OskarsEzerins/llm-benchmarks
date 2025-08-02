@@ -1,54 +1,5 @@
 # frozen_string_literal: true
 
-# Handle minitest loading for both standalone and subprocess execution
-begin
-  require 'minitest/autorun'
-rescue LoadError
-  begin
-    require 'minitest'
-  rescue LoadError
-    # If minitest still not available, define minimal test framework
-    module Minitest
-      class Test
-        def initialize(name)
-          @name = name
-        end
-
-        def setup; end
-
-        module Assertions
-          class Assertion < StandardError; end
-
-          def assert(test, msg = 'Failed assertion, no message given.')
-            raise Assertion, msg unless test
-          end
-
-          def assert_equal(expected, actual, msg = nil)
-            return if expected == actual
-
-            raise Assertion, msg || "Expected #{expected.inspect}, got #{actual.inspect}"
-          end
-
-          def assert_in_delta(expected, actual, delta = 0.001, msg = nil)
-            return if (expected - actual).abs <= delta
-
-            raise Assertion, msg || "Expected #{expected} to be within #{delta} of #{actual}"
-          end
-
-          def assert_raises(exception_class)
-            yield
-            raise Assertion, "Expected #{exception_class} to be raised"
-          rescue exception_class
-            # Expected exception was raised
-          end
-        end
-
-        include Assertions
-      end
-    end
-  end
-end
-
 class VendingMachineTest < Minitest::Test
   def setup
     items = [
@@ -181,7 +132,7 @@ class VendingMachineTest < Minitest::Test
 
   def test_restock_negative_quantity
     # Should handle negative quantities appropriately
-    original_stock = @vending_machine.check_stock('Cola')
+    @vending_machine.check_stock('Cola')
     @vending_machine.restock('Cola', -5)
     # Stock should not become negative
     assert @vending_machine.check_stock('Cola') >= 0

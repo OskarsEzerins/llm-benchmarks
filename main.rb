@@ -5,6 +5,7 @@ Bundler.require
 require 'terminal-table'
 require 'pry'
 require 'dotenv/load'
+require 'minitest'
 require_relative 'config'
 require_relative 'lib/services/results_display_service'
 require_relative 'lib/services/results_service'

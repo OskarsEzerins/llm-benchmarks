@@ -94,6 +94,9 @@ class BenchmarkRunnerService
     concrete_benchmark_class = Object.const_get(benchmark_config[:class_name])
 
     raw_result = concrete_benchmark_class.run(implementation_path)
+
+    # puts "Raw result: #{raw_result.inspect}"
+
     benchmark_type_class.evaluate_result(raw_result)
   end
 

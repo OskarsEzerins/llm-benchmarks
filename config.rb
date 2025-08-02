@@ -13,7 +13,8 @@ module Config
       'graph_shortest_paths' => { type: :performance, class_name: 'GraphShortestPathsBenchmark' },
       'run_length_encoding' => { type: :performance, class_name: 'RunLengthEncodingBenchmark' },
       'csv_processor' => { type: :performance, class_name: 'CsvProcessorBenchmark' },
-      'vending_machine' => { type: :program_fixer, class_name: 'VendingMachineBenchmark' }
+      'vending_machine' => { type: :program_fixer, class_name: 'VendingMachineBenchmark' },
+      'calendar' => { type: :program_fixer, class_name: 'CalendarBenchmark' }
     }
   end
 
