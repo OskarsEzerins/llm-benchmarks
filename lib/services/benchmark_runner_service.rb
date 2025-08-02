@@ -28,6 +28,7 @@ class BenchmarkRunnerService
 
   def initialize(benchmark_id, implementations)
     @benchmark_id = benchmark_id
+    @benchmark_type = BenchmarkTypes::BenchmarkTypeFactory.benchmark_type_for(benchmark_id)
     @implementations = implementations
   end
 
@@ -36,16 +37,20 @@ class BenchmarkRunnerService
     @implementations.shuffle.each do |implementation|
       run_implementation_iterations(implementation)
     end
+
+    # For program_fixer benchmarks, display results only once at the end
+    return unless @benchmark_type == :program_fixer
+
+    ResultsDisplayService.display(@benchmark_id)
   end
 
   private
 
   def run_implementation_iterations(implementation)
-    benchmark_type = BenchmarkTypes::BenchmarkTypeFactory.benchmark_type_for(@benchmark_id)
-    num_iterations = ITERATION_CONFIG[benchmark_type] || 1
+    num_iterations = ITERATION_CONFIG[@benchmark_type] || 1
 
     puts "\nRunning benchmark with implementation: #{implementation[:name]}"
-    puts "Running #{num_iterations} iteration#{'s' if num_iterations > 1} (#{benchmark_type} type)..."
+    puts "Running #{num_iterations} iteration#{'s' if num_iterations > 1} (#{@benchmark_type} type)..."
 
     results = []
     num_iterations.times do |i|
@@ -80,7 +85,7 @@ class BenchmarkRunnerService
     Process.wait(pid)
 
     execution_time = result_data[:execution_time] || result_data[:primary_metric] || 0
-    puts "Execution time: #{execution_time} seconds"
+    puts "Execution time: #{execution_time} seconds" if @benchmark_type == :performance
     result_data
   end
 
@@ -101,9 +106,7 @@ class BenchmarkRunnerService
   end
 
   def select_best_result(results)
-    benchmark_type = BenchmarkTypes::BenchmarkTypeFactory.benchmark_type_for(@benchmark_id)
-
-    case benchmark_type
+    case @benchmark_type
     when :performance
       select_best_performance_result(results)
     when :program_fixer
@@ -134,6 +137,10 @@ class BenchmarkRunnerService
       result,
       rubocop_offenses_count
     )
+
+    # Only display results immediately for performance benchmarks
+    # Program fixer benchmarks display once at the end
+    return unless @benchmark_type == :performance
 
     ResultsDisplayService.display(@benchmark_id)
   end

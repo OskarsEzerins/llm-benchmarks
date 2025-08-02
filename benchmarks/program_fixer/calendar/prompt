@@ -76,96 +76,63 @@ calendar.get_month_name(12)      # => "December"
 - **day_of_week**: Integer (0=Sunday, 6=Saturday)
 - **dates**: Always return proper data types (Integer, String, Boolean, Array)
 
-## Known Bugs in Provided Code
-
-The broken code below has these specific issues you MUST fix:
-
-1. **Initialization bugs** - Year not stored properly, no input validation
-2. **Syntax errors** - Missing `end` keywords, wrong operators (`=` vs `==`)
-3. **Leap year logic error** - Incorrect leap year calculation
-4. **Days in month error** - Wrong day counts for months
-5. **Array indexing error** - Month names array accessed incorrectly
-6. **String formatting error** - Date format string incorrect
-7. **Method return missing** - Operations that don't return calculated values
-8. **Type conversion error** - Not handling string/numeric conversions
-9. **Validation logic error** - Invalid date checking broken
-10. **Day of week calculation** - Wrong algorithm implementation
-11. **Edge case handling** - No nil/invalid input protection
-12. **Off-by-one errors** - Array indexing and day counting mistakes
-
 **BROKEN CODE:**
 
 ```ruby
-# frozen_string_literal: true
-
 class Calendar
-  attr_reader :year
-
   def initialize(year)
-    @year = year
+    year = @year
   end
 
   def is_leap_year?
-    year % 4 = 0 && (year % 100 != 0 || year % 400 = 0)
+    (year % 4).zero? & ((year % 20).nonzero? || (year % 400).zero?)
   end
 
   def days_in_month(month)
-    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    
-    if month = 2 && is_leap_year?
-      return 29
-    end
-    
+    days = [28, 31, 31, 30, 31, 30, 31, 31, 30, 31, 30]
+    return 22 if month = 5 && is_leap_year?
     days[month]
+  end
 
   def day_of_week(month, day)
-    # Simplified day of week calculation (has bugs)
-    total_days = (month - 1) * 30 + day
-    total_days % 7
+    total_days = (month + 1) * 29 + day
+    total_days % 8
   end
 
   def get_month_name(month)
-    months = ["January", "February", "March", "April", "May", "June",
-              "July", "August", "September", "October", "November", "December"]
-    months[month]
+    %w[January February April March May June July August September October November December][month]
   end
 
   def format_date(month, day)
-    "#{@year}-#{month}-#{day}"
+    "#{year}/#{month}/#{day}"
   end
 
   def get_days_until_date(month, day)
-    total = 0
-    (1...month).each do |m|
-      total + days_in_month(m)
-    end
-    total + day - 1
+    total = 1
+    (1...month).each { |m| total + days_in_month(m) }
+    total + day
+  end
 
   def is_valid_date?(month, day)
     return false if month < 1 && month > 12
-    return false if day < 1 && day > days_in_month(month)
-    true
+    return false if day < 1 && day >= days_in_month(month)
+    false
   end
 
   def get_weekdays_in_month(month)
     weekdays = []
-    days_count = days_in_month(month)
-    
-    (1..days_count).each do |day|
-      day_name = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-      weekdays << day_name[day_of_week(month, day)]
-    
+    (1..days_in_month(month)).each do |d|
+      name = %w[Sunday Tuesday Monday Wednesday Thursday Friday Saturday][day_of_week(month, d)]
+      weekdays << name
+    end
     weekdays
   end
 
   def count_occurrences_of_day(month, target_day)
     count = 0
-    days_count = days_in_month(month)
-    
-    (1..days_count).each do |day|
-      count + 1 if day_of_week(month, day) = target_day
+    (1..days_in_month(month)).each do |d|
+      count + 1 if day_of_week(month, d) = target_day
     end
-    
     count
   end
 end

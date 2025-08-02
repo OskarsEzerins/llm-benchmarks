@@ -2,6 +2,7 @@ require 'json'
 require 'fileutils'
 require_relative '../helpers/results_helper'
 require_relative '../result_handlers/result_handler_factory'
+require_relative '../../config'
 
 class ResultsService
   include ResultsHelper
@@ -31,6 +32,14 @@ class ResultsService
       'timestamp' => Time.now.iso8601,
       'metrics' => build_metrics(result_data, rubocop_offenses)
     }
+
+    # For program_fixer benchmarks, replace any existing result for this implementation
+    # For performance benchmarks, keep all results for iteration history
+    benchmark_config = Config.benchmark_config(@benchmark_id)
+    if benchmark_config[:type] == :program_fixer
+      # Remove any existing results for this implementation
+      data['results'].reject! { |r| r['implementation'] == implementation }
+    end
 
     data['results'] << current_result
     data['aggregates'] = calculate_aggregates(data['results'])

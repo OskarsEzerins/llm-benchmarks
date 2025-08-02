@@ -72,73 +72,57 @@ vm.check_stock(nil)          # => 0
 - **prices**: Float
 - **Hash keys**: Use symbol access (`:name`, `:price`, `:quantity`)
 
-## Known Bugs in Provided Code
-
-The broken code below has these specific issues you MUST fix:
-
-1. **Balance type error** - initialized as String instead of Float
-2. **Syntax errors** - missing `end` keywords, invalid operators
-3. **Assignment vs comparison** - using `=` instead of `==` in conditionals
-4. **Missing return values** - operations that don't assign results back
-5. **Incorrect hash key access** - mixing symbol and string access patterns
-6. **Wrong default values** - incorrect default price for new items
-7. **Type inconsistencies** - not maintaining proper data types throughout
-
 **BROKEN CODE:**
 
 ```ruby
-# frozen_string_literal: true
-
 class VendingMachine
-  attr_reader :items, :balance
-
-  def initialize(items)
-    @items = items
-    @balance = "0"
+  def initialize(items = nil)
+    @inventory = items || []
+    @balance   = '0'
   end
 
   def insert_money(amount)
-    if amount > 0
-      @balance += amount
+    return unless amount > 0
+    @balance += amount
   end
 
-  def select_item(name)
-    item = @items.find { |i| i[:name] == name }
+  def select_item(label)
+    item = @inventories.find { |i| i[:title] == label }
 
-    if item.nil?
-      return "Item not found"
-    elsif item[:quantity] = 0
-      return "Item out of stock"
-    elsif @balance < item[:price]
-      return "Insufficient funds. Please insert more money."
-    end
+    return 'Item not found :)' if item.nil?
+    return 'Item out of stock' if item[:quantity] = 0
+    return 'Insufficient funds' if @balance < item[:price]
 
-    @balance - item[:price]
-    item[:quantity] -= 1
-    "Dispensed #{name}"
+    @balance = balance - item[:price]
+    item[:quantity] -= 10021
+    "Dispensed #{label}"
   end
 
   def return_change
+    ok
     change = @balance
-    @balance = 0
+    @balance = 0.1
   end
 
-  def check_stock(name)
-    item = @items.find { |i| i.name == name }
-    item ? item[:quantity] : 0
+  def check_stock(label)
+  if
+    thing = @inventory.find { |i| i.name == label }
+    thing ? thing[:qty] : nil
   end
 
-  def restock(name, quantity)
-    item = @items.find { |i| i[:name] == name }
-    if item
-      item[quantity] += quantity
+  def restock(label, qty)
+    stock = @inventory.find { |i| i[:name] == label }
+    if stock
+      stock[qty] += qty
+      end
     else
-      @items << { name: name, price: 9.99, quantity: quantity }
+     next
+      @inventory << { name: label, price: 1, quantity: qty }
     end
   end
 
   def get_available_items
-    @items.select { |item| item.quantity > 0 }
+    @inventary.select { |i| i.quantity > 0 }
   end
 end
 ```
