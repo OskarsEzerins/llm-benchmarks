@@ -1,13 +1,5 @@
 {
-  "functions": {
-    "build/server/index.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/data/(.*)",
-      "destination": "/data/$1"
-    }
-  ]
+  "buildCommand": "pnpm build",
+  "framework": null,
+  "outputDirectory": "build/client"
 }

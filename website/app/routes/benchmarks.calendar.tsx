@@ -15,8 +15,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export async function loader() {
-  const data = await loadBenchmarkData('calendar');
+export async function loader({ request }: Route.LoaderArgs) {
+  const data = await loadBenchmarkData('calendar', request);
   if (!data) {
     throw new Error('Failed to load calendar benchmark data');
   }

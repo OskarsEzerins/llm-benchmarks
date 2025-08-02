@@ -18,8 +18,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export async function loader() {
-  const allData = await loadAllBenchmarkData();
+export async function loader({ request }: Route.LoaderArgs) {
+  const allData = await loadAllBenchmarkData(request);
   const totalRankings = calculateTotalRankings(allData);
 
   return {
