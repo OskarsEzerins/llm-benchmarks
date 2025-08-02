@@ -14,8 +14,8 @@ require_relative 'lib/services/rubocop_evaluation_service'
 require_relative 'lib/services/benchmark_runner_service'
 require_relative 'lib/services/format_name_service'
 require_relative 'lib/services/single_model_benchmark_service'
+require_relative 'lib/services/benchmark_type_selector_service'
 require_relative 'lib/services/implementations/adder'
-require_relative 'lib/services/implementations/benchmark_type_selector_service'
 
 class Main
   include FormatNameService
@@ -55,7 +55,7 @@ class Main
   end
 
   def run_benchmarks
-    benchmark_type = Implementations::BenchmarkTypeSelectorService.new.select
+    benchmark_type = BenchmarkTypeSelectorService.new.select
     return puts 'No benchmark type selected.' unless benchmark_type
 
     benchmark = select_benchmark(benchmark_type)

@@ -54,55 +54,7 @@ Update `config.rb` to register the new benchmark
 
 require 'benchmark'
 require 'tempfile'
-
-# Handle minitest loading for both standalone and subprocess execution
-begin
-  require 'minitest'
-rescue LoadError
-  begin
-    require 'minitest/autorun'
-  rescue LoadError
-    # If minitest still not available, define minimal test framework
-    module Minitest
-      class Test
-        def initialize(name)
-          @name = name
-        end
-
-        def setup; end
-
-        module Assertions
-          class Assertion < StandardError; end
-
-          def assert(test, msg = 'Failed assertion, no message given.')
-            raise Assertion, msg unless test
-          end
-
-          def assert_equal(expected, actual, msg = nil)
-            return if expected == actual
-
-            raise Assertion, msg || "Expected #{expected.inspect}, got #{actual.inspect}"
-          end
-
-          def assert_in_delta(expected, actual, delta = 0.001, msg = nil)
-            return if (expected - actual).abs <= delta
-
-            raise Assertion, msg || "Expected #{expected} to be within #{delta} of #{actual}"
-          end
-
-          def assert_raises(exception_class)
-            yield
-            raise Assertion, "Expected #{exception_class} to be raised"
-          rescue exception_class
-            # Expected exception was raised
-          end
-        end
-
-        include Assertions
-      end
-    end
-  end
-end
+require 'minitest'
 
 class ExampleNameBenchmark
   def self.run(implementation_path)
@@ -141,7 +93,7 @@ class ExampleNameBenchmark
 
     begin
       # Get test methods from ExampleTest in deterministic order
-      test_methods = ExampleTest.instance_methods(false)
+      test_methods = ExampleTest.instance_methods(true)
                                 .select { |m| m.to_s.start_with?('test_') }
                                 .sort # Ensure deterministic order!
       result[:total] = test_methods.count
@@ -172,7 +124,7 @@ class ExampleNameBenchmark
   end
 
   def self.get_total_test_count
-    ExampleTest.instance_methods(false).count { |m| m.to_s.start_with?('test_') }
+    ExampleTest.instance_methods(true).count { |m| m.to_s.start_with?('test_') }
   end
 end
 
@@ -260,55 +212,6 @@ Return ONLY the fixed Ruby code without explanations.
 
 ```ruby
 # frozen_string_literal: true
-
-# Handle minitest loading for both standalone and subprocess execution
-begin
-  require 'minitest/autorun'
-rescue LoadError
-  begin
-    require 'minitest'
-  rescue LoadError
-    # If minitest still not available, define minimal test framework
-    module Minitest
-      class Test
-        def initialize(name)
-          @name = name
-        end
-
-        def setup; end
-
-        module Assertions
-          class Assertion < StandardError; end
-
-          def assert(test, msg = 'Failed assertion, no message given.')
-            raise Assertion, msg unless test
-          end
-
-          def assert_equal(expected, actual, msg = nil)
-            return if expected == actual
-
-            raise Assertion, msg || "Expected #{expected.inspect}, got #{actual.inspect}"
-          end
-
-          def assert_in_delta(expected, actual, delta = 0.001, msg = nil)
-            return if (expected - actual).abs <= delta
-
-            raise Assertion, msg || "Expected #{expected} to be within #{delta} of #{actual}"
-          end
-
-          def assert_raises(exception_class)
-            yield
-            raise Assertion, "Expected #{exception_class} to be raised"
-          rescue exception_class
-            # Expected exception was raised
-          end
-        end
-
-        include Assertions
-      end
-    end
-  end
-end
 
 class ExampleTest < Minitest::Test
   def setup

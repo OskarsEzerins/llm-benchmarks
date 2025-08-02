@@ -8,8 +8,14 @@ module Implementations
       create_implementation_dir(benchmark_id)
       file_name = generate_file_name(benchmark_id)
 
+      if implementation_exists?(benchmark_id)
+        puts "\nSkipping #{@model_id} for #{benchmark_id} - implementation already exists for this month"
+        return false
+      end
+
       File.write(file_name, content)
       puts "\nSaved code to: #{file_name}"
+      true
     end
 
     private
@@ -26,6 +32,11 @@ module Implementations
     def generate_file_name(benchmark_id)
       timestamp = Time.now.strftime('%m_%Y')
       File.join(implementations_dir(benchmark_id), "#{model_name}_openrouter_#{timestamp}.rb".squeeze('_'))
+    end
+
+    def implementation_exists?(benchmark_id)
+      file_name = generate_file_name(benchmark_id)
+      File.exist?(file_name)
     end
 
     def model_name

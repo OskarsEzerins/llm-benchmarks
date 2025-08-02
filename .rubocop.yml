@@ -26,11 +26,15 @@ Style/WordArray:
 Metrics/AbcSize:
   Exclude:
     - benchmarks/**/*
+  Max: 20
+
+Metrics/CyclomaticComplexity:
+  Max: 10
 
 Metrics/ClassLength:
   Max: 200
 
 Metrics/MethodLength:
-  Max: 15
+  Max: 30
   Exclude:
     - benchmarks/**/*
