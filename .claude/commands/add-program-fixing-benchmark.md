@@ -29,9 +29,10 @@ When adding a new program fixing benchmark named `example_name`, create these fi
 
 ```
 benchmarks/<type>/example_name/
-├── benchmark.rb          # Test execution logic
+├── working_app.rb       # Working implementation for testing
+├── test_suite.rb        # Comprehensive test cases
 ├── prompt               # Instructions and broken code for LLMs
-└── test_suite.rb        # Comprehensive test cases (optional, for complex scenarios)
+└── benchmark.rb         # Test execution logic
 ```
 
 ### 2. Implementation Directory
@@ -45,7 +46,118 @@ implementations/<type>/example_name/
 
 Update `config.rb` to register the new benchmark
 
+## Development Workflow
+
+The recommended workflow for adding program fixing benchmarks:
+
+1. **Create working_app.rb**: Implement the fully working class/code
+2. **Create test_suite.rb**: Write comprehensive test cases
+3. **Validate**: Run tests against working app to ensure they pass
+   ```bash
+   cd benchmarks/program_fixer/example_name
+   ruby test_suite.rb
+   ```
+4. **Iterate**: Refine steps 1-3 until tests are comprehensive and working app is solid
+5. **Create prompt**: Write prompt with broken code based on working app
+6. **Create benchmark.rb**: Implement test execution logic
+7. **Test**: Validate the complete benchmark works correctly
+
+## Testing Your Working App
+
+During development, you can test your working app independently:
+
+```bash
+# Navigate to your benchmark directory
+cd benchmarks/program_fixer/example_name
+
+# Run the test suite against your working app
+ruby test_suite.rb
+
+# All tests should pass! If not, fix working_app.rb or test_suite.rb
+```
+
+The test_suite.rb file automatically loads working_app.rb during development, making it easy to iterate on both files until you have a solid foundation.
+
 ## File Templates
+
+### working_app.rb Template
+
+```ruby
+# frozen_string_literal: true
+
+# This is the working implementation that serves as the "correct answer"
+# Use this to:
+# 1. Design the API and behavior
+# 2. Test your test suite against a known working implementation
+# 3. Create broken versions for the prompt
+
+class ExampleClassName
+  def initialize
+    # Initialize your class with proper setup
+  end
+
+  def example_method(param)
+    # Implement core functionality with proper:
+    # - Input validation
+    # - Error handling
+    # - Return values
+    # - Edge case handling
+  end
+
+  private
+
+  def helper_method
+    # Private methods as needed
+  end
+end
+```
+
+### test_suite.rb Template
+
+```ruby
+# frozen_string_literal: true
+
+require 'minitest/autorun'
+
+# Load the working app for testing during development
+require_relative 'working_app'
+
+class ExampleTest < Minitest::Test
+  def setup
+    # Initialize test object with test data
+    @example_object = ExampleClassName.new # Customize initialization
+  end
+
+  # Basic functionality tests
+  def test_initialization
+    # Test object creation and initial state
+    assert_instance_of ExampleClassName, @example_object
+  end
+
+  def test_basic_operations
+    # Test core functionality with valid inputs
+  end
+
+  # Edge case tests
+  def test_edge_case_handling
+    # Test boundary conditions and edge cases
+  end
+
+  # Error handling tests
+  def test_invalid_input_handling
+    # Test nil, empty, wrong type inputs
+  end
+
+  def test_error_conditions
+    # Test error scenarios and exception handling
+  end
+
+  # Integration tests
+  def test_complex_scenarios
+    # Test multi-step operations and state changes
+  end
+end
+```
 
 ### benchmark.rb Template
 
@@ -128,8 +240,9 @@ class ExampleNameBenchmark
   end
 end
 
-# Load the test suite if it exists
-require_relative 'test_suite' if File.exist?(File.join(__dir__, 'test_suite.rb'))
+# Load the test suite
+require_relative 'test_suite'
+end
 ```
 
 ### prompt Template
@@ -165,7 +278,6 @@ Fix the broken Ruby code for a [ClassName] class. [Brief description of what the
 # Edge cases
 [edge_case_examples]
 ```
-````
 
 ## Input Validation Requirements
 
@@ -205,86 +317,55 @@ end
 ```
 
 Return ONLY the fixed Ruby code without explanations.
-
-````
-
-### test_suite.rb Template (For Complex Scenarios)
-
-```ruby
-# frozen_string_literal: true
-
-class ExampleTest < Minitest::Test
-  def setup
-    # Initialize test object with test data
-    @example_object = ExampleClassName.new # Customize initialization
-  end
-
-  # Basic functionality tests
-  def test_initialization
-    # Test object creation and initial state
-  end
-
-  def test_basic_operations
-    # Test core functionality with valid inputs
-  end
-
-  # Edge case tests
-  def test_edge_case_handling
-    # Test boundary conditions and edge cases
-  end
-
-  # Error handling tests
-  def test_invalid_input_handling
-    # Test nil, empty, wrong type inputs
-  end
-
-  def test_error_conditions
-    # Test error scenarios and exception handling
-  end
-
-  # Integration tests
-  def test_complex_scenarios
-    # Test multi-step operations and state changes
-  end
-end
 ````
 
 ## Step-by-Step Implementation Guide
 
-### Step 1: Design the Broken Code Scenario
+### Step 1: Create Working Implementation
 
-1. **Choose a programming concept to test** (e.g., data structures, algorithms, API design)
-2. **Define the working class interface** - what methods should exist and how they should behave
-3. **Create comprehensive test cases** covering:
-   - Basic functionality
-   - Edge cases
-   - Error handling
-   - Input validation
-   - Complex scenarios
-4. **Introduce strategic bugs**:
+1. **Create benchmark directory**: `mkdir benchmarks/program_fixer/example_name`
+2. **Write working_app.rb**: Create the fully functional implementation
+   - Design clean API with proper method signatures
+   - Implement all required functionality
+   - Add proper input validation and error handling
+   - Include edge case handling
+
+### Step 2: Develop Test Suite
+
+1. **Write test_suite.rb**: Create comprehensive tests
+   - Test all public methods and behaviors
+   - Include edge cases and error conditions
+   - Test input validation thoroughly
+   - Ensure deterministic test order (tests should be sorted)
+
+### Step 3: Validate Working Implementation
+
+1. **Run tests**: `cd benchmarks/program_fixer/example_name && ruby test_suite.rb`
+2. **Ensure all tests pass**: Fix any issues in working_app.rb or test_suite.rb
+3. **Iterate**: Refine both files until tests are comprehensive and all pass
+
+### Step 4: Create Broken Code and Prompt
+
+1. **Create prompt file**: Copy working_app.rb and introduce strategic bugs:
    - Syntax errors (missing `end`, wrong operators like `=` vs `==`)
    - Type errors (String vs Float, wrong data types)
    - Logic errors (incorrect calculations, wrong conditionals)
    - Missing return statements
    - Wrong method calls or data access patterns
+2. **Document all bugs**: List every intentional bug in the prompt
+3. **Write clear requirements**: Include examples and expected behaviors
 
-### Step 2: Create the Benchmark Files
+### Step 5: Create Benchmark Runner
 
-1. **Create benchmark directory**: `mkdir benchmarks/example_name`
-2. **Write benchmark.rb**: Copy template and customize:
+1. **Write benchmark.rb**: Copy template and customize:
    - Replace `ExampleName` with your benchmark name (PascalCase)
-   - Replace `ExampleClassName` with the class name from broken code
+   - Replace `ExampleClassName` with the class name from working_app.rb
    - Update test setup logic if needed
-3. **Write prompt file**: Copy template and customize:
-   - Write clear requirements and examples
-   - Include the intentionally broken code
-   - List all bugs that need fixing
-4. **Write test_suite.rb** (if needed): For complex scenarios with many test cases
-5. **Create implementations directory**: `mkdir implementations/example_name`
+2. **Create implementations directory**: `mkdir implementations/program_fixer/example_name`
 
-### Step 3: Register in Configuration
+### Step 6: Register and Test
 
-Update `config.rb` to add your benchmark:
+1. **Register in config.rb**: Add your benchmark to the configuration
 
 ```ruby
 def benchmark_configs
@@ -295,18 +376,11 @@ def benchmark_configs
 end
 ```
 
-### Step 4: Test the Benchmark
+### Step 7: Test the Complete Benchmark
 
-1. **Test manually first**:
-   ```bash
-   cd benchmarks/example_name
-   ruby -r ./benchmark.rb -e "p ExampleNameBenchmark.run('../../implementations/<type>/example_name/test_implementation.rb')"
-   ```
-
-### Step 5: Validate and Refine
-
-1. **Ensure test coverage is comprehensive**
-2. **Verify bugs are challenging but fixable**
+1. **Test the benchmark works end-to-end**
+2. **Ensure test coverage is comprehensive**
+3. **Verify bugs are challenging but fixable**
 
 ## Best Practices
 
@@ -333,46 +407,25 @@ end
 4. **Include data type specifications**: Prevent type confusion
 5. **Show expected error handling**: How invalid inputs should be handled
 
-## Example: Adding a "Calculator" Program Fixing Benchmark
-
-Here's a complete example for a calculator benchmark:
-
-### 1. Create Directory Structure
-
-```bash
-mkdir benchmarks/calculator
-mkdir implementations/calculator
-```
-
-### 2. Create benchmark.rb
-
-```ruby
-class CalculatorBenchmark
-  def self.run(implementation_path)
-    # [Implementation following template above]
-  end
-end
-```
-
-### 3. Create prompt
-
-```markdown
-Fix the broken Ruby code for a Calculator class. The class performs basic arithmetic operations with error handling.
-
-**CRITICAL: The provided broken code has 6+ specific bugs that must ALL be fixed to pass the test suite.**
-
-[Complete prompt following template...]
-```
-
-### 4. Register in config.rb
-
-```ruby
-'calculator' => { type: :program_fixer, class_name: 'CalculatorBenchmark' }
-```
-
-### 5. Test Implementation
-
 Create working version, test manually, then test through system.
+
+## Best Practices for working_app.rb Development
+
+### Design Guidelines
+
+1. **Start simple**: Begin with basic functionality, add complexity gradually
+2. **Think about edge cases**: What inputs could break your code?
+3. **Design for testability**: Clear method signatures, predictable behavior
+4. **Include proper validation**: Check inputs and handle errors gracefully
+5. **Follow Ruby conventions**: Use idiomatic Ruby patterns
+
+### Common Patterns to Include
+
+1. **Input validation**: Check for nil, wrong types, invalid ranges
+2. **Error handling**: Raise appropriate exceptions with clear messages
+3. **Type consistency**: Ensure return types are predictable
+4. **State management**: If stateful, ensure clean initialization and updates
+5. **Helper methods**: Extract common logic into private methods
 
 ## Troubleshooting Common Issues
 
