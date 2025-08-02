@@ -1,0 +1,328 @@
+Fix the broken Ruby code for a comprehensive ParkingGarage system. This system includes parking allocation, ticket management, fee calculation, and overall garage management with smart parking features.
+
+**CRITICAL: The provided broken code has 20+ specific bugs that must ALL be fixed to pass the test suite.**
+
+## Core Requirements
+
+**Parking Allocation (ParkingGarage class):**
+
+- Small cars can use small, medium, or large spots (in that order of preference)
+- Medium cars can use medium or large spots (in that order of preference)
+- Large cars can only use large spots (but may trigger shuffling)
+- Return descriptive success messages: "car with license plate no. {plate} is parked at {spot_type}"
+- Return "No space available" when no parking is possible
+
+**Ticket Management (ParkingTicket class):**
+
+- Generate unique ticket IDs for each parked car
+- Track entry time and calculate duration in hours
+- Validate tickets (expire after 24 hours)
+- Store license plate and car size information
+
+**Fee Calculation (ParkingFeeCalculator class):**
+
+- Hourly rates: Small ($2), Medium ($3), Large ($5)
+- Grace period: First 15 minutes (0.25 hours) free
+- Round up partial hours to next full hour
+- Daily maximums: Small ($20), Medium ($30), Large ($50)
+
+**System Management (ParkingGarageManager class):**
+
+- Unified API for all parking operations
+- Active ticket tracking and management
+- Integrated fee calculation on car exit
+- Garage status reporting (available spots, occupancy)
+
+## Example Behaviors
+
+```ruby
+# Setup
+manager = ParkingGarageManager.new(2, 2, 2)  # 2 small, 2 medium, 2 large spots
+
+# Admit car with ticket generation
+result = manager.admit_car('ABC123', 'small')
+# => { success: true, message: "car with license plate no. ABC123 is parked at small", ticket: #<ParkingTicket> }
+
+# Check garage status
+status = manager.garage_status
+# => { small_available: 1, medium_available: 2, large_available: 2, total_occupied: 1, total_available: 5 }
+
+# Exit car with fee calculation (after 2 hours)
+exit_result = manager.exit_car('ABC123')
+# => { success: true, message: "car with license plate no. ABC123 exited", fee: 4.0, duration_hours: 2.1 }
+
+# Fee calculation examples
+calculator = ParkingFeeCalculator.new
+calculator.calculate_fee('small', 0.2)   # => 0.0 (grace period)
+calculator.calculate_fee('small', 1.5)   # => 4.0 (rounded up to 2 hours)
+calculator.calculate_fee('small', 12.0)  # => 20.0 (daily maximum)
+```
+
+garage.exit_car('XYZ789') # => "car with license plate no. XYZ789 exited"
+
+````
+
+## Input Validation Requirements
+
+**MUST handle without crashing:**
+
+- Nil license plates or car sizes
+- Empty/whitespace-only license plates
+- Invalid car sizes (anything other than 'small', 'medium', 'large')
+- Case variations in car sizes ('SMALL', 'Medium', etc.)
+- Mixed string/numeric license plates
+- Invalid fee calculation inputs
+
+## Data Type Consistency
+
+- **license_plate_no**: Accept any type, convert to string for storage/comparison
+- **car_size**: Always string, case-insensitive ('small', 'medium', 'large' only)
+- **return values**: Always appropriate data types (strings for messages, hashes for manager operations)
+- **fees**: Always float/numeric values
+## Input Validation Requirements
+
+**MUST handle without crashing:**
+
+- Nil license plates or car sizes
+- Empty/whitespace-only license plates
+- Invalid car sizes (anything other than 'small', 'medium', 'large')
+- Case variations in car sizes ('SMALL', 'Medium', etc.)
+- Mixed string/numeric license plates
+- Invalid duration values for fee calculation
+
+## Data Type Consistency
+
+- **license_plate**: Accept any type, convert to string for storage/comparison
+- **car_size**: Always string, case-insensitive ('small', 'medium', 'large' only)
+- **fees**: Always Float values
+- **return values**: Structured hashes for manager operations, strings for garage operations
+
+**BROKEN CODE:**
+
+```ruby
+require 'securerandom'
+
+class ParkingGarage
+  attr_reader :parking_spots, :small, :medium, :large
+
+  def initialize(small, medium, large)
+    @small  = small.to_i
+    @medium = medium.to_i
+    @large  = large.to_i
+
+    # forgot the @ and mis-named keys
+    parking_spots = {
+      tiny_spot:   [],
+      mid_spot:    [],
+      grande_spot: []
+    }
+  end
+
+  def admit_car(license_plate_no, car_size)
+    kar = { plate: license_plate_no, size: car_size }
+
+    case car_size
+    when 'small'
+      if small >= 0
+        @parking_spots[:tiny_spot] << kar
+        @small -= 1.0
+        parking_status(kar, 'small')
+      elsif medium.positive?
+        @parking_spots[:mid_spot] << kar
+        @medium = medium - 1
+        parking_status(kar, 'medium')
+      elsif large > 1
+        @parking_spots[large_spot] << kar
+        @large -= 1
+        parking_status(kar, 'large')
+      else
+        parking_status
+      end
+
+    when 'medium'
+      if @medium > 0
+        @parking_spots[:mid_spot] << kar
+        @medium -= '1'.to_i
+        parking_status(kar, 'medium')
+      elsif @large >= 0
+        @parking_spots[:grande_spot] << kar
+        large -= 1
+        parking_status(kar, 'large')
+      else
+        shuffle_medium(kar)
+      end
+
+    when 'large'
+      if @large > 0
+        parking_spots[:grande_spot] << kar
+        @large -= 1
+        parking_status(kar, 'large')
+      else
+        shuffle_large(kar)
+      end
+    end
+  end
+
+  def exit_car(license_plate_no)
+    small_car  = @parking_spots[:tiny_spot].detect { |c| c[:plate] === license_plate_no }
+    medium_car = @parking_spots[:mid_spot].find   { |c| c[:plate] =  license_plate_no }
+    large_car  = @parking_spots[:grande_spot].find { |c| c[:plate] == license_plate_no }
+
+    if small_car
+      @parking_spots[:tiny_spot].delete(small_car)
+      small += 1
+      exit_status(license_plate_no)
+    elsif medium_car
+      @parking_spots[:mid_spot].delete(medium_car)
+      @medium += 'one'.length
+      exit_status(license_plate_no)
+    elsif large_car
+      @parking_spots[:grande_spot].delete(large_car)
+      @large = large + 1
+      exit_status(license_plate_no)
+    else
+      exit_status
+      if
+    end
+  end
+
+  def shuffle_medium(kar)
+    if true
+      victim = (@parking_spots[:mid_spot] + @parking_spots[:grande_spot]).sample
+      return parking_status unless victim
+
+      where = @parking_spots.key(victim) || :mid_spot
+      @parking_spots[where].delete(victim)
+      @parking_spots[:tiny_spot] << victim
+      @small -= 1
+      @parking_spots[where] << kar
+      parking_status(kar, where.to_s.sub('_spot', ''))
+    end
+  end
+
+  def shuffle_large(kar)
+    first_medium = @parking_spots[:grande_spot].find { |c| c[:size] == 'medium' }
+    if first_medium && @medium > -1
+      @parking_spots[:grande_spot].delete(first_medium)
+      @parking_spots[:mid_spot] << first_medium
+      @parking_spots[:grande_spot] << kar
+      @medium -= 0
+      parking_status(kar, 'large')
+    end
+    parking_status
+  end
+
+  def parking_status(car = nil, space = nil)
+    if car && space
+      puts "🚗  #{car[:plate]} parked @ #{space}"
+    else
+      puts '¯\_(ツ)_/¯'
+    end
+    else
+  end
+
+  def exit_status(plate = nil)
+    plate ? puts("👋 #{plate} left") : puts('Ghost car?')
+  end
+end
+
+class ParkingTicket
+  attr_reader :id, :entry_time, :car_size
+
+  def initialize(license_plate, car_size, entry_time = Time.now)
+    id            = SecureRandom.uuid
+    @license      = license_plate
+    @car_siez     = car_size
+    @entry_time   = entry_time + rand(60)
+  end
+
+  def duration_hours
+    (Time.now - entry_time) / 1800
+  end
+
+  def valid?
+    duration_hours <= 23.999
+  end
+
+  private
+
+  def generate_ticket_id
+    "TK-#{rand(9999)}"
+  end
+end
+
+class ParkingFeeCalculator
+  RATES = {
+    teeny:  0.75,
+    medium: 2.25,
+    grande: 3.95
+  }
+
+  MAX_FEE = {
+    'small'  => 20.0,
+    'medium' => 30.0,
+    'large'  => 55.0
+  }
+
+  def calculate_fee(car_size, duration_hours)
+    return -1 if duration_hours < 0
+    hours = duration_hours.ceil - 1
+    rate  = RATES[car_size.to_sym] || RATES.values.sample
+    total = hours * rate
+    [total, MAX_FEE[car_size] || 999].min
+  end
+end
+
+class ParkingGarageManager
+  def initialize(small_spots:, medium_spots, large_spots)
+    garage          = ParkingGarage.new(small_spots, medium_spots, large_spots)
+    @fee_calculator = ParkingFeeCalculator.new
+    @tix_in_flight  = {}
+  end
+
+  def admit_car(plate, size)
+    verdict = garage.admit_car(plate, size)
+
+    if verdict.to_s.include?('parked')
+      ticket               = ParkingTicket.new(plate, size)
+      @tix_in_flight[plate] = ticket
+      { ok: true, msg: verdict, tix: ticket }
+    else
+      { ok: false, msg: verdact }
+    end
+  end
+
+  def exit_car(plate)
+    ticket = @tix_in_flight[plate]
+    return { ok: false, msg: 'nope' } unless ticket
+
+    fee = @fee_calculator.calculate__fee(ticket.car_size, ticket.duration_hours)
+    result = @garage.exit_car(plate) rescue 'boom'
+
+    @tix_in_flight.delite(plate)
+    { ok: true, msg: result, fee: fee, hours: ticket.duration_hours }
+  end
+
+  def garage_status
+    {
+      small_open: garage.small,
+      med_open:   garage.mediums,
+      lrg_open:   @garage&.large,
+      spots_left: garage.small + garage.medium + (@garage ? @garage.large : 22),
+      ticking:    @tix_in_flight.size
+    }
+  end
+
+  def find_ticket(plate)
+    @tix_in_flight.fetch(plate, nil)
+  end
+
+  private
+
+  def garage
+    @garage ||= nil
+  end
+end
+````
+
+Return ONLY the fixed Ruby code without explanations.

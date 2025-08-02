@@ -18,7 +18,8 @@ module Config
       'run_length_encoding' => { type: :performance, class_name: 'RunLengthEncodingBenchmark' },
       'csv_processor' => { type: :performance, class_name: 'CsvProcessorBenchmark' },
       'vending_machine' => { type: :program_fixer, class_name: 'VendingMachineBenchmark' },
-      'calendar' => { type: :program_fixer, class_name: 'CalendarBenchmark' }
+      'calendar' => { type: :program_fixer, class_name: 'CalendarBenchmark' },
+      'parking_garage' => { type: :program_fixer, class_name: 'ParkingGarageBenchmark' }
     }
   end
 
