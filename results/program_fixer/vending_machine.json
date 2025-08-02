@@ -143,11 +143,119 @@
         "primary_metric": 0.967741935483871,
         "success": true
       }
+    },
+    {
+      "implementation": "llama_4_scout_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:27:12+03:00",
+      "metrics": {
+        "rubocop_offenses": 6,
+        "tests_passed": 30,
+        "total_tests": 31,
+        "success_rate": 0.967741935483871,
+        "primary_metric": 0.967741935483871,
+        "success": true
+      }
+    },
+    {
+      "implementation": "openai_4_1_nano_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:27:12+03:00",
+      "metrics": {
+        "rubocop_offenses": 14,
+        "tests_passed": 30,
+        "total_tests": 31,
+        "success_rate": 0.967741935483871,
+        "primary_metric": 0.967741935483871,
+        "success": true
+      }
+    },
+    {
+      "implementation": "phi_4_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:27:12+03:00",
+      "metrics": {
+        "rubocop_offenses": 8,
+        "tests_passed": 29,
+        "total_tests": 31,
+        "success_rate": 0.9354838709677419,
+        "primary_metric": 0.9354838709677419,
+        "success": true
+      }
+    },
+    {
+      "implementation": "openai_4_1_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:27:13+03:00",
+      "metrics": {
+        "rubocop_offenses": 13,
+        "tests_passed": 30,
+        "total_tests": 31,
+        "success_rate": 0.967741935483871,
+        "primary_metric": 0.967741935483871,
+        "success": true
+      }
+    },
+    {
+      "implementation": "gemini_2_0_flash_001_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:27:13+03:00",
+      "metrics": {
+        "rubocop_offenses": 9,
+        "tests_passed": 29,
+        "total_tests": 31,
+        "success_rate": 0.9354838709677419,
+        "primary_metric": 0.9354838709677419,
+        "success": true
+      }
+    },
+    {
+      "implementation": "gemini_2_5_flash_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:27:13+03:00",
+      "metrics": {
+        "rubocop_offenses": 13,
+        "tests_passed": 29,
+        "total_tests": 31,
+        "success_rate": 0.9354838709677419,
+        "primary_metric": 0.9354838709677419,
+        "success": true
+      }
+    },
+    {
+      "implementation": "llama_4_maverick_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:27:13+03:00",
+      "metrics": {
+        "rubocop_offenses": 6,
+        "tests_passed": 30,
+        "total_tests": 31,
+        "success_rate": 0.967741935483871,
+        "primary_metric": 0.967741935483871,
+        "success": true
+      }
+    },
+    {
+      "implementation": "openai_4_1_mini_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:27:13+03:00",
+      "metrics": {
+        "rubocop_offenses": 9,
+        "tests_passed": 30,
+        "total_tests": 31,
+        "success_rate": 0.967741935483871,
+        "primary_metric": 0.967741935483871,
+        "success": true
+      }
+    },
+    {
+      "implementation": "nova_lite_v1_openrouter_08_2025",
+      "timestamp": "2025-08-02T11:32:31+03:00",
+      "metrics": {
+        "rubocop_offenses": 8,
+        "tests_passed": 27,
+        "total_tests": 31,
+        "success_rate": 0.8709677419354839,
+        "primary_metric": 0.8709677419354839,
+        "success": true
+      }
     }
   ],
   "aggregates": {
     "openai_4_1_openrouter_08_2025": {
-      "run_count": 2,
+      "run_count": 3,
       "metrics": {
         "rubocop_offenses": 13.0,
         "tests_passed": 30.0,
@@ -164,7 +272,7 @@
       }
     },
     "gemini_2_5_flash_openrouter_08_2025": {
-      "run_count": 2,
+      "run_count": 3,
       "metrics": {
         "rubocop_offenses": 13.0,
         "tests_passed": 29.0,
@@ -181,7 +289,7 @@
       }
     },
     "openai_4_1_mini_openrouter_08_2025": {
-      "run_count": 2,
+      "run_count": 3,
       "metrics": {
         "rubocop_offenses": 9.0,
         "tests_passed": 30.0,
@@ -198,7 +306,7 @@
       }
     },
     "openai_4_1_nano_openrouter_08_2025": {
-      "run_count": 2,
+      "run_count": 3,
       "metrics": {
         "rubocop_offenses": 14.0,
         "tests_passed": 30.0,
@@ -215,7 +323,7 @@
       }
     },
     "llama_4_scout_openrouter_08_2025": {
-      "run_count": 1,
+      "run_count": 2,
       "metrics": {
         "rubocop_offenses": 6.0,
         "tests_passed": 30.0,
@@ -232,7 +340,7 @@
       }
     },
     "phi_4_openrouter_08_2025": {
-      "run_count": 1,
+      "run_count": 2,
       "metrics": {
         "rubocop_offenses": 8.0,
         "tests_passed": 29.0,
@@ -249,7 +357,7 @@
       }
     },
     "gemini_2_0_flash_001_openrouter_08_2025": {
-      "run_count": 1,
+      "run_count": 2,
       "metrics": {
         "rubocop_offenses": 9.0,
         "tests_passed": 29.0,
@@ -266,7 +374,7 @@
       }
     },
     "llama_4_maverick_openrouter_08_2025": {
-      "run_count": 1,
+      "run_count": 2,
       "metrics": {
         "rubocop_offenses": 6.0,
         "tests_passed": 30.0,
@@ -280,6 +388,23 @@
       "score_breakdown": {
         "success_score": 96.77,
         "quality_score": 88.0
+      }
+    },
+    "nova_lite_v1_openrouter_08_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 27.0,
+        "total_tests": 31.0,
+        "success_rate": 0.870968,
+        "primary_metric": 0.870968,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 86.79,
+      "score_breakdown": {
+        "success_score": 87.1,
+        "quality_score": 84.0
       }
     }
   }

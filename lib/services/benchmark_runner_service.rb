@@ -86,8 +86,8 @@ class BenchmarkRunnerService
 
   def run_single_benchmark(implementation)
     benchmark_file = Config.benchmark_file(@benchmark_id)
-    require_relative File.join('../..', benchmark_file)
-    implementation_path = File.join('..', '..', implementation[:file])
+    require_relative File.join(Config.root_path, benchmark_file)
+    implementation_path = File.join(Config.root_path, implementation[:file])
 
     benchmark_type_class = BenchmarkTypes::BenchmarkTypeFactory.create_benchmark(@benchmark_id)
     benchmark_config = Config.benchmark_config(@benchmark_id)

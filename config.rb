@@ -3,6 +3,10 @@ require_relative 'config/ruby_llm'
 module Config
   module_function
 
+  def root_path
+    Dir.pwd
+  end
+
   def benchmarks
     benchmark_configs.keys
   end
@@ -32,15 +36,23 @@ module Config
   end
 
   def implementations_dir(benchmark_id)
-    "implementations/#{benchmark_id}"
+    benchmark_type = benchmark_configs[benchmark_id]&.dig(:type) || :performance
+    "implementations/#{benchmark_type}/#{benchmark_id}"
   end
 
   def results_file(benchmark_id)
-    "#{results_dir}/#{benchmark_id}.json"
+    benchmark_type = benchmark_configs[benchmark_id]&.dig(:type) || :performance
+    "#{results_dir}/#{benchmark_type}/#{benchmark_id}.json"
   end
 
   def benchmark_file(benchmark_id)
-    "benchmarks/#{benchmark_id}/benchmark"
+    benchmark_type = benchmark_configs[benchmark_id]&.dig(:type) || :performance
+    "benchmarks/#{benchmark_type}/#{benchmark_id}/benchmark"
+  end
+
+  def benchmark_prompt(benchmark_id)
+    benchmark_type = benchmark_configs[benchmark_id]&.dig(:type) || :performance
+    "benchmarks/#{benchmark_type}/#{benchmark_id}/prompt"
   end
 
   private

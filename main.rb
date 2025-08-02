@@ -93,7 +93,7 @@ class Main
   end
 
   def select_implementations(benchmark_id)
-    selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id))
+    selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id)) # uses type-based path
     implementations = selector.select
     implementations.is_a?(Array) ? implementations : [implementations]
   end
@@ -115,7 +115,7 @@ class Main
     benchmarks = get_benchmarks_for_type(benchmark_type)
     benchmarks.each do |benchmark_id|
       puts "\nRunning #{format_name(benchmark_id)}..."
-      selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id))
+      selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id)) # uses type-based path
       implementations = selector.list_all
       BenchmarkRunnerService.new(benchmark_id, implementations).run
     end

@@ -31,7 +31,7 @@ class ResultsDisplayService
   private
 
   def load_results
-    results_file = "results/#{@benchmark_id}.json"
+    results_file = Config.results_file(@benchmark_id)
     File.exist?(results_file) ? JSON.parse(File.read(results_file)) : { 'results' => [], 'aggregates' => {} }
   rescue JSON::ParserError
     { 'results' => [], 'aggregates' => {} }
@@ -39,7 +39,7 @@ class ResultsDisplayService
 
   def calculate_best_results_by_implementation(results)
     # Use the results service to get best results properly
-    results_service = ResultsService.new("results/#{@benchmark_id}.json", @benchmark_id)
+    results_service = ResultsService.new(Config.results_file(@benchmark_id), @benchmark_id)
     results_service.calculate_best_results_by_implementation(results)
   end
 

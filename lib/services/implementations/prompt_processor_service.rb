@@ -24,7 +24,7 @@ module Implementations
         puts "=" * 50
 
         target_benchmarks.each do |benchmark_id|
-          prompt_file = File.join('benchmarks', benchmark_id, 'prompt')
+          prompt_file = Config.benchmark_prompt(benchmark_id)
 
           unless File.exist?(prompt_file)
             puts "Warning: Prompt file not found for #{benchmark_id}"
@@ -72,7 +72,7 @@ module Implementations
       benchmark_config = Config.benchmark_config(benchmark_id)
       return prompt_content unless benchmark_config[:type] == :program_fixer
 
-      test_suite_file = File.join('benchmarks', benchmark_id, 'test_suite.rb')
+      test_suite_file = "#{Config.benchmark_file(benchmark_id)}.test_suite.rb"
       return prompt_content unless File.exist?(test_suite_file)
 
       test_content = File.read(test_suite_file)

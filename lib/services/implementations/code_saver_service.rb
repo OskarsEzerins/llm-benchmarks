@@ -26,7 +26,7 @@ module Implementations
     end
 
     def implementations_dir(benchmark_id)
-      File.join('implementations', benchmark_id)
+      Config.implementations_dir(benchmark_id)
     end
 
     def generate_file_name(benchmark_id)
