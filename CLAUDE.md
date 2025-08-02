@@ -8,8 +8,8 @@ This is an LLM benchmarking system written in Ruby that tests AI models across m
 
 ### Core Components
 
-- **Benchmarks** (`benchmarks/`): Test cases including `lru_cache`, `graph_shortest_paths`, `run_length_encoding`, and `csv_processor`
-- **Implementations** (`implementations/`): AI-generated solutions organized by benchmark and model
+- **Benchmarks** (`benchmarks/`): Organized by benchmark type, e.g. `performance/lru_cache`, `program_fixer/vending_machine`
+- **Implementations** (`implementations/`): Organized by benchmark type and benchmark id, e.g. `performance/lru_cache`, `program_fixer/vending_machine`
 - **Services** (`lib/services/`): Core logic for running benchmarks, evaluating code quality, and displaying results
 - **Results** (`results/`): JSON files storing performance metrics and rankings
 

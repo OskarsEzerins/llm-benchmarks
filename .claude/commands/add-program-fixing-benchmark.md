@@ -28,7 +28,7 @@ When adding a new program fixing benchmark named `example_name`, create these fi
 ### 1. Benchmark Directory Structure
 
 ```
-benchmarks/example_name/
+benchmarks/<type>/example_name/
 ├── benchmark.rb          # Test execution logic
 ├── prompt               # Instructions and broken code for LLMs
 └── test_suite.rb        # Comprehensive test cases (optional, for complex scenarios)
@@ -37,7 +37,7 @@ benchmarks/example_name/
 ### 2. Implementation Directory
 
 ```
-implementations/example_name/
+implementations/<type>/example_name/
 └── (empty initially - LLM implementations will be added here)
 ```
 
@@ -300,7 +300,7 @@ end
 1. **Test manually first**:
    ```bash
    cd benchmarks/example_name
-   ruby -r ./benchmark.rb -e "p ExampleNameBenchmark.run('../../implementations/example_name/test_implementation.rb')"
+   ruby -r ./benchmark.rb -e "p ExampleNameBenchmark.run('../../implementations/<type>/example_name/test_implementation.rb')"
    ```
 
 ### Step 5: Validate and Refine
