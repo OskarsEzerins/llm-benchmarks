@@ -21,12 +21,12 @@ export function getDateForModel(implementation: string, timestamp?: string): Dat
   if (implDate) {
     return implDate;
   }
-  
+
   // Fall back to timestamp if available
   if (timestamp) {
     return extractDateFromTimestamp(timestamp);
   }
-  
+
   // Default to current date if no date information available
   return new Date();
 }
@@ -46,24 +46,20 @@ export function formatDateShort(date: Date): string {
   }).format(date);
 }
 
-// Server-side data loading using filesystem operations
+// Universal data loading using fetch API (works on both server and client)
 export const loadBenchmarkData = async (benchmarkType: BenchmarkType): Promise<BenchmarkData | null> => {
   try {
-    // Only use filesystem operations on server-side in loaders
-    if (typeof window === 'undefined') {
-      const { readFile } = await import('fs/promises')
-      const { join } = await import('path')
-      const filePath = join(process.cwd(), 'public', 'data', `${benchmarkType}.json`)
-      const fileContent = await readFile(filePath, 'utf-8')
-      return JSON.parse(fileContent) as BenchmarkData
-    } else {
-      // Client-side fallback using fetch API
-      const response = await fetch(`/data/${benchmarkType}.json`)
-      if (!response.ok) {
-        throw new Error(`Failed to fetch ${benchmarkType} data`)
-      }
-      return await response.json() as BenchmarkData
+    // Use fetch API for both server and client - works with Vercel Edge Runtime
+    const baseUrl = typeof window === 'undefined'
+      ? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` :
+         process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5173')
+      : ''
+
+    const response = await fetch(`${baseUrl}/data/${benchmarkType}.json`)
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${benchmarkType} data: ${response.status} ${response.statusText}`)
     }
+    return await response.json() as BenchmarkData
   } catch (error) {
     console.error(`Error loading ${benchmarkType} data:`, error)
     return null
@@ -152,7 +148,7 @@ export function getBenchmarkRankings(data: BenchmarkData): ModelRanking[] {
     .map(([implementation, aggregate]) => {
       // Find the first result for this implementation to get timestamp
       const result = data.results.find(r => r.implementation === implementation);
-      
+
       return {
         implementation,
         score: aggregate.score,
@@ -300,7 +296,7 @@ export function mergeRankingsAcrossBenchmarks(benchmarkRankings: ModelRanking[][
       model.totalTestsPassed += ranking.tests_passed;
       model.totalTests += ranking.total_tests;
       model.totalRubocopOffenses += ranking.rubocop_offenses;
-      
+
       // Keep the first date we encounter for this model
       if (!model.firstDate) {
         model.firstDate = ranking.date;

@@ -32,7 +32,7 @@ end
 
 ![LLM Benchmarks Website](website/screenshot.png)
 
-[**🌐 Interactive Results Website**](https://benchmarks.oskarsezerins.site/)
+ [**🌐 Interactive Results Website**](https://benchmarks.oskarsezerins.site/)
 
 _See real-time rankings, detailed metrics, and comprehensive analysis of AI model performance across all benchmark types_
 
