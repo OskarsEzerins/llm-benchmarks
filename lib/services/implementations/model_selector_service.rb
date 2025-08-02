@@ -22,6 +22,23 @@ module Implementations
       )
     end
 
+    def select_multiple
+      choices = chat_models.map do |model|
+        {
+          name: "#{model.name} (#{model.id})",
+          value: model.id
+        }
+      end
+
+      @prompt.multi_select(
+        'Choose models (use space to select, enter to confirm):',
+        choices,
+        per_page: 20,
+        filter: true,
+        filter_hint: '(Start typing to filter)'
+      )
+    end
+
     private
 
     def chat_models

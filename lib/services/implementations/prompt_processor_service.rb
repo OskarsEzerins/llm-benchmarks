@@ -2,8 +2,8 @@ require_relative '../../../config'
 
 module Implementations
   class PromptProcessorService
-    def initialize(model_id, benchmark_type = :all_types)
-      @model_id = model_id
+    def initialize(model_ids, benchmark_type = :all_types)
+      @model_ids = Array(model_ids)
       @benchmark_type = benchmark_type
     end
 
@@ -16,25 +16,40 @@ module Implementations
       end
 
       puts "Processing #{target_benchmarks.size} benchmark(s) for type: #{@benchmark_type}"
+      puts "Using #{@model_ids.size} model(s): #{@model_ids.join(', ')}"
 
-      target_benchmarks.each do |benchmark_id|
-        prompt_file = File.join('benchmarks', benchmark_id, 'prompt')
+      @model_ids.each do |model_id|
+        puts "\n#{'=' * 50}"
+        puts "Processing with model: #{model_id}"
+        puts "=" * 50
 
-        unless File.exist?(prompt_file)
-          puts "Warning: Prompt file not found for #{benchmark_id}"
-          next
+        target_benchmarks.each do |benchmark_id|
+          prompt_file = File.join('benchmarks', benchmark_id, 'prompt')
+
+          unless File.exist?(prompt_file)
+            puts "Warning: Prompt file not found for #{benchmark_id}"
+            next
+          end
+
+          code_saver = CodeSaverService.new(model_id)
+
+          # Check if implementation already exists for this model and month
+          if code_saver.send(:implementation_exists?, benchmark_id)
+            puts "Skipping #{model_id} for #{benchmark_id} - implementation already exists for this month"
+            next
+          end
+
+          puts "\nProcessing prompt from: #{prompt_file}"
+          prompt_content = File.read(prompt_file)
+
+          # For ProgramFixer benchmarks, append test suite content if available
+          # prompt_content = append_test_content_if_program_fixer(prompt_content, benchmark_id)
+
+          response = RubyLLM.chat(model: model_id).ask(prompt_content)
+          content = extract_ruby_code(response.content)
+
+          code_saver.save_code(benchmark_id, content)
         end
-
-        puts "\nProcessing prompt from: #{prompt_file}"
-        prompt_content = File.read(prompt_file)
-
-        # For ProgramFixer benchmarks, append test suite content if available
-        # prompt_content = append_test_content_if_program_fixer(prompt_content, benchmark_id)
-
-        response = RubyLLM.chat(model: @model_id).ask(prompt_content)
-        content = extract_ruby_code(response.content)
-
-        CodeSaverService.new(@model_id).save_code(benchmark_id, content)
       end
     end
 
