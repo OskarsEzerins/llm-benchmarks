@@ -47,10 +47,20 @@ export function formatDateShort(date: Date): string {
 }
 
 // Universal data loading using fetch API (works on both server and client)
-export const loadBenchmarkData = async (benchmarkType: BenchmarkType): Promise<BenchmarkData | null> => {
+export const loadBenchmarkData = async (benchmarkType: BenchmarkType, request?: Request): Promise<BenchmarkData | null> => {
   try {
-    // Use fetch API for both server and client
-    const response = await fetch(`/data/${benchmarkType}.json`)
+    let url: string
+
+    if (typeof window === 'undefined' && request) {
+      // Server-side: construct full URL from request
+      const baseUrl = new URL(request.url).origin
+      url = `${baseUrl}/data/${benchmarkType}.json`
+    } else {
+      // Client-side: use relative URL
+      url = `/data/${benchmarkType}.json`
+    }
+
+    const response = await fetch(url)
     if (!response.ok) {
       throw new Error(`Failed to fetch ${benchmarkType} data: ${response.status} ${response.statusText}`)
     }
@@ -61,13 +71,13 @@ export const loadBenchmarkData = async (benchmarkType: BenchmarkType): Promise<B
   }
 }
 
-export const loadAllBenchmarkData = async (): Promise<Record<BenchmarkType, BenchmarkData>> => {
+export const loadAllBenchmarkData = async (request?: Request): Promise<Record<BenchmarkType, BenchmarkData>> => {
   const benchmarkTypes: BenchmarkType[] = ['calendar', 'parking_garage', 'school_library', 'vending_machine']
   const results: Record<string, BenchmarkData> = {}
 
   await Promise.all(
     benchmarkTypes.map(async (type) => {
-      const data = await loadBenchmarkData(type)
+      const data = await loadBenchmarkData(type, request)
       if (data) {
         results[type] = data
       }
