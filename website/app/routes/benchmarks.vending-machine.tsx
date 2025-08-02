@@ -15,8 +15,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export async function loader({ request }: Route.LoaderArgs) {
-  const data = await loadBenchmarkData('vending_machine', request);
+export async function loader() {
+  const data = await loadBenchmarkData('vending_machine');
   if (!data) {
     throw new Error('Failed to load vending machine benchmark data');
   }

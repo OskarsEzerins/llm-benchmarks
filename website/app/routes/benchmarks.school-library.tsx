@@ -15,8 +15,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export async function loader({ request }: Route.LoaderArgs) {
-  const data = await loadBenchmarkData('school_library', request);
+export async function loader() {
+  const data = await loadBenchmarkData('school_library');
   if (!data) {
     throw new Error('Failed to load school library benchmark data');
   }

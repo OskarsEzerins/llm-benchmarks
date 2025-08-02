@@ -46,38 +46,39 @@ export function formatDateShort(date: Date): string {
   }).format(date);
 }
 
-// Universal data loading using fetch API (works on both server and client)
-export const loadBenchmarkData = async (benchmarkType: BenchmarkType, request?: Request): Promise<BenchmarkData | null> => {
+// Server-side data loading using filesystem operations (recommended for Vercel)
+export const loadBenchmarkData = async (benchmarkType: BenchmarkType): Promise<BenchmarkData | null> => {
   try {
-    let url: string
+    if (typeof window === 'undefined') {
+      // Server-side: use filesystem operations
+      const { readFile } = await import('fs/promises')
+      const { join } = await import('path')
 
-    if (typeof window === 'undefined' && request) {
-      // Server-side: construct full URL from request
-      const baseUrl = new URL(request.url).origin
-      url = `${baseUrl}/data/${benchmarkType}.json`
+      // On Vercel, files in public/ are available at process.cwd() + '/public'
+      const filePath = join(process.cwd(), 'public', 'data', `${benchmarkType}.json`)
+      const fileContent = await readFile(filePath, 'utf-8')
+      return JSON.parse(fileContent) as BenchmarkData
     } else {
-      // Client-side: use relative URL
-      url = `/data/${benchmarkType}.json`
+      // Client-side: use fetch API
+      const response = await fetch(`/data/${benchmarkType}.json`)
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${benchmarkType} data: ${response.status} ${response.statusText}`)
+      }
+      return await response.json() as BenchmarkData
     }
-
-    const response = await fetch(url)
-    if (!response.ok) {
-      throw new Error(`Failed to fetch ${benchmarkType} data: ${response.status} ${response.statusText}`)
-    }
-    return await response.json() as BenchmarkData
   } catch (error) {
     console.error(`Error loading ${benchmarkType} data:`, error)
     return null
   }
 }
 
-export const loadAllBenchmarkData = async (request?: Request): Promise<Record<BenchmarkType, BenchmarkData>> => {
+export const loadAllBenchmarkData = async (): Promise<Record<BenchmarkType, BenchmarkData>> => {
   const benchmarkTypes: BenchmarkType[] = ['calendar', 'parking_garage', 'school_library', 'vending_machine']
   const results: Record<string, BenchmarkData> = {}
 
   await Promise.all(
     benchmarkTypes.map(async (type) => {
-      const data = await loadBenchmarkData(type, request)
+      const data = await loadBenchmarkData(type)
       if (data) {
         results[type] = data
       }
