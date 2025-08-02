@@ -28,13 +28,11 @@ end
 
 </div>
 
-## � Live Results Dashboard
-
 <div align="center">
 
 ![LLM Benchmarks Website](website/screenshot.png)
 
-**🌐 Interactive Results Website** _(Coming Soon)_
+[**🌐 Interactive Results Website**](https://benchmarks.oskarsezerins.site/)
 
 _See real-time rankings, detailed metrics, and comprehensive analysis of AI model performance across all benchmark types_
 
