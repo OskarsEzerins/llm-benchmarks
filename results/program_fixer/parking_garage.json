@@ -1,8 +1,20 @@
 {
   "results": [
     {
+      "implementation": "gemini_2_5_flash_openrouter_08_2025",
+      "timestamp": "2025-08-02T13:16:37+03:00",
+      "metrics": {
+        "rubocop_offenses": 40,
+        "tests_passed": 12,
+        "total_tests": 39,
+        "success_rate": 0.3076923076923077,
+        "primary_metric": 0.3076923076923077,
+        "success": true
+      }
+    },
+    {
       "implementation": "openai_4_1_openrouter_08_2025",
-      "timestamp": "2025-08-02T13:00:09+03:00",
+      "timestamp": "2025-08-02T13:16:37+03:00",
       "metrics": {
         "rubocop_offenses": 38,
         "tests_passed": 19,
@@ -14,7 +26,7 @@
     },
     {
       "implementation": "openai_4_1_mini_openrouter_08_2025",
-      "timestamp": "2025-08-02T13:00:10+03:00",
+      "timestamp": "2025-08-02T13:16:37+03:00",
       "metrics": {
         "rubocop_offenses": 24,
         "tests_passed": 18,
@@ -23,21 +35,26 @@
         "primary_metric": 0.46153846153846156,
         "success": true
       }
-    },
-    {
-      "implementation": "gemini_2_5_flash_openrouter_08_2025",
-      "timestamp": "2025-08-02T13:00:10+03:00",
-      "metrics": {
-        "rubocop_offenses": 40,
-        "tests_passed": 12,
-        "total_tests": 39,
-        "success_rate": 0.3076923076923077,
-        "primary_metric": 0.3076923076923077,
-        "success": true
-      }
     }
   ],
   "aggregates": {
+    "gemini_2_5_flash_openrouter_08_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 40.0,
+        "tests_passed": 12.0,
+        "total_tests": 39.0,
+        "success_rate": 0.307692,
+        "primary_metric": 0.307692,
+        "success": 1.0
+      },
+      "rubocop_offenses": 40,
+      "score": 29.69,
+      "score_breakdown": {
+        "success_score": 30.77,
+        "quality_score": 20.0
+      }
+    },
     "openai_4_1_openrouter_08_2025": {
       "run_count": 1,
       "metrics": {
@@ -70,23 +87,6 @@
       "score_breakdown": {
         "success_score": 46.15,
         "quality_score": 52.0
-      }
-    },
-    "gemini_2_5_flash_openrouter_08_2025": {
-      "run_count": 1,
-      "metrics": {
-        "rubocop_offenses": 40.0,
-        "tests_passed": 12.0,
-        "total_tests": 39.0,
-        "success_rate": 0.307692,
-        "primary_metric": 0.307692,
-        "success": 1.0
-      },
-      "rubocop_offenses": 40,
-      "score": 29.69,
-      "score_breakdown": {
-        "success_score": 30.77,
-        "quality_score": 20.0
       }
     }
   }

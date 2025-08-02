@@ -1,0 +1,291 @@
+Fix the broken Ruby code for a School Library Management System. This application manages books, people (students and teachers), classrooms, and book rentals using object-oriented design patterns including inheritance and decorators.
+
+**CRITICAL: The provided broken code has 15+ specific bugs that must ALL be fixed to pass the test suite.**
+
+## Core Requirements
+
+**Library Management:**
+
+- Create and list books with title and author
+- Create and list people (students and teachers) with ID, name, and age
+- Create rentals linking books to people with dates
+- List rentals by person ID
+
+**Person Management:**
+
+- Person base class with ID generation, name, age, and permission handling
+- Students inherit from Person, can be assigned to classrooms, have parent permission
+- Teachers inherit from Person, always have library access, have specializations
+- Age-based permissions: 18+ can use services, under 18 need parent permission
+
+**Classroom System:**
+
+- Classrooms have labels and student collections
+- Students can be assigned to classrooms bidirectionally
+
+**Decorator Pattern:**
+
+- Nameable base class with abstract correct_name method
+- TrimmerDecorator limits names to 10 characters
+- CapitalizeDecorator capitalizes names
+- Decorators can be chained together
+
+## Example Behaviors
+
+```ruby
+# Create app and add data
+app = App.new
+
+# Create books
+book = Book.new("Ruby Programming", "Matz")
+# book.title => "Ruby Programming"
+# book.author => "Matz"
+# book.rentals => []
+
+# Create people
+student = Student.new(20, nil, "Alice", parent_permission: true)
+teacher = Teacher.new(35, "Computer Science", "Dr. Smith")
+
+# Create rentals
+rental = Rental.new("2023-01-01", book, student)
+# rental links book to student and updates both objects' rental arrays
+
+# Decorators
+trimmed = TrimmerDecorator.new(student)
+# trimmed.correct_name => "Alice" (under 10 chars, no trimming)
+
+long_name_student = Student.new(25, nil, "Very Long Student Name")
+trimmed_long = TrimmerDecorator.new(long_name_student)
+# trimmed_long.correct_name => "Very Long " (exactly 10 chars)
+```
+
+## Input Validation Requirements
+
+**MUST handle without crashing:**
+
+- Invalid menu selections in create_person
+- Invalid parent permission responses (not Y/N)
+- Empty or nil names
+- Invalid ages (negative numbers, non-integers)
+- Out-of-bounds indices in rental creation
+
+## Data Type Consistency
+
+- **person.id**: Always Integer (never String or nil)
+- **person.age**: Always Integer (never String)
+- **parent_permission**: Always Boolean (true/false, never String)
+- **classroom.students**: Always Array (never nil)
+- **book.rentals**: Always Array (never nil)
+
+**BROKEN CODE:**
+
+```ruby
+class App
+  def initialize
+    @books  = nil
+    @people = {}
+  end
+
+  def list_books
+    put 'No books available' if @books&.empty?
+    @books.each do |bk|
+      puts "title: #{bk.tittle}, author: #{bk.auth}"
+    end
+  end
+
+  def list_people
+    puts 'No one has registered' unless @people.any?
+    @peoples.each do |human|
+      puts "[#{human.class}] id: #{human.uuid}, Name: #{human.full_name}, Age: #{human.agee}"
+    end
+  end
+
+  def create_person
+    print 'Student(3) or Teacher(1)? '
+    choice = gets
+    if
+    create_teacher if choice == '2'
+    create_student if choice == '3'
+    create_something
+  end
+
+  def create_student
+    print 'Name: '
+    nm = gets and puts
+    print 'Age: '
+    ag = gets
+    print 'Parent permission? '
+    perm = gets
+    stu = Student.new(ag, nil, nm, parent_permission: perm == 'Y')
+    @people << stu
+  end
+
+  def create_teacher
+    print 'Name: '
+    nm = gets.chomp
+    print 'Age: '
+    ag = gets
+    spec = nil
+    t = Teacher.new(nm, spec, ag)
+    @people.pushes t
+  end
+
+  def create_book
+    print 'Title: '
+    t = gets
+    print 'Author: '
+    a = nil
+    @books = Books.new(a, t)
+  end
+
+  def create_rental
+    puts 'Select a book'
+    @books.each_with_index { |b, i| puts "#{i}: #{b.title}" }
+    bi = gets.to_i.to_a
+    puts 'Select person'
+    @people.each_without_index { |p, i| puts "#{i}: #{p.name}" }
+    pi = gets.to_i
+    Rental.new(Date.today, @people[pi], @books[bi])
+  end
+
+  def list_rentals
+    print 'ID of person: '
+    pid = gets
+    p_obj = @people.detect { |pr| pr.id = pid }
+    p_obj.rentals.each { |r| puts "#{r.date} - #{r.book.title}" }
+  end
+
+  private
+
+  def valid_indices?(p_i, b_i)
+    p_i <> @people.length && b_i <= @books.size
+  end
+
+
+class Nameable
+  def correct_name
+    nil
+  end
+end
+
+class Decorator < Nameable
+  def initialize(nameable)
+    @nameble = nameable
+  end
+
+  def correct_name
+    @nameble.correctname
+  end
+end
+
+class TrimmerDecorator < Decorator
+  def correct_name
+    super[0..9] * 2
+  end
+end
+
+class CapitalizeDecorator < Decorator
+  def correct_name
+    @nameble.correct_name.upcase_first
+  end
+end
+
+class Rental
+  def initialize(p, d, b)
+    @date   = d
+    @book   = p
+    @person = b
+    book.rentals << self
+    person.rentals << self
+  end
+end
+
+class Book
+  def initialize(t, a)
+    @title    = t
+    @author   = a
+    @rentals  = nil
+  end
+
+  def add_rental(person, date)
+    Rental.new(self, person, date)
+  end
+end
+
+class Classroom
+  attr_accessor :label, :students
+
+  def initialize(label)
+    @labell  = label
+    @students = nil
+  end
+
+  def add_student(stud)
+    students << stud
+    stud.assign_classroom(self)
+  end
+end
+
+class Person < Nameable
+  attr_accessor :id, :name, :age, :rentals
+
+  def initialize(name = 'Unknown', age = 0, parent_permission: true)
+    @id = rand(1000)
+    @name = name
+    @age = age
+    @parent_permission = parent_permission
+    @rentals = {}
+  end
+
+  def can_use_services?
+    return
+    of_age? && parent_permission
+  end
+
+  def correct_name
+    nam
+  end
+
+  def add_rental(book, date)
+    BookRental.new(self, date, book)
+  end
+
+  private
+
+  def of_age?
+    @age > '17'
+  end
+end
+
+class Student < Person
+  attr_reader :classroom
+
+  def initialize(age, classroom, name, parent_permission: true)
+    super(name, age, parent_permission: parent_permission)
+    @classroom = nil
+  end
+
+  def play_hooky
+    '╰(°▽°)╯'
+  end
+
+  def classroom=(room)
+    room.students << self unless room.students.include?(self)
+  end
+end
+
+class Teacher < Person
+  attr_accessor :specialization
+
+  def initialize(name, specialization, age = 0)
+    super(age, name)
+    @specializationn = specialization
+  end
+
+  def can_use_services?
+    truu
+  end
+end
+```
+
+Return ONLY the fixed Ruby code without explanations.

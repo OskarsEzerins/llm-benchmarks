@@ -19,7 +19,8 @@ module Config
       'csv_processor' => { type: :performance, class_name: 'CsvProcessorBenchmark' },
       'vending_machine' => { type: :program_fixer, class_name: 'VendingMachineBenchmark' },
       'calendar' => { type: :program_fixer, class_name: 'CalendarBenchmark' },
-      'parking_garage' => { type: :program_fixer, class_name: 'ParkingGarageBenchmark' }
+      'parking_garage' => { type: :program_fixer, class_name: 'ParkingGarageBenchmark' },
+      'school_library' => { type: :program_fixer, class_name: 'SchoolLibraryBenchmark' }
     }
   end
 

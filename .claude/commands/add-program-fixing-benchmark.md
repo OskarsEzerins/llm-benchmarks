@@ -290,15 +290,6 @@ Fix the broken Ruby code for a [ClassName] class. [Brief description of what the
 - **[field_name]**: Always [Type] (never [WrongType])
 - **[another_field]**: [Type specifications]
 
-## Known Bugs in Provided Code
-
-The broken code below has these specific issues you MUST fix:
-
-1. **[Bug type]** - [description]
-2. **[Bug type]** - [description]
-3. **[Bug type]** - [description]
-   [Continue listing all intentional bugs]
-
 **BROKEN CODE:**
 
 ```ruby
