@@ -46,26 +46,15 @@ export function formatDateShort(date: Date): string {
   }).format(date);
 }
 
-// Server-side data loading using filesystem operations (recommended for Vercel)
+// Universal data loading using fetch API (works on both server and client)
 export const loadBenchmarkData = async (benchmarkType: BenchmarkType): Promise<BenchmarkData | null> => {
   try {
-    if (typeof window === 'undefined') {
-      // Server-side: use filesystem operations
-      const { readFile } = await import('fs/promises')
-      const { join } = await import('path')
-
-      // On Vercel, files in public/ are available at process.cwd() + '/public'
-      const filePath = join(process.cwd(), 'public', 'data', `${benchmarkType}.json`)
-      const fileContent = await readFile(filePath, 'utf-8')
-      return JSON.parse(fileContent) as BenchmarkData
-    } else {
-      // Client-side: use fetch API
-      const response = await fetch(`/data/${benchmarkType}.json`)
-      if (!response.ok) {
-        throw new Error(`Failed to fetch ${benchmarkType} data: ${response.status} ${response.statusText}`)
-      }
-      return await response.json() as BenchmarkData
+    // Use fetch API for both server and client
+    const response = await fetch(`/data/${benchmarkType}.json`)
+    if (!response.ok) {
+      throw new Error(`Failed to fetch ${benchmarkType} data: ${response.status} ${response.statusText}`)
     }
+    return await response.json() as BenchmarkData
   } catch (error) {
     console.error(`Error loading ${benchmarkType} data:`, error)
     return null
