@@ -33,7 +33,7 @@ module Implementations
       @prompt.multi_select(
         'Choose models (use space to select, enter to confirm):',
         choices,
-        per_page: 20,
+        per_page: 50,
         filter: true,
         filter_hint: '(Start typing to filter)'
       )
