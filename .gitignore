@@ -6,4 +6,6 @@ vendor/bundle/
 .env
 
 .claude/settings.local.json
+.mcp.json
+
 .vercel
