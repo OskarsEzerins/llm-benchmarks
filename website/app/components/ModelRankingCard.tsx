@@ -1,5 +1,5 @@
 import type { ModelRanking } from '../types/benchmark';
-import { formatModelName, getModelFamily } from '../lib/data';
+import { normalizeModelName, getModelFamily } from '../lib/model-name-utils';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
@@ -13,8 +13,8 @@ interface ModelRankingCardProps {
 
 export function ModelRankingCard({ model, rank, showRank = true }: ModelRankingCardProps) {
   const family = getModelFamily(model.implementation);
-  const formattedName = formatModelName(model.implementation);
-  
+  const formattedName = normalizeModelName(model.implementation);
+
   const getScoreColor = (score: number) => {
     if (score >= 75) return 'text-emerald-600 dark:text-emerald-400';
     if (score >= 60) return 'text-amber-600 dark:text-amber-400';
@@ -67,7 +67,7 @@ export function ModelRankingCard({ model, rank, showRank = true }: ModelRankingC
           {formattedName}
         </h3>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         <div className="space-y-3">
           <div className="flex items-center justify-between">
@@ -79,9 +79,9 @@ export function ModelRankingCard({ model, rank, showRank = true }: ModelRankingC
               {successRate.toFixed(1)}%
             </span>
           </div>
-          <Progress 
-            value={successRate} 
-            className="h-2" 
+          <Progress
+            value={successRate}
+            className="h-2"
           />
         </div>
 
@@ -97,7 +97,7 @@ export function ModelRankingCard({ model, rank, showRank = true }: ModelRankingC
               Tests Passed
             </div>
           </div>
-          
+
           <div className="text-center space-y-1">
             <div className="flex items-center justify-center">
               <span className="text-muted-foreground font-medium">Q</span>
@@ -109,7 +109,7 @@ export function ModelRankingCard({ model, rank, showRank = true }: ModelRankingC
               Quality
             </div>
           </div>
-          
+
           <div className="text-center space-y-1">
             <div className="flex items-center justify-center">
               <AlertTriangle className="h-4 w-4 text-amber-500" />

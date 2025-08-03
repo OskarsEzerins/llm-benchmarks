@@ -1,4 +1,5 @@
 import type { BenchmarkData, BenchmarkType, ModelRanking, BenchmarkAggregate, BenchmarkResult } from '../types/benchmark'
+import { getModelFamily } from './model-name-utils'
 
 // Date extraction and formatting utilities
 export function extractDateFromImplementation(implementation: string): Date | null {
@@ -166,29 +167,6 @@ export function getBenchmarkRankings(data: BenchmarkData): ModelRanking[] {
       };
     })
     .sort((a, b) => b.score - a.score);
-}
-
-export function formatModelName(implementation: string): string {
-  return implementation
-    .replace(/_openrouter_\d+_\d+/g, '')
-    .replace(/_/g, ' ')
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-
-export function getModelFamily(implementation: string): string {
-  const name = implementation.toLowerCase();
-  if (name.includes('claude')) return 'Claude';
-  if (name.includes('openai') || name.includes('gpt')) return 'OpenAI';
-  if (name.includes('gemini')) return 'Google';
-  if (name.includes('deepseek')) return 'DeepSeek';
-  if (name.includes('grok')) return 'xAI';
-  if (name.includes('llama')) return 'Meta';
-  if (name.includes('mistral')) return 'Mistral';
-  if (name.includes('qwen')) return 'Alibaba';
-  if (name.includes('nova')) return 'Amazon';
-  return 'Other';
 }
 
 export function calculateBenchmarkStats(data: BenchmarkData) {

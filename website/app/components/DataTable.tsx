@@ -5,6 +5,7 @@ import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import { ChevronUp, ChevronDown, Search, Filter } from 'lucide-react'
 import { formatDateLocale, formatDateShort } from '../lib/data'
+import { normalizeModelName, getModelFamily } from '../lib/model-name-utils'
 
 interface DataTableProps {
   data: ModelRanking[]
@@ -14,28 +15,6 @@ interface DataTableProps {
 
 type SortField = 'implementation' | 'score' | 'success_rate' | 'quality_score' | 'tests_passed' | 'rubocop_offenses' | 'date'
 type SortDirection = 'asc' | 'desc'
-
-const formatModelName = (implementation: string): string => {
-  return implementation
-    .replace(/_openrouter_\d+_\d+$/g, '') // Remove date suffix like "_openrouter_08_2025"
-    .replace(/_\d+_\d+$/g, '') // Remove date suffix like "_08_2025"
-    .split('_')
-    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ')
-    .replace(/(\d+)/, ' $1')
-    .replace(/^(\w+)\s(\d+)\s(\d+)/, '$1 $2.$3')
-}
-
-const getModelFamily = (implementation: string): string => {
-  if (implementation.includes('claude')) return 'Claude'
-  if (implementation.includes('openai') || implementation.includes('gpt')) return 'OpenAI'
-  if (implementation.includes('gemini')) return 'Gemini'
-  if (implementation.includes('deepseek')) return 'DeepSeek'
-  if (implementation.includes('llama')) return 'Llama'
-  if (implementation.includes('grok')) return 'Grok'
-  if (implementation.includes('r1')) return 'R1'
-  return 'Other'
-}
 
 const getScoreColor = (score: number): string => {
   if (score >= 80) return 'bg-emerald-500 text-white dark:bg-emerald-600 dark:text-white shadow-md border-emerald-600 dark:border-emerald-400'
@@ -72,7 +51,7 @@ export const DataTable: React.FC<DataTableProps> = ({
     // Apply search filter
     if (searchTerm) {
       filtered = filtered.filter(model =>
-        formatModelName(model.implementation).toLowerCase().includes(searchTerm.toLowerCase()) ||
+        normalizeModelName(model.implementation).toLowerCase().includes(searchTerm.toLowerCase()) ||
         model.implementation.toLowerCase().includes(searchTerm.toLowerCase())
       )
     }
@@ -88,8 +67,8 @@ export const DataTable: React.FC<DataTableProps> = ({
       let bValue: number | string | Date = b[sortField]
 
       if (sortField === 'implementation') {
-        aValue = formatModelName(a.implementation)
-        bValue = formatModelName(b.implementation)
+        aValue = normalizeModelName(a.implementation)
+        bValue = normalizeModelName(b.implementation)
       }
 
       if (sortField === 'date') {
@@ -179,29 +158,29 @@ export const DataTable: React.FC<DataTableProps> = ({
 
       <CardContent className="p-0">
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full max-w-7xl">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left p-4 font-medium">
+                <th className="text-left p-3 font-medium w-32 lg:w-40">
                   <SortButton field="implementation">Model</SortButton>
                 </th>
-                <th className="text-left p-4 font-medium hidden sm:table-cell">Family</th>
-                <th className="text-left p-4 font-medium hidden md:table-cell">
+                <th className="text-left p-3 font-medium hidden sm:table-cell w-12">Family</th>
+                <th className="text-left p-3 font-medium hidden md:table-cell w-14">
                   <SortButton field="date">Date</SortButton>
                 </th>
-                <th className="text-right p-4 font-medium">
+                <th className="text-right p-3 font-medium w-12">
                   <SortButton field="score" className="flex-row-reverse">Score</SortButton>
                 </th>
-                <th className="text-right p-4 font-medium">
+                <th className="text-right p-3 font-medium w-14">
                   <SortButton field="success_rate" className="flex-row-reverse">Success Rate</SortButton>
                 </th>
-                <th className="text-right p-4 font-medium hidden lg:table-cell">
+                <th className="text-right p-3 font-medium hidden lg:table-cell w-16">
                   <SortButton field="quality_score" className="flex-row-reverse">Quality Score</SortButton>
                 </th>
-                <th className="text-right p-4 font-medium hidden lg:table-cell">
+                <th className="text-right p-3 font-medium hidden lg:table-cell w-16">
                   <SortButton field="tests_passed" className="flex-row-reverse">Tests Passed</SortButton>
                 </th>
-                <th className="text-right p-4 font-medium hidden xl:table-cell">
+                <th className="text-right p-3 font-medium hidden lg:table-cell w-16">
                   <SortButton field="rubocop_offenses" className="flex-row-reverse">Code Issues</SortButton>
                 </th>
               </tr>
@@ -209,59 +188,56 @@ export const DataTable: React.FC<DataTableProps> = ({
             <tbody>
               {sortedAndFilteredData.map((model, index) => (
                 <tr key={model.implementation} className="border-b border-border/50 hover:bg-muted/50 transition-colors">
-                  <td className="p-4">
-                    <div className="flex items-center gap-3">
-                      <div className="flex-shrink-0 w-8 h-8 bg-primary/10 border-2 border-primary/20 flex items-center justify-center text-sm font-medium text-primary">
+                  <td className="p-3 w-32 lg:w-40">
+                    <div className="flex items-center gap-2">
+                      <div className="flex-shrink-0 w-6 h-6 bg-primary/10 border-2 border-primary/20 flex items-center justify-center text-xs font-medium text-primary">
                         {sortedAndFilteredData.findIndex(m => m.implementation === model.implementation) + 1}
                       </div>
-                      <div>
-                        <div className="font-medium text-foreground">
-                          {formatModelName(model.implementation)}
+                      <div className="min-w-0 flex-1">
+                        <div className="font-medium text-foreground text-sm truncate">
+                          {normalizeModelName(model.implementation)}
                         </div>
-                        <div className="text-xs text-muted-foreground sm:hidden">
+                        <div className="text-xs text-muted-foreground sm:hidden truncate">
                           {getModelFamily(model.implementation)} • {formatDateShort(model.date)}
                         </div>
-                        <div className="text-xs text-muted-foreground md:hidden sm:block">
+                        <div className="text-xs text-muted-foreground md:hidden sm:block truncate">
                           {formatDateShort(model.date)}
                         </div>
                       </div>
                     </div>
                   </td>
-                  <td className="p-4 hidden sm:table-cell">
-                    <Badge variant="outline" className="text-xs">
+                  <td className="p-3 hidden sm:table-cell w-12">
+                    <Badge variant="outline" className="text-xs px-1 py-0.5">
                       {getModelFamily(model.implementation)}
                     </Badge>
                   </td>
-                  <td className="p-4 hidden md:table-cell">
+                  <td className="p-3 hidden md:table-cell w-14">
                     <div className="text-sm text-foreground">
-                      <div className="font-medium">{formatDateShort(model.date)}</div>
-                      <div className="text-xs text-muted-foreground lg:hidden">
-                        {formatDateLocale(model.date)}
-                      </div>
+                      <div className="font-medium text-xs">{formatDateShort(model.date)}</div>
                     </div>
                   </td>
-                  <td className="p-4 text-right">
-                    <Badge className={`text-lg font-bold px-4 py-2 border-2 ${getScoreColor(model.score)}`}>
+                  <td className="p-3 text-right w-12">
+                    <Badge className={`text-sm font-bold px-2 py-1 border-2 ${getScoreColor(model.score)}`}>
                       {model.score.toFixed(1)}
                     </Badge>
                   </td>
-                  <td className="p-4 text-right">
-                    <span className={getSuccessRateColor(model.success_rate)}>
+                  <td className="p-3 text-right w-14">
+                    <span className={getSuccessRateColor(model.success_rate).replace('text-lg', 'text-sm')}>
                       {(model.success_rate * 100).toFixed(1)}%
                     </span>
                   </td>
-                  <td className="p-4 text-right hidden lg:table-cell">
-                    <span className="text-foreground font-bold text-lg">
+                  <td className="p-3 text-right hidden lg:table-cell w-16">
+                    <span className="text-foreground font-bold text-sm">
                       {model.quality_score.toFixed(0)}
                     </span>
                   </td>
-                  <td className="p-4 text-right hidden lg:table-cell">
-                    <span className="text-foreground font-medium text-base">
+                  <td className="p-3 text-right hidden lg:table-cell w-16">
+                    <span className="text-foreground font-medium text-sm">
                       {model.tests_passed}/{model.total_tests}
                     </span>
                   </td>
-                  <td className="p-4 text-right hidden xl:table-cell">
-                    <span className={model.rubocop_offenses > 0 ? 'text-amber-600 dark:text-amber-400 font-medium text-base' : 'text-emerald-600 dark:text-emerald-400 font-medium text-base'}>
+                  <td className="p-3 text-right hidden lg:table-cell w-16">
+                    <span className={model.rubocop_offenses > 0 ? 'text-amber-600 dark:text-amber-400 font-medium text-sm' : 'text-emerald-600 dark:text-emerald-400 font-medium text-sm'}>
                       {model.rubocop_offenses}
                     </span>
                   </td>

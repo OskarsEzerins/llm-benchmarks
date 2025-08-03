@@ -202,3 +202,9 @@ body {
     letter-spacing: var(--tracking-normal);
   }
 }
+
+@layer utilities {
+  .w-18 {
+    width: 4.5rem; /* 72px */
+  }
+}
