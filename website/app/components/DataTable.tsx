@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import { ChevronUp, ChevronDown, Search, Filter } from 'lucide-react'
-import { formatDateLocale, formatDateShort } from '../lib/data'
+import { formatDateShort } from '../lib/data'
 import { normalizeModelName, getModelFamily } from '../lib/model-name-utils'
 
 interface DataTableProps {
@@ -13,7 +13,7 @@ interface DataTableProps {
   title?: string
 }
 
-type SortField = 'implementation' | 'score' | 'success_rate' | 'quality_score' | 'tests_passed' | 'rubocop_offenses' | 'date'
+type SortField = 'implementation' | 'score' | 'success_rate' | 'quality_score' | 'date'
 type SortDirection = 'asc' | 'desc'
 
 const getScoreColor = (score: number): string => {
@@ -24,10 +24,10 @@ const getScoreColor = (score: number): string => {
 }
 
 const getSuccessRateColor = (rate: number): string => {
-  if (rate >= 0.9) return 'text-emerald-600 dark:text-emerald-400 font-bold text-lg'
-  if (rate >= 0.7) return 'text-blue-600 dark:text-blue-400 font-bold text-lg'
-  if (rate >= 0.5) return 'text-amber-600 dark:text-amber-400 font-bold text-lg'
-  return 'text-red-600 dark:text-red-400 font-bold text-lg'
+  if (rate >= 0.9) return 'text-emerald-600 dark:text-emerald-400 font-bold text-sm'
+  if (rate >= 0.7) return 'text-blue-600 dark:text-blue-400 font-bold text-sm'
+  if (rate >= 0.5) return 'text-amber-600 dark:text-amber-400 font-bold text-sm'
+  return 'text-red-600 dark:text-red-400 font-bold text-sm'
 }
 
 export const DataTable: React.FC<DataTableProps> = ({
@@ -120,7 +120,6 @@ export const DataTable: React.FC<DataTableProps> = ({
       <CardHeader className="pb-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <CardTitle className="text-2xl font-bold">{title}</CardTitle>
-
           <div className="flex flex-col sm:flex-row gap-3">
             {/* Search */}
             <div className="relative">
@@ -133,7 +132,6 @@ export const DataTable: React.FC<DataTableProps> = ({
                 className="pl-9 pr-3 py-2 border-2 border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent shadow-lg"
               />
             </div>
-
             {/* Family Filter */}
             <div className="relative">
               <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -150,7 +148,6 @@ export const DataTable: React.FC<DataTableProps> = ({
             </div>
           </div>
         </div>
-
         <div className="text-sm text-muted-foreground">
           Showing {sortedAndFilteredData.length} of {data.length} models
         </div>
@@ -168,20 +165,14 @@ export const DataTable: React.FC<DataTableProps> = ({
                 <th className="text-left p-3 font-medium hidden md:table-cell w-14">
                   <SortButton field="date">Date</SortButton>
                 </th>
-                <th className="text-right p-3 font-medium w-12">
-                  <SortButton field="score" className="flex-row-reverse">Score</SortButton>
+                <th className="text-center p-3 font-medium w-12">
+                  <SortButton field="score">Score</SortButton>
                 </th>
-                <th className="text-right p-3 font-medium w-14">
+                <th className="text-center p-3 font-medium w-14">
                   <SortButton field="success_rate" className="flex-row-reverse">Success Rate</SortButton>
                 </th>
-                <th className="text-right p-3 font-medium hidden lg:table-cell w-16">
+                <th className="text-center p-3 font-medium hidden lg:table-cell w-16">
                   <SortButton field="quality_score" className="flex-row-reverse">Quality Score</SortButton>
-                </th>
-                <th className="text-right p-3 font-medium hidden lg:table-cell w-16">
-                  <SortButton field="tests_passed" className="flex-row-reverse">Tests Passed</SortButton>
-                </th>
-                <th className="text-right p-3 font-medium hidden lg:table-cell w-16">
-                  <SortButton field="rubocop_offenses" className="flex-row-reverse">Code Issues</SortButton>
                 </th>
               </tr>
             </thead>
@@ -216,29 +207,19 @@ export const DataTable: React.FC<DataTableProps> = ({
                       <div className="font-medium text-xs">{formatDateShort(model.date)}</div>
                     </div>
                   </td>
-                  <td className="p-3 text-right w-12">
+                  <td className="p-3 text-center w-12">
                     <Badge className={`text-sm font-bold px-2 py-1 border-2 ${getScoreColor(model.score)}`}>
                       {model.score.toFixed(1)}
                     </Badge>
                   </td>
-                  <td className="p-3 text-right w-14">
-                    <span className={getSuccessRateColor(model.success_rate).replace('text-lg', 'text-sm')}>
+                  <td className="p-3 text-center w-14">
+                    <span className={getSuccessRateColor(model.success_rate)}>
                       {(model.success_rate * 100).toFixed(1)}%
                     </span>
                   </td>
-                  <td className="p-3 text-right hidden lg:table-cell w-16">
-                    <span className="text-foreground font-bold text-sm">
-                      {model.quality_score.toFixed(0)}
-                    </span>
-                  </td>
-                  <td className="p-3 text-right hidden lg:table-cell w-16">
-                    <span className="text-foreground font-medium text-sm">
-                      {model.tests_passed}/{model.total_tests}
-                    </span>
-                  </td>
-                  <td className="p-3 text-right hidden lg:table-cell w-16">
-                    <span className={model.rubocop_offenses > 0 ? 'text-amber-600 dark:text-amber-400 font-medium text-sm' : 'text-emerald-600 dark:text-emerald-400 font-medium text-sm'}>
-                      {model.rubocop_offenses}
+                  <td className="p-3 text-center hidden lg:table-cell w-16">
+                    <span className={getSuccessRateColor(model.quality_score / 100)}>
+                      {(model.quality_score).toFixed(1)}%
                     </span>
                   </td>
                 </tr>

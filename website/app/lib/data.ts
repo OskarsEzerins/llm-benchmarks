@@ -141,9 +141,9 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
       score: scores.totalScore / scores.benchmarkCount,
       success_rate: scores.totalSuccessRate / scores.benchmarkCount,
       quality_score: scores.totalQualityScore / scores.benchmarkCount,
-      tests_passed: Math.round(scores.totalTestsPassed / scores.benchmarkCount),
-      total_tests: Math.round(scores.totalTests / scores.benchmarkCount),
-      rubocop_offenses: Math.round(scores.totalRubocopOffenses / scores.benchmarkCount),
+      tests_passed: scores.totalTestsPassed,
+      total_tests: scores.totalTests,
+      rubocop_offenses: scores.totalRubocopOffenses,
       date: getDateForModel(implementation, scores.firstTimestamp)
     }))
     .sort((a, b) => b.score - a.score);
@@ -294,8 +294,8 @@ export function mergeRankingsAcrossBenchmarks(benchmarkRankings: ModelRanking[][
       score: scores.totalScore / scores.benchmarkCount,
       success_rate: scores.totalSuccessRate / scores.benchmarkCount,
       quality_score: scores.totalQualityScore / scores.benchmarkCount,
-      tests_passed: Math.round(scores.totalTestsPassed / scores.benchmarkCount),
-      total_tests: Math.round(scores.totalTests / scores.benchmarkCount),
+      tests_passed: scores.totalTestsPassed,
+      total_tests: scores.totalTests,
       rubocop_offenses: Math.round(scores.totalRubocopOffenses / scores.benchmarkCount),
       date: scores.firstDate || getDateForModel(implementation)
     }))

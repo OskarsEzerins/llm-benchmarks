@@ -7,6 +7,7 @@ import { HeroSection } from '../components/HeroSection';
 import { HomeStatsDisplay } from '../components/HomeStatsDisplay';
 import { TopPerformerSection } from '../components/TopPerformerSection';
 import { DataTable } from '../components/DataTable';
+import { ScoringExplanation } from '../components/ScoringExplanation';
 import { Card, CardContent } from '../components/ui/card';
 import { Separator } from '../components/ui/separator';
 import { Award, Database, Bot, Target, TrendingUp, Trophy } from 'lucide-react';
@@ -55,6 +56,11 @@ export default function Home({ loaderData }: Route.ComponentProps) {
             allData={allData}
             title="Overall Performance Rankings - All Benchmarks Combined"
           />
+        </section>
+
+        <Separator className="my-12" />
+        <section className="mb-12">
+          <ScoringExplanation />
         </section>
 
         <Separator className="my-12" />
