@@ -30,6 +30,12 @@ Metrics/AbcSize:
 
 Metrics/CyclomaticComplexity:
   Max: 10
+  Exclude:
+    - benchmarks/**/*
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - benchmarks/**/*
 
 Metrics/ClassLength:
   Max: 200
@@ -38,3 +44,7 @@ Metrics/MethodLength:
   Max: 30
   Exclude:
     - benchmarks/**/*
+
+ThreadSafety/ClassInstanceVariable:
+  Exclude:
+    - benchmarks/program_fixer/*/benchmark.rb

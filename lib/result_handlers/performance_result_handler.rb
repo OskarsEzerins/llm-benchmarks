@@ -10,29 +10,51 @@ module ResultHandlers
 
     def calculate_implementation_metrics(impl_results)
       metrics = calculate_average_metrics(impl_results)
-      rubocop_offenses = impl_results.filter_map { |r| r['metrics']['rubocop_offenses'] }.max || 0
+      time_metrics = extract_time_metrics(impl_results, metrics)
+      rubocop_offenses = extract_max_rubocop_offenses(impl_results)
+      scores = calculate_performance_scores(time_metrics, rubocop_offenses)
 
-      best_time = impl_results.filter_map { |r| r['metrics']['execution_time'] }.min || 0
-      avg_time = metrics['execution_time'] || 0
+      build_implementation_result(impl_results, metrics, rubocop_offenses, scores)
+    end
 
-      # Calculate scores
-      best_time_score = normalize_inverse_score(best_time, MIN_BENCHMARK_RUN_TIME_SECONDS,
+    private
+
+    def extract_time_metrics(impl_results, metrics)
+      {
+        best_time: impl_results.filter_map { |r| r['metrics']['execution_time'] }.min || 0,
+        avg_time: metrics['execution_time'] || 0
+      }
+    end
+
+    def extract_max_rubocop_offenses(impl_results)
+      impl_results.filter_map { |r| r['metrics']['rubocop_offenses'] }.max || 0
+    end
+
+    def calculate_performance_scores(time_metrics, rubocop_offenses)
+      best_time_score = normalize_inverse_score(time_metrics[:best_time], MIN_BENCHMARK_RUN_TIME_SECONDS,
                                                 MAX_BENCHMARK_RUN_TIME_SECONDS)
-      avg_time_score = normalize_inverse_score(avg_time, MIN_BENCHMARK_RUN_TIME_SECONDS, MAX_BENCHMARK_RUN_TIME_SECONDS)
+      avg_time_score = normalize_inverse_score(time_metrics[:avg_time], MIN_BENCHMARK_RUN_TIME_SECONDS,
+                                               MAX_BENCHMARK_RUN_TIME_SECONDS)
       quality_score = normalize_inverse_score(rubocop_offenses, 0, MAX_RUBOCOP_OFFENSES)
 
-      # Weight the scores (performance benchmarks: time is most important)
-      final_score = ((best_time_score * 0.4) + (avg_time_score * 0.3) + (quality_score * 0.3)).round(2)
+      {
+        best_time_score: best_time_score,
+        avg_time_score: avg_time_score,
+        quality_score: quality_score,
+        final_score: ((best_time_score * 0.4) + (avg_time_score * 0.3) + (quality_score * 0.3)).round(2)
+      }
+    end
 
+    def build_implementation_result(impl_results, metrics, rubocop_offenses, scores)
       {
         'run_count' => impl_results.size,
         'metrics' => metrics,
         'rubocop_offenses' => rubocop_offenses,
-        'score' => final_score,
+        'score' => scores[:final_score],
         'score_breakdown' => {
-          'best_time_score' => best_time_score.round(2),
-          'avg_time_score' => avg_time_score.round(2),
-          'quality_score' => quality_score.round(2)
+          'best_time_score' => scores[:best_time_score].round(2),
+          'avg_time_score' => scores[:avg_time_score].round(2),
+          'quality_score' => scores[:quality_score].round(2)
         }
       }
     end
@@ -42,8 +64,6 @@ module ResultHandlers
              .filter_map { |_, impl_results| select_best_result(impl_results) }
              .sort_by { |r| r['metrics']['execution_time'] || Float::INFINITY }
     end
-
-    private
 
     def select_best_result(impl_results)
       impl_results.min_by { |r| r['metrics']['execution_time'] || Float::INFINITY }

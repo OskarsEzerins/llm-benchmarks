@@ -23,19 +23,31 @@ module ResultHandlers
 
       metrics.each_with_object({}) do |metric, acc|
         values = impl_results.filter_map { |r| r['metrics'][metric] }
-        if values.any?
-          # Handle boolean values
-          if values.first.is_a?(TrueClass) || values.first.is_a?(FalseClass)
-            acc[metric] = values.count(true).to_f / values.size
-          else
-            # Handle numeric values
-            numeric_values = values.select { |v| v.is_a?(Numeric) }
-            acc[metric] = numeric_values.any? ? (numeric_values.sum / numeric_values.size.to_f).round(6) : nil
-          end
-        else
-          acc[metric] = nil
-        end
+        acc[metric] = values.any? ? calculate_metric_average(values) : nil
       end
+    end
+
+    private
+
+    def calculate_metric_average(values)
+      return calculate_boolean_average(values) if boolean_values?(values)
+
+      calculate_numeric_average(values)
+    end
+
+    def boolean_values?(values)
+      values.first.is_a?(TrueClass) || values.first.is_a?(FalseClass)
+    end
+
+    def calculate_boolean_average(values)
+      values.count(true).to_f / values.size
+    end
+
+    def calculate_numeric_average(values)
+      numeric_values = values.select { |v| v.is_a?(Numeric) }
+      return nil unless numeric_values.any?
+
+      (numeric_values.sum / numeric_values.size.to_f).round(6)
     end
   end
 end
