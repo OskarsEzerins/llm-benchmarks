@@ -373,6 +373,10 @@ end
 2. **Ensure test coverage is comprehensive**
 3. **Verify bugs are challenging but fixable**
 
+### Step 8: Final steps
+
+1. **Remove working_app.rb from test_suite.rb**: Ensure it only loads during development
+
 ## Best Practices
 
 ### Bug Design Guidelines

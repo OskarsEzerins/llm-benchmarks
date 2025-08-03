@@ -3,9 +3,6 @@
 require 'minitest/autorun'
 require 'stringio'
 
-# Load the working app for testing during development
-require_relative 'working_app'
-
 class SchoolLibraryTest < Minitest::Test
   def setup
     @app = App.new

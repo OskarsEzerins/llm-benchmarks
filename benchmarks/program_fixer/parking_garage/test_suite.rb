@@ -2,9 +2,6 @@
 
 require 'minitest/autorun'
 
-# Load the working app for testing during development
-require_relative 'working_app'
-
 # Original ParkingGarage tests
 class ParkingGarageTest < Minitest::Test
   def setup
