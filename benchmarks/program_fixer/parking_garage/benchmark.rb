@@ -28,7 +28,7 @@ class ParkingGarageBenchmark
   rescue StandardError => e
     {
       tests_passed: 0,
-      total_tests: get_total_test_count,
+      total_tests: total_test_count,
       success: false,
       execution_time: 0,
       syntax_valid: false,
@@ -92,7 +92,7 @@ class ParkingGarageBenchmark
     result
   end
 
-  def self.get_total_test_count
+  def self.total_test_count
     test_classes = [ParkingGarageTest, ParkingTicketTest, ParkingFeeCalculatorTest, ParkingGarageManagerTest]
     test_classes.sum do |test_class|
       test_class.instance_methods(true).count { |m| m.to_s.start_with?('test_') }

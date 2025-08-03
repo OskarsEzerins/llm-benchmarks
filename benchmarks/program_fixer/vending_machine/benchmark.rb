@@ -23,7 +23,7 @@ class VendingMachineBenchmark
   rescue StandardError => e
     {
       tests_passed: 0,
-      total_tests: get_total_test_count,
+      total_tests: total_test_count,
       success: false,
       syntax_valid: false,
       error_message: e.message
@@ -70,7 +70,7 @@ class VendingMachineBenchmark
     result
   end
 
-  def self.get_total_test_count
+  def self.total_test_count
     VendingMachineTest.instance_methods(true).count { |m| m.to_s.start_with?('test_') }
   end
 end

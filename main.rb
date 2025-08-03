@@ -100,13 +100,11 @@ class Main
 
   def get_benchmarks_for_type(benchmark_type)
     case benchmark_type
-    when :all_types
-      Config.benchmarks
     when :performance
       Config.benchmarks_by_type(:performance)
     when :program_fixer
       Config.benchmarks_by_type(:program_fixer)
-    else
+    else # :all_types or any other value
       Config.benchmarks
     end
   end

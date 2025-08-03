@@ -35,10 +35,11 @@ module DisplayHandlers
       @best_results.each do |result|
         impl = result['implementation']
         agg = @aggregates[impl]
-        if agg && agg['score_breakdown']
-          breakdown = agg['score_breakdown']
-          puts "  #{impl}: #{breakdown['success_score']}% tests + #{breakdown['quality_score']}% quality = #{agg['score']}%"
-        end
+        next unless agg && agg['score_breakdown']
+
+        breakdown = agg['score_breakdown']
+        puts "  #{impl}: #{breakdown['success_score']}% tests + " \
+             "#{breakdown['quality_score']}% quality = #{agg['score']}%"
       end
     end
   end

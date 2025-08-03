@@ -8,7 +8,7 @@ module Implementations
     end
 
     def process_prompts
-      target_benchmarks = get_target_benchmarks
+      target_benchmarks = self.target_benchmarks
 
       if target_benchmarks.empty?
         puts "No benchmarks found for type: #{@benchmark_type}"
@@ -55,15 +55,13 @@ module Implementations
 
     private
 
-    def get_target_benchmarks
+    def target_benchmarks
       case @benchmark_type
-      when :all_types
-        Config.benchmarks
       when :performance
         Config.benchmarks_by_type(:performance)
       when :program_fixer
         Config.benchmarks_by_type(:program_fixer)
-      else
+      else # :all_types or any other value
         Config.benchmarks
       end
     end

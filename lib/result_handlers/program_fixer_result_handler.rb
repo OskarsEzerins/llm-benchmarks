@@ -42,8 +42,7 @@ module ResultHandlers
 
     def calculate_best_results_by_implementation(results)
       results.group_by { |r| r['implementation'] }
-             .map { |_, impl_results| select_best_result(impl_results) }
-             .compact
+             .filter_map { |_, impl_results| select_best_result(impl_results) }
              .sort_by { |r| -(r['metrics']['success_rate'] || 0) }
     end
 

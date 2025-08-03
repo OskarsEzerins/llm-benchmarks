@@ -29,16 +29,16 @@ class CalendarTest < Minitest::Test
     assert @calendar.is_leap_year?
 
     # Test non-leap year
-    calendar_2023 = Calendar.new(2023)
-    assert !calendar_2023.is_leap_year?
+    calendar_year_twenty_twenty_three = Calendar.new(2023)
+    assert !calendar_year_twenty_twenty_three.is_leap_year?
 
     # Test century year that is leap year
-    calendar_2000 = Calendar.new(2000)
-    assert calendar_2000.is_leap_year?
+    calendar_year_two_thousand = Calendar.new(2000)
+    assert calendar_year_two_thousand.is_leap_year?
 
     # Test century year that is not leap year
-    calendar_1900 = Calendar.new(1900)
-    assert !calendar_1900.is_leap_year?
+    calendar_year_nineteen_hundred = Calendar.new(1900)
+    assert !calendar_year_nineteen_hundred.is_leap_year?
   end
 
   def test_days_in_month_regular_year
@@ -240,14 +240,14 @@ class CalendarTest < Minitest::Test
 
   def test_leap_year_edge_cases
     # Test year 1600 (divisible by 400)
-    calendar_1600 = Calendar.new(1600)
-    assert calendar_1600.is_leap_year?
-    assert_equal 29, calendar_1600.days_in_month(2)
+    calendar_year_sixteen_hundred = Calendar.new(1600)
+    assert calendar_year_sixteen_hundred.is_leap_year?
+    assert_equal 29, calendar_year_sixteen_hundred.days_in_month(2)
 
     # Test year 1700 (divisible by 100 but not 400)
-    calendar_1700 = Calendar.new(1700)
-    assert !calendar_1700.is_leap_year?
-    assert_equal 28, calendar_1700.days_in_month(2)
+    calendar_year_seventeen_hundred = Calendar.new(1700)
+    assert !calendar_year_seventeen_hundred.is_leap_year?
+    assert_equal 28, calendar_year_seventeen_hundred.days_in_month(2)
   end
 
   def test_comprehensive_date_validation

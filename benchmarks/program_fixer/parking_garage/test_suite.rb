@@ -169,8 +169,9 @@ class ParkingGarageTest < Minitest::Test
 
     # Now try to park a medium car - should shuffle
     result = @garage.admit_car('M1', 'medium')
-    assert_includes ['car with license plate no. M1 is parked at medium', 'car with license plate no. M1 is parked at large'],
-                    result
+    expected_results = ['car with license plate no. M1 is parked at medium',
+                        'car with license plate no. M1 is parked at large']
+    assert_includes expected_results, result
   end
 
   def test_large_car_shuffling_when_no_large_spots
