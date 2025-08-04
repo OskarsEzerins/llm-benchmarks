@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Badge } from './ui/badge'
-import { StatsGrid } from './StatsGrid'
-import { Breadcrumbs } from './Breadcrumbs'
+import { StatsGrid } from './stats-grid'
+import { Breadcrumbs } from './breadcrumbs'
 import { getDifficultyLabelUppercase, getDifficultyVariant, getDifficultyColor } from '../lib/difficulty-utils'
 
 interface BenchmarkPageHeaderProps {

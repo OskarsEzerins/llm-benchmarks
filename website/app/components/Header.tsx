@@ -3,7 +3,7 @@ import { Github, Menu, X } from "lucide-react"
 import { useState } from "react"
 import { ThemeToggle } from "./theme-toggle"
 import { Button } from "./ui/button"
-import { Logo } from "./Logo"
+import { Logo } from "./logo"
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)

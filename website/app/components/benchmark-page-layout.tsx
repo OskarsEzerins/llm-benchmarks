@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Separator } from './ui/separator'
-import { PageLayout, PageContent } from './PageLayout'
+import { PageLayout, PageContent } from './page-layout'
 
 interface BenchmarkPageLayoutProps {
   header: ReactNode

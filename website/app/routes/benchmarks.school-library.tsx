@@ -1,10 +1,10 @@
 import type { Route } from "./+types/benchmarks.school-library";
 import { loadBenchmarkData, getBenchmarkRankings, calculateBenchmarkStats } from '../lib/data';
-import { BenchmarkPageLayout, BenchmarkPageContent } from '../components/BenchmarkPageLayout';
-import { BenchmarkPageHeader } from '../components/BenchmarkPageHeader';
-import { TopPerformerSection } from '../components/TopPerformerSection';
-import { DataTable } from '../components/DataTable';
-import { CallToActionSection } from '../components/CallToActionSection';
+import { BenchmarkPageLayout, BenchmarkPageContent } from '../components/benchmark-page-layout'
+import { BenchmarkPageHeader } from '../components/benchmark-page-header'
+import { TopPerformerSection } from '../components/top-performer-section'
+import { DataTable } from '../components/data-table'
+import { CallToActionSection } from '../components/call-to-action-section'
 import { Separator } from '../components/ui/separator';
 import { BookOpen } from 'lucide-react';
 

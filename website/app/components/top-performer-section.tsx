@@ -1,6 +1,6 @@
 import type { ModelRanking } from '../types/benchmark'
-import { ModelRankingCard } from './ModelRankingCard'
-import { SectionHeader } from './SectionHeader'
+import { ModelRankingCard } from './model-ranking-card'
+import { SectionHeader } from './section-header'
 import { Trophy, Crown, Medal } from 'lucide-react'
 
 interface TopPerformerSectionProps {

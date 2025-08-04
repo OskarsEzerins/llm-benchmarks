@@ -1,15 +1,15 @@
 import type { Route } from "./+types/home";
 import type { BenchmarkType } from '../types/benchmark';
 import { calculateTotalRankings, loadAllBenchmarkData } from '../lib/data';
-import { BenchmarkSummaryCard } from '../components/BenchmarkSummaryCard';
-import { PageLayout, PageContent } from '../components/PageLayout';
-import { HeroSection } from '../components/HeroSection';
-import { HomeStatsDisplay } from '../components/HomeStatsDisplay';
-import { TopPerformerSection } from '../components/TopPerformerSection';
-import { DataTable } from '../components/DataTable';
-import { ScoringExplanation } from '../components/ScoringExplanation';
-import { Card, CardContent } from '../components/ui/card';
-import { Separator } from '../components/ui/separator';
+import { BenchmarkSummaryCard } from '../components/benchmark-summary-card'
+import { PageLayout, PageContent } from '../components/page-layout'
+import { HeroSection } from '../components/hero-section'
+import { HomeStatsDisplay } from '../components/home-stats-display'
+import { TopPerformerSection } from '../components/top-performer-section'
+import { DataTable } from '../components/data-table'
+import { ScoringExplanation } from '../components/scoring-explanation'
+import { Card, CardContent } from '../components/ui/card'
+import { Separator } from '../components/ui/separator'
 import { Award, Database, Bot, Target, TrendingUp, Trophy } from 'lucide-react';
 
 export function meta({}: Route.MetaArgs) {
