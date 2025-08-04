@@ -515,6 +515,18 @@
         "primary_metric": 0.7142857142857143,
         "success": true
       }
+    },
+    {
+      "implementation": "glm_4_5_openrouter_08_2025",
+      "timestamp": "2025-08-04T23:39:16+03:00",
+      "metrics": {
+        "rubocop_offenses": 6,
+        "tests_passed": 13,
+        "total_tests": 28,
+        "success_rate": 0.4642857142857143,
+        "primary_metric": 0.4642857142857143,
+        "success": true
+      }
     }
   ],
   "aggregates": {
@@ -1247,6 +1259,23 @@
       "score_breakdown": {
         "success_score": 71.43,
         "quality_score": 76.0
+      }
+    },
+    "glm_4_5_openrouter_08_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 6.0,
+        "tests_passed": 13.0,
+        "total_tests": 28.0,
+        "success_rate": 0.464286,
+        "primary_metric": 0.464286,
+        "success": 1.0
+      },
+      "rubocop_offenses": 6,
+      "score": 50.59,
+      "score_breakdown": {
+        "success_score": 46.43,
+        "quality_score": 88.0
       }
     }
   }
