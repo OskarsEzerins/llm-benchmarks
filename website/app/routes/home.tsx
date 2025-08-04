@@ -68,7 +68,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <TopPerformerSection
           topModels={topModels}
           championTitle="Champions"
-          useHomeStyle={true}
+          useHomeStyle
         />
 
         <Separator className="my-12" />
