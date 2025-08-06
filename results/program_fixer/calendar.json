@@ -539,6 +539,18 @@
         "primary_metric": 0.782608695652174,
         "success": true
       }
+    },
+    {
+      "implementation": "claude_opus_4_1_openrouter_08_2025",
+      "timestamp": "2025-08-06T19:48:07+03:00",
+      "metrics": {
+        "rubocop_offenses": 26,
+        "tests_passed": 22,
+        "total_tests": 23,
+        "success_rate": 0.9565217391304348,
+        "primary_metric": 0.9565217391304348,
+        "success": true
+      }
     }
   ],
   "aggregates": {
@@ -1305,6 +1317,23 @@
       "score_breakdown": {
         "success_score": 78.26,
         "quality_score": 54.0
+      }
+    },
+    "claude_opus_4_1_openrouter_08_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 26.0,
+        "tests_passed": 22.0,
+        "total_tests": 23.0,
+        "success_rate": 0.956522,
+        "primary_metric": 0.956522,
+        "success": 1.0
+      },
+      "rubocop_offenses": 26,
+      "score": 90.89,
+      "score_breakdown": {
+        "success_score": 95.65,
+        "quality_score": 48.0
       }
     }
   }
