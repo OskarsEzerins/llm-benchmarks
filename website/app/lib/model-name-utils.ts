@@ -2,48 +2,39 @@
 
 interface ModelNormalizationRule {
   pattern: RegExp
-  replacement: string
+  replacement?: string
+  transform?: (match: RegExpMatchArray) => string
 }
 
 const MODEL_NORMALIZATION_RULES: ModelNormalizationRule[] = [
-  // OpenAI models
-  { pattern: /^openai[_\s]*o[_\s]*1[_\s]*mini/i, replacement: 'OpenAI o1-mini' },
-  { pattern: /^openai[_\s]*o[_\s]*1[_\s]*preview/i, replacement: 'OpenAI o1-preview' },
-  { pattern: /^openai[_\s]*o[_\s]*1(?![\w\d])/i, replacement: 'OpenAI o1' },
-  { pattern: /^openai[_\s]*o[_\s]*3[_\s]*mini[_\s]*high/i, replacement: 'OpenAI o3-mini (High)' },
-  { pattern: /^openai[_\s]*o[_\s]*3[_\s]*mini/i, replacement: 'OpenAI o3-mini' },
-  { pattern: /^openai[_\s]*o[_\s]*4[_\s]*mini[_\s]*high/i, replacement: 'OpenAI o4-mini (High)' },
-  { pattern: /^openai[_\s]*o[_\s]*4[_\s]*mini/i, replacement: 'OpenAI o4-mini' },
-  { pattern: /^openai[_\s]*4[_\s]*o[_\s]*latest/i, replacement: 'OpenAI GPT-4o' },
-  { pattern: /^openai[_\s]*4[_\s]*o[_\s]*mini/i, replacement: 'OpenAI GPT-4o mini' },
-  { pattern: /^openai[_\s]*4[_\s]*o/i, replacement: 'OpenAI GPT-4o' },
-  { pattern: /^openai[_\s]*4[_\s]*turbo/i, replacement: 'OpenAI GPT-4 Turbo' },
-  { pattern: /^openai[_\s]*4[_\s]*1[_\s]*mini/i, replacement: 'OpenAI GPT-4.1 mini' },
-  { pattern: /^openai[_\s]*4[_\s]*1[_\s]*nano/i, replacement: 'OpenAI GPT-4.1 nano' },
-  { pattern: /^openai[_\s]*4[_\s]*1(?![\w\d])/i, replacement: 'OpenAI GPT-4.1' },
-  { pattern: /^openai[_\s]*4(?![\w\d])/i, replacement: 'OpenAI GPT-4' },
-  { pattern: /^openai[_\s]*3[_\s]*5[_\s]*turbo/i, replacement: 'OpenAI GPT-3.5 Turbo' },
+  // OpenAI models with flexible versioning
+  { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*mini[_\s]*high/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}-mini (High)` },
+  { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*mini/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}-mini` },
+  { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*preview/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}-preview` },
+  { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)(?![\w\d])/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}` },
+  
+  { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o[_\s]*latest/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o` },
+  { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o[_\s]*mini/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o mini` },
+  { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o` },
+  { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*turbo/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')} Turbo` },
+  { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*mini/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')} mini` },
+  { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*nano/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')} nano` },
+  { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)(?![\w\d])/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}` },
   { pattern: /^openai[_\s]*chat[_\s]*4o[_\s]*latest/i, replacement: 'OpenAI GPT-4o' },
 
-  // Claude models
-  { pattern: /^claude[_\s]*sonnet[_\s]*4/i, replacement: 'Claude 4 Sonnet' },
-  { pattern: /^claude[_\s]*opus[_\s]*4/i, replacement: 'Claude 4 Opus' },
-  { pattern: /^claude[_\s]*3[_\s]*7[_\s]*sonnet[_\s]*thinking/i, replacement: 'Claude 3.7 Sonnet (Thinking)' },
-  { pattern: /^claude[_\s]*3[_\s]*7[_\s]*sonnet/i, replacement: 'Claude 3.7 Sonnet' },
-  { pattern: /^claude[_\s]*3[_\s]*5[_\s]*sonnet/i, replacement: 'Claude 3.5 Sonnet' },
-  { pattern: /^claude[_\s]*3[_\s]*5[_\s]*haiku/i, replacement: 'Claude 3.5 Haiku' },
-  { pattern: /^claude[_\s]*3[_\s]*haiku/i, replacement: 'Claude 3 Haiku' },
-  { pattern: /^claude[_\s]*3[_\s]*opus/i, replacement: 'Claude 3 Opus' },
-  { pattern: /^claude[_\s]*3[_\s]*sonnet/i, replacement: 'Claude 3 Sonnet' },
+  // Claude models with flexible versioning (Series 4+ format: claude_model_version, Series 3: claude_version_model)
+  // Series 4 format: claude_sonnet_4, claude_opus_4_1
+  { pattern: /^claude[_\s]*(sonnet|opus|haiku)[_\s]*(\d+(?:[_\s]*\d+)*)/i, transform: (m: RegExpMatchArray) => `Claude ${m[2].replace(/[_\s]+/g, '.')} ${m[1].charAt(0).toUpperCase() + m[1].slice(1)}` },
+  
+  // Series 3 format: claude_3_5_sonnet, claude_3_7_sonnet_thinking
+  { pattern: /^claude[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*(sonnet|opus|haiku)[_\s]*thinking/i, transform: (m: RegExpMatchArray) => `Claude ${m[1].replace(/[_\s]+/g, '.')} ${m[2].charAt(0).toUpperCase() + m[2].slice(1)} (Thinking)` },
+  { pattern: /^claude[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*(sonnet|opus|haiku)/i, transform: (m: RegExpMatchArray) => `Claude ${m[1].replace(/[_\s]+/g, '.')} ${m[2].charAt(0).toUpperCase() + m[2].slice(1)}` },
 
-  // Gemini models
-  { pattern: /^gemini[_\s]*2[_\s]*5[_\s]*pro/i, replacement: 'Gemini 2.5 Pro' },
-  { pattern: /^gemini[_\s]*2[_\s]*5[_\s]*flash[_\s]*lite/i, replacement: 'Gemini 2.5 Flash Lite' },
-  { pattern: /^gemini[_\s]*2[_\s]*5[_\s]*flash/i, replacement: 'Gemini 2.5 Flash' },
-  { pattern: /^gemini[_\s]*2[_\s]*0[_\s]*flash[_\s]*001/i, replacement: 'Gemini 2.0 Flash-001' },
-  { pattern: /^gemini[_\s]*2[_\s]*0[_\s]*flash/i, replacement: 'Gemini 2.0 Flash' },
-  { pattern: /^gemini[_\s]*1[_\s]*5[_\s]*pro/i, replacement: 'Gemini 1.5 Pro' },
-  { pattern: /^gemini[_\s]*1[_\s]*5[_\s]*flash/i, replacement: 'Gemini 1.5 Flash' },
+  // Gemini models with flexible versioning
+  { pattern: /^gemini[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*pro/i, transform: (m: RegExpMatchArray) => `Gemini ${m[1].replace(/[_\s]+/g, '.')} Pro` },
+  { pattern: /^gemini[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*flash[_\s]*lite/i, transform: (m: RegExpMatchArray) => `Gemini ${m[1].replace(/[_\s]+/g, '.')} Flash Lite` },
+  { pattern: /^gemini[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*flash[_\s]*(\d+)/i, transform: (m: RegExpMatchArray) => `Gemini ${m[1].replace(/[_\s]+/g, '.')} Flash-${m[2]}` },
+  { pattern: /^gemini[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*flash/i, transform: (m: RegExpMatchArray) => `Gemini ${m[1].replace(/[_\s]+/g, '.')} Flash` },
 
   // DeepSeek models
   { pattern: /^deepseek[_\s]*v[_\s]*3/i, replacement: 'DeepSeek V3' },
@@ -112,8 +103,16 @@ export const normalizeModelName = (implementation: string): string => {
 
   // Apply specific normalization rules
   for (const rule of MODEL_NORMALIZATION_RULES) {
-    if (rule.pattern.test(normalized)) {
-      return rule.replacement
+    const match = normalized.match(rule.pattern)
+    if (match) {
+      // Use transform function if available (for dynamic patterns)
+      if (rule.transform) {
+        return rule.transform(match)
+      }
+      // Use static replacement if available
+      if (rule.replacement) {
+        return rule.replacement
+      }
     }
   }
 
