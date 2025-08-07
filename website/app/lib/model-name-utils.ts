@@ -13,6 +13,9 @@ const MODEL_NORMALIZATION_RULES: ModelNormalizationRule[] = [
   { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*preview/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}-preview` },
   { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)(?![\w\d])/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}` },
   
+  // GPT-5 variants
+  { pattern: /^openai[_\s]*(5(?:[_\s]*\d+)*)[_\s]*chat/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')} Chat` },
+  
   { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o[_\s]*latest/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o` },
   { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o[_\s]*mini/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o mini` },
   { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o` },
