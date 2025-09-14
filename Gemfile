@@ -4,7 +4,7 @@ gem 'benchmark'
 gem 'dotenv'
 gem 'minitest'
 gem 'pry'
-gem 'ruby_llm', github: 'crmne/ruby_llm', ref: '74305703dcdcdcf8b2adefd8236184bcffc83910'
+gem 'ruby_llm'
 gem 'terminal-table'
 gem 'tty-prompt'
 
