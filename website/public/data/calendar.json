@@ -659,6 +659,18 @@
         "primary_metric": 0.782608695652174,
         "success": true
       }
+    },
+    {
+      "implementation": "claude_sonnet_4_5_openrouter_10_2025",
+      "timestamp": "2025-10-02T04:06:03+00:00",
+      "metrics": {
+        "rubocop_offenses": 19,
+        "tests_passed": 17,
+        "total_tests": 23,
+        "success_rate": 0.7391304347826086,
+        "primary_metric": 0.7391304347826086,
+        "success": true
+      }
     }
   ],
   "aggregates": {
@@ -1594,6 +1606,23 @@
       "score": 76.63,
       "score_breakdown": {
         "success_score": 78.26,
+        "quality_score": 62.0
+      }
+    },
+    "claude_sonnet_4_5_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 19.0,
+        "tests_passed": 17.0,
+        "total_tests": 23.0,
+        "success_rate": 0.73913,
+        "primary_metric": 0.73913,
+        "success": 1.0
+      },
+      "rubocop_offenses": 19,
+      "score": 72.72,
+      "score_breakdown": {
+        "success_score": 73.91,
         "quality_score": 62.0
       }
     }
