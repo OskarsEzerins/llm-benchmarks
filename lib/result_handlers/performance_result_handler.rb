@@ -17,6 +17,12 @@ module ResultHandlers
       build_implementation_result(impl_results, metrics, rubocop_offenses, scores)
     end
 
+    def calculate_best_results_by_implementation(results)
+      results.group_by { |r| r['implementation'] }
+             .filter_map { |_, impl_results| select_best_result(impl_results) }
+             .sort_by { |r| r['metrics']['execution_time'] || Float::INFINITY }
+    end
+
     private
 
     def extract_time_metrics(impl_results, metrics)
@@ -57,12 +63,6 @@ module ResultHandlers
           'quality_score' => scores[:quality_score].round(2)
         }
       }
-    end
-
-    def calculate_best_results_by_implementation(results)
-      results.group_by { |r| r['implementation'] }
-             .filter_map { |_, impl_results| select_best_result(impl_results) }
-             .sort_by { |r| r['metrics']['execution_time'] || Float::INFINITY }
     end
 
     def select_best_result(impl_results)
