@@ -1,8 +1,9 @@
 class SingleModelBenchmarkService
   include FormatNameService
 
-  def initialize(prompt)
+  def initialize(prompt, benchmark_type = :all_types)
     @prompt = prompt
+    @benchmark_type = benchmark_type
   end
 
   def run
@@ -10,15 +11,26 @@ class SingleModelBenchmarkService
     implementation = select_from_available_implementations(implementations)
     return puts 'No implementation selected.' unless implementation
 
-    Config.benchmarks.each do |benchmark_id|
+    target_benchmarks.each do |benchmark_id|
       run_benchmark_for_implementation(benchmark_id, implementation)
     end
   end
 
   private
 
+  def target_benchmarks
+    case @benchmark_type
+    when :performance
+      Config.benchmarks_by_type(:performance)
+    when :program_fixer
+      Config.benchmarks_by_type(:program_fixer)
+    else # :all_types or any other value
+      Config.benchmarks
+    end
+  end
+
   def available_implementations
-    Config.benchmarks.each_with_object(Set.new) do |benchmark_id, implementations|
+    target_benchmarks.each_with_object(Set.new) do |benchmark_id, implementations|
       Dir.glob("#{Config.implementations_dir(benchmark_id)}/*.rb").each do |file|
         implementations << File.basename(file, '.rb')
       end
@@ -26,8 +38,17 @@ class SingleModelBenchmarkService
   end
 
   def select_from_available_implementations(implementations)
+    benchmark_type_text = case @benchmark_type
+                          when :performance
+                            'performance benchmarks'
+                          when :program_fixer
+                            'program fixer benchmarks'
+                          else
+                            'all benchmarks'
+                          end
+
     selection = @prompt.select(
-      'Choose an implementation to run across all benchmarks:',
+      "Choose an implementation to run across #{benchmark_type_text}:",
       implementations.to_a,
       per_page: 20,
       filter: true,
