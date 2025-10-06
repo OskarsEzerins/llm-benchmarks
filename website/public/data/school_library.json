@@ -671,6 +671,90 @@
         "primary_metric": 0.75,
         "success": true
       }
+    },
+    {
+      "implementation": "qwen3_max_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:24:56+00:00",
+      "metrics": {
+        "rubocop_offenses": 5,
+        "tests_passed": 13,
+        "total_tests": 28,
+        "success_rate": 0.4642857142857143,
+        "primary_metric": 0.4642857142857143,
+        "success": true
+      }
+    },
+    {
+      "implementation": "qwen3_coder_plus_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:25:40+00:00",
+      "metrics": {
+        "rubocop_offenses": 8,
+        "tests_passed": 15,
+        "total_tests": 28,
+        "success_rate": 0.5357142857142857,
+        "primary_metric": 0.5357142857142857,
+        "success": true
+      }
+    },
+    {
+      "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:29:03+00:00",
+      "metrics": {
+        "rubocop_offenses": 12,
+        "tests_passed": 14,
+        "total_tests": 28,
+        "success_rate": 0.5,
+        "primary_metric": 0.5,
+        "success": true
+      }
+    },
+    {
+      "implementation": "openai_5_codex_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:29:39+00:00",
+      "metrics": {
+        "rubocop_offenses": 11,
+        "tests_passed": 16,
+        "total_tests": 28,
+        "success_rate": 0.5714285714285714,
+        "primary_metric": 0.5714285714285714,
+        "success": true
+      }
+    },
+    {
+      "implementation": "grok_4_fast_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:30:16+00:00",
+      "metrics": {
+        "rubocop_offenses": 14,
+        "tests_passed": 13,
+        "total_tests": 28,
+        "success_rate": 0.4642857142857143,
+        "primary_metric": 0.4642857142857143,
+        "success": true
+      }
+    },
+    {
+      "implementation": "glm_4_6_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:30:28+00:00",
+      "metrics": {
+        "rubocop_offenses": 11,
+        "tests_passed": 13,
+        "total_tests": 28,
+        "success_rate": 0.4642857142857143,
+        "primary_metric": 0.4642857142857143,
+        "success": true
+      }
+    },
+    {
+      "implementation": "kimi_k2_0905_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:30:37+00:00",
+      "metrics": {
+        "rubocop_offenses": 8,
+        "tests_passed": 13,
+        "total_tests": 28,
+        "success_rate": 0.4642857142857143,
+        "primary_metric": 0.4642857142857143,
+        "success": true
+      }
     }
   ],
   "aggregates": {
@@ -1624,6 +1708,125 @@
       "score_breakdown": {
         "success_score": 75.0,
         "quality_score": 86.0
+      }
+    },
+    "qwen3_max_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 5.0,
+        "tests_passed": 13.0,
+        "total_tests": 28.0,
+        "success_rate": 0.464286,
+        "primary_metric": 0.464286,
+        "success": 1.0
+      },
+      "rubocop_offenses": 5,
+      "score": 50.79,
+      "score_breakdown": {
+        "success_score": 46.43,
+        "quality_score": 90.0
+      }
+    },
+    "qwen3_coder_plus_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 15.0,
+        "total_tests": 28.0,
+        "success_rate": 0.535714,
+        "primary_metric": 0.535714,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 56.61,
+      "score_breakdown": {
+        "success_score": 53.57,
+        "quality_score": 84.0
+      }
+    },
+    "deepseek_v3_2_exp_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 12.0,
+        "tests_passed": 14.0,
+        "total_tests": 28.0,
+        "success_rate": 0.5,
+        "primary_metric": 0.5,
+        "success": 1.0
+      },
+      "rubocop_offenses": 12,
+      "score": 52.6,
+      "score_breakdown": {
+        "success_score": 50.0,
+        "quality_score": 76.0
+      }
+    },
+    "openai_5_codex_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 11.0,
+        "tests_passed": 16.0,
+        "total_tests": 28.0,
+        "success_rate": 0.571429,
+        "primary_metric": 0.571429,
+        "success": 1.0
+      },
+      "rubocop_offenses": 11,
+      "score": 59.23,
+      "score_breakdown": {
+        "success_score": 57.14,
+        "quality_score": 78.0
+      }
+    },
+    "grok_4_fast_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 14.0,
+        "tests_passed": 13.0,
+        "total_tests": 28.0,
+        "success_rate": 0.464286,
+        "primary_metric": 0.464286,
+        "success": 1.0
+      },
+      "rubocop_offenses": 14,
+      "score": 48.99,
+      "score_breakdown": {
+        "success_score": 46.43,
+        "quality_score": 72.0
+      }
+    },
+    "glm_4_6_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 11.0,
+        "tests_passed": 13.0,
+        "total_tests": 28.0,
+        "success_rate": 0.464286,
+        "primary_metric": 0.464286,
+        "success": 1.0
+      },
+      "rubocop_offenses": 11,
+      "score": 49.59,
+      "score_breakdown": {
+        "success_score": 46.43,
+        "quality_score": 78.0
+      }
+    },
+    "kimi_k2_0905_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 13.0,
+        "total_tests": 28.0,
+        "success_rate": 0.464286,
+        "primary_metric": 0.464286,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 50.19,
+      "score_breakdown": {
+        "success_score": 46.43,
+        "quality_score": 84.0
       }
     }
   }
