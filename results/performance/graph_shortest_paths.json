@@ -3652,6 +3652,76 @@
         "execution_time": 0.4165,
         "rubocop_offenses": 22
       }
+    },
+    {
+      "implementation": "gemini_2_5_flash_preview_05_20_openrouter_06_2025",
+      "timestamp": "2025-10-06T05:30:36+00:00",
+      "metrics": {
+        "rubocop_offenses": 8,
+        "execution_time": 0.261,
+        "primary_metric": 0.261,
+        "success": true
+      }
+    },
+    {
+      "implementation": "kimi_k2_0905_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:17:20+00:00",
+      "metrics": {
+        "rubocop_offenses": 8,
+        "execution_time": 0.2857,
+        "primary_metric": 0.2857,
+        "success": true
+      }
+    },
+    {
+      "implementation": "kimi_k2_0905_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:20:56+00:00",
+      "metrics": {
+        "rubocop_offenses": 8,
+        "execution_time": 0.2877,
+        "primary_metric": 0.2877,
+        "success": true
+      }
+    },
+    {
+      "implementation": "qwen3_max_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:24:36+00:00",
+      "metrics": {
+        "rubocop_offenses": 15,
+        "execution_time": 0.3116,
+        "primary_metric": 0.3116,
+        "success": true
+      }
+    },
+    {
+      "implementation": "qwen3_coder_plus_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:25:30+00:00",
+      "metrics": {
+        "rubocop_offenses": 15,
+        "execution_time": 0.3282,
+        "primary_metric": 0.3282,
+        "success": true
+      }
+    },
+    {
+      "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:28:45+00:00",
+      "metrics": {
+        "rubocop_offenses": 30,
+        "execution_time": 0.2267,
+        "primary_metric": 0.2267,
+        "success": true
+      }
+    },
+    {
+      "implementation": "openai_5_codex_openrouter_10_2025",
+      "timestamp": "2025-10-06T06:29:25+00:00",
+      "metrics": {
+        "rubocop_offenses": 10,
+        "execution_time": 0.3097,
+        "primary_metric": 0.3097,
+        "success": true
+      }
     }
   ],
   "averages": {
@@ -3705,7 +3775,12 @@
         "execution_time": 0.326107
       },
       "rubocop_offenses": 9,
-      "score": 96.04666666666667
+      "score": 95.91,
+      "score_breakdown": {
+        "best_time_score": 94.66,
+        "avg_time_score": 93.48,
+        "quality_score": 100
+      }
     },
     "openai_o1_web_chat_02_2025": {
       "run_count": 29,
@@ -3713,7 +3788,12 @@
         "execution_time": 0.331262
       },
       "rubocop_offenses": 16,
-      "score": 95.91333333333334
+      "score": 95.76,
+      "score_breakdown": {
+        "best_time_score": 94.36,
+        "avg_time_score": 93.38,
+        "quality_score": 100
+      }
     },
     "claude_3_5_sonnet_cursor_02_2025": {
       "run_count": 29,
@@ -3721,7 +3801,12 @@
         "execution_time": 0.362821
       },
       "rubocop_offenses": 9,
-      "score": 95.58999999999999
+      "score": 95.43,
+      "score_breakdown": {
+        "best_time_score": 94.02,
+        "avg_time_score": 92.75,
+        "quality_score": 100
+      }
     },
     "deepseek_r1_web_chat_02_2025": {
       "run_count": 29,
@@ -3729,7 +3814,12 @@
         "execution_time": 0.324586
       },
       "rubocop_offenses": 12,
-      "score": 96.06333333333333
+      "score": 95.92,
+      "score_breakdown": {
+        "best_time_score": 94.68,
+        "avg_time_score": 93.51,
+        "quality_score": 100
+      }
     },
     "gemini_2_0_flash_web_chat_02_2025": {
       "run_count": 29,
@@ -3737,7 +3827,12 @@
         "execution_time": 0.324817
       },
       "rubocop_offenses": 12,
-      "score": 96.07000000000001
+      "score": 95.93,
+      "score_breakdown": {
+        "best_time_score": 94.7,
+        "avg_time_score": 93.51,
+        "quality_score": 100
+      }
     },
     "openai_4o_web_chat_02_2025": {
       "run_count": 29,
@@ -3745,7 +3840,12 @@
         "execution_time": 0.363872
       },
       "rubocop_offenses": 8,
-      "score": 95.54333333333334
+      "score": 95.38,
+      "score_breakdown": {
+        "best_time_score": 93.91,
+        "avg_time_score": 92.72,
+        "quality_score": 100
+      }
     },
     "openai_o3_mini_web_chat_02_2025": {
       "run_count": 29,
@@ -3753,7 +3853,12 @@
         "execution_time": 0.348179
       },
       "rubocop_offenses": 9,
-      "score": 95.74666666666667
+      "score": 95.59,
+      "score_breakdown": {
+        "best_time_score": 94.2,
+        "avg_time_score": 93.04,
+        "quality_score": 100
+      }
     },
     "qwen_2_5_max_02_2025": {
       "run_count": 22,
@@ -3762,7 +3867,12 @@
         "rubocop_offenses": 8.0
       },
       "rubocop_offenses": 8,
-      "score": 96.18666666666667
+      "score": 96.06,
+      "score_breakdown": {
+        "best_time_score": 94.87,
+        "avg_time_score": 93.69,
+        "quality_score": 100
+      }
     },
     "deepseek_v3_web_chat_02_2025": {
       "run_count": 20,
@@ -3771,7 +3881,12 @@
         "rubocop_offenses": 16.0
       },
       "rubocop_offenses": 16,
-      "score": 99.85333333333334
+      "score": 99.86,
+      "score_breakdown": {
+        "best_time_score": 99.97,
+        "avg_time_score": 99.59,
+        "quality_score": 100
+      }
     },
     "gemini_2_0_pro_exp_cursor_chat_02_2025": {
       "run_count": 18,
@@ -3780,7 +3895,12 @@
         "rubocop_offenses": 9.0
       },
       "rubocop_offenses": 9,
-      "score": 96.74666666666667
+      "score": 96.65,
+      "score_breakdown": {
+        "best_time_score": 95.75,
+        "avg_time_score": 94.49,
+        "quality_score": 100
+      }
     },
     "claude_3_7_sonnet_thinking_cursor_02_2025": {
       "run_count": 15,
@@ -3789,7 +3909,12 @@
         "rubocop_offenses": 13.0
       },
       "rubocop_offenses": 13,
-      "score": 95.53666666666668
+      "score": 95.38,
+      "score_breakdown": {
+        "best_time_score": 93.93,
+        "avg_time_score": 92.68,
+        "quality_score": 100
+      }
     },
     "claude_3_7_sonnet_thinking_vscode_03_2025": {
       "run_count": 12,
@@ -3798,7 +3923,12 @@
         "rubocop_offenses": 12.0
       },
       "rubocop_offenses": 12,
-      "score": 95.46
+      "score": 95.28,
+      "score_breakdown": {
+        "best_time_score": 93.66,
+        "avg_time_score": 92.72,
+        "quality_score": 100
+      }
     },
     "claude_3_7_sonnet_vscode_03_2025": {
       "run_count": 12,
@@ -3807,7 +3937,12 @@
         "rubocop_offenses": 11.0
       },
       "rubocop_offenses": 11,
-      "score": 96.14999999999999
+      "score": 96.01,
+      "score_breakdown": {
+        "best_time_score": 94.7,
+        "avg_time_score": 93.75,
+        "quality_score": 100
+      }
     },
     "openai_o3_mini_web_chat_03_2025": {
       "run_count": 12,
@@ -3816,7 +3951,12 @@
         "rubocop_offenses": 7.0
       },
       "rubocop_offenses": 7,
-      "score": 96.17333333333333
+      "score": 96.03,
+      "score_breakdown": {
+        "best_time_score": 94.69,
+        "avg_time_score": 93.83,
+        "quality_score": 100
+      }
     },
     "mistral_web_03_2025": {
       "run_count": 11,
@@ -3825,7 +3965,12 @@
         "rubocop_offenses": 10.0
       },
       "rubocop_offenses": 10,
-      "score": 96.53333333333335
+      "score": 96.41,
+      "score_breakdown": {
+        "best_time_score": 95.31,
+        "avg_time_score": 94.29,
+        "quality_score": 100
+      }
     },
     "gemini_2_5_pro_exp_chat_03_2025": {
       "run_count": 10,
@@ -3834,7 +3979,12 @@
         "rubocop_offenses": 19.0
       },
       "rubocop_offenses": 19,
-      "score": 93.57000000000001
+      "score": 93.29,
+      "score_breakdown": {
+        "best_time_score": 90.76,
+        "avg_time_score": 89.95,
+        "quality_score": 100
+      }
     },
     "openai_4_1_mini_openai_api_04_2025": {
       "run_count": 9,
@@ -3843,7 +3993,12 @@
         "rubocop_offenses": 17.0
       },
       "rubocop_offenses": 17,
-      "score": 96.99000000000001
+      "score": 96.88,
+      "score_breakdown": {
+        "best_time_score": 95.85,
+        "avg_time_score": 95.12,
+        "quality_score": 100
+      }
     },
     "openai_o4_mini_web_chat_04_2025": {
       "run_count": 9,
@@ -3852,7 +4007,12 @@
         "rubocop_offenses": 10.0
       },
       "rubocop_offenses": 10,
-      "score": 96.16333333333334
+      "score": 96.01,
+      "score_breakdown": {
+        "best_time_score": 94.63,
+        "avg_time_score": 93.86,
+        "quality_score": 100
+      }
     },
     "openai_4_1_nano_openai_api_04_2025": {
       "run_count": 9,
@@ -3861,7 +4021,12 @@
         "rubocop_offenses": 18.0
       },
       "rubocop_offenses": 18,
-      "score": 99.65333333333335
+      "score": 99.65,
+      "score_breakdown": {
+        "best_time_score": 99.59,
+        "avg_time_score": 99.37,
+        "quality_score": 100
+      }
     },
     "openai_o4_high_web_chat_04_2025": {
       "run_count": 9,
@@ -3870,7 +4035,12 @@
         "rubocop_offenses": 15.0
       },
       "rubocop_offenses": 15,
-      "score": 95.71
+      "score": 95.54,
+      "score_breakdown": {
+        "best_time_score": 94.02,
+        "avg_time_score": 93.11,
+        "quality_score": 100
+      }
     },
     "claude_4_sonnet_web_chat_05_2025": {
       "run_count": 7,
@@ -3879,7 +4049,12 @@
         "rubocop_offenses": 13.0
       },
       "rubocop_offenses": 13,
-      "score": 95.32000000000001
+      "score": 95.14,
+      "score_breakdown": {
+        "best_time_score": 93.56,
+        "avg_time_score": 92.4,
+        "quality_score": 100
+      }
     },
     "deepseek_v3_free_openrouter_05_2025": {
       "run_count": 5,
@@ -3888,7 +4063,12 @@
         "rubocop_offenses": 12.0
       },
       "rubocop_offenses": 12,
-      "score": 99.99000000000001
+      "score": 99.99,
+      "score_breakdown": {
+        "best_time_score": 99.99,
+        "avg_time_score": 99.98,
+        "quality_score": 100
+      }
     },
     "claude_3_5_haiku_openrouter_05_2025": {
       "run_count": 6,
@@ -3897,7 +4077,12 @@
         "rubocop_offenses": 5.0
       },
       "rubocop_offenses": 5,
-      "score": 91.04666666666667
+      "score": 90.67,
+      "score_breakdown": {
+        "best_time_score": 87.23,
+        "avg_time_score": 85.91,
+        "quality_score": 100
+      }
     },
     "gemini_2_5_flash_preview_05_20_openrouter_05_2025": {
       "run_count": 5,
@@ -3906,7 +4091,12 @@
         "rubocop_offenses": 11.0
       },
       "rubocop_offenses": 11,
-      "score": 95.05333333333333
+      "score": 94.83,
+      "score_breakdown": {
+        "best_time_score": 92.82,
+        "avg_time_score": 92.34,
+        "quality_score": 100
+      }
     },
     "claude_opus_4_openrouter_05_2025": {
       "run_count": 5,
@@ -3915,7 +4105,12 @@
         "rubocop_offenses": 23.0
       },
       "rubocop_offenses": 23,
-      "score": 96.81
+      "score": 96.68,
+      "score_breakdown": {
+        "best_time_score": 95.51,
+        "avg_time_score": 94.92,
+        "quality_score": 100
+      }
     },
     "claude_3_5_sonnet_openrouter_05_2025": {
       "run_count": 6,
@@ -3924,7 +4119,12 @@
         "rubocop_offenses": 11.0
       },
       "rubocop_offenses": 11,
-      "score": 86.36333333333334
+      "score": 85.77,
+      "score_breakdown": {
+        "best_time_score": 80.4,
+        "avg_time_score": 78.69,
+        "quality_score": 100
+      }
     },
     "openai_o4_mini_high_openrouter_05_2025": {
       "run_count": 8,
@@ -3933,7 +4133,12 @@
         "rubocop_offenses": 21.0
       },
       "rubocop_offenses": 21,
-      "score": 96.36333333333333
+      "score": 96.2,
+      "score_breakdown": {
+        "best_time_score": 94.74,
+        "avg_time_score": 94.35,
+        "quality_score": 100
+      }
     },
     "gemma_3_27b_it_free_openrouter_05_2025": {
       "run_count": 5,
@@ -3942,7 +4147,12 @@
         "rubocop_offenses": 17.0
       },
       "rubocop_offenses": 17,
-      "score": 95.49666666666667
+      "score": 95.3,
+      "score_breakdown": {
+        "best_time_score": 93.54,
+        "avg_time_score": 92.95,
+        "quality_score": 100
+      }
     },
     "llama_4_maverick_openrouter_05_2025": {
       "run_count": 6,
@@ -3951,7 +4161,12 @@
         "rubocop_offenses": 9.0
       },
       "rubocop_offenses": 9,
-      "score": 95.75999999999999
+      "score": 95.57,
+      "score_breakdown": {
+        "best_time_score": 93.87,
+        "avg_time_score": 93.41,
+        "quality_score": 100
+      }
     },
     "grok_3_beta_openrouter_05_2025": {
       "run_count": 5,
@@ -3960,7 +4175,12 @@
         "rubocop_offenses": 7.0
       },
       "rubocop_offenses": 7,
-      "score": 96.11666666666667
+      "score": 95.95,
+      "score_breakdown": {
+        "best_time_score": 94.42,
+        "avg_time_score": 93.93,
+        "quality_score": 100
+      }
     },
     "openai_4_1_openrouter_05_2025": {
       "run_count": 6,
@@ -3969,7 +4189,12 @@
         "rubocop_offenses": 13.0
       },
       "rubocop_offenses": 13,
-      "score": 82.96333333333332
+      "score": 82.22,
+      "score_breakdown": {
+        "best_time_score": 75.57,
+        "avg_time_score": 73.32,
+        "quality_score": 100
+      }
     },
     "gemini_2_5_pro_preview_openrouter_05_2025": {
       "run_count": 5,
@@ -3978,16 +4203,26 @@
         "rubocop_offenses": 21.0
       },
       "rubocop_offenses": 21,
-      "score": 95.73666666666666
+      "score": 95.55,
+      "score_breakdown": {
+        "best_time_score": 93.85,
+        "avg_time_score": 93.36,
+        "quality_score": 100
+      }
     },
     "gemini_2_5_flash_preview_05_20_openrouter_06_2025": {
-      "run_count": 3,
+      "run_count": 4,
       "metrics": {
-        "execution_time": 0.3017,
-        "rubocop_offenses": 11.0
+        "execution_time": 0.291525,
+        "rubocop_offenses": 10.25
       },
       "rubocop_offenses": 11,
-      "score": 96.11333333333334
+      "score": 96.16,
+      "score_breakdown": {
+        "best_time_score": 94.78,
+        "avg_time_score": 94.17,
+        "quality_score": 100
+      }
     },
     "claude_3_7_sonnet_thinking_openrouter_06_2025": {
       "run_count": 2,
@@ -3996,7 +4231,12 @@
         "rubocop_offenses": 33.0
       },
       "rubocop_offenses": 33,
-      "score": 94.67666666666666
+      "score": 94.46,
+      "score_breakdown": {
+        "best_time_score": 92.51,
+        "avg_time_score": 91.52,
+        "quality_score": 100
+      }
     },
     "openai_o4_mini_openrouter_06_2025": {
       "run_count": 2,
@@ -4005,7 +4245,12 @@
         "rubocop_offenses": 16.0
       },
       "rubocop_offenses": 16,
-      "score": 96.35666666666667
+      "score": 96.21,
+      "score_breakdown": {
+        "best_time_score": 94.93,
+        "avg_time_score": 94.14,
+        "quality_score": 100
+      }
     },
     "openai_4o_openrouter_06_2025": {
       "run_count": 2,
@@ -4014,7 +4259,12 @@
         "rubocop_offenses": 15.0
       },
       "rubocop_offenses": 15,
-      "score": 95.32333333333334
+      "score": 95.13,
+      "score_breakdown": {
+        "best_time_score": 93.37,
+        "avg_time_score": 92.6,
+        "quality_score": 100
+      }
     },
     "openai_4o_mini_openrouter_06_2025": {
       "run_count": 2,
@@ -4023,7 +4273,12 @@
         "rubocop_offenses": 10.0
       },
       "rubocop_offenses": 10,
-      "score": 99.98333333333333
+      "score": 99.98,
+      "score_breakdown": {
+        "best_time_score": 99.98,
+        "avg_time_score": 99.97,
+        "quality_score": 100
+      }
     },
     "claude_3_7_sonnet_openrouter_06_2025": {
       "run_count": 2,
@@ -4032,7 +4287,12 @@
         "rubocop_offenses": 30.0
       },
       "rubocop_offenses": 30,
-      "score": 95.23333333333333
+      "score": 95.03,
+      "score_breakdown": {
+        "best_time_score": 93.18,
+        "avg_time_score": 92.52,
+        "quality_score": 100
+      }
     },
     "openai_4_1_mini_openrouter_06_2025": {
       "run_count": 2,
@@ -4041,7 +4301,12 @@
         "rubocop_offenses": 12.0
       },
       "rubocop_offenses": 12,
-      "score": 96.06
+      "score": 95.89,
+      "score_breakdown": {
+        "best_time_score": 94.33,
+        "avg_time_score": 93.85,
+        "quality_score": 100
+      }
     },
     "kimi_k2_openrouter_07_2025": {
       "run_count": 2,
@@ -4050,7 +4315,12 @@
         "rubocop_offenses": 18.0
       },
       "rubocop_offenses": 18,
-      "score": 93.63
+      "score": 93.32,
+      "score_breakdown": {
+        "best_time_score": 90.5,
+        "avg_time_score": 90.39,
+        "quality_score": 100
+      }
     },
     "claude_sonnet_4_openrouter_07_2025": {
       "run_count": 2,
@@ -4059,7 +4329,12 @@
         "rubocop_offenses": 22.0
       },
       "rubocop_offenses": 22,
-      "score": 94.41666666666667
+      "score": 94.14,
+      "score_breakdown": {
+        "best_time_score": 91.67,
+        "avg_time_score": 91.58,
+        "quality_score": 100
+      }
     },
     "qwen3_coder_openrouter_07_2025": {
       "run_count": 2,
@@ -4068,7 +4343,92 @@
         "rubocop_offenses": 9.0
       },
       "rubocop_offenses": 9,
-      "score": 94.48
+      "score": 94.22,
+      "score_breakdown": {
+        "best_time_score": 91.86,
+        "avg_time_score": 91.58,
+        "quality_score": 100
+      }
+    },
+    "kimi_k2_0905_openrouter_10_2025": {
+      "run_count": 2,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "execution_time": 0.2867,
+        "primary_metric": 0.2867,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 96.0,
+      "score_breakdown": {
+        "best_time_score": 94.29,
+        "avg_time_score": 94.27,
+        "quality_score": 100
+      }
+    },
+    "qwen3_max_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 15.0,
+        "execution_time": 0.3116,
+        "primary_metric": 0.3116,
+        "success": 1.0
+      },
+      "rubocop_offenses": 15,
+      "score": 95.64,
+      "score_breakdown": {
+        "best_time_score": 93.77,
+        "avg_time_score": 93.77,
+        "quality_score": 100
+      }
+    },
+    "qwen3_coder_plus_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 15.0,
+        "execution_time": 0.3282,
+        "primary_metric": 0.3282,
+        "success": 1.0
+      },
+      "rubocop_offenses": 15,
+      "score": 95.41,
+      "score_breakdown": {
+        "best_time_score": 93.44,
+        "avg_time_score": 93.44,
+        "quality_score": 100
+      }
+    },
+    "deepseek_v3_2_exp_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 30.0,
+        "execution_time": 0.2267,
+        "primary_metric": 0.2267,
+        "success": 1.0
+      },
+      "rubocop_offenses": 30,
+      "score": 96.83,
+      "score_breakdown": {
+        "best_time_score": 95.47,
+        "avg_time_score": 95.47,
+        "quality_score": 100
+      }
+    },
+    "openai_5_codex_openrouter_10_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 10.0,
+        "execution_time": 0.3097,
+        "primary_metric": 0.3097,
+        "success": 1.0
+      },
+      "rubocop_offenses": 10,
+      "score": 95.67,
+      "score_breakdown": {
+        "best_time_score": 93.81,
+        "avg_time_score": 93.81,
+        "quality_score": 100
+      }
     }
   }
 }
