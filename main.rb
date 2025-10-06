@@ -55,7 +55,7 @@ class Main
   end
 
   def run_benchmarks
-    benchmark_type = BenchmarkTypeSelectorService.new.select
+    benchmark_type = BenchmarkTypeSelectorService.new.select(:benchmark)
     return puts 'No benchmark type selected.' unless benchmark_type
 
     benchmark = select_benchmark(benchmark_type)
@@ -69,7 +69,7 @@ class Main
         run_all_benchmarks_of_type(benchmark_type)
       end
     when :single_model
-      SingleModelBenchmarkService.new(@prompt).run
+      SingleModelBenchmarkService.new(@prompt, benchmark_type).run
     else
       implementations = select_implementations(benchmark)
       BenchmarkRunnerService.new(benchmark, implementations).run
