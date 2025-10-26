@@ -11,9 +11,16 @@ class BenchmarkTypeSelectorService
     @prompt = TTY::Prompt.new
   end
 
-  def select
+  def select(context = :implementation)
+    prompt_text = case context
+                  when :benchmark
+                    "\nSelect benchmark type to run:"
+                  else
+                    "\nSelect benchmark type for new implementations:"
+                  end
+
     @prompt.select(
-      "\nSelect benchmark type for new implementations:",
+      prompt_text,
       BENCHMARK_TYPE_OPTIONS,
       per_page: 20,
       filter: true,
