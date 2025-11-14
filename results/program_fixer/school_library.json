@@ -767,6 +767,54 @@
         "primary_metric": 0.4642857142857143,
         "success": true
       }
+    },
+    {
+      "implementation": "openai_5_1_chat_openrouter_11_2025",
+      "timestamp": "2025-11-14T11:08:04+02:00",
+      "metrics": {
+        "rubocop_offenses": 6,
+        "tests_passed": 21,
+        "total_tests": 28,
+        "success_rate": 0.75,
+        "primary_metric": 0.75,
+        "success": true
+      }
+    },
+    {
+      "implementation": "openai_5_1_openrouter_11_2025",
+      "timestamp": "2025-11-14T11:08:29+02:00",
+      "metrics": {
+        "rubocop_offenses": 37,
+        "tests_passed": 9,
+        "total_tests": 28,
+        "success_rate": 0.32142857142857145,
+        "primary_metric": 0.32142857142857145,
+        "success": true
+      }
+    },
+    {
+      "implementation": "openai_5_1_codex_mini_openrouter_11_2025",
+      "timestamp": "2025-11-14T11:09:01+02:00",
+      "metrics": {
+        "rubocop_offenses": 5,
+        "tests_passed": 19,
+        "total_tests": 28,
+        "success_rate": 0.6785714285714286,
+        "primary_metric": 0.6785714285714286,
+        "success": true
+      }
+    },
+    {
+      "implementation": "openai_5_1_codex_openrouter_11_2025",
+      "timestamp": "2025-11-14T11:09:14+02:00",
+      "metrics": {
+        "rubocop_offenses": 8,
+        "tests_passed": 20,
+        "total_tests": 28,
+        "success_rate": 0.7142857142857143,
+        "primary_metric": 0.7142857142857143,
+        "success": true
+      }
     }
   ],
   "aggregates": {
@@ -1856,6 +1904,74 @@
       "score_breakdown": {
         "success_score": 46.43,
         "quality_score": 74.0
+      }
+    },
+    "openai_5_1_chat_openrouter_11_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 6.0,
+        "tests_passed": 21.0,
+        "total_tests": 28.0,
+        "success_rate": 0.75,
+        "primary_metric": 0.75,
+        "success": 1.0
+      },
+      "rubocop_offenses": 6,
+      "score": 76.3,
+      "score_breakdown": {
+        "success_score": 75.0,
+        "quality_score": 88.0
+      }
+    },
+    "openai_5_1_openrouter_11_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 37.0,
+        "tests_passed": 9.0,
+        "total_tests": 28.0,
+        "success_rate": 0.321429,
+        "primary_metric": 0.321429,
+        "success": 1.0
+      },
+      "rubocop_offenses": 37,
+      "score": 31.53,
+      "score_breakdown": {
+        "success_score": 32.14,
+        "quality_score": 26.0
+      }
+    },
+    "openai_5_1_codex_mini_openrouter_11_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 5.0,
+        "tests_passed": 19.0,
+        "total_tests": 28.0,
+        "success_rate": 0.678571,
+        "primary_metric": 0.678571,
+        "success": 1.0
+      },
+      "rubocop_offenses": 5,
+      "score": 70.07,
+      "score_breakdown": {
+        "success_score": 67.86,
+        "quality_score": 90.0
+      }
+    },
+    "openai_5_1_codex_openrouter_11_2025": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 20.0,
+        "total_tests": 28.0,
+        "success_rate": 0.714286,
+        "primary_metric": 0.714286,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 72.69,
+      "score_breakdown": {
+        "success_score": 71.43,
+        "quality_score": 84.0
       }
     }
   }

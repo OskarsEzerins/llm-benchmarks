@@ -12,10 +12,12 @@ const MODEL_NORMALIZATION_RULES: ModelNormalizationRule[] = [
   { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*mini/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}-mini` },
   { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*preview/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}-preview` },
   { pattern: /^openai[_\s]*o[_\s]*(\d+(?:[_\s]*\d+)*)(?![\w\d])/i, transform: (m: RegExpMatchArray) => `OpenAI o${m[1].replace(/[_\s]+/g, '.')}` },
-  
+
   // GPT-5 variants
+  { pattern: /^openai[_\s]*(5(?:[_\s]*\d+)*)[_\s]*codex[_\s]*mini/i, transform: (m: RegExpMatchArray) => `OpenAI ${m[1].replace(/[_\s]+/g, '.')} Codex Mini` },
+  { pattern: /^openai[_\s]*(5(?:[_\s]*\d+)*)[_\s]*codex/i, transform: (m: RegExpMatchArray) => `OpenAI ${m[1].replace(/[_\s]+/g, '.')} Codex` },
   { pattern: /^openai[_\s]*(5(?:[_\s]*\d+)*)[_\s]*chat/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')} Chat` },
-  
+
   { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o[_\s]*latest/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o` },
   { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o[_\s]*mini/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o mini` },
   { pattern: /^openai[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*o/i, transform: (m: RegExpMatchArray) => `OpenAI GPT-${m[1].replace(/[_\s]+/g, '.')}o` },
@@ -28,7 +30,7 @@ const MODEL_NORMALIZATION_RULES: ModelNormalizationRule[] = [
   // Claude models with flexible versioning (Series 4+ format: claude_model_version, Series 3: claude_version_model)
   // Series 4 format: claude_sonnet_4, claude_opus_4_1
   { pattern: /^claude[_\s]*(sonnet|opus|haiku)[_\s]*(\d+(?:[_\s]*\d+)*)/i, transform: (m: RegExpMatchArray) => `Claude ${m[2].replace(/[_\s]+/g, '.')} ${m[1].charAt(0).toUpperCase() + m[1].slice(1)}` },
-  
+
   // Series 3 format: claude_3_5_sonnet, claude_3_7_sonnet_thinking
   { pattern: /^claude[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*(sonnet|opus|haiku)[_\s]*thinking/i, transform: (m: RegExpMatchArray) => `Claude ${m[1].replace(/[_\s]+/g, '.')} ${m[2].charAt(0).toUpperCase() + m[2].slice(1)} (Thinking)` },
   { pattern: /^claude[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*(sonnet|opus|haiku)/i, transform: (m: RegExpMatchArray) => `Claude ${m[1].replace(/[_\s]+/g, '.')} ${m[2].charAt(0).toUpperCase() + m[2].slice(1)}` },
