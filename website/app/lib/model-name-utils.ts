@@ -36,6 +36,7 @@ const MODEL_NORMALIZATION_RULES: ModelNormalizationRule[] = [
   { pattern: /^claude[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*(sonnet|opus|haiku)/i, transform: (m: RegExpMatchArray) => `Claude ${m[1].replace(/[_\s]+/g, '.')} ${m[2].charAt(0).toUpperCase() + m[2].slice(1)}` },
 
   // Gemini models with flexible versioning
+  { pattern: /^gemini[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*pro[_\s]*preview/i, transform: (m: RegExpMatchArray) => `Gemini ${m[1].replace(/[_\s]+/g, '.')} Pro Preview` },
   { pattern: /^gemini[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*pro/i, transform: (m: RegExpMatchArray) => `Gemini ${m[1].replace(/[_\s]+/g, '.')} Pro` },
   { pattern: /^gemini[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*flash[_\s]*lite/i, transform: (m: RegExpMatchArray) => `Gemini ${m[1].replace(/[_\s]+/g, '.')} Flash Lite` },
   { pattern: /^gemini[_\s]*(\d+(?:[_\s]*\d+)*)[_\s]*flash[_\s]*(\d+)/i, transform: (m: RegExpMatchArray) => `Gemini ${m[1].replace(/[_\s]+/g, '.')} Flash-${m[2]}` },
