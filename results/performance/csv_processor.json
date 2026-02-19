@@ -4157,6 +4157,16 @@
         "primary_metric": 1.1165,
         "success": true
       }
+    },
+    {
+      "implementation": "minimax_m2_5_openrouter_02_2026",
+      "timestamp": "2026-02-19T22:06:02+02:00",
+      "metrics": {
+        "rubocop_offenses": 13,
+        "execution_time": 1.6122,
+        "primary_metric": 1.6122,
+        "success": true
+      }
     }
   ],
   "aggregates": {
@@ -4883,6 +4893,22 @@
       "score_breakdown": {
         "best_time_score": 77.67,
         "avg_time_score": 77.67,
+        "quality_score": 100
+      }
+    },
+    "minimax_m2_5_openrouter_02_2026": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 13.0,
+        "execution_time": 1.6122,
+        "primary_metric": 1.6122,
+        "success": 1.0
+      },
+      "rubocop_offenses": 13,
+      "score": 77.43,
+      "score_breakdown": {
+        "best_time_score": 67.76,
+        "avg_time_score": 67.76,
         "quality_score": 100
       }
     }
