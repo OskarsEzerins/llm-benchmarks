@@ -3063,12 +3063,12 @@
       }
     },
     {
-      "implementation": "minimax_m2_5_openrouter_02_2026",
-      "timestamp": "2026-02-18T00:33:31+00:00",
+      "implementation": "glm_5_openrouter_02_2026",
+      "timestamp": "2026-02-17T23:55:29+00:00",
       "metrics": {
-        "rubocop_offenses": 2,
-        "execution_time": 0.7856,
-        "primary_metric": 0.7856,
+        "rubocop_offenses": 5,
+        "execution_time": 0.4954,
+        "primary_metric": 0.4954,
         "success": true
       }
     }
@@ -3630,19 +3630,19 @@
         "quality_score": 100
       }
     },
-    "minimax_m2_5_openrouter_02_2026": {
+    "glm_5_openrouter_02_2026": {
       "run_count": 1,
       "metrics": {
-        "rubocop_offenses": 2.0,
-        "execution_time": 0.7856,
-        "primary_metric": 0.7856,
+        "rubocop_offenses": 5.0,
+        "execution_time": 0.4954,
+        "primary_metric": 0.4954,
         "success": 1.0
       },
-      "rubocop_offenses": 2,
-      "score": 89.0,
+      "rubocop_offenses": 5,
+      "score": 93.07,
       "score_breakdown": {
-        "best_time_score": 84.29,
-        "avg_time_score": 84.29,
+        "best_time_score": 90.09,
+        "avg_time_score": 90.09,
         "quality_score": 100
       }
     }
