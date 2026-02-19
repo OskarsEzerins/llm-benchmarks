@@ -995,6 +995,18 @@
         "primary_metric": 0.8695652173913043,
         "success": true
       }
+    },
+    {
+      "implementation": "gemini_3_1_pro_preview_openrouter_02_2026",
+      "timestamp": "2026-02-19T21:56:51+02:00",
+      "metrics": {
+        "rubocop_offenses": 14,
+        "tests_passed": 17,
+        "total_tests": 23,
+        "success_rate": 0.7391304347826086,
+        "primary_metric": 0.7391304347826086,
+        "success": true
+      }
     }
   ],
   "aggregates": {
@@ -2407,6 +2419,23 @@
       "score_breakdown": {
         "success_score": 86.96,
         "quality_score": 66.0
+      }
+    },
+    "gemini_3_1_pro_preview_openrouter_02_2026": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 14.0,
+        "tests_passed": 17.0,
+        "total_tests": 23.0,
+        "success_rate": 0.73913,
+        "primary_metric": 0.73913,
+        "success": 1.0
+      },
+      "rubocop_offenses": 14,
+      "score": 73.72,
+      "score_breakdown": {
+        "success_score": 73.91,
+        "quality_score": 72.0
       }
     }
   }
