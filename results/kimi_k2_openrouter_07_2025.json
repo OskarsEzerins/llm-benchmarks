@@ -1,0 +1,139 @@
+{
+  "implementation": "kimi_k2_openrouter_07_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "kimi_k2_openrouter_07_2025",
+        "timestamp": "2025-07-22T21:03:46+03:00",
+        "metrics": {
+          "execution_time": 0.5874,
+          "rubocop_offenses": 21
+        }
+      },
+      {
+        "implementation": "kimi_k2_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:38:00+03:00",
+        "metrics": {
+          "execution_time": 0.5691,
+          "rubocop_offenses": 21
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.57825,
+        "rubocop_offenses": 21.0
+      },
+      "rubocop_offenses": 21,
+      "score": 91.98,
+      "score_breakdown": {
+        "best_time_score": 88.62,
+        "avg_time_score": 88.44,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "kimi_k2_openrouter_07_2025",
+        "timestamp": "2025-07-22T21:03:18+03:00",
+        "metrics": {
+          "execution_time": 0.4858,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "kimi_k2_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:26:18+03:00",
+        "metrics": {
+          "execution_time": 0.4749,
+          "rubocop_offenses": 18
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.48035,
+        "rubocop_offenses": 18.0
+      },
+      "rubocop_offenses": 18,
+      "score": 93.32,
+      "score_breakdown": {
+        "best_time_score": 90.5,
+        "avg_time_score": 90.39,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "kimi_k2_openrouter_07_2025",
+        "timestamp": "2025-07-22T21:03:08+03:00",
+        "metrics": {
+          "execution_time": 2.1201,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "kimi_k2_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:14:10+03:00",
+        "metrics": {
+          "execution_time": 1.871,
+          "rubocop_offenses": 1
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.99555,
+        "rubocop_offenses": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 73.06,
+      "score_breakdown": {
+        "best_time_score": 62.58,
+        "avg_time_score": 60.09,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "kimi_k2_openrouter_07_2025",
+        "timestamp": "2025-07-22T21:03:42+03:00",
+        "metrics": {
+          "execution_time": 2.55,
+          "rubocop_offenses": 13
+        }
+      },
+      {
+        "implementation": "kimi_k2_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:36:35+03:00",
+        "metrics": {
+          "execution_time": 2.4546,
+          "rubocop_offenses": 13
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 2.5023,
+        "rubocop_offenses": 13.0
+      },
+      "rubocop_offenses": 13,
+      "score": 65.35,
+      "score_breakdown": {
+        "best_time_score": 50.91,
+        "avg_time_score": 49.95,
+        "quality_score": 100
+      }
+    }
+  }
+}

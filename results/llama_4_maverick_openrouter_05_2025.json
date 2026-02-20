@@ -1,0 +1,193 @@
+{
+  "implementation": "llama_4_maverick_openrouter_05_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:22:36+03:00",
+        "metrics": {
+          "execution_time": 0.3413,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-05-25T18:01:35+03:00",
+        "metrics": {
+          "execution_time": 0.3548,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:59:47+03:00",
+        "metrics": {
+          "execution_time": 0.3462,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:11:57+03:00",
+        "metrics": {
+          "execution_time": 0.3903,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:37:17+03:00",
+        "metrics": {
+          "execution_time": 0.4267,
+          "rubocop_offenses": 3
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.37186,
+        "rubocop_offenses": 3.0
+      },
+      "rubocop_offenses": 3,
+      "score": 95.04,
+      "score_breakdown": {
+        "best_time_score": 93.18,
+        "avg_time_score": 92.56,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:21:26+03:00",
+        "metrics": {
+          "execution_time": 0.32,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:22:34+03:00",
+        "metrics": {
+          "execution_time": 0.3207,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:51:46+03:00",
+        "metrics": {
+          "execution_time": 0.3068,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:52:03+03:00",
+        "metrics": {
+          "execution_time": 0.3163,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:01:55+03:00",
+        "metrics": {
+          "execution_time": 0.32,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:21:10+03:00",
+        "metrics": {
+          "execution_time": 0.3947,
+          "rubocop_offenses": 9
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 6,
+      "metrics": {
+        "execution_time": 0.32975,
+        "rubocop_offenses": 9.0
+      },
+      "rubocop_offenses": 9,
+      "score": 95.57,
+      "score_breakdown": {
+        "best_time_score": 93.87,
+        "avg_time_score": 93.41,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:21:19+03:00",
+        "metrics": {
+          "execution_time": 1.5041,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:22:26+03:00",
+        "metrics": {
+          "execution_time": 1.5153,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:47:18+03:00",
+        "metrics": {
+          "execution_time": 1.5182,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:47:28+03:00",
+        "metrics": {
+          "execution_time": 1.4972,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-06-01T20:57:01+03:00",
+        "metrics": {
+          "execution_time": 1.4772,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "llama_4_maverick_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:17:24+03:00",
+        "metrics": {
+          "execution_time": 1.8299,
+          "rubocop_offenses": 1
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 6,
+      "metrics": {
+        "execution_time": 1.556983,
+        "rubocop_offenses": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 78.84,
+      "score_breakdown": {
+        "best_time_score": 70.46,
+        "avg_time_score": 68.86,
+        "quality_score": 100
+      }
+    }
+  }
+}

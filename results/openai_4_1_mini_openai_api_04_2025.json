@@ -1,0 +1,363 @@
+{
+  "implementation": "openai_4_1_mini_openai_api_04_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-04-16T23:17:23+03:00",
+        "metrics": {
+          "execution_time": 0.3314,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-04-22T11:11:41+03:00",
+        "metrics": {
+          "execution_time": 0.3537,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:15:23+03:00",
+        "metrics": {
+          "execution_time": 0.3603,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:31:01+03:00",
+        "metrics": {
+          "execution_time": 0.3448,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T12:11:36+03:00",
+        "metrics": {
+          "execution_time": 0.3519,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T18:02:06+03:00",
+        "metrics": {
+          "execution_time": 0.3464,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-06-01T19:59:25+03:00",
+        "metrics": {
+          "execution_time": 0.349,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-06-01T21:12:44+03:00",
+        "metrics": {
+          "execution_time": 0.3385,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-07-24T00:37:14+03:00",
+        "metrics": {
+          "execution_time": 0.4285,
+          "rubocop_offenses": 6
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 9,
+      "metrics": {
+        "execution_time": 0.356056,
+        "rubocop_offenses": 6.0
+      },
+      "rubocop_offenses": 6,
+      "score": 95.21,
+      "score_breakdown": {
+        "best_time_score": 93.37,
+        "avg_time_score": 92.88,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-04-16T23:10:08+03:00",
+        "metrics": {
+          "execution_time": 0.2074,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-04-22T11:02:32+03:00",
+        "metrics": {
+          "execution_time": 0.2342,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:09:35+03:00",
+        "metrics": {
+          "execution_time": 0.2393,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:24:01+03:00",
+        "metrics": {
+          "execution_time": 0.3096,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T12:06:02+03:00",
+        "metrics": {
+          "execution_time": 0.2415,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T17:53:08+03:00",
+        "metrics": {
+          "execution_time": 0.2168,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-06-01T19:49:57+03:00",
+        "metrics": {
+          "execution_time": 0.2334,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-06-01T21:02:50+03:00",
+        "metrics": {
+          "execution_time": 0.2336,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-07-24T00:25:57+03:00",
+        "metrics": {
+          "execution_time": 0.2794,
+          "rubocop_offenses": 17
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 9,
+      "metrics": {
+        "execution_time": 0.243911,
+        "rubocop_offenses": 17.0
+      },
+      "rubocop_offenses": 17,
+      "score": 96.88,
+      "score_breakdown": {
+        "best_time_score": 95.85,
+        "avg_time_score": 95.12,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-04-16T23:07:04+03:00",
+        "metrics": {
+          "execution_time": 1.4013,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-04-22T10:59:17+03:00",
+        "metrics": {
+          "execution_time": 1.6088,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:03:18+03:00",
+        "metrics": {
+          "execution_time": 1.5447,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:22:58+03:00",
+        "metrics": {
+          "execution_time": 1.533,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T12:01:14+03:00",
+        "metrics": {
+          "execution_time": 1.5156,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T17:49:46+03:00",
+        "metrics": {
+          "execution_time": 1.5015,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-06-01T19:45:37+03:00",
+        "metrics": {
+          "execution_time": 1.4526,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-06-01T20:53:48+03:00",
+        "metrics": {
+          "execution_time": 1.5551,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-07-24T00:14:30+03:00",
+        "metrics": {
+          "execution_time": 1.884,
+          "rubocop_offenses": 0
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 9,
+      "metrics": {
+        "execution_time": 1.555178,
+        "rubocop_offenses": 0.0
+      },
+      "rubocop_offenses": 0,
+      "score": 79.46,
+      "score_breakdown": {
+        "best_time_score": 71.98,
+        "avg_time_score": 68.9,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-04-16T23:14:06+03:00",
+        "metrics": {
+          "execution_time": 1.6235,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-04-22T11:07:31+03:00",
+        "metrics": {
+          "execution_time": 2.2236,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:12:03+03:00",
+        "metrics": {
+          "execution_time": 1.4998,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:30:34+03:00",
+        "metrics": {
+          "execution_time": 2.0727,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T12:09:21+03:00",
+        "metrics": {
+          "execution_time": 1.6808,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-05-25T17:55:22+03:00",
+        "metrics": {
+          "execution_time": 1.3295,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-06-01T19:53:53+03:00",
+        "metrics": {
+          "execution_time": 1.2547,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-06-01T21:05:04+03:00",
+        "metrics": {
+          "execution_time": 1.7848,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4_1_mini_openai_api_04_2025",
+        "timestamp": "2025-07-24T00:35:02+03:00",
+        "metrics": {
+          "execution_time": 1.7283,
+          "rubocop_offenses": 4
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 9,
+      "metrics": {
+        "execution_time": 1.688633,
+        "rubocop_offenses": 4.0
+      },
+      "rubocop_offenses": 4,
+      "score": 79.83,
+      "score_breakdown": {
+        "best_time_score": 74.91,
+        "avg_time_score": 66.23,
+        "quality_score": 100
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "implementation": "qwen3_coder_openrouter_07_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "qwen3_coder_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:11:08+03:00",
+        "metrics": {
+          "execution_time": 1.3574,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "qwen3_coder_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:37:50+03:00",
+        "metrics": {
+          "execution_time": 1.3007,
+          "rubocop_offenses": 11
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.32905,
+        "rubocop_offenses": 11.0
+      },
+      "rubocop_offenses": 11,
+      "score": 81.62,
+      "score_breakdown": {
+        "best_time_score": 73.99,
+        "avg_time_score": 73.42,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "qwen3_coder_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:10:42+03:00",
+        "metrics": {
+          "execution_time": 0.4355,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "qwen3_coder_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:22:11+03:00",
+        "metrics": {
+          "execution_time": 0.407,
+          "rubocop_offenses": 9
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.42125,
+        "rubocop_offenses": 9.0
+      },
+      "rubocop_offenses": 9,
+      "score": 94.22,
+      "score_breakdown": {
+        "best_time_score": 91.86,
+        "avg_time_score": 91.58,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "qwen3_coder_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:10:33+03:00",
+        "metrics": {
+          "execution_time": 2.0582,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "qwen3_coder_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:18:24+03:00",
+        "metrics": {
+          "execution_time": 1.8541,
+          "rubocop_offenses": 2
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.95615,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 73.43,
+      "score_breakdown": {
+        "best_time_score": 62.92,
+        "avg_time_score": 60.88,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "qwen3_coder_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:11:00+03:00",
+        "metrics": {
+          "execution_time": 1.5982,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "qwen3_coder_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:28:13+03:00",
+        "metrics": {
+          "execution_time": 1.5702,
+          "rubocop_offenses": 11
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.5842,
+        "rubocop_offenses": 11.0
+      },
+      "rubocop_offenses": 11,
+      "score": 77.93,
+      "score_breakdown": {
+        "best_time_score": 68.6,
+        "avg_time_score": 68.32,
+        "quality_score": 100
+      }
+    }
+  }
+}

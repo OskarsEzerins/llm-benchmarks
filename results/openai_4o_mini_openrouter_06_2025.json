@@ -1,0 +1,139 @@
+{
+  "implementation": "openai_4o_mini_openrouter_06_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "openai_4o_mini_openrouter_06_2025",
+        "timestamp": "2025-06-01T21:11:22+03:00",
+        "metrics": {
+          "execution_time": 0.3234,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "openai_4o_mini_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:39:16+03:00",
+        "metrics": {
+          "execution_time": 0.4272,
+          "rubocop_offenses": 8
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.3753,
+        "rubocop_offenses": 8.0
+      },
+      "rubocop_offenses": 8,
+      "score": 95.16,
+      "score_breakdown": {
+        "best_time_score": 93.53,
+        "avg_time_score": 92.5,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "openai_4o_mini_openrouter_06_2025",
+        "timestamp": "2025-06-01T21:02:00+03:00",
+        "metrics": {
+          "execution_time": 0.0013,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "openai_4o_mini_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:25:49+03:00",
+        "metrics": {
+          "execution_time": 0.0015,
+          "rubocop_offenses": 10
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.0014,
+        "rubocop_offenses": 10.0
+      },
+      "rubocop_offenses": 10,
+      "score": 99.98,
+      "score_breakdown": {
+        "best_time_score": 99.98,
+        "avg_time_score": 99.97,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "openai_4o_mini_openrouter_06_2025",
+        "timestamp": "2025-06-01T20:58:44+03:00",
+        "metrics": {
+          "execution_time": 1.514,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "openai_4o_mini_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:13:39+03:00",
+        "metrics": {
+          "execution_time": 2.1749,
+          "rubocop_offenses": 2
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.84445,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 76.82,
+      "score_breakdown": {
+        "best_time_score": 69.72,
+        "avg_time_score": 63.11,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "openai_4o_mini_openrouter_06_2025",
+        "timestamp": "2025-06-01T21:07:45+03:00",
+        "metrics": {
+          "execution_time": 0.9961,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "openai_4o_mini_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:33:18+03:00",
+        "metrics": {
+          "execution_time": 1.264,
+          "rubocop_offenses": 2
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.13005,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 85.25,
+      "score_breakdown": {
+        "best_time_score": 80.08,
+        "avg_time_score": 77.4,
+        "quality_score": 100
+      }
+    }
+  }
+}

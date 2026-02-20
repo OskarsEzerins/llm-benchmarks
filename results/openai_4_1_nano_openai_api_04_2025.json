@@ -1,0 +1,183 @@
+{
+  "implementation": "openai_4_1_nano_openai_api_04_2025",
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-04-16T23:10:38+03:00",
+        "metrics": {
+          "execution_time": 0.0217,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-04-22T11:03:12+03:00",
+        "metrics": {
+          "execution_time": 0.0929,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:08:34+03:00",
+        "metrics": {
+          "execution_time": 0.0236,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:24:22+03:00",
+        "metrics": {
+          "execution_time": 0.021,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-05-25T12:06:15+03:00",
+        "metrics": {
+          "execution_time": 0.0234,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-05-25T17:53:57+03:00",
+        "metrics": {
+          "execution_time": 0.0251,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-06-01T19:49:43+03:00",
+        "metrics": {
+          "execution_time": 0.0207,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-06-01T21:01:48+03:00",
+        "metrics": {
+          "execution_time": 0.0247,
+          "rubocop_offenses": 18
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-07-24T00:25:42+03:00",
+        "metrics": {
+          "execution_time": 0.0298,
+          "rubocop_offenses": 18
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 9,
+      "metrics": {
+        "execution_time": 0.031433,
+        "rubocop_offenses": 18.0
+      },
+      "rubocop_offenses": 18,
+      "score": 99.65,
+      "score_breakdown": {
+        "best_time_score": 99.59,
+        "avg_time_score": 99.37,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-04-16T23:07:57+03:00",
+        "metrics": {
+          "execution_time": 1.3895,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-04-22T10:59:25+03:00",
+        "metrics": {
+          "execution_time": 1.6641,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:03:58+03:00",
+        "metrics": {
+          "execution_time": 1.5444,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-05-25T11:21:38+03:00",
+        "metrics": {
+          "execution_time": 1.5282,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-05-25T12:03:32+03:00",
+        "metrics": {
+          "execution_time": 1.5265,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-05-25T17:49:05+03:00",
+        "metrics": {
+          "execution_time": 1.5246,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-06-01T19:44:43+03:00",
+        "metrics": {
+          "execution_time": 1.5729,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-06-01T20:54:28+03:00",
+        "metrics": {
+          "execution_time": 1.4906,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "openai_4_1_nano_openai_api_04_2025",
+        "timestamp": "2025-07-24T00:17:34+03:00",
+        "metrics": {
+          "execution_time": 1.8225,
+          "rubocop_offenses": 0
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 9,
+      "metrics": {
+        "execution_time": 1.562589,
+        "rubocop_offenses": 0.0
+      },
+      "rubocop_offenses": 0,
+      "score": 79.51,
+      "score_breakdown": {
+        "best_time_score": 72.21,
+        "avg_time_score": 68.75,
+        "quality_score": 100
+      }
+    }
+  }
+}

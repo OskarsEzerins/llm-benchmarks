@@ -1,0 +1,197 @@
+{
+  "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-15T12:07:40+02:00",
+        "metrics": {
+          "execution_time": 0.3213,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-15T12:23:08+02:00",
+        "metrics": {
+          "execution_time": 0.3247,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-15T12:35:12+02:00",
+        "metrics": {
+          "execution_time": 0.3443,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-15T12:55:31+02:00",
+        "metrics": {
+          "execution_time": 0.3281,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-15T13:05:08+02:00",
+        "metrics": {
+          "execution_time": 0.3301,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-15T13:14:18+02:00",
+        "metrics": {
+          "execution_time": 0.3281,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-25T21:55:44+02:00",
+        "metrics": {
+          "execution_time": 0.3312,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-25T22:04:55+02:00",
+        "metrics": {
+          "execution_time": 0.3372,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-02-25T22:15:32+02:00",
+        "metrics": {
+          "execution_time": 0.3373,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-03-20T16:33:37+02:00",
+        "metrics": {
+          "execution_time": 0.3238,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-03-20T16:34:36+02:00",
+        "metrics": {
+          "execution_time": 0.3233,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-03-20T18:13:40+02:00",
+        "metrics": {
+          "execution_time": 0.3798,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-03-27T00:17:38+02:00",
+        "metrics": {
+          "execution_time": 0.3328,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-04-16T23:16:46+03:00",
+        "metrics": {
+          "execution_time": 0.3185,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-04-22T11:11:39+03:00",
+        "metrics": {
+          "execution_time": 0.3368,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-05-25T11:14:56+03:00",
+        "metrics": {
+          "execution_time": 0.3502,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-05-25T11:30:52+03:00",
+        "metrics": {
+          "execution_time": 0.3311,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-05-25T12:12:05+03:00",
+        "metrics": {
+          "execution_time": 0.3366,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-05-25T18:00:57+03:00",
+        "metrics": {
+          "execution_time": 0.3417,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-06-01T20:01:00+03:00",
+        "metrics": {
+          "execution_time": 0.3436,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-06-01T21:12:26+03:00",
+        "metrics": {
+          "execution_time": 0.3256,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_r1_distill_qwen_32b_web_chat_02_2025",
+        "timestamp": "2025-07-24T00:37:29+03:00",
+        "metrics": {
+          "execution_time": 0.4096,
+          "rubocop_offenses": 10
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 22,
+      "metrics": {
+        "execution_time": 0.337986,
+        "rubocop_offenses": 10.0
+      },
+      "rubocop_offenses": 10,
+      "score": 95.43,
+      "score_breakdown": {
+        "best_time_score": 93.63,
+        "avg_time_score": 93.24,
+        "quality_score": 100
+      }
+    }
+  }
+}

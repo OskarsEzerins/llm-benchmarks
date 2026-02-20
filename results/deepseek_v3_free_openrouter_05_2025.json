@@ -1,0 +1,177 @@
+{
+  "implementation": "deepseek_v3_free_openrouter_05_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T14:48:09+03:00",
+        "metrics": {
+          "execution_time": 0.4899,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T18:00:33+03:00",
+        "metrics": {
+          "execution_time": 0.5285,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:59:53+03:00",
+        "metrics": {
+          "execution_time": 0.5245,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:10:52+03:00",
+        "metrics": {
+          "execution_time": 0.5079,
+          "rubocop_offenses": 10
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:39:45+03:00",
+        "metrics": {
+          "execution_time": 0.5921,
+          "rubocop_offenses": 10
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.52858,
+        "rubocop_offenses": 10.0
+      },
+      "rubocop_offenses": 10,
+      "score": 92.91,
+      "score_breakdown": {
+        "best_time_score": 90.2,
+        "avg_time_score": 89.43,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T14:47:41+03:00",
+        "metrics": {
+          "execution_time": 0.0005,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:51:58+03:00",
+        "metrics": {
+          "execution_time": 0.0013,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:52:50+03:00",
+        "metrics": {
+          "execution_time": 0.0012,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:01:22+03:00",
+        "metrics": {
+          "execution_time": 0.0014,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:22:43+03:00",
+        "metrics": {
+          "execution_time": 0.0015,
+          "rubocop_offenses": 12
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.00118,
+        "rubocop_offenses": 12.0
+      },
+      "rubocop_offenses": 12,
+      "score": 99.99,
+      "score_breakdown": {
+        "best_time_score": 99.99,
+        "avg_time_score": 99.98,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T14:48:06+03:00",
+        "metrics": {
+          "execution_time": 2.403,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:57:07+03:00",
+        "metrics": {
+          "execution_time": 2.5944,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:53:33+03:00",
+        "metrics": {
+          "execution_time": 1.9785,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:09:56+03:00",
+        "metrics": {
+          "execution_time": 2.5363,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "deepseek_v3_free_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:37:05+03:00",
+        "metrics": {
+          "execution_time": 3.0029,
+          "rubocop_offenses": 2
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 2.50302,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 69.15,
+      "score_breakdown": {
+        "best_time_score": 60.43,
+        "avg_time_score": 49.94,
+        "quality_score": 100
+      }
+    }
+  }
+}

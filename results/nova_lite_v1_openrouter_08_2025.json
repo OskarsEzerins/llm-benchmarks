@@ -1,0 +1,135 @@
+{
+  "implementation": "nova_lite_v1_openrouter_08_2025",
+  "calendar": {
+    "results": [
+      {
+        "implementation": "nova_lite_v1_openrouter_08_2025",
+        "timestamp": "2026-01-15T18:26:30+02:00",
+        "metrics": {
+          "rubocop_offenses": 8,
+          "tests_passed": 14,
+          "total_tests": 23,
+          "success_rate": 0.6086956521739131,
+          "primary_metric": 0.6086956521739131,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 14.0,
+        "total_tests": 23.0,
+        "success_rate": 0.608696,
+        "primary_metric": 0.608696,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 63.18,
+      "score_breakdown": {
+        "success_score": 60.87,
+        "quality_score": 84.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "nova_lite_v1_openrouter_08_2025",
+        "timestamp": "2026-01-15T18:26:40+02:00",
+        "metrics": {
+          "rubocop_offenses": 12,
+          "tests_passed": 7,
+          "total_tests": 39,
+          "success_rate": 0.1794871794871795,
+          "primary_metric": 0.1794871794871795,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 12.0,
+        "tests_passed": 7.0,
+        "total_tests": 39.0,
+        "success_rate": 0.179487,
+        "primary_metric": 0.179487,
+        "success": 1.0
+      },
+      "rubocop_offenses": 12,
+      "score": 23.76,
+      "score_breakdown": {
+        "success_score": 17.95,
+        "quality_score": 76.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "nova_lite_v1_openrouter_08_2025",
+        "timestamp": "2026-01-15T18:26:53+02:00",
+        "metrics": {
+          "rubocop_offenses": 1,
+          "tests_passed": 19,
+          "total_tests": 28,
+          "success_rate": 0.6785714285714286,
+          "primary_metric": 0.6785714285714286,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 1.0,
+        "tests_passed": 19.0,
+        "total_tests": 28.0,
+        "success_rate": 0.678571,
+        "primary_metric": 0.678571,
+        "success": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 70.87,
+      "score_breakdown": {
+        "success_score": 67.86,
+        "quality_score": 98.0
+      }
+    }
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "nova_lite_v1_openrouter_08_2025",
+        "timestamp": "2026-01-15T18:26:24+02:00",
+        "metrics": {
+          "rubocop_offenses": 5,
+          "tests_passed": 8,
+          "total_tests": 31,
+          "success_rate": 0.25806451612903225,
+          "primary_metric": 0.25806451612903225,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 5.0,
+        "tests_passed": 8.0,
+        "total_tests": 31.0,
+        "success_rate": 0.258065,
+        "primary_metric": 0.258065,
+        "success": 1.0
+      },
+      "rubocop_offenses": 5,
+      "score": 32.23,
+      "score_breakdown": {
+        "success_score": 25.81,
+        "quality_score": 90.0
+      }
+    }
+  }
+}

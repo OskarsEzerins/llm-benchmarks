@@ -1,0 +1,299 @@
+{
+  "implementation": "claude_4_sonnet_web_chat_05_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T11:15:14+03:00",
+        "metrics": {
+          "execution_time": 1.2396,
+          "rubocop_offenses": 27
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T11:31:56+03:00",
+        "metrics": {
+          "execution_time": 1.1964,
+          "rubocop_offenses": 27
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T12:11:33+03:00",
+        "metrics": {
+          "execution_time": 1.2139,
+          "rubocop_offenses": 27
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T18:02:20+03:00",
+        "metrics": {
+          "execution_time": 1.1501,
+          "rubocop_offenses": 27
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-06-01T19:59:20+03:00",
+        "metrics": {
+          "execution_time": 1.1641,
+          "rubocop_offenses": 27
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-06-01T21:11:51+03:00",
+        "metrics": {
+          "execution_time": 1.2703,
+          "rubocop_offenses": 27
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-07-24T00:39:24+03:00",
+        "metrics": {
+          "execution_time": 1.4721,
+          "rubocop_offenses": 27
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 7,
+      "metrics": {
+        "execution_time": 1.243786,
+        "rubocop_offenses": 27.0
+      },
+      "rubocop_offenses": 27,
+      "score": 83.34,
+      "score_breakdown": {
+        "best_time_score": 77.0,
+        "avg_time_score": 75.13,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T11:08:21+03:00",
+        "metrics": {
+          "execution_time": 0.3481,
+          "rubocop_offenses": 13
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T11:23:55+03:00",
+        "metrics": {
+          "execution_time": 0.4189,
+          "rubocop_offenses": 13
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T12:04:13+03:00",
+        "metrics": {
+          "execution_time": 0.48,
+          "rubocop_offenses": 13
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T17:51:18+03:00",
+        "metrics": {
+          "execution_time": 0.3219,
+          "rubocop_offenses": 13
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-06-01T19:50:50+03:00",
+        "metrics": {
+          "execution_time": 0.3385,
+          "rubocop_offenses": 13
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-06-01T21:02:07+03:00",
+        "metrics": {
+          "execution_time": 0.3392,
+          "rubocop_offenses": 13
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-07-24T00:24:45+03:00",
+        "metrics": {
+          "execution_time": 0.4157,
+          "rubocop_offenses": 13
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 7,
+      "metrics": {
+        "execution_time": 0.380329,
+        "rubocop_offenses": 13.0
+      },
+      "rubocop_offenses": 13,
+      "score": 95.14,
+      "score_breakdown": {
+        "best_time_score": 93.56,
+        "avg_time_score": 92.4,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T11:03:34+03:00",
+        "metrics": {
+          "execution_time": 1.5564,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T11:22:18+03:00",
+        "metrics": {
+          "execution_time": 1.5335,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T12:01:22+03:00",
+        "metrics": {
+          "execution_time": 1.5141,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T17:49:38+03:00",
+        "metrics": {
+          "execution_time": 1.5089,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-06-01T19:48:34+03:00",
+        "metrics": {
+          "execution_time": 1.553,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-06-01T20:58:18+03:00",
+        "metrics": {
+          "execution_time": 1.4485,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-07-24T00:19:03+03:00",
+        "metrics": {
+          "execution_time": 1.8348,
+          "rubocop_offenses": 2
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 7,
+      "metrics": {
+        "execution_time": 1.564171,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 79.03,
+      "score_breakdown": {
+        "best_time_score": 71.03,
+        "avg_time_score": 68.72,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T11:13:39+03:00",
+        "metrics": {
+          "execution_time": 1.2765,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T11:30:09+03:00",
+        "metrics": {
+          "execution_time": 1.2514,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T12:08:45+03:00",
+        "metrics": {
+          "execution_time": 1.2834,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-05-25T18:00:24+03:00",
+        "metrics": {
+          "execution_time": 1.2171,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-06-01T19:56:41+03:00",
+        "metrics": {
+          "execution_time": 1.1949,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-06-01T21:07:58+03:00",
+        "metrics": {
+          "execution_time": 1.2033,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_4_sonnet_web_chat_05_2025",
+        "timestamp": "2025-07-24T00:27:03+03:00",
+        "metrics": {
+          "execution_time": 1.5757,
+          "rubocop_offenses": 1
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 7,
+      "metrics": {
+        "execution_time": 1.286043,
+        "rubocop_offenses": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 82.73,
+      "score_breakdown": {
+        "best_time_score": 76.1,
+        "avg_time_score": 74.28,
+        "quality_score": 100
+      }
+    }
+  }
+}

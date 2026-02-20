@@ -1,0 +1,71 @@
+{
+  "implementation": "claude_3_5_sonnet_openrouter_06_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "claude_3_5_sonnet_openrouter_06_2025",
+        "timestamp": "2025-06-01T21:12:15+03:00",
+        "metrics": {
+          "execution_time": 0.432,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:38:39+03:00",
+        "metrics": {
+          "execution_time": 0.5716,
+          "rubocop_offenses": 5
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.5018,
+        "rubocop_offenses": 5.0
+      },
+      "rubocop_offenses": 5,
+      "score": 93.53,
+      "score_breakdown": {
+        "best_time_score": 91.36,
+        "avg_time_score": 89.97,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "claude_3_5_sonnet_openrouter_06_2025",
+        "timestamp": "2025-06-01T20:58:28+03:00",
+        "metrics": {
+          "execution_time": 1.7829,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:16:08+03:00",
+        "metrics": {
+          "execution_time": 2.628,
+          "rubocop_offenses": 2
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 2.20545,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 72.5,
+      "score_breakdown": {
+        "best_time_score": 64.34,
+        "avg_time_score": 55.89,
+        "quality_score": 100
+      }
+    }
+  }
+}

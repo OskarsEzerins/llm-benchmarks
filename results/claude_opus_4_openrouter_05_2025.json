@@ -1,0 +1,235 @@
+{
+  "implementation": "claude_opus_4_openrouter_05_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-05-25T15:32:46+03:00",
+        "metrics": {
+          "execution_time": 0.5001,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-05-25T18:02:00+03:00",
+        "metrics": {
+          "execution_time": 0.4601,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-06-01T20:00:01+03:00",
+        "metrics": {
+          "execution_time": 0.4457,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:11:17+03:00",
+        "metrics": {
+          "execution_time": 0.4415,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:39:08+03:00",
+        "metrics": {
+          "execution_time": 0.5968,
+          "rubocop_offenses": 12
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.48884,
+        "rubocop_offenses": 12.0
+      },
+      "rubocop_offenses": 12,
+      "score": 93.54,
+      "score_breakdown": {
+        "best_time_score": 91.17,
+        "avg_time_score": 90.23,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-05-25T15:32:23+03:00",
+        "metrics": {
+          "execution_time": 0.2244,
+          "rubocop_offenses": 23
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:51:39+03:00",
+        "metrics": {
+          "execution_time": 0.2312,
+          "rubocop_offenses": 23
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:52:24+03:00",
+        "metrics": {
+          "execution_time": 0.2603,
+          "rubocop_offenses": 23
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-06-01T20:58:57+03:00",
+        "metrics": {
+          "execution_time": 0.2579,
+          "rubocop_offenses": 23
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:21:01+03:00",
+        "metrics": {
+          "execution_time": 0.2963,
+          "rubocop_offenses": 23
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.25402,
+        "rubocop_offenses": 23.0
+      },
+      "rubocop_offenses": 23,
+      "score": 96.68,
+      "score_breakdown": {
+        "best_time_score": 95.51,
+        "avg_time_score": 94.92,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-05-25T15:32:16+03:00",
+        "metrics": {
+          "execution_time": 1.6153,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:48:25+03:00",
+        "metrics": {
+          "execution_time": 1.5192,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:47:51+03:00",
+        "metrics": {
+          "execution_time": 1.4994,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-06-01T20:55:07+03:00",
+        "metrics": {
+          "execution_time": 1.4516,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:16:48+03:00",
+        "metrics": {
+          "execution_time": 1.8133,
+          "rubocop_offenses": 3
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 1.57976,
+        "rubocop_offenses": 3.0
+      },
+      "rubocop_offenses": 3,
+      "score": 78.91,
+      "score_breakdown": {
+        "best_time_score": 70.97,
+        "avg_time_score": 68.41,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-05-25T15:32:43+03:00",
+        "metrics": {
+          "execution_time": 1.92,
+          "rubocop_offenses": 14
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:54:59+03:00",
+        "metrics": {
+          "execution_time": 1.6643,
+          "rubocop_offenses": 14
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:56:05+03:00",
+        "metrics": {
+          "execution_time": 1.5757,
+          "rubocop_offenses": 14
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:10:40+03:00",
+        "metrics": {
+          "execution_time": 1.6062,
+          "rubocop_offenses": 14
+        }
+      },
+      {
+        "implementation": "claude_opus_4_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:32:14+03:00",
+        "metrics": {
+          "execution_time": 2.1132,
+          "rubocop_offenses": 14
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 1.77588,
+        "rubocop_offenses": 14.0
+      },
+      "rubocop_offenses": 14,
+      "score": 76.74,
+      "score_breakdown": {
+        "best_time_score": 68.49,
+        "avg_time_score": 64.48,
+        "quality_score": 100
+      }
+    }
+  }
+}

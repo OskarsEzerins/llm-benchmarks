@@ -1,0 +1,139 @@
+{
+  "implementation": "claude_sonnet_4_openrouter_07_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_4_openrouter_07_2025",
+        "timestamp": "2025-07-22T21:11:13+03:00",
+        "metrics": {
+          "execution_time": 0.5414,
+          "rubocop_offenses": 20
+        }
+      },
+      {
+        "implementation": "claude_sonnet_4_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:39:28+03:00",
+        "metrics": {
+          "execution_time": 0.5759,
+          "rubocop_offenses": 20
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.55865,
+        "rubocop_offenses": 20.0
+      },
+      "rubocop_offenses": 20,
+      "score": 92.32,
+      "score_breakdown": {
+        "best_time_score": 89.17,
+        "avg_time_score": 88.83,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_4_openrouter_07_2025",
+        "timestamp": "2025-07-22T21:10:55+03:00",
+        "metrics": {
+          "execution_time": 0.4257,
+          "rubocop_offenses": 22
+        }
+      },
+      {
+        "implementation": "claude_sonnet_4_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:26:45+03:00",
+        "metrics": {
+          "execution_time": 0.4165,
+          "rubocop_offenses": 22
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.4211,
+        "rubocop_offenses": 22.0
+      },
+      "rubocop_offenses": 22,
+      "score": 94.14,
+      "score_breakdown": {
+        "best_time_score": 91.67,
+        "avg_time_score": 91.58,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_4_openrouter_07_2025",
+        "timestamp": "2025-07-22T21:10:46+03:00",
+        "metrics": {
+          "execution_time": 1.8484,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_sonnet_4_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:18:04+03:00",
+        "metrics": {
+          "execution_time": 1.8515,
+          "rubocop_offenses": 6
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.84995,
+        "rubocop_offenses": 6.0
+      },
+      "rubocop_offenses": 6,
+      "score": 74.11,
+      "score_breakdown": {
+        "best_time_score": 63.03,
+        "avg_time_score": 63.0,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_4_openrouter_07_2025",
+        "timestamp": "2025-07-22T21:11:09+03:00",
+        "metrics": {
+          "execution_time": 1.2376,
+          "rubocop_offenses": 14
+        }
+      },
+      {
+        "implementation": "claude_sonnet_4_openrouter_07_2025",
+        "timestamp": "2025-07-24T00:36:11+03:00",
+        "metrics": {
+          "execution_time": 1.2595,
+          "rubocop_offenses": 14
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.24855,
+        "rubocop_offenses": 14.0
+      },
+      "rubocop_offenses": 14,
+      "score": 82.61,
+      "score_breakdown": {
+        "best_time_score": 75.25,
+        "avg_time_score": 75.03,
+        "quality_score": 100
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "implementation": "openai_4o_openrouter_06_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "openai_4o_openrouter_06_2025",
+        "timestamp": "2025-06-01T21:12:22+03:00",
+        "metrics": {
+          "execution_time": 0.5366,
+          "rubocop_offenses": 14
+        }
+      },
+      {
+        "implementation": "openai_4o_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:40:08+03:00",
+        "metrics": {
+          "execution_time": 0.6792,
+          "rubocop_offenses": 14
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.6079,
+        "rubocop_offenses": 14.0
+      },
+      "rubocop_offenses": 14,
+      "score": 92.06,
+      "score_breakdown": {
+        "best_time_score": 89.27,
+        "avg_time_score": 87.84,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "openai_4o_openrouter_06_2025",
+        "timestamp": "2025-06-01T21:01:29+03:00",
+        "metrics": {
+          "execution_time": 0.3317,
+          "rubocop_offenses": 15
+        }
+      },
+      {
+        "implementation": "openai_4o_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:26:36+03:00",
+        "metrics": {
+          "execution_time": 0.4084,
+          "rubocop_offenses": 15
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.37005,
+        "rubocop_offenses": 15.0
+      },
+      "rubocop_offenses": 15,
+      "score": 95.13,
+      "score_breakdown": {
+        "best_time_score": 93.37,
+        "avg_time_score": 92.6,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "openai_4o_openrouter_06_2025",
+        "timestamp": "2025-06-01T21:09:30+03:00",
+        "metrics": {
+          "execution_time": 1.3003,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "openai_4o_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:35:23+03:00",
+        "metrics": {
+          "execution_time": 1.6634,
+          "rubocop_offenses": 4
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 1.48185,
+        "rubocop_offenses": 4.0
+      },
+      "rubocop_offenses": 4,
+      "score": 80.71,
+      "score_breakdown": {
+        "best_time_score": 74.0,
+        "avg_time_score": 70.36,
+        "quality_score": 100
+      }
+    }
+  }
+}

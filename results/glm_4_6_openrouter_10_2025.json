@@ -1,0 +1,165 @@
+{
+  "implementation": "glm_4_6_openrouter_10_2025",
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "glm_4_6_openrouter_10_2025",
+        "timestamp": "2025-10-06T06:22:10+00:00",
+        "metrics": {
+          "rubocop_offenses": 3,
+          "execution_time": 1.7022,
+          "primary_metric": 1.7022,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 3.0,
+        "execution_time": 1.7022,
+        "primary_metric": 1.7022,
+        "success": 1.0
+      },
+      "rubocop_offenses": 3,
+      "score": 76.17,
+      "score_breakdown": {
+        "best_time_score": 65.96,
+        "avg_time_score": 65.96,
+        "quality_score": 100
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "glm_4_6_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:33+02:00",
+        "metrics": {
+          "rubocop_offenses": 18,
+          "tests_passed": 19,
+          "total_tests": 23,
+          "success_rate": 0.8260869565217391,
+          "primary_metric": 0.8260869565217391,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 18.0,
+        "tests_passed": 19.0,
+        "total_tests": 23.0,
+        "success_rate": 0.826087,
+        "primary_metric": 0.826087,
+        "success": 1.0
+      },
+      "rubocop_offenses": 18,
+      "score": 80.75,
+      "score_breakdown": {
+        "success_score": 82.61,
+        "quality_score": 64.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "glm_4_6_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:42+02:00",
+        "metrics": {
+          "rubocop_offenses": 27,
+          "tests_passed": 24,
+          "total_tests": 39,
+          "success_rate": 0.6153846153846154,
+          "primary_metric": 0.6153846153846154,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 27.0,
+        "tests_passed": 24.0,
+        "total_tests": 39.0,
+        "success_rate": 0.615385,
+        "primary_metric": 0.615385,
+        "success": 1.0
+      },
+      "rubocop_offenses": 27,
+      "score": 59.99,
+      "score_breakdown": {
+        "success_score": 61.54,
+        "quality_score": 46.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "glm_4_6_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:56+02:00",
+        "metrics": {
+          "rubocop_offenses": 11,
+          "tests_passed": 13,
+          "total_tests": 28,
+          "success_rate": 0.4642857142857143,
+          "primary_metric": 0.4642857142857143,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 11.0,
+        "tests_passed": 13.0,
+        "total_tests": 28.0,
+        "success_rate": 0.464286,
+        "primary_metric": 0.464286,
+        "success": 1.0
+      },
+      "rubocop_offenses": 11,
+      "score": 49.59,
+      "score_breakdown": {
+        "success_score": 46.43,
+        "quality_score": 78.0
+      }
+    }
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "glm_4_6_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:25+02:00",
+        "metrics": {
+          "rubocop_offenses": 9,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 9.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 9,
+      "score": 77.88,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 82.0
+      }
+    }
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T16:33:35+02:00",
+        "metrics": {
+          "execution_time": 0.484,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T16:35:17+02:00",
+        "metrics": {
+          "execution_time": 0.4494,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T18:13:35+02:00",
+        "metrics": {
+          "execution_time": 0.5549,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-27T00:17:24+02:00",
+        "metrics": {
+          "execution_time": 0.449,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-04-16T23:17:13+03:00",
+        "metrics": {
+          "execution_time": 0.438,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-04-22T11:11:11+03:00",
+        "metrics": {
+          "execution_time": 0.4459,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T11:15:07+03:00",
+        "metrics": {
+          "execution_time": 0.4621,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T11:30:58+03:00",
+        "metrics": {
+          "execution_time": 0.4543,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T12:12:08+03:00",
+        "metrics": {
+          "execution_time": 0.4661,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T18:01:07+03:00",
+        "metrics": {
+          "execution_time": 0.4604,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-06-01T19:59:23+03:00",
+        "metrics": {
+          "execution_time": 0.4501,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-06-01T21:12:47+03:00",
+        "metrics": {
+          "execution_time": 0.45,
+          "rubocop_offenses": 19
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-07-24T00:37:20+03:00",
+        "metrics": {
+          "execution_time": 0.5569,
+          "rubocop_offenses": 19
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 13,
+      "metrics": {
+        "execution_time": 0.470854,
+        "rubocop_offenses": 19.0
+      },
+      "rubocop_offenses": 19,
+      "score": 93.67,
+      "score_breakdown": {
+        "best_time_score": 91.24,
+        "avg_time_score": 90.58,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T16:16:37+02:00",
+        "metrics": {
+          "execution_time": 0.4044,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T18:07:23+02:00",
+        "metrics": {
+          "execution_time": 0.3361,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-27T00:13:31+02:00",
+        "metrics": {
+          "execution_time": 0.4757,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-04-16T23:09:34+03:00",
+        "metrics": {
+          "execution_time": 0.3169,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-04-22T11:06:04+03:00",
+        "metrics": {
+          "execution_time": 0.3383,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T11:06:51+03:00",
+        "metrics": {
+          "execution_time": 0.3387,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T11:24:36+03:00",
+        "metrics": {
+          "execution_time": 0.4082,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T12:04:46+03:00",
+        "metrics": {
+          "execution_time": 0.3411,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T17:53:51+03:00",
+        "metrics": {
+          "execution_time": 0.3235,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-06-01T19:49:50+03:00",
+        "metrics": {
+          "execution_time": 0.3351,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-06-01T21:01:43+03:00",
+        "metrics": {
+          "execution_time": 0.3301,
+          "rubocop_offenses": 12
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-07-24T00:24:54+03:00",
+        "metrics": {
+          "execution_time": 0.4207,
+          "rubocop_offenses": 12
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 12,
+      "metrics": {
+        "execution_time": 0.364067,
+        "rubocop_offenses": 12.0
+      },
+      "rubocop_offenses": 12,
+      "score": 95.28,
+      "score_breakdown": {
+        "best_time_score": 93.66,
+        "avg_time_score": 92.72,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T16:12:01+02:00",
+        "metrics": {
+          "execution_time": 1.5114,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T16:32:20+02:00",
+        "metrics": {
+          "execution_time": 1.4478,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T18:05:55+02:00",
+        "metrics": {
+          "execution_time": 1.4425,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-27T00:09:07+02:00",
+        "metrics": {
+          "execution_time": 1.4739,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-04-16T23:07:49+03:00",
+        "metrics": {
+          "execution_time": 1.4126,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-04-22T11:01:10+03:00",
+        "metrics": {
+          "execution_time": 1.5399,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T11:02:27+03:00",
+        "metrics": {
+          "execution_time": 1.6869,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T11:21:30+03:00",
+        "metrics": {
+          "execution_time": 1.535,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T12:02:50+03:00",
+        "metrics": {
+          "execution_time": 1.5491,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T17:50:12+03:00",
+        "metrics": {
+          "execution_time": 1.5053,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-06-01T19:46:14+03:00",
+        "metrics": {
+          "execution_time": 1.5378,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-06-01T20:53:40+03:00",
+        "metrics": {
+          "execution_time": 1.5791,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-07-24T00:19:54+03:00",
+        "metrics": {
+          "execution_time": 1.8942,
+          "rubocop_offenses": 2
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 13,
+      "metrics": {
+        "execution_time": 1.547346,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 79.42,
+      "score_breakdown": {
+        "best_time_score": 71.75,
+        "avg_time_score": 69.05,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T16:29:08+02:00",
+        "metrics": {
+          "execution_time": 0.8074,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-20T18:12:37+02:00",
+        "metrics": {
+          "execution_time": 0.8037,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-03-27T00:14:16+02:00",
+        "metrics": {
+          "execution_time": 0.8338,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-04-16T23:16:15+03:00",
+        "metrics": {
+          "execution_time": 0.8213,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-04-22T11:09:19+03:00",
+        "metrics": {
+          "execution_time": 0.9356,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T11:11:34+03:00",
+        "metrics": {
+          "execution_time": 0.9088,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T11:27:47+03:00",
+        "metrics": {
+          "execution_time": 0.9075,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T12:09:32+03:00",
+        "metrics": {
+          "execution_time": 0.9121,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-05-25T17:55:32+03:00",
+        "metrics": {
+          "execution_time": 0.8456,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-06-01T19:58:23+03:00",
+        "metrics": {
+          "execution_time": 0.8478,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-06-01T21:03:43+03:00",
+        "metrics": {
+          "execution_time": 0.8513,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_thinking_vscode_03_2025",
+        "timestamp": "2025-07-24T00:27:37+03:00",
+        "metrics": {
+          "execution_time": 1.0878,
+          "rubocop_offenses": 4
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 12,
+      "metrics": {
+        "execution_time": 0.880225,
+        "rubocop_offenses": 4.0
+      },
+      "rubocop_offenses": 4,
+      "score": 88.29,
+      "score_breakdown": {
+        "best_time_score": 83.93,
+        "avg_time_score": 82.4,
+        "quality_score": 100
+      }
+    }
+  }
+}

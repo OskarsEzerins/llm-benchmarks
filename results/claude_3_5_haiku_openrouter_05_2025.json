@@ -1,0 +1,127 @@
+{
+  "implementation": "claude_3_5_haiku_openrouter_05_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-05-25T15:25:17+03:00",
+        "metrics": {
+          "execution_time": 0.5121,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-05-25T18:00:42+03:00",
+        "metrics": {
+          "execution_time": 0.5822,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-06-01T20:00:21+03:00",
+        "metrics": {
+          "execution_time": 0.5329,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:11:14+03:00",
+        "metrics": {
+          "execution_time": 0.5311,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:38:44+03:00",
+        "metrics": {
+          "execution_time": 0.6724,
+          "rubocop_offenses": 4
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.56614,
+        "rubocop_offenses": 4.0
+      },
+      "rubocop_offenses": 4,
+      "score": 92.51,
+      "score_breakdown": {
+        "best_time_score": 89.76,
+        "avg_time_score": 88.68,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-05-25T15:24:45+03:00",
+        "metrics": {
+          "execution_time": 0.6948,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-05-25T15:25:14+03:00",
+        "metrics": {
+          "execution_time": 0.6941,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:54:13+03:00",
+        "metrics": {
+          "execution_time": 0.6386,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:50:31+03:00",
+        "metrics": {
+          "execution_time": 0.6913,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:03:06+03:00",
+        "metrics": {
+          "execution_time": 0.6908,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_haiku_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:26:08+03:00",
+        "metrics": {
+          "execution_time": 0.8178,
+          "rubocop_offenses": 5
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 6,
+      "metrics": {
+        "execution_time": 0.704567,
+        "rubocop_offenses": 5.0
+      },
+      "rubocop_offenses": 5,
+      "score": 90.67,
+      "score_breakdown": {
+        "best_time_score": 87.23,
+        "avg_time_score": 85.91,
+        "quality_score": 100
+      }
+    }
+  }
+}

@@ -131,7 +131,7 @@ class BenchmarkRunnerService
   end
 
   def save_and_display_results(implementation, result, rubocop_offenses_count)
-    results_service = ResultsService.new(Config.results_file(@benchmark_id), @benchmark_id)
+    results_service = ResultsService.new(@benchmark_id)
     results_service.add_result(
       implementation[:name],
       result,

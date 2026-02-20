@@ -1,0 +1,235 @@
+{
+  "implementation": "grok_3_beta_openrouter_05_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:33:21+03:00",
+        "metrics": {
+          "execution_time": 1.0475,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-05-25T18:01:17+03:00",
+        "metrics": {
+          "execution_time": 1.0754,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-06-01T20:00:10+03:00",
+        "metrics": {
+          "execution_time": 1.0369,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:13:00+03:00",
+        "metrics": {
+          "execution_time": 1.0344,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:39:38+03:00",
+        "metrics": {
+          "execution_time": 1.2807,
+          "rubocop_offenses": 8
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 1.09498,
+        "rubocop_offenses": 8.0
+      },
+      "rubocop_offenses": 8,
+      "score": 85.16,
+      "score_breakdown": {
+        "best_time_score": 79.31,
+        "avg_time_score": 78.1,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:33:05+03:00",
+        "metrics": {
+          "execution_time": 0.2926,
+          "rubocop_offenses": 7
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:51:25+03:00",
+        "metrics": {
+          "execution_time": 0.2789,
+          "rubocop_offenses": 7
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:52:31+03:00",
+        "metrics": {
+          "execution_time": 0.2904,
+          "rubocop_offenses": 7
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:01:09+03:00",
+        "metrics": {
+          "execution_time": 0.2916,
+          "rubocop_offenses": 7
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:23:10+03:00",
+        "metrics": {
+          "execution_time": 0.3643,
+          "rubocop_offenses": 7
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.30356,
+        "rubocop_offenses": 7.0
+      },
+      "rubocop_offenses": 7,
+      "score": 95.95,
+      "score_breakdown": {
+        "best_time_score": 94.42,
+        "avg_time_score": 93.93,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:32:58+03:00",
+        "metrics": {
+          "execution_time": 1.6604,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:48:33+03:00",
+        "metrics": {
+          "execution_time": 1.5375,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:45:01+03:00",
+        "metrics": {
+          "execution_time": 1.6085,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-06-01T20:55:56+03:00",
+        "metrics": {
+          "execution_time": 1.4564,
+          "rubocop_offenses": 2
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:16:58+03:00",
+        "metrics": {
+          "execution_time": 1.859,
+          "rubocop_offenses": 2
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 1.62436,
+        "rubocop_offenses": 2.0
+      },
+      "rubocop_offenses": 2,
+      "score": 78.6,
+      "score_breakdown": {
+        "best_time_score": 70.87,
+        "avg_time_score": 67.51,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:33:15+03:00",
+        "metrics": {
+          "execution_time": 0.863,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:58:27+03:00",
+        "metrics": {
+          "execution_time": 0.8323,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:56:15+03:00",
+        "metrics": {
+          "execution_time": 0.8344,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:05:33+03:00",
+        "metrics": {
+          "execution_time": 0.8429,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "grok_3_beta_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:30:20+03:00",
+        "metrics": {
+          "execution_time": 1.0736,
+          "rubocop_offenses": 8
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.88924,
+        "rubocop_offenses": 8.0
+      },
+      "rubocop_offenses": 8,
+      "score": 88.01,
+      "score_breakdown": {
+        "best_time_score": 83.36,
+        "avg_time_score": 82.22,
+        "quality_score": 100
+      }
+    }
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "implementation": "claude_3_7_sonnet_vscode_03_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-20T16:34:05+02:00",
+        "metrics": {
+          "execution_time": 0.5127,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-20T16:35:07+02:00",
+        "metrics": {
+          "execution_time": 0.4955,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-20T18:13:32+02:00",
+        "metrics": {
+          "execution_time": 0.4745,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-27T00:17:31+02:00",
+        "metrics": {
+          "execution_time": 0.4522,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-04-16T23:16:52+03:00",
+        "metrics": {
+          "execution_time": 0.437,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-04-22T11:10:42+03:00",
+        "metrics": {
+          "execution_time": 0.4482,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T11:15:00+03:00",
+        "metrics": {
+          "execution_time": 0.5496,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T11:31:06+03:00",
+        "metrics": {
+          "execution_time": 0.4494,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T12:11:18+03:00",
+        "metrics": {
+          "execution_time": 0.4565,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T18:00:45+03:00",
+        "metrics": {
+          "execution_time": 0.5237,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-06-01T20:01:10+03:00",
+        "metrics": {
+          "execution_time": 0.4682,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-06-01T21:12:54+03:00",
+        "metrics": {
+          "execution_time": 0.4445,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-07-24T00:37:24+03:00",
+        "metrics": {
+          "execution_time": 0.5573,
+          "rubocop_offenses": 0
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 13,
+      "metrics": {
+        "execution_time": 0.482254,
+        "rubocop_offenses": 0.0
+      },
+      "rubocop_offenses": 0,
+      "score": 93.61,
+      "score_breakdown": {
+        "best_time_score": 91.26,
+        "avg_time_score": 90.36,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-20T16:18:45+02:00",
+        "metrics": {
+          "execution_time": 0.3613,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-20T18:08:46+02:00",
+        "metrics": {
+          "execution_time": 0.2913,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-27T00:13:39+02:00",
+        "metrics": {
+          "execution_time": 0.2968,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-04-16T23:10:15+03:00",
+        "metrics": {
+          "execution_time": 0.265,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-04-22T11:05:21+03:00",
+        "metrics": {
+          "execution_time": 0.3598,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T11:09:01+03:00",
+        "metrics": {
+          "execution_time": 0.2985,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T11:24:58+03:00",
+        "metrics": {
+          "execution_time": 0.3711,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T12:04:32+03:00",
+        "metrics": {
+          "execution_time": 0.297,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T17:54:04+03:00",
+        "metrics": {
+          "execution_time": 0.2767,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-06-01T19:51:49+03:00",
+        "metrics": {
+          "execution_time": 0.2878,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-06-01T21:00:35+03:00",
+        "metrics": {
+          "execution_time": 0.2868,
+          "rubocop_offenses": 11
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-07-24T00:23:27+03:00",
+        "metrics": {
+          "execution_time": 0.3594,
+          "rubocop_offenses": 11
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 12,
+      "metrics": {
+        "execution_time": 0.312625,
+        "rubocop_offenses": 11.0
+      },
+      "rubocop_offenses": 11,
+      "score": 96.01,
+      "score_breakdown": {
+        "best_time_score": 94.7,
+        "avg_time_score": 93.75,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-20T16:14:02+02:00",
+        "metrics": {
+          "execution_time": 1.4641,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-20T16:31:27+02:00",
+        "metrics": {
+          "execution_time": 1.4706,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-20T18:06:10+02:00",
+        "metrics": {
+          "execution_time": 1.4311,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-03-27T00:09:24+02:00",
+        "metrics": {
+          "execution_time": 1.472,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-04-16T23:08:45+03:00",
+        "metrics": {
+          "execution_time": 1.5104,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-04-22T10:59:08+03:00",
+        "metrics": {
+          "execution_time": 1.6679,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T11:04:59+03:00",
+        "metrics": {
+          "execution_time": 1.5444,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T11:22:02+03:00",
+        "metrics": {
+          "execution_time": 1.5194,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T12:00:41+03:00",
+        "metrics": {
+          "execution_time": 1.6581,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-05-25T17:46:54+03:00",
+        "metrics": {
+          "execution_time": 1.5383,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-06-01T19:46:45+03:00",
+        "metrics": {
+          "execution_time": 1.4674,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-06-01T20:55:22+03:00",
+        "metrics": {
+          "execution_time": 1.4527,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "claude_3_7_sonnet_vscode_03_2025",
+        "timestamp": "2025-07-24T00:14:20+03:00",
+        "metrics": {
+          "execution_time": 1.8734,
+          "rubocop_offenses": 1
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 13,
+      "metrics": {
+        "execution_time": 1.543831,
+        "rubocop_offenses": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 79.29,
+      "score_breakdown": {
+        "best_time_score": 71.38,
+        "avg_time_score": 69.12,
+        "quality_score": 100
+      }
+    }
+  }
+}

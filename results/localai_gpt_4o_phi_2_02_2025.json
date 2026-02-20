@@ -1,0 +1,263 @@
+{
+  "implementation": "localai_gpt_4o_phi_2_02_2025",
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-14T23:41:56+02:00",
+        "metrics": {
+          "execution_time": 2.7329
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-14T23:44:13+02:00",
+        "metrics": {
+          "execution_time": 2.6839
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-14T23:46:17+02:00",
+        "metrics": {
+          "execution_time": 2.6966
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-14T23:48:12+02:00",
+        "metrics": {
+          "execution_time": 2.7614
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-14T23:50:06+02:00",
+        "metrics": {
+          "execution_time": 2.7128
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T01:52:25+02:00",
+        "metrics": {
+          "execution_time": 2.8213,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T01:59:06+02:00",
+        "metrics": {
+          "execution_time": 2.7402,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T12:03:56+02:00",
+        "metrics": {
+          "execution_time": 2.8763,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T12:11:38+02:00",
+        "metrics": {
+          "execution_time": 2.7065,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T12:19:31+02:00",
+        "metrics": {
+          "execution_time": 2.6768,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T12:30:05+02:00",
+        "metrics": {
+          "execution_time": 2.7317,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T12:50:39+02:00",
+        "metrics": {
+          "execution_time": 2.6888,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T13:00:58+02:00",
+        "metrics": {
+          "execution_time": 2.6908,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-15T13:09:02+02:00",
+        "metrics": {
+          "execution_time": 2.7768,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-25T21:40:49+02:00",
+        "metrics": {
+          "execution_time": 3.0393,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-25T21:49:41+02:00",
+        "metrics": {
+          "execution_time": 2.7097,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-25T21:58:57+02:00",
+        "metrics": {
+          "execution_time": 2.731,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-02-25T22:08:48+02:00",
+        "metrics": {
+          "execution_time": 2.8874,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-03-20T16:13:23+02:00",
+        "metrics": {
+          "execution_time": 2.7312,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-03-20T16:30:40+02:00",
+        "metrics": {
+          "execution_time": 2.7775,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-03-20T18:05:15+02:00",
+        "metrics": {
+          "execution_time": 2.806,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-03-27T00:10:39+02:00",
+        "metrics": {
+          "execution_time": 2.7738,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-04-16T23:08:29+03:00",
+        "metrics": {
+          "execution_time": 2.6659,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-04-22T11:00:54+03:00",
+        "metrics": {
+          "execution_time": 2.9371,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-05-25T11:05:14+03:00",
+        "metrics": {
+          "execution_time": 2.8496,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-05-25T11:21:10+03:00",
+        "metrics": {
+          "execution_time": 3.0287,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-05-25T12:01:53+03:00",
+        "metrics": {
+          "execution_time": 2.8857,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-05-25T17:47:52+03:00",
+        "metrics": {
+          "execution_time": 2.7796,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-06-01T19:46:29+03:00",
+        "metrics": {
+          "execution_time": 2.7778,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-06-01T20:56:46+03:00",
+        "metrics": {
+          "execution_time": 2.6419,
+          "rubocop_offenses": 33
+        }
+      },
+      {
+        "implementation": "localai_gpt_4o_phi_2_02_2025",
+        "timestamp": "2025-07-24T00:17:15+03:00",
+        "metrics": {
+          "execution_time": 3.1675,
+          "rubocop_offenses": 33
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 31,
+      "metrics": {
+        "execution_time": 2.789887
+      },
+      "rubocop_offenses": 33,
+      "score": 62.13,
+      "score_breakdown": {
+        "best_time_score": 47.16,
+        "avg_time_score": 44.2,
+        "quality_score": 100
+      }
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:15:02+03:00",
+        "metrics": {
+          "execution_time": 0.3336,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T18:02:11+03:00",
+        "metrics": {
+          "execution_time": 0.3443,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:59:59+03:00",
+        "metrics": {
+          "execution_time": 0.3346,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:11:19+03:00",
+        "metrics": {
+          "execution_time": 0.3362,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:39:41+03:00",
+        "metrics": {
+          "execution_time": 0.4402,
+          "rubocop_offenses": 9
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.35778,
+        "rubocop_offenses": 9.0
+      },
+      "rubocop_offenses": 9,
+      "score": 95.19,
+      "score_breakdown": {
+        "best_time_score": 93.33,
+        "avg_time_score": 92.85,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:14:50+03:00",
+        "metrics": {
+          "execution_time": 0.3409,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:51:53+03:00",
+        "metrics": {
+          "execution_time": 0.3232,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:51:35+03:00",
+        "metrics": {
+          "execution_time": 0.3422,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:02:21+03:00",
+        "metrics": {
+          "execution_time": 0.3401,
+          "rubocop_offenses": 17
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:23:01+03:00",
+        "metrics": {
+          "execution_time": 0.4175,
+          "rubocop_offenses": 17
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.35278,
+        "rubocop_offenses": 17.0
+      },
+      "rubocop_offenses": 17,
+      "score": 95.3,
+      "score_breakdown": {
+        "best_time_score": 93.54,
+        "avg_time_score": 92.95,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T16:15:00+03:00",
+        "metrics": {
+          "execution_time": 0.8408,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-05-25T17:56:24+03:00",
+        "metrics": {
+          "execution_time": 0.8101,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T19:59:13+03:00",
+        "metrics": {
+          "execution_time": 0.8224,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-06-01T21:10:05+03:00",
+        "metrics": {
+          "execution_time": 0.8253,
+          "rubocop_offenses": 3
+        }
+      },
+      {
+        "implementation": "gemma_3_27b_it_free_openrouter_05_2025",
+        "timestamp": "2025-07-24T00:31:07+03:00",
+        "metrics": {
+          "execution_time": 1.093,
+          "rubocop_offenses": 3
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 5,
+      "metrics": {
+        "execution_time": 0.87832,
+        "rubocop_offenses": 3.0
+      },
+      "rubocop_offenses": 3,
+      "score": 88.25,
+      "score_breakdown": {
+        "best_time_score": 83.8,
+        "avg_time_score": 82.44,
+        "quality_score": 100
+      }
+    }
+  }
+}

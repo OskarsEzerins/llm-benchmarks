@@ -1,0 +1,255 @@
+{
+  "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+        "timestamp": "2025-10-06T06:29:02+00:00",
+        "metrics": {
+          "rubocop_offenses": 8,
+          "execution_time": 0.977,
+          "primary_metric": 0.977,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "execution_time": 0.977,
+        "primary_metric": 0.977,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 86.32,
+      "score_breakdown": {
+        "best_time_score": 80.46,
+        "avg_time_score": 80.46,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+        "timestamp": "2025-10-06T06:28:45+00:00",
+        "metrics": {
+          "rubocop_offenses": 30,
+          "execution_time": 0.2267,
+          "primary_metric": 0.2267,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 30.0,
+        "execution_time": 0.2267,
+        "primary_metric": 0.2267,
+        "success": 1.0
+      },
+      "rubocop_offenses": 30,
+      "score": 96.83,
+      "score_breakdown": {
+        "best_time_score": 95.47,
+        "avg_time_score": 95.47,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+        "timestamp": "2025-10-06T06:28:39+00:00",
+        "metrics": {
+          "rubocop_offenses": 1,
+          "execution_time": 1.6967,
+          "primary_metric": 1.6967,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 1.0,
+        "execution_time": 1.6967,
+        "primary_metric": 1.6967,
+        "success": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 76.25,
+      "score_breakdown": {
+        "best_time_score": 66.07,
+        "avg_time_score": 66.07,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+        "timestamp": "2025-10-06T06:28:57+00:00",
+        "metrics": {
+          "rubocop_offenses": 10,
+          "execution_time": 1.0906,
+          "primary_metric": 1.0906,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 10.0,
+        "execution_time": 1.0906,
+        "primary_metric": 1.0906,
+        "success": 1.0
+      },
+      "rubocop_offenses": 10,
+      "score": 84.73,
+      "score_breakdown": {
+        "best_time_score": 78.19,
+        "avg_time_score": 78.19,
+        "quality_score": 100
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:35+02:00",
+        "metrics": {
+          "rubocop_offenses": 19,
+          "tests_passed": 18,
+          "total_tests": 23,
+          "success_rate": 0.782608695652174,
+          "primary_metric": 0.782608695652174,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 19.0,
+        "tests_passed": 18.0,
+        "total_tests": 23.0,
+        "success_rate": 0.782609,
+        "primary_metric": 0.782609,
+        "success": 1.0
+      },
+      "rubocop_offenses": 19,
+      "score": 76.63,
+      "score_breakdown": {
+        "success_score": 78.26,
+        "quality_score": 62.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:44+02:00",
+        "metrics": {
+          "rubocop_offenses": 25,
+          "tests_passed": 23,
+          "total_tests": 39,
+          "success_rate": 0.5897435897435898,
+          "primary_metric": 0.5897435897435898,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 25.0,
+        "tests_passed": 23.0,
+        "total_tests": 39.0,
+        "success_rate": 0.589744,
+        "primary_metric": 0.589744,
+        "success": 1.0
+      },
+      "rubocop_offenses": 25,
+      "score": 58.07,
+      "score_breakdown": {
+        "success_score": 58.97,
+        "quality_score": 50.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:52+02:00",
+        "metrics": {
+          "rubocop_offenses": 12,
+          "tests_passed": 14,
+          "total_tests": 28,
+          "success_rate": 0.5,
+          "primary_metric": 0.5,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 12.0,
+        "tests_passed": 14.0,
+        "total_tests": 28.0,
+        "success_rate": 0.5,
+        "primary_metric": 0.5,
+        "success": 1.0
+      },
+      "rubocop_offenses": 12,
+      "score": 52.6,
+      "score_breakdown": {
+        "success_score": 50.0,
+        "quality_score": 76.0
+      }
+    }
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "deepseek_v3_2_exp_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:22+02:00",
+        "metrics": {
+          "rubocop_offenses": 10,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 10.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 10,
+      "score": 77.68,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 80.0
+      }
+    }
+  }
+}

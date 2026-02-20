@@ -31,16 +31,11 @@ class ResultsDisplayService
   private
 
   def load_results
-    results_file = Config.results_file(@benchmark_id)
-    File.exist?(results_file) ? JSON.parse(File.read(results_file)) : { 'results' => [], 'aggregates' => {} }
-  rescue JSON::ParserError
-    { 'results' => [], 'aggregates' => {} }
+    ResultsService.new(@benchmark_id).load
   end
 
   def calculate_best_results_by_implementation(results)
-    # Use the results service to get best results properly
-    results_service = ResultsService.new(Config.results_file(@benchmark_id), @benchmark_id)
-    results_service.calculate_best_results_by_implementation(results)
+    ResultsService.new(@benchmark_id).calculate_best_results_by_implementation(results)
   end
 
   def display_rankings_table

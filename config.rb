@@ -42,9 +42,8 @@ module Config
     "implementations/#{benchmark_type}/#{benchmark_id}"
   end
 
-  def results_file(benchmark_id)
-    benchmark_type = benchmark_configs[benchmark_id]&.dig(:type) || :performance
-    "#{results_dir}/#{benchmark_type}/#{benchmark_id}.json"
+  def implementation_results_file(implementation_name)
+    "#{results_dir}/#{implementation_name}.json"
   end
 
   def benchmark_file(benchmark_id)

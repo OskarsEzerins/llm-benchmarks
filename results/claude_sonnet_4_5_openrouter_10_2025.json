@@ -1,0 +1,135 @@
+{
+  "implementation": "claude_sonnet_4_5_openrouter_10_2025",
+  "calendar": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_4_5_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:34+02:00",
+        "metrics": {
+          "rubocop_offenses": 19,
+          "tests_passed": 17,
+          "total_tests": 23,
+          "success_rate": 0.7391304347826086,
+          "primary_metric": 0.7391304347826086,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 19.0,
+        "tests_passed": 17.0,
+        "total_tests": 23.0,
+        "success_rate": 0.73913,
+        "primary_metric": 0.73913,
+        "success": 1.0
+      },
+      "rubocop_offenses": 19,
+      "score": 72.72,
+      "score_breakdown": {
+        "success_score": 73.91,
+        "quality_score": 62.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_4_5_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:47+02:00",
+        "metrics": {
+          "rubocop_offenses": 36,
+          "tests_passed": 26,
+          "total_tests": 39,
+          "success_rate": 0.6666666666666666,
+          "primary_metric": 0.6666666666666666,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 36.0,
+        "tests_passed": 26.0,
+        "total_tests": 39.0,
+        "success_rate": 0.666667,
+        "primary_metric": 0.666667,
+        "success": 1.0
+      },
+      "rubocop_offenses": 36,
+      "score": 62.8,
+      "score_breakdown": {
+        "success_score": 66.67,
+        "quality_score": 28.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_4_5_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:55+02:00",
+        "metrics": {
+          "rubocop_offenses": 7,
+          "tests_passed": 21,
+          "total_tests": 28,
+          "success_rate": 0.75,
+          "primary_metric": 0.75,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 7.0,
+        "tests_passed": 21.0,
+        "total_tests": 28.0,
+        "success_rate": 0.75,
+        "primary_metric": 0.75,
+        "success": 1.0
+      },
+      "rubocop_offenses": 7,
+      "score": 76.1,
+      "score_breakdown": {
+        "success_score": 75.0,
+        "quality_score": 86.0
+      }
+    }
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_4_5_openrouter_10_2025",
+        "timestamp": "2026-01-15T18:26:22+02:00",
+        "metrics": {
+          "rubocop_offenses": 11,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 11.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 11,
+      "score": 77.48,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 78.0
+      }
+    }
+  }
+}

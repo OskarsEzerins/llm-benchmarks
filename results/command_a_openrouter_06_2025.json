@@ -1,0 +1,37 @@
+{
+  "implementation": "command_a_openrouter_06_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "command_a_openrouter_06_2025",
+        "timestamp": "2025-06-01T21:12:01+03:00",
+        "metrics": {
+          "execution_time": 0.5594,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "command_a_openrouter_06_2025",
+        "timestamp": "2025-07-24T00:37:54+03:00",
+        "metrics": {
+          "execution_time": 0.6449,
+          "rubocop_offenses": 9
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 2,
+      "metrics": {
+        "execution_time": 0.60215,
+        "rubocop_offenses": 9.0
+      },
+      "rubocop_offenses": 9,
+      "score": 91.91,
+      "score_breakdown": {
+        "best_time_score": 88.81,
+        "avg_time_score": 87.96,
+        "quality_score": 100
+      }
+    }
+  }
+}

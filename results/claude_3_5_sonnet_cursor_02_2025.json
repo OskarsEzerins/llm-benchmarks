@@ -1,0 +1,975 @@
+{
+  "implementation": "claude_3_5_sonnet_cursor_02_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T11:39:42+02:00",
+        "metrics": {
+          "execution_time": 0.3275,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T11:40:20+02:00",
+        "metrics": {
+          "execution_time": 0.3242,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T11:40:51+02:00",
+        "metrics": {
+          "execution_time": 0.3247,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T11:46:14+02:00",
+        "metrics": {
+          "execution_time": 0.3221,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T11:47:53+02:00",
+        "metrics": {
+          "execution_time": 0.3476,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:06:12+02:00",
+        "metrics": {
+          "execution_time": 0.3302,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:06:43+02:00",
+        "metrics": {
+          "execution_time": 0.3336,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:07:45+02:00",
+        "metrics": {
+          "execution_time": 0.3308,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:23:30+02:00",
+        "metrics": {
+          "execution_time": 0.3355,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:34:50+02:00",
+        "metrics": {
+          "execution_time": 0.3464,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:55:18+02:00",
+        "metrics": {
+          "execution_time": 0.3319,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T13:05:22+02:00",
+        "metrics": {
+          "execution_time": 0.3388,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T13:14:07+02:00",
+        "metrics": {
+          "execution_time": 0.3376,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T21:55:51+02:00",
+        "metrics": {
+          "execution_time": 0.3383,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T22:05:11+02:00",
+        "metrics": {
+          "execution_time": 0.3414,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T22:15:43+02:00",
+        "metrics": {
+          "execution_time": 0.3451,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T16:33:32+02:00",
+        "metrics": {
+          "execution_time": 0.325,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T16:34:49+02:00",
+        "metrics": {
+          "execution_time": 0.331,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T18:13:21+02:00",
+        "metrics": {
+          "execution_time": 0.3422,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-27T00:17:29+02:00",
+        "metrics": {
+          "execution_time": 0.3384,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-04-16T23:16:54+03:00",
+        "metrics": {
+          "execution_time": 0.3337,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-04-22T11:10:39+03:00",
+        "metrics": {
+          "execution_time": 0.3386,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T11:15:30+03:00",
+        "metrics": {
+          "execution_time": 0.3627,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T11:31:47+03:00",
+        "metrics": {
+          "execution_time": 0.3442,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T12:11:46+03:00",
+        "metrics": {
+          "execution_time": 0.3631,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T18:01:40+03:00",
+        "metrics": {
+          "execution_time": 0.3438,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-06-01T20:00:17+03:00",
+        "metrics": {
+          "execution_time": 0.3512,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-06-01T21:11:07+03:00",
+        "metrics": {
+          "execution_time": 0.3345,
+          "rubocop_offenses": 5
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-07-24T00:39:31+03:00",
+        "metrics": {
+          "execution_time": 0.4359,
+          "rubocop_offenses": 5
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 29,
+      "metrics": {
+        "execution_time": 0.341379,
+        "rubocop_offenses": 5.0
+      },
+      "rubocop_offenses": 5,
+      "score": 95.38,
+      "score_breakdown": {
+        "best_time_score": 93.56,
+        "avg_time_score": 93.17,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:33:52+02:00",
+        "metrics": {
+          "execution_time": 0.306
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:35:44+02:00",
+        "metrics": {
+          "execution_time": 0.3302
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:38:28+02:00",
+        "metrics": {
+          "execution_time": 0.3025
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:52:05+02:00",
+        "metrics": {
+          "execution_time": 0.2991
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:53:51+02:00",
+        "metrics": {
+          "execution_time": 0.3331
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T01:51:34+02:00",
+        "metrics": {
+          "execution_time": 0.3079,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T01:55:56+02:00",
+        "metrics": {
+          "execution_time": 0.3312,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T11:58:41+02:00",
+        "metrics": {
+          "execution_time": 0.4349,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:02:58+02:00",
+        "metrics": {
+          "execution_time": 0.5021,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:20:48+02:00",
+        "metrics": {
+          "execution_time": 0.3791,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:31:17+02:00",
+        "metrics": {
+          "execution_time": 0.3155,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:52:19+02:00",
+        "metrics": {
+          "execution_time": 0.4021,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T13:02:02+02:00",
+        "metrics": {
+          "execution_time": 0.378,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T13:11:47+02:00",
+        "metrics": {
+          "execution_time": 0.4022,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T21:51:53+02:00",
+        "metrics": {
+          "execution_time": 0.4155,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T22:01:16+02:00",
+        "metrics": {
+          "execution_time": 0.412,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T22:11:41+02:00",
+        "metrics": {
+          "execution_time": 0.3399,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T16:18:02+02:00",
+        "metrics": {
+          "execution_time": 0.405,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T18:08:18+02:00",
+        "metrics": {
+          "execution_time": 0.3333,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-27T00:13:24+02:00",
+        "metrics": {
+          "execution_time": 0.4116,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-04-16T23:09:28+03:00",
+        "metrics": {
+          "execution_time": 0.3036,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-04-22T11:05:58+03:00",
+        "metrics": {
+          "execution_time": 0.4686,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T11:08:28+03:00",
+        "metrics": {
+          "execution_time": 0.3404,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T11:25:39+03:00",
+        "metrics": {
+          "execution_time": 0.3373,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T12:05:35+03:00",
+        "metrics": {
+          "execution_time": 0.339,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T17:53:15+03:00",
+        "metrics": {
+          "execution_time": 0.3244,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-06-01T19:51:56+03:00",
+        "metrics": {
+          "execution_time": 0.3285,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-06-01T20:59:11+03:00",
+        "metrics": {
+          "execution_time": 0.3275,
+          "rubocop_offenses": 9
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-07-24T00:24:35+03:00",
+        "metrics": {
+          "execution_time": 0.4113,
+          "rubocop_offenses": 9
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 29,
+      "metrics": {
+        "execution_time": 0.362821
+      },
+      "rubocop_offenses": 9,
+      "score": 95.43,
+      "score_breakdown": {
+        "best_time_score": 94.02,
+        "avg_time_score": 92.75,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:42:34+02:00",
+        "metrics": {
+          "execution_time": 1.4738
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:43:44+02:00",
+        "metrics": {
+          "execution_time": 1.4565
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:46:03+02:00",
+        "metrics": {
+          "execution_time": 1.4689
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:47:35+02:00",
+        "metrics": {
+          "execution_time": 1.471
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-14T23:49:30+02:00",
+        "metrics": {
+          "execution_time": 1.4774
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T01:53:04+02:00",
+        "metrics": {
+          "execution_time": 1.438,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T01:58:43+02:00",
+        "metrics": {
+          "execution_time": 1.4352,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:04:36+02:00",
+        "metrics": {
+          "execution_time": 1.4475,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:11:03+02:00",
+        "metrics": {
+          "execution_time": 1.5133,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:18:19+02:00",
+        "metrics": {
+          "execution_time": 1.4846,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:30:54+02:00",
+        "metrics": {
+          "execution_time": 1.5297,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:50:47+02:00",
+        "metrics": {
+          "execution_time": 1.4352,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T13:00:08+02:00",
+        "metrics": {
+          "execution_time": 1.4275,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T13:09:10+02:00",
+        "metrics": {
+          "execution_time": 1.5134,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T21:41:06+02:00",
+        "metrics": {
+          "execution_time": 1.6037,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T21:49:57+02:00",
+        "metrics": {
+          "execution_time": 1.4593,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T21:59:13+02:00",
+        "metrics": {
+          "execution_time": 1.4598,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T22:09:37+02:00",
+        "metrics": {
+          "execution_time": 1.441,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T16:13:54+02:00",
+        "metrics": {
+          "execution_time": 1.4693,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T16:32:04+02:00",
+        "metrics": {
+          "execution_time": 1.466,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T18:07:08+02:00",
+        "metrics": {
+          "execution_time": 1.4353,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-27T00:10:17+02:00",
+        "metrics": {
+          "execution_time": 1.469,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-04-16T23:08:53+03:00",
+        "metrics": {
+          "execution_time": 1.4226,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-04-22T11:00:13+03:00",
+        "metrics": {
+          "execution_time": 1.5159,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T11:05:22+03:00",
+        "metrics": {
+          "execution_time": 1.5799,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T11:23:47+03:00",
+        "metrics": {
+          "execution_time": 1.5354,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T12:01:06+03:00",
+        "metrics": {
+          "execution_time": 1.6737,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T17:48:00+03:00",
+        "metrics": {
+          "execution_time": 1.5303,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-06-01T19:49:16+03:00",
+        "metrics": {
+          "execution_time": 1.4983,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-06-01T20:54:43+03:00",
+        "metrics": {
+          "execution_time": 1.4497,
+          "rubocop_offenses": 0
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-07-24T00:15:27+03:00",
+        "metrics": {
+          "execution_time": 1.8464,
+          "rubocop_offenses": 0
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 31,
+      "metrics": {
+        "execution_time": 1.497665
+      },
+      "rubocop_offenses": 0,
+      "score": 79.63,
+      "score_breakdown": {
+        "best_time_score": 71.55,
+        "avg_time_score": 70.05,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T10:39:02+02:00",
+        "metrics": {
+          "execution_time": 0.5879,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T10:48:36+02:00",
+        "metrics": {
+          "execution_time": 0.5912,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T10:50:08+02:00",
+        "metrics": {
+          "execution_time": 0.6301,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T10:53:38+02:00",
+        "metrics": {
+          "execution_time": 0.6227,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T10:53:57+02:00",
+        "metrics": {
+          "execution_time": 0.6193,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:22:31+02:00",
+        "metrics": {
+          "execution_time": 0.5961,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:33:18+02:00",
+        "metrics": {
+          "execution_time": 0.6159,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T12:53:38+02:00",
+        "metrics": {
+          "execution_time": 0.625,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T13:03:20+02:00",
+        "metrics": {
+          "execution_time": 0.5925,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-15T13:12:31+02:00",
+        "metrics": {
+          "execution_time": 0.6241,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T21:53:35+02:00",
+        "metrics": {
+          "execution_time": 0.6384,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T22:04:05+02:00",
+        "metrics": {
+          "execution_time": 0.6401,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-02-25T22:12:42+02:00",
+        "metrics": {
+          "execution_time": 0.6375,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T16:29:27+02:00",
+        "metrics": {
+          "execution_time": 0.6243,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-20T18:11:46+02:00",
+        "metrics": {
+          "execution_time": 0.6319,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-03-27T00:14:53+02:00",
+        "metrics": {
+          "execution_time": 0.6364,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-04-16T23:13:30+03:00",
+        "metrics": {
+          "execution_time": 0.61,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-04-22T11:08:06+03:00",
+        "metrics": {
+          "execution_time": 0.6644,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T11:11:41+03:00",
+        "metrics": {
+          "execution_time": 0.6694,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T11:26:33+03:00",
+        "metrics": {
+          "execution_time": 0.6746,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T12:06:43+03:00",
+        "metrics": {
+          "execution_time": 0.6779,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-05-25T17:59:01+03:00",
+        "metrics": {
+          "execution_time": 0.6304,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-06-01T19:57:06+03:00",
+        "metrics": {
+          "execution_time": 0.6483,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-06-01T21:04:44+03:00",
+        "metrics": {
+          "execution_time": 0.6487,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "claude_3_5_sonnet_cursor_02_2025",
+        "timestamp": "2025-07-24T00:29:17+03:00",
+        "metrics": {
+          "execution_time": 0.8071,
+          "rubocop_offenses": 6
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 25,
+      "metrics": {
+        "execution_time": 0.637768,
+        "rubocop_offenses": 6.0
+      },
+      "rubocop_offenses": 6,
+      "score": 91.47,
+      "score_breakdown": {
+        "best_time_score": 88.24,
+        "avg_time_score": 87.25,
+        "quality_score": 100
+      }
+    }
+  }
+}

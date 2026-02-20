@@ -1,6 +1,7 @@
 require 'terminal-table'
 require_relative '../../config'
 require_relative '../helpers/results_helper'
+require_relative 'results_service'
 
 class TotalResultsDisplayService
   include ResultsHelper
@@ -25,10 +26,9 @@ class TotalResultsDisplayService
 
   def load_all_results
     Config.benchmarks.each do |benchmark_id|
-      results_file = Config.results_file(benchmark_id)
-      next unless File.exist?(results_file)
+      data = ResultsService.new(benchmark_id).load
+      next if data['aggregates'].empty?
 
-      data = JSON.parse(File.read(results_file))
       @benchmark_results[benchmark_id] = data['aggregates']
     end
   end

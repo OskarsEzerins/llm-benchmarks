@@ -1,0 +1,835 @@
+{
+  "implementation": "qwen_2_5_max_02_2025",
+  "csv_processor": {
+    "results": [
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T11:45:37+02:00",
+        "metrics": {
+          "execution_time": 0.3204,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T11:45:45+02:00",
+        "metrics": {
+          "execution_time": 0.3394,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T11:45:53+02:00",
+        "metrics": {
+          "execution_time": 0.3436,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T11:46:24+02:00",
+        "metrics": {
+          "execution_time": 0.3223,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T11:47:45+02:00",
+        "metrics": {
+          "execution_time": 0.3051,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:06:02+02:00",
+        "metrics": {
+          "execution_time": 0.313,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:06:33+02:00",
+        "metrics": {
+          "execution_time": 0.311,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:07:49+02:00",
+        "metrics": {
+          "execution_time": 0.3138,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:23:18+02:00",
+        "metrics": {
+          "execution_time": 0.391,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:35:14+02:00",
+        "metrics": {
+          "execution_time": 0.3383,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:55:20+02:00",
+        "metrics": {
+          "execution_time": 0.3185,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T13:05:15+02:00",
+        "metrics": {
+          "execution_time": 0.315,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T13:14:16+02:00",
+        "metrics": {
+          "execution_time": 0.3183,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T21:55:41+02:00",
+        "metrics": {
+          "execution_time": 0.3266,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T22:04:51+02:00",
+        "metrics": {
+          "execution_time": 0.3523,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T22:15:24+02:00",
+        "metrics": {
+          "execution_time": 0.3304,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T16:34:01+02:00",
+        "metrics": {
+          "execution_time": 0.3185,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T16:34:39+02:00",
+        "metrics": {
+          "execution_time": 0.3143,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T18:13:13+02:00",
+        "metrics": {
+          "execution_time": 0.3489,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-27T00:17:46+02:00",
+        "metrics": {
+          "execution_time": 0.3227,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-04-16T23:17:33+03:00",
+        "metrics": {
+          "execution_time": 0.3126,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-04-22T11:10:44+03:00",
+        "metrics": {
+          "execution_time": 0.3238,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T11:15:27+03:00",
+        "metrics": {
+          "execution_time": 0.3404,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T11:31:03+03:00",
+        "metrics": {
+          "execution_time": 0.3242,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T12:10:47+03:00",
+        "metrics": {
+          "execution_time": 0.3429,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T18:02:22+03:00",
+        "metrics": {
+          "execution_time": 0.329,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-06-01T19:59:45+03:00",
+        "metrics": {
+          "execution_time": 0.3199,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-06-01T21:11:09+03:00",
+        "metrics": {
+          "execution_time": 0.3144,
+          "rubocop_offenses": 6
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-07-24T00:38:52+03:00",
+        "metrics": {
+          "execution_time": 0.4257,
+          "rubocop_offenses": 6
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 29,
+      "metrics": {
+        "execution_time": 0.330907,
+        "rubocop_offenses": 6.0
+      },
+      "rubocop_offenses": 6,
+      "score": 95.58,
+      "score_breakdown": {
+        "best_time_score": 93.9,
+        "avg_time_score": 93.38,
+        "quality_score": 100
+      }
+    }
+  },
+  "graph_shortest_paths": {
+    "results": [
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T11:57:35+02:00",
+        "metrics": {
+          "execution_time": 0.3744,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:01:16+02:00",
+        "metrics": {
+          "execution_time": 0.2905,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:19:46+02:00",
+        "metrics": {
+          "execution_time": 0.331,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:31:32+02:00",
+        "metrics": {
+          "execution_time": 0.2689,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:51:23+02:00",
+        "metrics": {
+          "execution_time": 0.3507,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T13:01:20+02:00",
+        "metrics": {
+          "execution_time": 0.3301,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T13:11:40+02:00",
+        "metrics": {
+          "execution_time": 0.352,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T21:52:30+02:00",
+        "metrics": {
+          "execution_time": 0.3625,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T22:01:53+02:00",
+        "metrics": {
+          "execution_time": 0.3578,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T22:11:56+02:00",
+        "metrics": {
+          "execution_time": 0.3642,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T16:17:54+02:00",
+        "metrics": {
+          "execution_time": 0.3623,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T18:09:41+02:00",
+        "metrics": {
+          "execution_time": 0.2844,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-27T00:12:46+02:00",
+        "metrics": {
+          "execution_time": 0.2877,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-04-16T23:10:33+03:00",
+        "metrics": {
+          "execution_time": 0.2564,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-04-22T11:05:28+03:00",
+        "metrics": {
+          "execution_time": 0.354,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T11:06:44+03:00",
+        "metrics": {
+          "execution_time": 0.2852,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T11:25:25+03:00",
+        "metrics": {
+          "execution_time": 0.288,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T12:05:56+03:00",
+        "metrics": {
+          "execution_time": 0.2841,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T17:50:50+03:00",
+        "metrics": {
+          "execution_time": 0.2666,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-06-01T19:53:05+03:00",
+        "metrics": {
+          "execution_time": 0.2792,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-06-01T21:00:42+03:00",
+        "metrics": {
+          "execution_time": 0.279,
+          "rubocop_offenses": 8
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-07-24T00:21:53+03:00",
+        "metrics": {
+          "execution_time": 0.3374,
+          "rubocop_offenses": 8
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 22,
+      "metrics": {
+        "execution_time": 0.315745,
+        "rubocop_offenses": 8.0
+      },
+      "rubocop_offenses": 8,
+      "score": 96.06,
+      "score_breakdown": {
+        "best_time_score": 94.87,
+        "avg_time_score": 93.69,
+        "quality_score": 100
+      }
+    }
+  },
+  "lru_cache": {
+    "results": [
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:04:59+02:00",
+        "metrics": {
+          "execution_time": 2.6456,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:11:16+02:00",
+        "metrics": {
+          "execution_time": 2.5395,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:18:48+02:00",
+        "metrics": {
+          "execution_time": 2.4182,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:30:28+02:00",
+        "metrics": {
+          "execution_time": 2.5452,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:51:00+02:00",
+        "metrics": {
+          "execution_time": 2.5405,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T13:00:36+02:00",
+        "metrics": {
+          "execution_time": 2.4365,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T13:09:55+02:00",
+        "metrics": {
+          "execution_time": 2.4796,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T21:41:54+02:00",
+        "metrics": {
+          "execution_time": 2.6799,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T21:50:19+02:00",
+        "metrics": {
+          "execution_time": 2.5359,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T21:58:25+02:00",
+        "metrics": {
+          "execution_time": 2.5644,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T22:09:59+02:00",
+        "metrics": {
+          "execution_time": 2.5513,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T16:12:45+02:00",
+        "metrics": {
+          "execution_time": 2.4819,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T16:31:41+02:00",
+        "metrics": {
+          "execution_time": 2.5575,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T18:06:30+02:00",
+        "metrics": {
+          "execution_time": 2.4838,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-27T00:09:53+02:00",
+        "metrics": {
+          "execution_time": 2.5736,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-04-16T23:08:08+03:00",
+        "metrics": {
+          "execution_time": 2.0405,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-04-22T11:01:30+03:00",
+        "metrics": {
+          "execution_time": 2.2698,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T11:04:18+03:00",
+        "metrics": {
+          "execution_time": 2.2823,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T11:21:22+03:00",
+        "metrics": {
+          "execution_time": 2.2611,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T12:03:44+03:00",
+        "metrics": {
+          "execution_time": 2.2159,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T17:47:38+03:00",
+        "metrics": {
+          "execution_time": 2.1736,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-06-01T19:45:57+03:00",
+        "metrics": {
+          "execution_time": 2.0642,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-06-01T20:56:32+03:00",
+        "metrics": {
+          "execution_time": 2.1025,
+          "rubocop_offenses": 1
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-07-24T00:15:17+03:00",
+        "metrics": {
+          "execution_time": 2.6327,
+          "rubocop_offenses": 1
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 24,
+      "metrics": {
+        "execution_time": 2.419833,
+        "rubocop_offenses": 1.0
+      },
+      "rubocop_offenses": 1,
+      "score": 69.16,
+      "score_breakdown": {
+        "best_time_score": 59.19,
+        "avg_time_score": 51.6,
+        "quality_score": 100
+      }
+    }
+  },
+  "run_length_encoding": {
+    "results": [
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:22:52+02:00",
+        "metrics": {
+          "execution_time": 0.9501,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:34:47+02:00",
+        "metrics": {
+          "execution_time": 0.9778,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T12:54:24+02:00",
+        "metrics": {
+          "execution_time": 0.9755,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T13:04:39+02:00",
+        "metrics": {
+          "execution_time": 0.936,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-15T13:12:13+02:00",
+        "metrics": {
+          "execution_time": 0.9684,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T21:54:37+02:00",
+        "metrics": {
+          "execution_time": 0.9877,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T22:04:32+02:00",
+        "metrics": {
+          "execution_time": 0.9814,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-02-25T22:12:54+02:00",
+        "metrics": {
+          "execution_time": 0.9787,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T16:29:19+02:00",
+        "metrics": {
+          "execution_time": 0.9731,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-20T18:11:39+02:00",
+        "metrics": {
+          "execution_time": 0.9917,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-03-27T00:15:04+02:00",
+        "metrics": {
+          "execution_time": 0.998,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-04-16T23:14:17+03:00",
+        "metrics": {
+          "execution_time": 0.8845,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-04-22T11:07:43+03:00",
+        "metrics": {
+          "execution_time": 1.0288,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T11:13:12+03:00",
+        "metrics": {
+          "execution_time": 0.9984,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T11:26:25+03:00",
+        "metrics": {
+          "execution_time": 1.0416,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T12:06:54+03:00",
+        "metrics": {
+          "execution_time": 0.977,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-05-25T17:58:53+03:00",
+        "metrics": {
+          "execution_time": 0.9303,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-06-01T19:54:04+03:00",
+        "metrics": {
+          "execution_time": 0.9729,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-06-01T21:09:14+03:00",
+        "metrics": {
+          "execution_time": 0.9835,
+          "rubocop_offenses": 4
+        }
+      },
+      {
+        "implementation": "qwen_2_5_max_02_2025",
+        "timestamp": "2025-07-24T00:34:13+03:00",
+        "metrics": {
+          "execution_time": 1.2173,
+          "rubocop_offenses": 4
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 20,
+      "metrics": {
+        "execution_time": 0.987635,
+        "rubocop_offenses": 4.0
+      },
+      "rubocop_offenses": 4,
+      "score": 87.0,
+      "score_breakdown": {
+        "best_time_score": 82.31,
+        "avg_time_score": 80.25,
+        "quality_score": 100
+      }
+    }
+  }
+}

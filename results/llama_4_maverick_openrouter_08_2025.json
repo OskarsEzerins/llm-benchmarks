@@ -1,0 +1,135 @@
+{
+  "implementation": "llama_4_maverick_openrouter_08_2025",
+  "calendar": {
+    "results": [
+      {
+        "implementation": "llama_4_maverick_openrouter_08_2025",
+        "timestamp": "2026-01-15T18:26:35+02:00",
+        "metrics": {
+          "rubocop_offenses": 22,
+          "tests_passed": 20,
+          "total_tests": 23,
+          "success_rate": 0.8695652173913043,
+          "primary_metric": 0.8695652173913043,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 22.0,
+        "tests_passed": 20.0,
+        "total_tests": 23.0,
+        "success_rate": 0.869565,
+        "primary_metric": 0.869565,
+        "success": 1.0
+      },
+      "rubocop_offenses": 22,
+      "score": 83.86,
+      "score_breakdown": {
+        "success_score": 86.96,
+        "quality_score": 56.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "llama_4_maverick_openrouter_08_2025",
+        "timestamp": "2026-01-15T18:26:48+02:00",
+        "metrics": {
+          "rubocop_offenses": 22,
+          "tests_passed": 16,
+          "total_tests": 39,
+          "success_rate": 0.41025641025641024,
+          "primary_metric": 0.41025641025641024,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 22.0,
+        "tests_passed": 16.0,
+        "total_tests": 39.0,
+        "success_rate": 0.410256,
+        "primary_metric": 0.410256,
+        "success": 1.0
+      },
+      "rubocop_offenses": 22,
+      "score": 42.53,
+      "score_breakdown": {
+        "success_score": 41.03,
+        "quality_score": 56.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "llama_4_maverick_openrouter_08_2025",
+        "timestamp": "2026-01-15T18:26:57+02:00",
+        "metrics": {
+          "rubocop_offenses": 4,
+          "tests_passed": 12,
+          "total_tests": 28,
+          "success_rate": 0.42857142857142855,
+          "primary_metric": 0.42857142857142855,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 4.0,
+        "tests_passed": 12.0,
+        "total_tests": 28.0,
+        "success_rate": 0.428571,
+        "primary_metric": 0.428571,
+        "success": 1.0
+      },
+      "rubocop_offenses": 4,
+      "score": 47.77,
+      "score_breakdown": {
+        "success_score": 42.86,
+        "quality_score": 92.0
+      }
+    }
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "llama_4_maverick_openrouter_08_2025",
+        "timestamp": "2026-01-15T18:26:24+02:00",
+        "metrics": {
+          "rubocop_offenses": 10,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 10.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 10,
+      "score": 77.68,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 80.0
+      }
+    }
+  }
+}

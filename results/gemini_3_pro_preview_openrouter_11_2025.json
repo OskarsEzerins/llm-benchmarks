@@ -1,0 +1,135 @@
+{
+  "implementation": "gemini_3_pro_preview_openrouter_11_2025",
+  "calendar": {
+    "results": [
+      {
+        "implementation": "gemini_3_pro_preview_openrouter_11_2025",
+        "timestamp": "2026-01-15T18:26:32+02:00",
+        "metrics": {
+          "rubocop_offenses": 20,
+          "tests_passed": 17,
+          "total_tests": 23,
+          "success_rate": 0.7391304347826086,
+          "primary_metric": 0.7391304347826086,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 20.0,
+        "tests_passed": 17.0,
+        "total_tests": 23.0,
+        "success_rate": 0.73913,
+        "primary_metric": 0.73913,
+        "success": 1.0
+      },
+      "rubocop_offenses": 20,
+      "score": 72.52,
+      "score_breakdown": {
+        "success_score": 73.91,
+        "quality_score": 60.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "gemini_3_pro_preview_openrouter_11_2025",
+        "timestamp": "2026-01-15T18:26:46+02:00",
+        "metrics": {
+          "rubocop_offenses": 38,
+          "tests_passed": 12,
+          "total_tests": 39,
+          "success_rate": 0.3076923076923077,
+          "primary_metric": 0.3076923076923077,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 38.0,
+        "tests_passed": 12.0,
+        "total_tests": 39.0,
+        "success_rate": 0.307692,
+        "primary_metric": 0.307692,
+        "success": 1.0
+      },
+      "rubocop_offenses": 38,
+      "score": 30.09,
+      "score_breakdown": {
+        "success_score": 30.77,
+        "quality_score": 24.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "gemini_3_pro_preview_openrouter_11_2025",
+        "timestamp": "2026-01-15T18:26:54+02:00",
+        "metrics": {
+          "rubocop_offenses": 3,
+          "tests_passed": 17,
+          "total_tests": 28,
+          "success_rate": 0.6071428571428571,
+          "primary_metric": 0.6071428571428571,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 3.0,
+        "tests_passed": 17.0,
+        "total_tests": 28.0,
+        "success_rate": 0.607143,
+        "primary_metric": 0.607143,
+        "success": 1.0
+      },
+      "rubocop_offenses": 3,
+      "score": 64.04,
+      "score_breakdown": {
+        "success_score": 60.71,
+        "quality_score": 94.0
+      }
+    }
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "gemini_3_pro_preview_openrouter_11_2025",
+        "timestamp": "2026-01-15T18:26:25+02:00",
+        "metrics": {
+          "rubocop_offenses": 9,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 9.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 9,
+      "score": 45.95,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 82.0
+      }
+    }
+  }
+}
