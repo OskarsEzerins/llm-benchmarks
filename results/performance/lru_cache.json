@@ -4107,12 +4107,22 @@
       }
     },
     {
-      "implementation": "kimi_k2_5_openrouter_02_2026",
-      "timestamp": "2026-02-17T22:36:19+00:00",
+      "implementation": "glm_5_openrouter_02_2026",
+      "timestamp": "2026-02-17T23:30:32+00:00",
       "metrics": {
-        "rubocop_offenses": 14,
-        "execution_time": 1.6619,
-        "primary_metric": 1.6619,
+        "rubocop_offenses": 1,
+        "execution_time": 1.6926,
+        "primary_metric": 1.6926,
+        "success": true
+      }
+    },
+    {
+      "implementation": "glm_5_openrouter_02_2026",
+      "timestamp": "2026-02-17T23:55:15+00:00",
+      "metrics": {
+        "rubocop_offenses": 1,
+        "execution_time": 1.7695,
+        "primary_metric": 1.7695,
         "success": true
       }
     }
@@ -4846,19 +4856,19 @@
         "quality_score": 100
       }
     },
-    "kimi_k2_5_openrouter_02_2026": {
-      "run_count": 1,
+    "glm_5_openrouter_02_2026": {
+      "run_count": 2,
       "metrics": {
-        "rubocop_offenses": 14.0,
-        "execution_time": 1.6619,
-        "primary_metric": 1.6619,
+        "rubocop_offenses": 1.0,
+        "execution_time": 1.73105,
+        "primary_metric": 1.73105,
         "success": 1.0
       },
-      "rubocop_offenses": 14,
-      "score": 76.73,
+      "rubocop_offenses": 1,
+      "score": 76.07,
       "score_breakdown": {
-        "best_time_score": 66.76,
-        "avg_time_score": 66.76,
+        "best_time_score": 66.15,
+        "avg_time_score": 65.38,
         "quality_score": 100
       }
     }

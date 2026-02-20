@@ -997,14 +997,26 @@
       }
     },
     {
-      "implementation": "kimi_k2_5_openrouter_02_2026",
-      "timestamp": "2026-02-17T22:36:36+00:00",
+      "implementation": "glm_5_openrouter_02_2026",
+      "timestamp": "2026-02-17T23:55:36+00:00",
+      "metrics": {
+        "rubocop_offenses": 5,
+        "tests_passed": 22,
+        "total_tests": 28,
+        "success_rate": 0.7857142857142857,
+        "primary_metric": 0.7857142857142857,
+        "success": true
+      }
+    },
+    {
+      "implementation": "gemini_3_1_pro_preview_openrouter_02_2026",
+      "timestamp": "2026-02-19T21:56:52+02:00",
       "metrics": {
         "rubocop_offenses": 23,
-        "tests_passed": 15,
+        "tests_passed": 14,
         "total_tests": 28,
-        "success_rate": 0.5357142857142857,
-        "primary_metric": 0.5357142857142857,
+        "success_rate": 0.5,
+        "primary_metric": 0.5,
         "success": true
       }
     }
@@ -2421,20 +2433,37 @@
         "quality_score": 88.0
       }
     },
-    "kimi_k2_5_openrouter_02_2026": {
+    "glm_5_openrouter_02_2026": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 5.0,
+        "tests_passed": 22.0,
+        "total_tests": 28.0,
+        "success_rate": 0.785714,
+        "primary_metric": 0.785714,
+        "success": 1.0
+      },
+      "rubocop_offenses": 5,
+      "score": 79.71,
+      "score_breakdown": {
+        "success_score": 78.57,
+        "quality_score": 90.0
+      }
+    },
+    "gemini_3_1_pro_preview_openrouter_02_2026": {
       "run_count": 1,
       "metrics": {
         "rubocop_offenses": 23.0,
-        "tests_passed": 15.0,
+        "tests_passed": 14.0,
         "total_tests": 28.0,
-        "success_rate": 0.535714,
-        "primary_metric": 0.535714,
+        "success_rate": 0.5,
+        "primary_metric": 0.5,
         "success": 1.0
       },
       "rubocop_offenses": 23,
-      "score": 53.61,
+      "score": 50.4,
       "score_breakdown": {
-        "success_score": 53.57,
+        "success_score": 50.0,
         "quality_score": 54.0
       }
     }
