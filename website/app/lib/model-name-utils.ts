@@ -67,6 +67,7 @@ const MODEL_NORMALIZATION_RULES: ModelNormalizationRule[] = [
   { pattern: /^qwen[_\s]*3\.14b/i, replacement: 'Qwen 3.14B' },
   { pattern: /^coder[_\s]*large/i, replacement: 'Coder Large' },
   { pattern: /^nova[_\s]*pro[_\s]*v[_\s]*1/i, replacement: 'Nova Pro V1' },
+  { pattern: /^nova[_\s]*2[_\s]*lite[_\s]*v[_\s]*1/i, replacement: 'Nova 2 Lite V1' },
   { pattern: /^nova[_\s]*lite[_\s]*v[_\s]*1/i, replacement: 'Nova Lite V1' },
   { pattern: /^nova[_\s]*micro[_\s]*v[_\s]*1/i, replacement: 'Nova Micro V1' },
   { pattern: /^kimi[_\s]*k[_\s]*2[_\s]*5/i, replacement: 'Kimi K2.5' },
