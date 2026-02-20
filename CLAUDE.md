@@ -11,7 +11,7 @@ This is an LLM benchmarking system written in Ruby that tests AI models across m
 - **Benchmarks** (`benchmarks/`): Organized by benchmark type, e.g. `performance/lru_cache`, `program_fixer/vending_machine`
 - **Implementations** (`implementations/`): Organized by benchmark type and benchmark id, e.g. `performance/lru_cache`, `program_fixer/vending_machine`
 - **Services** (`lib/services/`): Core logic for running benchmarks, evaluating code quality, and displaying results
-- **Results** (`results/`): JSON files storing performance metrics and rankings
+- **Results** (`results/`): One JSON file per implementation (e.g. `results/claude_sonnet_4_6_openrouter_02_2026.json`), containing that implementation's results across all benchmarks
 
 ### Key Services
 
@@ -21,7 +21,13 @@ This is an LLM benchmarking system written in Ruby that tests AI models across m
 - `ResultsService`/`ResultsDisplayService`: Manages result storage and display
 - `Implementations::Adder`: Generates new implementations using OpenRouter API models
 
-### Benchmark Structure 
+### Results Storage
+
+Results are stored **per-implementation** rather than per-benchmark. Each model gets its own `results/{implementation}.json` file containing results for every benchmark it has run. This design eliminates merge conflicts — adding a new model only creates new files.
+
+`bin/aggregate_results` aggregates these per-implementation files into per-benchmark JSON files consumed by the website. It runs automatically via `prebuild`/`predev` npm scripts before building or serving the website. The aggregated output goes to `website/public/data/` (gitignored).
+
+### Benchmark Structure
 
 Each benchmark consists of:
 - `benchmark.rb`: Contains the test logic and validation
@@ -35,9 +41,6 @@ Each benchmark consists of:
 # Interactive main menu for running benchmarks or adding implementations
 bin/main
 
-# Run all benchmarks with all models
-bundle exec ruby main.rb
-
 # Install dependencies
 bundle install
 ```
@@ -47,8 +50,11 @@ bundle install
 # Show results for all benchmarks
 bin/show_all_results
 
-# Show total rankings across all benchmarks
+# Show total rankings across all benchmark types
 bin/show_total_rankings
+
+# Aggregate per-implementation results into per-benchmark JSON for the website
+bin/aggregate_results website/public/data
 ```
 
 ### Code Quality
@@ -81,3 +87,10 @@ New implementations are generated via the `ruby_llm` gem using OpenRouter API. E
 - Results include execution time and RuboCop offense count
 - Broken implementations are moved to `broken/` subdirectories
 - Slow implementations are moved to `slow/` subdirectories
+
+## Adding a New Model
+
+To add a new model's implementations via PR:
+1. Run `bin/main` and choose to generate implementations for the desired model
+2. This creates implementation files under `implementations/` and a results file at `results/{implementation}.json`
+3. Open a PR — since each model has its own result file, there are no merge conflicts with concurrent PRs

@@ -38,7 +38,7 @@ _See real-time rankings, detailed metrics, and comprehensive analysis of AI mode
 
 </div>
 
-## 🔧 Requirements
+## Requirements
 
 ```ruby
 unless RUBY_VERSION >= "3.4.0"
@@ -49,7 +49,7 @@ end
 puts "✨ You're good to go! Let's benchmark some AI! ✨"
 ```
 
-## 🚀 Features
+## Features
 
 ```ruby
 module BenchmarkFeatures
@@ -130,7 +130,7 @@ end
 # (They just learned some humility)
 ```
 
-## ⚡ Quick Start
+## Quick Start
 
 ```bash
 # Clone this beauty
@@ -163,7 +163,27 @@ pnpm install
 pnpm dev
 ```
 
-## 🏗️ Project Anatomy
+## Ways to Contribute
+
+```ruby
+if you.have_ideas? && you.like_benchmarks?
+  puts "We'd love your help!"
+  fork_it
+  create_branch
+  push_changes
+  pull_request
+else
+  puts "No pressure! Star us and come back later!"
+end
+```
+
+- **Add new model implementations**: Run a model against all benchmarks and open a PR with the results. See [#19](https://github.com/OskarsEzerins/llm-benchmarks/pull/19/files) as an example.
+- **Add new benchmark types**: Got a clever challenge for AI models?
+- **Improve the website**: Make those charts even prettier
+- **Optimize benchmarks**: More accurate, more fair, more challenging
+- **Documentation**: Help others understand the madness
+
+## Project Anatomy
 
 ```
 📦 LLM_BENCHMARKS
@@ -179,7 +199,7 @@ pnpm dev
  ┗ 📂 bin             # Press buttons, get answers
 ```
 
-### 🎯 Benchmark Types
+### Benchmark Types
 
 **Performance Benchmarks** ⚡️
 
@@ -194,27 +214,6 @@ pnpm dev
 - Parking garage logic repair
 - School library management fixes
 - Vending machine state handling
-
-## 🤝 Join the Fun!
-
-```ruby
-if you.have_ideas? && you.like_benchmarks?
-  puts "We'd love your help!"
-  fork_it
-  create_branch
-  push_changes
-  pull_request
-else
-  puts "No pressure! Star us and come back later!"
-end
-```
-
-### 🎯 Ways to Contribute
-
-- **Add new benchmark types**: Got a clever challenge for AI models?
-- **Improve the website**: Make those charts even prettier
-- **Optimize benchmarks**: More accurate, more fair, more challenging
-- **Documentation**: Help others understand the madness
 
 ---
 
