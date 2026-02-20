@@ -3,11 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm sync-data && react-router build",
-    "dev": "pnpm sync-data && react-router dev",
+    "prebuild": "mkdir -p public/data && cp ../results/program_fixer/*.json public/data/",
+    "build": "react-router build",
+    "predev": "mkdir -p public/data && cp ../results/program_fixer/*.json public/data/",
+    "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "tsc": "react-router typegen && tsc",
-    "sync-data": "./sync-data.sh"
+    "tsc": "react-router typegen && tsc"
   },
   "dependencies": {
     "@radix-ui/react-progress": "^1.1.8",
