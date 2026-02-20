@@ -1,0 +1,102 @@
+{
+  "implementation": "nova_2_lite_v1_openrouter_02_2026",
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "nova_2_lite_v1_openrouter_02_2026",
+        "timestamp": "2026-02-21T01:14:43+02:00",
+        "metrics": {
+          "rubocop_offenses": 15,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 15.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 15,
+      "score": 76.68,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 70.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "nova_2_lite_v1_openrouter_02_2026",
+        "timestamp": "2026-02-21T01:14:44+02:00",
+        "metrics": {
+          "rubocop_offenses": 20,
+          "tests_passed": 16,
+          "total_tests": 23,
+          "success_rate": 0.6956521739130435,
+          "primary_metric": 0.6956521739130435,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 20.0,
+        "tests_passed": 16.0,
+        "total_tests": 23.0,
+        "success_rate": 0.695652,
+        "primary_metric": 0.695652,
+        "success": 1.0
+      },
+      "rubocop_offenses": 20,
+      "score": 68.61,
+      "score_breakdown": {
+        "success_score": 69.57,
+        "quality_score": 60.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "nova_2_lite_v1_openrouter_02_2026",
+        "timestamp": "2026-02-21T01:14:44+02:00",
+        "metrics": {
+          "rubocop_offenses": 33,
+          "tests_passed": 15,
+          "total_tests": 39,
+          "success_rate": 0.38461538461538464,
+          "primary_metric": 0.38461538461538464,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 33.0,
+        "tests_passed": 15.0,
+        "total_tests": 39.0,
+        "success_rate": 0.384615,
+        "primary_metric": 0.384615,
+        "success": 1.0
+      },
+      "rubocop_offenses": 33,
+      "score": 38.01,
+      "score_breakdown": {
+        "success_score": 38.46,
+        "quality_score": 34.0
+      }
+    }
+  }
+}
