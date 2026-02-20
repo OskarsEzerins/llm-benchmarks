@@ -4135,6 +4135,16 @@
         "primary_metric": 2.4224,
         "success": true
       }
+    },
+    {
+      "implementation": "kimi_k2_5_openrouter_02_2026",
+      "timestamp": "2026-02-20T21:47:23+02:00",
+      "metrics": {
+        "rubocop_offenses": 14,
+        "execution_time": 2.5039,
+        "primary_metric": 2.5039,
+        "success": true
+      }
     }
   ],
   "averages": {
@@ -4895,6 +4905,22 @@
       "score_breakdown": {
         "best_time_score": 51.55,
         "avg_time_score": 51.55,
+        "quality_score": 100
+      }
+    },
+    "kimi_k2_5_openrouter_02_2026": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 14.0,
+        "execution_time": 2.5039,
+        "primary_metric": 2.5039,
+        "success": 1.0
+      },
+      "rubocop_offenses": 14,
+      "score": 64.95,
+      "score_breakdown": {
+        "best_time_score": 49.92,
+        "avg_time_score": 49.92,
         "quality_score": 100
       }
     }

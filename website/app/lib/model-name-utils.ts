@@ -69,6 +69,7 @@ const MODEL_NORMALIZATION_RULES: ModelNormalizationRule[] = [
   { pattern: /^nova[_\s]*pro[_\s]*v[_\s]*1/i, replacement: 'Nova Pro V1' },
   { pattern: /^nova[_\s]*lite[_\s]*v[_\s]*1/i, replacement: 'Nova Lite V1' },
   { pattern: /^nova[_\s]*micro[_\s]*v[_\s]*1/i, replacement: 'Nova Micro V1' },
+  { pattern: /^kimi[_\s]*k[_\s]*2[_\s]*5/i, replacement: 'Kimi K2.5' },
   { pattern: /^kimi[_\s]*k[_\s]*2/i, replacement: 'Kimi K2' },
   { pattern: /^magnum[_\s]*v[_\s]*4[_\s]*72b/i, replacement: 'Magnum V4 72B' },
   { pattern: /^gemma[_\s]*3[_\s]*4b[_\s]*it/i, replacement: 'Gemma 3 4B IT' },

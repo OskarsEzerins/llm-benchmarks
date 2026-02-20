@@ -1031,6 +1031,18 @@
         "primary_metric": 0.4642857142857143,
         "success": true
       }
+    },
+    {
+      "implementation": "kimi_k2_5_openrouter_02_2026",
+      "timestamp": "2026-02-20T21:47:58+02:00",
+      "metrics": {
+        "rubocop_offenses": 23,
+        "tests_passed": 15,
+        "total_tests": 28,
+        "success_rate": 0.5357142857142857,
+        "primary_metric": 0.5357142857142857,
+        "success": true
+      }
     }
   ],
   "aggregates": {
@@ -2494,6 +2506,23 @@
       "score_breakdown": {
         "success_score": 46.43,
         "quality_score": 66.0
+      }
+    },
+    "kimi_k2_5_openrouter_02_2026": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 23.0,
+        "tests_passed": 15.0,
+        "total_tests": 28.0,
+        "success_rate": 0.535714,
+        "primary_metric": 0.535714,
+        "success": 1.0
+      },
+      "rubocop_offenses": 23,
+      "score": 53.61,
+      "score_breakdown": {
+        "success_score": 53.57,
+        "quality_score": 54.0
       }
     }
   }
