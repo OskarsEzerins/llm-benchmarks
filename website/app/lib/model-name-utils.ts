@@ -55,6 +55,8 @@ const MODEL_NORMALIZATION_RULES: ModelNormalizationRule[] = [
   { pattern: /^llama[_\s]*3/i, replacement: 'Llama 3' },
 
   // Grok models
+  { pattern: /^grok[_\s]*4[_\s]*1[_\s]*fast/i, replacement: 'Grok 4.1 Fast' },
+  { pattern: /^grok[_\s]*4[_\s]*fast/i, replacement: 'Grok 4 Fast' },
   { pattern: /^grok[_\s]*4/i, replacement: 'Grok 4' },
   { pattern: /^grok[_\s]*3[_\s]*mini/i, replacement: 'Grok 3 Mini' },
   { pattern: /^grok[_\s]*3/i, replacement: 'Grok 3' },
