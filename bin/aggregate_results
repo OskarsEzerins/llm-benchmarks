@@ -4,41 +4,48 @@
 # Aggregates per-implementation result files into per-benchmark JSON files
 # for the website. Run before building/serving the website.
 #
-# Usage: bundle exec ruby bin/aggregate_results <output_dir>
-# Example: bundle exec ruby bin/aggregate_results website/public/data
+# Usage: ruby bin/aggregate_results <output_dir>
+# Example: ruby bin/aggregate_results website/public/data
 
 require 'json'
 require 'fileutils'
-require_relative '../config'
 
-output_dir = ARGV[0] || 'website/public/data'
+results_dir = File.expand_path('../results', __dir__)
+output_dir  = File.expand_path(ARGV[0] || 'website/public/data', Dir.pwd)
 FileUtils.mkdir_p(output_dir)
 
-# For each benchmark, collect results and aggregates from all implementation files
-Config.benchmarks.each do |benchmark_id|
-  results = []
-  aggregates = {}
+# Discover benchmark IDs and collect data from all per-implementation files
+benchmark_results    = {}  # benchmark_id => { results: [], aggregates: {} }
+benchmark_aggregates = {}
 
-  Dir.glob("#{Config.results_dir}/*.json").each do |file|
-    data = JSON.parse(File.read(file))
-    benchmark_data = data[benchmark_id]
-    next unless benchmark_data
+Dir.glob("#{results_dir}/*.json").each do |file|
+  data = JSON.parse(File.read(file))
+  implementation = data['implementation']
+  next unless implementation
 
-    implementation = data['implementation']
-    next unless implementation
+  data.each do |key, value|
+    next if key == 'implementation'
+    next unless value.is_a?(Hash) && value.key?('results')
 
-    results.concat(benchmark_data['results'] || [])
-    aggregates[implementation] = benchmark_data['aggregate'] if benchmark_data['aggregate']
-  rescue JSON::ParserError
-    next
+    benchmark_id = key
+    benchmark_results[benchmark_id]    ||= []
+    benchmark_aggregates[benchmark_id] ||= {}
+
+    benchmark_results[benchmark_id].concat(value['results'] || [])
+    benchmark_aggregates[benchmark_id][implementation] = value['aggregate'] if value['aggregate']
   end
+rescue JSON::ParserError
+  next
+end
 
-  next if results.empty? && aggregates.empty?
-
-  output = { 'results' => results, 'aggregates' => aggregates }
+benchmark_results.each_key do |benchmark_id|
+  output = {
+    'results'    => benchmark_results[benchmark_id],
+    'aggregates' => benchmark_aggregates[benchmark_id]
+  }
   output_file = File.join(output_dir, "#{benchmark_id}.json")
   File.write(output_file, JSON.pretty_generate(output))
-  puts "Wrote #{output_file} (#{aggregates.size} implementations)"
+  puts "Wrote #{output_file} (#{output['aggregates'].size} implementations)"
 end
 
 puts "Done. Output written to #{output_dir}/"

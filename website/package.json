@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "cd .. && bundle exec ruby bin/aggregate_results website/public/data",
+    "prebuild": "cd .. && ruby bin/aggregate_results website/public/data",
     "build": "react-router build",
-    "predev": "cd .. && bundle exec ruby bin/aggregate_results website/public/data",
+    "predev": "cd .. && ruby bin/aggregate_results website/public/data",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "tsc": "react-router typegen && tsc"
