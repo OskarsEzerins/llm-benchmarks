@@ -2,7 +2,7 @@
 // Used by components that receive benchmark result data (not manifest data).
 // Components that have access to manifest ImplementationEntry objects should
 // use entry.display_name / entry.provider directly instead of calling these functions.
-import modelNamesJson from '../../public/data/model_names.json'
+import modelNamesJson from '../data/model_names.json'
 
 type ModelEntry = { display_name: string; provider: string }
 const MODEL_DATA: Record<string, ModelEntry> = modelNamesJson as Record<string, ModelEntry>

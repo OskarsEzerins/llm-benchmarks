@@ -24,6 +24,8 @@ pnpm dev          # Start dev server (runs aggregate_results first via predev ho
 pnpm build        # Production build (runs aggregate_results first via prebuild hook)
 pnpm tsc          # Type check (runs typegen first)
 # Data generation: ruby ../bin/aggregate_results website/public/data
+# Note: model_names.json is written to website/app/data/ (not public/data/) so Vite
+#       can import it as an ES module. All other generated files go to public/data/.
 ```
 
 ## Project Structure
@@ -48,6 +50,9 @@ website/
 │   ├── types/
 │   │   └── benchmark.ts  # TypeScript interfaces
 │   └── routes.ts         # Route definitions
+├── app/
+│   └── data/             # Generated at build time, gitignored
+│       └── model_names.json  # Copied from config/model_names.json for ES module import
 ├── public/data/          # Synced JSON data files (generated, gitignored)
 │   ├── *.json            # Benchmark results
 │   └── implementations.json  # Implementation manifest (with display_name per entry)
@@ -63,9 +68,12 @@ website/
 
 ### Build-time vs. runtime file access
 
-`bin/aggregate_results` runs at build time (before Vite) and writes all generated data to
-`public/data/`. Anything needed at runtime must be either imported statically (Vite inlines it)
-or served from `public/`. The live server has no repo filesystem access.
+`bin/aggregate_results` runs at build time (before Vite) and writes generated data to two locations:
+
+- `public/data/` — benchmark results and `implementations.json`, served as static URL-accessible files and fetched at runtime via `fetch()`
+- `app/data/model_names.json` — copied here (not `public/data/`) so that Vite can process it as an ES module import. Vite forbids `import` statements targeting files inside `public/`, so this file must live in the app source tree.
+
+The live server has no repo filesystem access; all data must be either statically imported (Vite inlines it) or served from `public/`.
 
 ## Routing Conventions
 

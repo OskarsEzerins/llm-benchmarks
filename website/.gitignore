@@ -7,3 +7,7 @@
 
 # Generated during build - source of truth is results/ at repo root
 /public/data/
+
+# model_names.json is generated into app/data/ so Vite can import it as an ES module
+# (public/ imports are not allowed via ES module syntax in Vite)
+/app/data/

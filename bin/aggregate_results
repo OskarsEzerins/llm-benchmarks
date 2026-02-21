@@ -113,8 +113,11 @@ rescue StandardError
 end
 puts "Copied #{copied_count} implementation source files"
 
-# Copy model_names.json into output_dir so the website can import it within its own tree
-FileUtils.cp(config_file, File.join(output_dir, 'model_names.json'))
-puts "Copied model_names.json"
+# Copy model_names.json into website/app/data/ so Vite can process it as a static ES module import.
+# It must NOT go into public/ because Vite does not allow importing files from public/ via ES module syntax.
+app_data_dir = File.expand_path('../website/app/data', __dir__)
+FileUtils.mkdir_p(app_data_dir)
+FileUtils.cp(config_file, File.join(app_data_dir, 'model_names.json'))
+puts "Copied model_names.json to #{app_data_dir}/"
 
 puts "Done. Output written to #{output_dir}/"
