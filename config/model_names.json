@@ -135,6 +135,10 @@
     "display_name": "DeepSeek V3.2 Exp",
     "provider": "DeepSeek"
   },
+  "deepseek_v3_2_speciale_openrouter_02_2026": {
+    "display_name": "DeepSeek V3.2 Speciale",
+    "provider": "DeepSeek"
+  },
   "deepseek_v3_free_openrouter_05_2025": {
     "display_name": "DeepSeek V3",
     "provider": "DeepSeek"
@@ -203,12 +207,12 @@
     "display_name": "Gemini 3 Pro Preview",
     "provider": "Google"
   },
-  "gemma_3_4b_it_openrouter_08_2025": {
-    "display_name": "Gemma 3 4B IT",
-    "provider": "Google"
-  },
   "gemma_3_27b_it_free_openrouter_05_2025": {
     "display_name": "Gemma 3 27B IT",
+    "provider": "Google"
+  },
+  "gemma_3_4b_it_openrouter_08_2025": {
+    "display_name": "Gemma 3 4B IT",
     "provider": "Google"
   },
   "glm_4_5_openrouter_08_2025": {
