@@ -11,7 +11,7 @@ module Implementations
 
     def add
       benchmark_type = ::BenchmarkTypeSelectorService.new.select
-      return puts 'No benchmark type selected.' unless benchmark_type
+      return {} unless benchmark_type
 
       selection_type = @prompt.select(
         'How would you like to select models?',
@@ -24,10 +24,10 @@ module Implementations
       case selection_type
       when :single
         model_ids = [ModelSelectorService.new.select]
-        return puts 'No model selected.' unless model_ids.first
+        return {} unless model_ids.first
       when :multiple
         model_ids = ModelSelectorService.new.select_multiple
-        return puts 'No models selected.' if model_ids.empty?
+        return {} if model_ids.empty?
       end
 
       PromptProcessorService.new(model_ids, benchmark_type).process_prompts

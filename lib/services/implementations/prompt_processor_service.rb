@@ -7,46 +7,41 @@ module Implementations
       @benchmark_type = benchmark_type
     end
 
+    # Returns a hash of { benchmark_id => [slug, ...] } for newly saved implementations
     def process_prompts
       target_benchmarks = self.target_benchmarks
-      return display_no_benchmarks_message if target_benchmarks.empty?
+      if target_benchmarks.empty?
+        puts "No benchmarks found for type: #{@benchmark_type}"
+        return {}
+      end
 
-      display_processing_summary(target_benchmarks)
+      puts "Processing #{target_benchmarks.size} benchmark(s) for type: #{@benchmark_type}"
+      puts "Using #{@model_ids.size} model(s): #{@model_ids.join(', ')}"
       process_models_and_benchmarks(target_benchmarks)
     end
 
     private
 
-    def display_no_benchmarks_message
-      puts "No benchmarks found for type: #{@benchmark_type}"
-    end
-
-    def display_processing_summary(target_benchmarks)
-      puts "Processing #{target_benchmarks.size} benchmark(s) for type: #{@benchmark_type}"
-      puts "Using #{@model_ids.size} model(s): #{@model_ids.join(', ')}"
-    end
-
     def process_models_and_benchmarks(target_benchmarks)
+      added = Hash.new { |h, k| h[k] = [] }
       @model_ids.each do |model_id|
-        display_model_header(model_id)
-        process_benchmarks_for_model(model_id, target_benchmarks)
+        puts "\n#{'=' * 50}"
+        puts "Processing with model: #{model_id}"
+        puts "=" * 50
+        process_benchmarks_for_model(model_id, target_benchmarks, added)
       end
+      added
     end
 
-    def display_model_header(model_id)
-      puts "\n#{'=' * 50}"
-      puts "Processing with model: #{model_id}"
-      puts "=" * 50
-    end
-
-    def process_benchmarks_for_model(model_id, target_benchmarks)
+    def process_benchmarks_for_model(model_id, target_benchmarks, added)
       code_saver = CodeSaverService.new(model_id)
 
       target_benchmarks.each do |benchmark_id|
         next unless validate_prompt_file(benchmark_id)
         next if skip_existing_implementation?(code_saver, model_id, benchmark_id)
 
-        process_single_benchmark(model_id, benchmark_id, code_saver)
+        slug = process_single_benchmark(model_id, benchmark_id, code_saver)
+        added[benchmark_id] << slug if slug
       end
     end
 
@@ -59,7 +54,7 @@ module Implementations
     end
 
     def skip_existing_implementation?(code_saver, model_id, benchmark_id)
-      return false unless code_saver.send(:implementation_exists?, benchmark_id)
+      return false unless code_saver.implementation_exists?(benchmark_id)
 
       puts "Skipping #{model_id} for #{benchmark_id} - implementation already exists for this month"
       true
@@ -67,8 +62,7 @@ module Implementations
 
     def process_single_benchmark(model_id, benchmark_id, code_saver)
       prompt_file = Config.benchmark_prompt(benchmark_id)
-      puts "
-Processing prompt from: #{prompt_file}"
+      puts "\nProcessing prompt from: #{prompt_file}"
 
       prompt_content = File.read(prompt_file)
       response = RubyLLM.chat(model: model_id).ask(prompt_content)
@@ -88,32 +82,12 @@ Processing prompt from: #{prompt_file}"
       end
     end
 
-    def append_test_content_if_program_fixer(prompt_content, benchmark_id)
-      benchmark_config = Config.benchmark_config(benchmark_id)
-      return prompt_content unless benchmark_config[:type] == :program_fixer
-
-      test_suite_file = "#{Config.benchmark_file(benchmark_id)}.test_suite.rb"
-      return prompt_content unless File.exist?(test_suite_file)
-
-      test_content = File.read(test_suite_file)
-
-      "#{prompt_content}\n\n" \
-        "#{'=' * 50}\n" \
-        "TEST SUITE (test_suite.rb):\n" \
-        "#{'=' * 50}\n\n" \
-        "#{test_content}"
-    end
-
     def extract_ruby_code(response)
       if response.include?('```ruby')
         response.split('```ruby').last.split('```').first.strip
       else
         response.strip
       end
-    end
-
-    def extract_benchmark_id(prompt_file)
-      prompt_file.split(File::SEPARATOR)[1]
     end
   end
 end

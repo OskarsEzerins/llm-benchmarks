@@ -39,7 +39,8 @@ class Main
     when :run_benchmarks
       run_benchmarks
     when :add_implementations
-      Implementations::Adder.new.add
+      added = Implementations::Adder.new.add
+      run_benchmarks_for_added(added) if added.any?
     end
   end
 
@@ -115,6 +116,21 @@ class Main
       puts "\nRunning #{format_name(benchmark_id)}..."
       selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id)) # uses type-based path
       implementations = selector.list_all
+      BenchmarkRunnerService.new(benchmark_id, implementations).run
+    end
+  end
+
+  def run_benchmarks_for_added(added)
+    total = added.values.sum(&:size)
+    return unless @prompt.yes?("Run benchmarks for newly added implementations? (#{total} added)")
+
+    added.each do |benchmark_id, slugs|
+      next if slugs.empty?
+
+      puts "\nRunning #{format_name(benchmark_id)}..."
+      implementations = slugs.map do |slug|
+        { name: slug, file: "#{Config.implementations_dir(benchmark_id)}/#{slug}.rb" }
+      end
       BenchmarkRunnerService.new(benchmark_id, implementations).run
     end
   end

@@ -15,13 +15,19 @@ module Implementations
 
       if implementation_exists?(benchmark_id)
         puts "\nSkipping #{@model_id} for #{benchmark_id} - implementation already exists for this month"
-        return false
+        return nil
       end
 
       File.write(file_name, content)
+      slug = File.basename(file_name, '.rb')
       puts "\nSaved code to: #{file_name}"
-      update_model_names_config(File.basename(file_name, '.rb'))
-      true
+      update_model_names_config(slug)
+      slug
+    end
+
+    def implementation_exists?(benchmark_id)
+      file_name = generate_file_name(benchmark_id)
+      File.exist?(file_name)
     end
 
     private
@@ -40,11 +46,6 @@ module Implementations
       File.join(implementations_dir(benchmark_id), "#{model_name}_openrouter_#{timestamp}.rb".squeeze('_'))
     end
 
-    def implementation_exists?(benchmark_id)
-      file_name = generate_file_name(benchmark_id)
-      File.exist?(file_name)
-    end
-
     def model_name
       name = if ['deepseek'].any? { |provider| @model_id.include?(provider) }
                RubyLLM.models.find(@model_id).name.split(":").last.strip.tr('-.:() ', '_').downcase
@@ -57,7 +58,9 @@ module Implementations
 
     def model_display_name
       model_info = RubyLLM.models.find(@model_id)
-      model_info&.name || @model_id.split('/').last
+      name = model_info&.name || @model_id.split('/').last
+      # Strip "Provider: " prefix that some ruby_llm model names include (e.g. "Qwen: Qwen3 Coder Next")
+      name.include?(': ') ? name.split(': ', 2).last : name
     rescue StandardError
       @model_id.split('/').last
     end
