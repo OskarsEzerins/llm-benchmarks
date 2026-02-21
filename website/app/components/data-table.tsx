@@ -5,7 +5,7 @@ import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import { ChevronUp, ChevronDown, Search, Filter } from 'lucide-react'
 import { formatDateShort } from '../lib/data'
-import { normalizeModelName, getModelFamily } from '../lib/model-name-utils'
+import { getDisplayName, getModelFamily } from '../lib/model-names'
 
 interface DataTableProps {
   data: ModelRanking[]
@@ -51,7 +51,7 @@ export const DataTable: React.FC<DataTableProps> = ({
     // Apply search filter
     if (searchTerm) {
       filtered = filtered.filter(model =>
-        normalizeModelName(model.implementation).toLowerCase().includes(searchTerm.toLowerCase()) ||
+        getDisplayName(model.implementation).toLowerCase().includes(searchTerm.toLowerCase()) ||
         model.implementation.toLowerCase().includes(searchTerm.toLowerCase())
       )
     }
@@ -67,8 +67,8 @@ export const DataTable: React.FC<DataTableProps> = ({
       let bValue: number | string | Date = b[sortField]
 
       if (sortField === 'implementation') {
-        aValue = normalizeModelName(a.implementation)
-        bValue = normalizeModelName(b.implementation)
+        aValue = getDisplayName(a.implementation)
+        bValue = getDisplayName(b.implementation)
       }
 
       if (sortField === 'date') {
@@ -186,7 +186,7 @@ export const DataTable: React.FC<DataTableProps> = ({
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="font-medium text-foreground text-sm truncate">
-                          {normalizeModelName(model.implementation)}
+                          {getDisplayName(model.implementation)}
                         </div>
                         <div className="text-xs text-muted-foreground sm:hidden truncate">
                           {getModelFamily(model.implementation)} • {formatDateShort(model.date)}

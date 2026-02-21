@@ -8,6 +8,7 @@ import { Button } from '../components/ui/button'
 import { CompareColumns } from '../components/compare-columns'
 import { ComparisonControls } from '../components/comparison-controls'
 import { loadImplementationsManifest } from '../lib/implementations-data'
+import { itemDisplayName } from '../lib/model-names'
 import type { CompareItem, ImplementationEntry } from '../types/benchmark'
 
 export function meta() {
@@ -24,20 +25,28 @@ export async function loader({ request }: Route.LoaderArgs) {
   }
 }
 
-const parseItems = (itemsParam: string | null): CompareItem[] => {
+const parseItems = (itemsParam: string | null, allImplementations: ImplementationEntry[]): CompareItem[] => {
   if (!itemsParam) return []
-  return itemsParam.split(',').map(item => {
+  const result: CompareItem[] = []
+  for (const item of itemsParam.split(',')) {
     const parts = item.split('/')
-    if (parts.length < 3) return null
-    return { type: parts[0], task: parts[1], model: parts.slice(2).join('/') }
-  }).filter((item): item is CompareItem => item !== null)
+    if (parts.length < 3) continue
+    const type = parts[0]
+    const task = parts[1]
+    const model = parts.slice(2).join('/')
+    const entry = allImplementations.find(i => i.type === type && i.task === task && i.model === model)
+    const compareItem: CompareItem = { type, task, model }
+    if (entry?.display_name) compareItem.display_name = entry.display_name
+    result.push(compareItem)
+  }
+  return result
 }
 
 export default function ComparisonCompare({ loaderData }: Route.ComponentProps) {
   const { allImplementations } = loaderData
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
-  const items = useMemo(() => parseItems(searchParams.get('items')), [searchParams])
+  const items = useMemo(() => parseItems(searchParams.get('items'), allImplementations), [searchParams, allImplementations])
 
   if (items.length === 0) {
     return (
@@ -61,12 +70,16 @@ export default function ComparisonCompare({ loaderData }: Route.ComponentProps) 
   const handleItemsChange = (newItems: CompareItem[]) => {
     const encoded = newItems.map(i => `${i.type}/${i.task}/${i.model}`).join(',')
     // Sync selections back to sessionStorage so the catalog page stays consistent
-    const entries = newItems.map(i => ({
-      type: i.type,
-      task: i.task,
-      model: i.model,
-      lines: allImplementations.find(impl => impl.type === i.type && impl.task === i.task && impl.model === i.model)?.lines ?? 0,
-    }))
+    const entries = newItems.map(i => {
+      const impl = allImplementations.find(e => e.type === i.type && e.task === i.task && e.model === i.model)
+      return {
+        type: i.type,
+        task: i.task,
+        model: i.model,
+        lines: impl?.lines ?? 0,
+        display_name: impl?.display_name ?? itemDisplayName(i),
+      }
+    })
     sessionStorage.setItem('impl_compare_selections', JSON.stringify(entries))
     navigate(`/comparison/compare?items=${encodeURIComponent(encoded)}`)
   }

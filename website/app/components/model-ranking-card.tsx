@@ -1,5 +1,5 @@
 import type { ModelRanking } from '../types/benchmark';
-import { normalizeModelName, getModelFamily } from '../lib/model-name-utils';
+import { getDisplayName, getModelFamily } from '../lib/model-names';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
@@ -13,7 +13,7 @@ interface ModelRankingCardProps {
 
 export function ModelRankingCard({ model, rank, showRank = true }: ModelRankingCardProps) {
   const family = getModelFamily(model.implementation);
-  const formattedName = normalizeModelName(model.implementation);
+  const formattedName = getDisplayName(model.implementation);
 
   const getScoreColor = (score: number) => {
     if (score >= 75) return 'text-emerald-600 dark:text-emerald-400';

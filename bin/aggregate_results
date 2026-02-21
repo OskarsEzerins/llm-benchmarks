@@ -52,6 +52,27 @@ end
 implementations_dir = File.expand_path('../implementations', __dir__)
 manifest_entries = []
 
+# Load display name config
+model_names_config = {}
+config_file = File.expand_path('../config/model_names.json', __dir__)
+if File.exist?(config_file)
+  model_names_config = JSON.parse(File.read(config_file))
+end
+
+# Generic fallback formatter (title-case the slug stripped of date suffix)
+def format_display_name(slug)
+  base = slug
+    .sub(/_openrouter_\d{2}_\d{4}$/, '')
+    .sub(/_openai_api_\d{2}_\d{4}$/, '')
+    .sub(/_cursor_chat_\d{2}_\d{4}$/, '')
+    .sub(/_cursor_\d{2}_\d{4}$/, '')
+    .sub(/_vscode_\d{2}_\d{4}$/, '')
+    .sub(/_web_chat_\d{2}_\d{4}$/, '')
+    .sub(/_web_\d{2}_\d{4}$/, '')
+    .sub(/_\d{2}_\d{4}$/, '')
+  base.split('_').map(&:capitalize).join(' ')
+end
+
 Dir.glob("#{implementations_dir}/**/*.rb").sort.each do |file|
   rel = file.sub("#{implementations_dir}/", '')
   parts = rel.split('/')
@@ -62,7 +83,11 @@ Dir.glob("#{implementations_dir}/**/*.rb").sort.each do |file|
   task  = parts[1]
   model = parts[2].sub(/\.rb$/, '')
   lines = File.read(file).count("\n")
-  manifest_entries << { type: type, task: task, model: model, lines: lines }
+  entry = model_names_config[model]
+  display_name = entry.is_a?(Hash) ? entry['display_name'] : format_display_name(model)
+  provider     = entry.is_a?(Hash) ? entry['provider']      : 'Other'
+  manifest_entries << { type: type, task: task, model: model, lines: lines,
+                        display_name: display_name, provider: provider }
 rescue StandardError
   next
 end
@@ -87,5 +112,9 @@ rescue StandardError
   next
 end
 puts "Copied #{copied_count} implementation source files"
+
+# Copy model_names.json into output_dir so the website can import it within its own tree
+FileUtils.cp(config_file, File.join(output_dir, 'model_names.json'))
+puts "Copied model_names.json"
 
 puts "Done. Output written to #{output_dir}/"

@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { GitCompareArrows, X, AlertTriangle } from 'lucide-react'
 import { Button } from './ui/button'
-import { normalizeModelName } from '../lib/model-name-utils'
+import { itemDisplayName } from '../lib/model-names'
 import type { ImplementationEntry } from '../types/benchmark'
 
 interface CompareToolbarProps {
@@ -39,12 +39,12 @@ export const CompareToolbar = ({ selections, onRemove, onClear }: CompareToolbar
               className="inline-flex items-center gap-1.5 bg-muted text-foreground text-sm font-medium rounded-full px-3 py-1 shrink-0"
             >
               <span className="truncate max-w-[140px] sm:max-w-[200px]">
-                {normalizeModelName(s.model)}
+                {itemDisplayName(s)}
               </span>
               <button
                 onClick={() => onRemove(s)}
                 className="text-muted-foreground hover:text-foreground transition-colors ml-0.5 leading-none"
-                aria-label={`Remove ${normalizeModelName(s.model)} from comparison`}
+                aria-label={`Remove ${itemDisplayName(s)} from comparison`}
               >
                 <X className="h-3.5 w-3.5" />
               </button>

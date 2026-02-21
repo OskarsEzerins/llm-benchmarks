@@ -1,0 +1,566 @@
+{
+  "claude_3_5_haiku_openrouter_05_2025": {
+    "display_name": "Claude 3.5 Haiku",
+    "provider": "Anthropic"
+  },
+  "claude_3_5_haiku_openrouter_08_2025": {
+    "display_name": "Claude 3.5 Haiku",
+    "provider": "Anthropic"
+  },
+  "claude_3_5_sonnet_cursor_02_2025": {
+    "display_name": "Claude 3.5 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_3_5_sonnet_openrouter_05_2025": {
+    "display_name": "Claude 3.5 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_3_5_sonnet_openrouter_06_2025": {
+    "display_name": "Claude 3.5 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_3_5_sonnet_openrouter_08_2025": {
+    "display_name": "Claude 3.5 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_3_7_sonnet_openrouter_06_2025": {
+    "display_name": "Claude 3.7 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_3_7_sonnet_openrouter_08_2025": {
+    "display_name": "Claude 3.7 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_3_7_sonnet_thinking_cursor_02_2025": {
+    "display_name": "Claude 3.7 Sonnet (Thinking)",
+    "provider": "Anthropic"
+  },
+  "claude_3_7_sonnet_thinking_openrouter_06_2025": {
+    "display_name": "Claude 3.7 Sonnet (Thinking)",
+    "provider": "Anthropic"
+  },
+  "claude_3_7_sonnet_thinking_openrouter_08_2025": {
+    "display_name": "Claude 3.7 Sonnet (Thinking)",
+    "provider": "Anthropic"
+  },
+  "claude_3_7_sonnet_thinking_vscode_03_2025": {
+    "display_name": "Claude 3.7 Sonnet (Thinking)",
+    "provider": "Anthropic"
+  },
+  "claude_3_7_sonnet_vscode_03_2025": {
+    "display_name": "Claude 3.7 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_3_7_sonnet_web_chat_02_2025": {
+    "display_name": "Claude 3.7 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_3_haiku_openrouter_08_2025": {
+    "display_name": "Claude 3 Haiku",
+    "provider": "Anthropic"
+  },
+  "claude_4_sonnet_web_chat_05_2025": {
+    "display_name": "Claude 4 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_haiku_4_5_openrouter_10_2025": {
+    "display_name": "Claude 4.5 Haiku",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_1_openrouter_08_2025": {
+    "display_name": "Claude 4.1 Opus",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_5_openrouter_11_2025": {
+    "display_name": "Claude 4.5 Opus",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_6_openrouter_02_2026": {
+    "display_name": "Claude 4.6 Opus",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_openrouter_05_2025": {
+    "display_name": "Claude 4 Opus",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_openrouter_08_2025": {
+    "display_name": "Claude 4 Opus",
+    "provider": "Anthropic"
+  },
+  "claude_sonnet_4_5_openrouter_10_2025": {
+    "display_name": "Claude 4.5 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_sonnet_4_6_openrouter_02_2026": {
+    "display_name": "Claude 4.6 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_sonnet_4_openrouter_07_2025": {
+    "display_name": "Claude 4 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_sonnet_4_openrouter_08_2025": {
+    "display_name": "Claude 4 Sonnet",
+    "provider": "Anthropic"
+  },
+  "coder_large_openrouter_08_2025": {
+    "display_name": "Coder Large",
+    "provider": "Other"
+  },
+  "codestral_2508_openrouter_08_2025": {
+    "display_name": "Codestral 25.08",
+    "provider": "Mistral"
+  },
+  "command_a_openrouter_06_2025": {
+    "display_name": "Command A",
+    "provider": "Cohere"
+  },
+  "command_a_openrouter_08_2025": {
+    "display_name": "Command A",
+    "provider": "Cohere"
+  },
+  "deepseek_r1_distill_qwen_32b_web_chat_02_2025": {
+    "display_name": "DeepSeek R1 Distill Qwen 32B",
+    "provider": "DeepSeek"
+  },
+  "deepseek_r1_web_chat_02_2025": {
+    "display_name": "DeepSeek R1",
+    "provider": "DeepSeek"
+  },
+  "deepseek_v3_2_exp_openrouter_10_2025": {
+    "display_name": "DeepSeek V3.2 Exp",
+    "provider": "DeepSeek"
+  },
+  "deepseek_v3_2_exp_openrouter_12_2025": {
+    "display_name": "DeepSeek V3.2 Exp",
+    "provider": "DeepSeek"
+  },
+  "deepseek_v3_free_openrouter_05_2025": {
+    "display_name": "DeepSeek V3",
+    "provider": "DeepSeek"
+  },
+  "deepseek_v3_openrouter_08_2025": {
+    "display_name": "DeepSeek V3",
+    "provider": "DeepSeek"
+  },
+  "deepseek_v3_web_chat_02_2025": {
+    "display_name": "DeepSeek V3",
+    "provider": "DeepSeek"
+  },
+  "devstral_2512_openrouter_12_2025": {
+    "display_name": "Devstral 25.12",
+    "provider": "Mistral"
+  },
+  "gemini_2_0_flash_001_openrouter_08_2025": {
+    "display_name": "Gemini 2.0 Flash 001",
+    "provider": "Google"
+  },
+  "gemini_2_0_flash_web_chat_02_2025": {
+    "display_name": "Gemini 2.0 Flash",
+    "provider": "Google"
+  },
+  "gemini_2_0_pro_exp_cursor_chat_02_2025": {
+    "display_name": "Gemini 2.0 Pro Exp",
+    "provider": "Google"
+  },
+  "gemini_2_5_flash_lite_openrouter_08_2025": {
+    "display_name": "Gemini 2.5 Flash Lite",
+    "provider": "Google"
+  },
+  "gemini_2_5_flash_openrouter_08_2025": {
+    "display_name": "Gemini 2.5 Flash",
+    "provider": "Google"
+  },
+  "gemini_2_5_flash_preview_05_20_openrouter_05_2025": {
+    "display_name": "Gemini 2.5 Flash Preview 05-20",
+    "provider": "Google"
+  },
+  "gemini_2_5_flash_preview_05_20_openrouter_06_2025": {
+    "display_name": "Gemini 2.5 Flash Preview 05-20",
+    "provider": "Google"
+  },
+  "gemini_2_5_pro_exp_chat_03_2025": {
+    "display_name": "Gemini 2.5 Pro Exp",
+    "provider": "Google"
+  },
+  "gemini_2_5_pro_openrouter_08_2025": {
+    "display_name": "Gemini 2.5 Pro",
+    "provider": "Google"
+  },
+  "gemini_2_5_pro_preview_openrouter_05_2025": {
+    "display_name": "Gemini 2.5 Pro Preview",
+    "provider": "Google"
+  },
+  "gemini_3_1_pro_preview_openrouter_02_2026": {
+    "display_name": "Gemini 3.1 Pro Preview",
+    "provider": "Google"
+  },
+  "gemini_3_flash_preview_openrouter_12_2025": {
+    "display_name": "Gemini 3 Flash Preview",
+    "provider": "Google"
+  },
+  "gemini_3_pro_preview_openrouter_11_2025": {
+    "display_name": "Gemini 3 Pro Preview",
+    "provider": "Google"
+  },
+  "gemma_3_27b_it_free_openrouter_05_2025": {
+    "display_name": "Gemma 3 27B IT",
+    "provider": "Google"
+  },
+  "glm_4_5_openrouter_08_2025": {
+    "display_name": "GLM-4.5",
+    "provider": "Z.AI"
+  },
+  "glm_4_6_openrouter_10_2025": {
+    "display_name": "GLM-4.6",
+    "provider": "Z.AI"
+  },
+  "glm_4_7_openrouter_12_2025": {
+    "display_name": "GLM-4.7",
+    "provider": "Z.AI"
+  },
+  "glm_5_openrouter_02_2026": {
+    "display_name": "GLM-5",
+    "provider": "Z.AI"
+  },
+  "grok_3_beta_openrouter_05_2025": {
+    "display_name": "Grok 3",
+    "provider": "xAI"
+  },
+  "grok_3_mini_openrouter_08_2025": {
+    "display_name": "Grok 3 Mini",
+    "provider": "xAI"
+  },
+  "grok_3_openrouter_08_2025": {
+    "display_name": "Grok 3",
+    "provider": "xAI"
+  },
+  "grok_4_1_fast_openrouter_02_2026": {
+    "display_name": "Grok 4.1 Fast",
+    "provider": "xAI"
+  },
+  "grok_4_fast_openrouter_10_2025": {
+    "display_name": "Grok 4 Fast",
+    "provider": "xAI"
+  },
+  "grok_4_openrouter_08_2025": {
+    "display_name": "Grok 4",
+    "provider": "xAI"
+  },
+  "grok_code_fast_1_openrouter_09_2025": {
+    "display_name": "Grok Code Fast 1",
+    "provider": "xAI"
+  },
+  "horizon_beta_openrouter_08_2025": {
+    "display_name": "Horizon Beta",
+    "provider": "Other"
+  },
+  "kimi_k2_0905_openrouter_10_2025": {
+    "display_name": "Kimi K2 (0905)",
+    "provider": "Moonshot AI"
+  },
+  "kimi_k2_5_openrouter_02_2026": {
+    "display_name": "Kimi K2.5",
+    "provider": "Moonshot AI"
+  },
+  "kimi_k2_openrouter_07_2025": {
+    "display_name": "Kimi K2",
+    "provider": "Moonshot AI"
+  },
+  "kimi_k2_openrouter_08_2025": {
+    "display_name": "Kimi K2",
+    "provider": "Moonshot AI"
+  },
+  "kimi_k2_thinking_openrouter_12_2025": {
+    "display_name": "Kimi K2 Thinking",
+    "provider": "Moonshot AI"
+  },
+  "llama_4_maverick_openrouter_05_2025": {
+    "display_name": "Llama 4 Maverick",
+    "provider": "Meta"
+  },
+  "llama_4_maverick_openrouter_08_2025": {
+    "display_name": "Llama 4 Maverick",
+    "provider": "Meta"
+  },
+  "llama_4_scout_openrouter_08_2025": {
+    "display_name": "Llama 4 Scout",
+    "provider": "Meta"
+  },
+  "localai_gpt_4o_phi_2_02_2025": {
+    "display_name": "LocalAI GPT-4o Phi-2",
+    "provider": "Other"
+  },
+  "magnum_v4_72b_openrouter_08_2025": {
+    "display_name": "Magnum V4 72B",
+    "provider": "NousResearch"
+  },
+  "mimo_v2_flash_free_openrouter_12_2025": {
+    "display_name": "MIMO V2 Flash",
+    "provider": "Minimax"
+  },
+  "minimax_m2_1_openrouter_12_2025": {
+    "display_name": "MiniMax M2.1",
+    "provider": "Minimax"
+  },
+  "minimax_m2_5_openrouter_02_2026": {
+    "display_name": "MiniMax M2.5",
+    "provider": "Minimax"
+  },
+  "mistral_large_2512_openrouter_12_2025": {
+    "display_name": "Mistral Large 25.12",
+    "provider": "Mistral"
+  },
+  "mistral_medium_3_openrouter_08_2025": {
+    "display_name": "Mistral Medium 3",
+    "provider": "Mistral"
+  },
+  "mistral_web_03_2025": {
+    "display_name": "Mistral (Web)",
+    "provider": "Mistral"
+  },
+  "nova_2_lite_v1_openrouter_02_2026": {
+    "display_name": "Nova 2 Lite V1",
+    "provider": "Amazon"
+  },
+  "nova_lite_v1_openrouter_08_2025": {
+    "display_name": "Nova Lite V1",
+    "provider": "Amazon"
+  },
+  "nova_micro_v1_openrouter_08_2025": {
+    "display_name": "Nova Micro V1",
+    "provider": "Amazon"
+  },
+  "nova_pro_v1_openrouter_08_2025": {
+    "display_name": "Nova Pro V1",
+    "provider": "Amazon"
+  },
+  "openai_3_5_turbo_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-3.5 Turbo",
+    "provider": "OpenAI"
+  },
+  "openai_4_1_mini_openai_api_04_2025": {
+    "display_name": "OpenAI GPT-4.1 mini",
+    "provider": "OpenAI"
+  },
+  "openai_4_1_mini_openrouter_06_2025": {
+    "display_name": "OpenAI GPT-4.1 mini",
+    "provider": "OpenAI"
+  },
+  "openai_4_1_mini_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-4.1 mini",
+    "provider": "OpenAI"
+  },
+  "openai_4_1_nano_openai_api_04_2025": {
+    "display_name": "OpenAI GPT-4.1 nano",
+    "provider": "OpenAI"
+  },
+  "openai_4_1_nano_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-4.1 nano",
+    "provider": "OpenAI"
+  },
+  "openai_4_1_openai_api_04_2025": {
+    "display_name": "OpenAI GPT-4.1",
+    "provider": "OpenAI"
+  },
+  "openai_4_1_openrouter_05_2025": {
+    "display_name": "OpenAI GPT-4.1",
+    "provider": "OpenAI"
+  },
+  "openai_4_1_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-4.1",
+    "provider": "OpenAI"
+  },
+  "openai_4_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-4",
+    "provider": "OpenAI"
+  },
+  "openai_4_turbo_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-4 Turbo",
+    "provider": "OpenAI"
+  },
+  "openai_4o_mini_openrouter_06_2025": {
+    "display_name": "OpenAI GPT-4o mini",
+    "provider": "OpenAI"
+  },
+  "openai_4o_mini_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-4o mini",
+    "provider": "OpenAI"
+  },
+  "openai_4o_openrouter_06_2025": {
+    "display_name": "OpenAI GPT-4o",
+    "provider": "OpenAI"
+  },
+  "openai_4o_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-4o",
+    "provider": "OpenAI"
+  },
+  "openai_4o_web_chat_02_2025": {
+    "display_name": "OpenAI GPT-4o",
+    "provider": "OpenAI"
+  },
+  "openai_5_1_chat_openrouter_11_2025": {
+    "display_name": "OpenAI GPT-5.1",
+    "provider": "OpenAI"
+  },
+  "openai_5_1_codex_mini_openrouter_11_2025": {
+    "display_name": "OpenAI GPT-5.1 Codex Mini",
+    "provider": "OpenAI"
+  },
+  "openai_5_1_codex_openrouter_11_2025": {
+    "display_name": "OpenAI GPT-5.1 Codex",
+    "provider": "OpenAI"
+  },
+  "openai_5_1_openrouter_11_2025": {
+    "display_name": "OpenAI GPT-5.1",
+    "provider": "OpenAI"
+  },
+  "openai_5_2_chat_openrouter_12_2025": {
+    "display_name": "OpenAI GPT-5.2",
+    "provider": "OpenAI"
+  },
+  "openai_5_2_codex_openrouter_01_2026": {
+    "display_name": "OpenAI GPT-5.2 Codex",
+    "provider": "OpenAI"
+  },
+  "openai_5_2_openrouter_12_2025": {
+    "display_name": "OpenAI GPT-5.2",
+    "provider": "OpenAI"
+  },
+  "openai_5_chat_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-5",
+    "provider": "OpenAI"
+  },
+  "openai_5_codex_openrouter_10_2025": {
+    "display_name": "OpenAI GPT-5 Codex",
+    "provider": "OpenAI"
+  },
+  "openai_5_mini_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-5 mini",
+    "provider": "OpenAI"
+  },
+  "openai_5_mini_openrouter_09_2025": {
+    "display_name": "OpenAI GPT-5 mini",
+    "provider": "OpenAI"
+  },
+  "openai_5_nano_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-5 nano",
+    "provider": "OpenAI"
+  },
+  "openai_5_nano_openrouter_09_2025": {
+    "display_name": "OpenAI GPT-5 nano",
+    "provider": "OpenAI"
+  },
+  "openai_5_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-5",
+    "provider": "OpenAI"
+  },
+  "openai_5_openrouter_09_2025": {
+    "display_name": "OpenAI GPT-5",
+    "provider": "OpenAI"
+  },
+  "openai_chat_4o_latest_openrouter_08_2025": {
+    "display_name": "OpenAI GPT-4o",
+    "provider": "OpenAI"
+  },
+  "openai_o1_mini_openrouter_08_2025": {
+    "display_name": "OpenAI o1-mini",
+    "provider": "OpenAI"
+  },
+  "openai_o1_web_chat_02_2025": {
+    "display_name": "OpenAI o1",
+    "provider": "OpenAI"
+  },
+  "openai_o3_high_web_chat_02_2025": {
+    "display_name": "OpenAI o3 (High)",
+    "provider": "OpenAI"
+  },
+  "openai_o3_high_web_chat_03_2025": {
+    "display_name": "OpenAI o3 (High)",
+    "provider": "OpenAI"
+  },
+  "openai_o3_mini_high_openrouter_08_2025": {
+    "display_name": "OpenAI o3-mini (High)",
+    "provider": "OpenAI"
+  },
+  "openai_o3_mini_openrouter_08_2025": {
+    "display_name": "OpenAI o3-mini",
+    "provider": "OpenAI"
+  },
+  "openai_o3_mini_web_chat_02_2025": {
+    "display_name": "OpenAI o3-mini",
+    "provider": "OpenAI"
+  },
+  "openai_o3_mini_web_chat_03_2025": {
+    "display_name": "OpenAI o3-mini",
+    "provider": "OpenAI"
+  },
+  "openai_o4_high_web_chat_04_2025": {
+    "display_name": "OpenAI o4 (High)",
+    "provider": "OpenAI"
+  },
+  "openai_o4_mini_high_openrouter_05_2025": {
+    "display_name": "OpenAI o4-mini (High)",
+    "provider": "OpenAI"
+  },
+  "openai_o4_mini_high_openrouter_08_2025": {
+    "display_name": "OpenAI o4-mini (High)",
+    "provider": "OpenAI"
+  },
+  "openai_o4_mini_openrouter_06_2025": {
+    "display_name": "OpenAI o4-mini",
+    "provider": "OpenAI"
+  },
+  "openai_o4_mini_openrouter_08_2025": {
+    "display_name": "OpenAI o4-mini",
+    "provider": "OpenAI"
+  },
+  "openai_o4_mini_web_chat_04_2025": {
+    "display_name": "OpenAI o4-mini",
+    "provider": "OpenAI"
+  },
+  "openai_oss_120b_openrouter_08_2025": {
+    "display_name": "OpenAI OSS 120B",
+    "provider": "OpenAI"
+  },
+  "openai_oss_20b_openrouter_08_2025": {
+    "display_name": "OpenAI OSS 20B",
+    "provider": "OpenAI"
+  },
+  "qwen3_14b_openrouter_08_2025": {
+    "display_name": "Qwen3 14B",
+    "provider": "Qwen"
+  },
+  "qwen3_coder_openrouter_07_2025": {
+    "display_name": "Qwen3 Coder",
+    "provider": "Qwen"
+  },
+  "qwen3_coder_openrouter_08_2025": {
+    "display_name": "Qwen3 Coder",
+    "provider": "Qwen"
+  },
+  "qwen3_coder_plus_openrouter_10_2025": {
+    "display_name": "Qwen3 Coder Plus",
+    "provider": "Qwen"
+  },
+  "qwen3_max_openrouter_10_2025": {
+    "display_name": "Qwen3 Max",
+    "provider": "Qwen"
+  },
+  "qwen_2_5_max_02_2025": {
+    "display_name": "Qwen 2.5 Max",
+    "provider": "Qwen"
+  },
+  "qwen_2_5_plus_02_2025": {
+    "display_name": "Qwen 2.5 Plus",
+    "provider": "Qwen"
+  },
+  "r1_openrouter_08_2025": {
+    "display_name": "DeepSeek R1",
+    "provider": "DeepSeek"
+  },
+  "sonoma_sky_alpha_openrouter_09_2025": {
+    "display_name": "Sonoma Sky Alpha",
+    "provider": "Other"
+  }
+}

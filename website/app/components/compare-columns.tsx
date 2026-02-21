@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Loader2 } from 'lucide-react'
 import { ColorSchemeType } from 'diff2html/lib/types'
-import { normalizeModelName } from '../lib/model-name-utils'
 import { loadImplementationSource } from '../lib/implementations-data'
+import { itemDisplayName } from '../lib/model-names'
 import 'diff2html/bundles/css/diff2html.min.css'
 import type { CompareItem } from '../types/benchmark'
 
@@ -64,8 +64,8 @@ export const CompareColumns = ({ items }: CompareColumnsProps) => {
           fileName,
           sourceA,
           sourceB,
-          normalizeModelName(a.model),
-          normalizeModelName(b.model),
+          itemDisplayName(a),
+          itemDisplayName(b),
           { context: 5 },
         )
 

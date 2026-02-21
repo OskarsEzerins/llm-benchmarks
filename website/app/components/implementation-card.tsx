@@ -2,7 +2,7 @@ import { FileCode } from 'lucide-react'
 import { Card, CardContent } from './ui/card'
 import { Badge } from './ui/badge'
 import { Checkbox } from './ui/checkbox'
-import { normalizeModelName, getModelFamily } from '../lib/model-name-utils'
+import { getModelFamily } from '../lib/model-names'
 import { formatLabel } from '../lib/utils'
 import type { ImplementationEntry } from '../types/benchmark'
 
@@ -19,15 +19,15 @@ export const ImplementationCard = ({
   onToggleCompare,
   compareDisabled,
 }: ImplementationCardProps) => {
-  const { type, task, model, lines } = implementation
+  const { type, task, model, lines, display_name } = implementation
 
   return (
     <Card className="group border shadow-sm hover:shadow-md transition-shadow">
       <CardContent className="p-4 space-y-3">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0 flex-1">
-            <h3 className="font-medium text-sm truncate" title={normalizeModelName(model)}>
-              {normalizeModelName(model)}
+            <h3 className="font-medium text-sm truncate" title={display_name}>
+              {display_name}
             </h3>
             <p className="text-xs text-muted-foreground truncate">
               {getModelFamily(model)}
@@ -41,7 +41,7 @@ export const ImplementationCard = ({
               checked={isSelected}
               onCheckedChange={() => onToggleCompare(implementation)}
               disabled={compareDisabled && !isSelected}
-              aria-label={`Select ${normalizeModelName(model)} for comparison`}
+              aria-label={`Select ${display_name} for comparison`}
             />
           </div>
         </div>

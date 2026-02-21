@@ -3,8 +3,8 @@ import { ArrowLeftRight, ChevronDown, Check } from 'lucide-react'
 import { Button } from './ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
 import { Command, CommandEmpty, CommandInput, CommandItem, CommandList } from './ui/command'
-import { normalizeModelName } from '../lib/model-name-utils'
 import { formatLabel } from '../lib/utils'
+import { itemDisplayName } from '../lib/model-names'
 import type { CompareItem, ImplementationEntry } from '../types/benchmark'
 
 interface ComparisonControlsProps {
@@ -63,7 +63,7 @@ const ModelSelector = ({ label, currentItem, allImplementations, onSelect }: Mod
     [onSelect],
   )
 
-  const displayName = normalizeModelName(currentItem.model)
+  const displayName = itemDisplayName(currentItem)
 
   return (
     <div className="flex-1 min-w-0">
@@ -90,14 +90,14 @@ const ModelSelector = ({ label, currentItem, allImplementations, onSelect }: Mod
               {candidates.map(i => (
                 <CommandItem
                   key={i.model}
-                  value={normalizeModelName(i.model)}
+                  value={i.display_name}
                   onSelect={() => handleSelect(i.model)}
                   className="cursor-pointer"
                 >
                   <Check
                     className={`mr-2 h-4 w-4 shrink-0 ${i.model === currentItem.model ? 'opacity-100' : 'opacity-0'}`}
                   />
-                  {normalizeModelName(i.model)}
+                  {i.display_name}
                 </CommandItem>
               ))}
             </CommandList>

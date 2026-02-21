@@ -160,8 +160,13 @@ bin/show_total_rankings
 # 🌐 Launch the website locally (optional)
 cd website
 pnpm install
-pnpm dev
+pnpm dev  # runs bin/aggregate_results automatically via predev hook
 ```
+
+> **Adding a new model?** Also add its slug → display name entry to `config/model_names.json`
+> at the repo root. `bin/aggregate_results` reads this file at build time and bakes the display
+> name into the website's data. The JSON is bundled statically by Vite, so it works on Vercel
+> without any runtime filesystem access.
 
 ## Ways to Contribute
 
@@ -193,6 +198,7 @@ end
  ┣ 📂 implementations # AI's best attempts at glory
  ┃ ┣ 📂 performance   # Generated speed solutions
  ┃ ┗ 📂 program_fixer # Generated debugging fixes
+ ┣ 📂 config          # Shared config (model_names.json — slug → display name)
  ┣ 📂 lib             # Our benchmark orchestration tools
  ┣ 📂 results         # The cold, hard truth (JSON data)
  ┣ 📂 website         # 🌐 Interactive results dashboard

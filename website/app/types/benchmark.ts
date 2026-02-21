@@ -59,6 +59,8 @@ export interface ImplementationEntry {
   task: string;
   model: string;
   lines: number;
+  display_name: string;
+  provider?: string;
 }
 
 export interface ImplementationsManifest {
@@ -69,4 +71,5 @@ export interface CompareItem {
   type: string;
   task: string;
   model: string;
+  display_name?: string;
 }

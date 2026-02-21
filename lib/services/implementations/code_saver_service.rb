@@ -1,5 +1,10 @@
+require 'json'
+require_relative 'provider_name_service'
+
 module Implementations
   class CodeSaverService
+    MODEL_NAMES_CONFIG = File.expand_path('../../../config/model_names.json', __dir__)
+
     def initialize(model_id)
       @model_id = model_id
     end
@@ -15,6 +20,7 @@ module Implementations
 
       File.write(file_name, content)
       puts "\nSaved code to: #{file_name}"
+      update_model_names_config(File.basename(file_name, '.rb'))
       true
     end
 
@@ -47,6 +53,34 @@ module Implementations
              end
 
       @model_id.include?('openai') ? "openai_#{name.gsub('gpt', '')}" : name
+    end
+
+    def model_display_name
+      model_info = RubyLLM.models.find(@model_id)
+      model_info&.name || @model_id.split('/').last
+    rescue StandardError
+      @model_id.split('/').last
+    end
+
+    def model_provider
+      model_info = RubyLLM.models.find(@model_id)
+      return 'Other' unless model_info
+
+      ProviderNameService.display_name(model_info.provider)
+    rescue StandardError
+      'Other'
+    end
+
+    def update_model_names_config(slug)
+      config = File.exist?(MODEL_NAMES_CONFIG) ? JSON.parse(File.read(MODEL_NAMES_CONFIG)) : {}
+      return if config.key?(slug)
+
+      config[slug] = { 'display_name' => model_display_name, 'provider' => model_provider }
+      sorted = config.sort.to_h
+      File.write(MODEL_NAMES_CONFIG, JSON.pretty_generate(sorted))
+      puts "Updated model_names.json: #{slug} => #{config[slug]}"
+    rescue StandardError => e
+      puts "Warning: could not update model_names.json: #{e.message}"
     end
   end
 end

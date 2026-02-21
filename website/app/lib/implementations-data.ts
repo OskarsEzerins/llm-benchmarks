@@ -1,5 +1,5 @@
 import type { ImplementationsManifest, ImplementationEntry } from '../types/benchmark'
-import { getModelFamily } from './model-name-utils'
+import { getModelFamily } from './model-names'
 
 export const loadImplementationsManifest = async (request?: Request): Promise<ImplementationsManifest | null> => {
   try {
@@ -61,7 +61,8 @@ export const filterImplementations = (
   if (filters.search) {
     const search = filters.search.toLowerCase()
     filtered = filtered.filter(impl =>
-      impl.model.toLowerCase().includes(search)
+      impl.model.toLowerCase().includes(search) ||
+      impl.display_name.toLowerCase().includes(search)
     )
   }
 

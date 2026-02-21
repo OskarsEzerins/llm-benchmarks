@@ -1,5 +1,5 @@
 import type { BenchmarkData, BenchmarkType, ModelRanking, BenchmarkAggregate, BenchmarkResult } from '../types/benchmark'
-import { getModelFamily } from './model-name-utils'
+import { getModelFamily } from './model-names'
 
 // Date extraction and formatting utilities
 export function extractDateFromImplementation(implementation: string): Date | null {
