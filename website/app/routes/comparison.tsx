@@ -3,7 +3,6 @@ import type { Route } from './+types/comparison'
 import { GitCompareArrows, Database, Layers, FolderTree, Filter } from 'lucide-react'
 import { PageLayout, PageContent } from '../components/page-layout'
 import { Badge } from '../components/ui/badge'
-import { Button } from '../components/ui/button'
 import { ImplementationFilters } from '../components/implementation-filters'
 import { ImplementationCard } from '../components/implementation-card'
 import { CompareToolbar } from '../components/compare-toolbar'
@@ -168,46 +167,68 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
       </div>
 
       <PageContent>
-        {/* Filter bar */}
-        <div className="space-y-4">
-          {/* Mobile filter toggle */}
-          <div className="sm:hidden">
-            <Button
-              variant="outline"
-              onClick={() => setShowFilters(!showFilters)}
-              className="w-full justify-between"
-            >
-              <span className="flex items-center gap-2">
-                <Filter className="h-4 w-4" />
-                Filters
-                {hasActiveFilters && (
-                  <Badge variant="secondary" className="text-xs">Active</Badge>
-                )}
+        {/* Unified filter + toolbar panel — sticky so compare toolbar stays accessible while scrolling */}
+        <div className="sticky top-16 z-20">
+          <div className="rounded-xl border border-border bg-card shadow-sm">
+
+            {/* Mobile: filter toggle header row */}
+            <div className="sm:hidden px-4 pt-3 pb-2">
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex w-full items-center justify-between text-sm font-medium"
+                aria-expanded={showFilters}
+              >
+                <span className="flex items-center gap-2">
+                  <Filter className="h-4 w-4 text-muted-foreground" />
+                  Filters
+                  {hasActiveFilters && (
+                    <Badge variant="secondary" className="text-xs">Active</Badge>
+                  )}
+                </span>
+                <span className="text-muted-foreground text-xs">{showFilters ? '▲' : '▼'}</span>
+              </button>
+            </div>
+
+            {/* Filters — always visible on desktop, toggle on mobile */}
+            <div className={`${showFilters ? 'block' : 'hidden'} sm:block px-4 pt-3 sm:pt-4 pb-3`}>
+              <ImplementationFilters
+                types={types}
+                tasks={tasks}
+                families={families}
+                selectedType={selectedType}
+                selectedTask={selectedTask}
+                selectedFamily={selectedFamily}
+                searchTerm={searchInput}
+                onTypeChange={handleTypeChange}
+                onTaskChange={handleTaskChange}
+                onFamilyChange={handleFamilyChange}
+                onSearchChange={handleSearchChange}
+                onClear={clearFilters}
+                hasActiveFilters={hasActiveFilters}
+              />
+            </div>
+
+            {/* Divider */}
+            <div className="border-t border-border" />
+
+            {/* Bottom strip: count on left, compare toolbar on right */}
+            <div className="flex items-center gap-3 px-4 py-2.5 min-h-[44px]">
+              <span className="text-sm text-muted-foreground shrink-0">
+                Showing <span className="font-medium text-foreground">{filtered.length}</span> of {implementations.length}
               </span>
-            </Button>
-          </div>
 
-          {/* Filters (always visible on desktop, toggle on mobile) */}
-          <div className={`${showFilters ? 'block' : 'hidden'} sm:block`}>
-            <ImplementationFilters
-              types={types}
-              tasks={tasks}
-              families={families}
-              selectedType={selectedType}
-              selectedTask={selectedTask}
-              selectedFamily={selectedFamily}
-              searchTerm={searchInput}
-              onTypeChange={handleTypeChange}
-              onTaskChange={handleTaskChange}
-              onFamilyChange={handleFamilyChange}
-              onSearchChange={handleSearchChange}
-              onClear={clearFilters}
-              hasActiveFilters={hasActiveFilters}
-            />
-          </div>
+              {compareSelections.length > 0 && (
+                <>
+                  <div className="w-px h-4 bg-border shrink-0" />
+                  <CompareToolbar
+                    selections={compareSelections}
+                    onRemove={toggleCompare}
+                    onClear={clearCompare}
+                  />
+                </>
+              )}
+            </div>
 
-          <div className="text-sm text-muted-foreground">
-            Showing {filtered.length} of {implementations.length} implementations
           </div>
         </div>
 
@@ -233,15 +254,6 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
         )}
       </PageContent>
 
-      {/* Compare toolbar */}
-      <CompareToolbar
-        selections={compareSelections}
-        onRemove={toggleCompare}
-        onClear={clearCompare}
-      />
-
-      {/* Spacer when compare toolbar is visible */}
-      {compareSelections.length > 0 && <div className="h-16" />}
     </PageLayout>
   )
 }
