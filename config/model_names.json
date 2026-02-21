@@ -562,5 +562,9 @@
   "sonoma_sky_alpha_openrouter_09_2025": {
     "display_name": "Sonoma Sky Alpha",
     "provider": "Other"
+  },
+  "trinity_large_preview_free_openrouter_02_2026": {
+    "display_name": "Trinity Large Preview",
+    "provider": "Arcee AI"
   }
 }
