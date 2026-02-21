@@ -66,7 +66,13 @@ module Implementations
       model_info = RubyLLM.models.find(@model_id)
       return 'Other' unless model_info
 
-      ProviderNameService.display_name(model_info.provider)
+      provider_slug = if model_info.provider == 'openrouter'
+                        @model_id.split('/').first
+                      else
+                        model_info.provider
+                      end
+
+      ProviderNameService.display_name(provider_slug)
     rescue StandardError
       'Other'
     end
