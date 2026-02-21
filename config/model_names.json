@@ -531,6 +531,10 @@
     "display_name": "Qwen3 14B",
     "provider": "Qwen"
   },
+  "qwen3_coder_next_openrouter_02_2026": {
+    "display_name": "Qwen3 Coder Next",
+    "provider": "Qwen"
+  },
   "qwen3_coder_openrouter_07_2025": {
     "display_name": "Qwen3 Coder",
     "provider": "Qwen"
