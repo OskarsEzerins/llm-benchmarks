@@ -2,9 +2,9 @@ require 'tty-prompt'
 
 class BenchmarkTypeSelectorService
   BENCHMARK_TYPE_OPTIONS = [
-    { name: 'All benchmark types', value: :all_types },
+    { name: 'Program fixer benchmarks (fix broken code)', value: :program_fixer },
     { name: 'Performance benchmarks (speed & efficiency)', value: :performance },
-    { name: 'Program fixer benchmarks (fix broken code)', value: :program_fixer }
+    { name: 'All benchmark types', value: :all_types },
   ].freeze
 
   def initialize

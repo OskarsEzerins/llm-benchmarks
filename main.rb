@@ -21,8 +21,8 @@ class Main
   include FormatNameService
 
   HIGH_LEVEL_OPTIONS = [
-    { name: 'Run benchmarks', value: :run_benchmarks },
-    { name: 'Add implementations', value: :add_implementations }
+    { name: 'Add implementations', value: :add_implementations },
+    { name: 'Run benchmarks', value: :run_benchmarks }
   ].freeze
 
   RUN_ALL_OPTION = { name: 'Run all benchmarks with all models', value: :all }.freeze
