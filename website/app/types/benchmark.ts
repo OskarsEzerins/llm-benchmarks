@@ -53,3 +53,20 @@ export const BENCHMARK_NAMES: Record<BenchmarkType, string> = {
   school_library: 'School Library',
   vending_machine: 'Vending Machine'
 };
+
+export interface ImplementationEntry {
+  type: string;
+  task: string;
+  model: string;
+  lines: number;
+}
+
+export interface ImplementationsManifest {
+  implementations: ImplementationEntry[];
+}
+
+export interface CompareItem {
+  type: string;
+  task: string;
+  model: string;
+}

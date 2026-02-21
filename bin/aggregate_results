@@ -48,4 +48,44 @@ benchmark_results.each_key do |benchmark_id|
   puts "Wrote #{output_file} (#{output['aggregates'].size} implementations)"
 end
 
+# Generate implementations manifest (metadata only, no source code)
+implementations_dir = File.expand_path('../implementations', __dir__)
+manifest_entries = []
+
+Dir.glob("#{implementations_dir}/**/*.rb").sort.each do |file|
+  rel = file.sub("#{implementations_dir}/", '')
+  parts = rel.split('/')
+  next if parts.include?('broken') || parts.include?('slow')
+  next unless parts.length == 3
+
+  type  = parts[0]
+  task  = parts[1]
+  model = parts[2].sub(/\.rb$/, '')
+  lines = File.read(file).count("\n")
+  manifest_entries << { type: type, task: task, model: model, lines: lines }
+rescue StandardError
+  next
+end
+
+manifest_file = File.join(output_dir, 'implementations.json')
+File.write(manifest_file, JSON.generate({ implementations: manifest_entries }))
+puts "Wrote #{manifest_file} (#{manifest_entries.size} implementations)"
+
+# Copy implementation source files for local static serving
+copied_count = 0
+Dir.glob("#{implementations_dir}/**/*.rb").sort.each do |file|
+  rel   = file.sub("#{implementations_dir}/", '')
+  parts = rel.split('/')
+  next if parts.include?('broken') || parts.include?('slow')
+  next unless parts.length == 3
+
+  dest = File.join(output_dir, 'implementations', rel)
+  FileUtils.mkdir_p(File.dirname(dest))
+  FileUtils.cp(file, dest)
+  copied_count += 1
+rescue StandardError
+  next
+end
+puts "Copied #{copied_count} implementation source files"
+
 puts "Done. Output written to #{output_dir}/"

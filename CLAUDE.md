@@ -30,6 +30,7 @@ Results are stored **per-implementation** rather than per-benchmark. Each model 
 ### Benchmark Structure
 
 Each benchmark consists of:
+
 - `benchmark.rb`: Contains the test logic and validation
 - `prompt`: The prompt given to AI models
 - Test data files (e.g., `test_data.csv`)
@@ -37,6 +38,7 @@ Each benchmark consists of:
 ## Development Commands
 
 ### Main Operations
+
 ```bash
 # Interactive main menu for running benchmarks or adding implementations
 bin/main
@@ -46,6 +48,7 @@ bundle install
 ```
 
 ### Results and Rankings
+
 ```bash
 # Show results for all benchmarks
 bin/show_all_results
@@ -58,6 +61,7 @@ bin/aggregate_results website/public/data
 ```
 
 ### Code Quality
+
 ```bash
 # Run RuboCop linting (used automatically during benchmarks)
 bundle exec rubocop
@@ -75,6 +79,7 @@ bundle exec rubocop --require rubocop-performance
 ## Implementation Generation
 
 New implementations are generated via the `ruby_llm` gem using OpenRouter API. Each implementation is:
+
 - Saved with model name and timestamp
 - Automatically tested for functionality
 - Evaluated for code quality using RuboCop
@@ -91,6 +96,11 @@ New implementations are generated via the `ruby_llm` gem using OpenRouter API. E
 ## Adding a New Model
 
 To add a new model's implementations via PR:
+
 1. Run `bin/main` and choose to generate implementations for the desired model
 2. This creates implementation files under `implementations/` and a results file at `results/{implementation}.json`
 3. Open a PR — since each model has its own result file, there are no merge conflicts with concurrent PRs
+
+## Website
+
+The `website/` directory contains a React/TypeScript frontend. See `website/CLAUDE.md` for detailed instructions. All website features must be mobile-responsive (375px+ viewports).
