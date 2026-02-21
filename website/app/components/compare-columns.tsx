@@ -3,6 +3,7 @@ import { Loader2 } from 'lucide-react'
 import { ColorSchemeType } from 'diff2html/lib/types'
 import { loadImplementationSource } from '../lib/implementations-data'
 import { itemDisplayName } from '../lib/model-names'
+import { useMediaQuery } from '../lib/use-media-query'
 import 'diff2html/bundles/css/diff2html.min.css'
 import type { CompareItem } from '../types/benchmark'
 
@@ -29,6 +30,9 @@ export const CompareColumns = ({ items }: CompareColumnsProps) => {
 
   const isTwoSameTask =
     items.length === 2 && items[0].task === items[1].task && items[0].type === items[1].type
+
+  // Switch to single-column inline diff on mobile/tablet to avoid cramped side-by-side columns
+  const isNarrow = useMediaQuery('(max-width: 767px)')
 
   useEffect(() => {
     if (!isTwoSameTask) return
@@ -70,7 +74,7 @@ export const CompareColumns = ({ items }: CompareColumnsProps) => {
         )
 
         const rendered = html(patch, {
-          outputFormat: 'side-by-side',
+          outputFormat: isNarrow ? 'line-by-line' : 'side-by-side',
           drawFileList: false,
           matching: 'lines',
           renderNothingWhenEmpty: false,
@@ -95,7 +99,7 @@ export const CompareColumns = ({ items }: CompareColumnsProps) => {
     return () => {
       cancelled = true
     }
-  }, [items, isTwoSameTask])
+  }, [items, isTwoSameTask, isNarrow])
 
   if (!isTwoSameTask) {
     return (
