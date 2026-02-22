@@ -24,36 +24,38 @@ export const CompareToolbar = ({ selections, onRemove, onClear }: CompareToolbar
   const canCompare = selections.length === 2 && !hasMismatch
 
   return (
-    <div className="flex items-center gap-3 min-w-0">
-      <span className="text-sm font-medium text-muted-foreground whitespace-nowrap shrink-0">
-        {selections.length}/2
-      </span>
+    <div className="flex flex-col gap-2 min-w-0 w-full sm:flex-row sm:items-center sm:gap-3">
+      <div className="flex items-center gap-2 min-w-0 flex-1">
+        <span className="text-sm font-medium text-muted-foreground whitespace-nowrap shrink-0">
+          {selections.length}/2
+        </span>
 
-      <div className="flex items-center gap-2 min-w-0 flex-1 overflow-x-auto">
-        {selections.map(s => (
-          <span
-            key={`${s.type}/${s.task}/${s.model}`}
-            className="inline-flex items-center gap-1.5 bg-muted text-foreground text-xs font-medium rounded-full px-3 py-1.5 shrink-0"
-          >
-            <span className="truncate max-w-[120px] sm:max-w-[200px]">
-              {itemDisplayName(s)}
-            </span>
-            <button
-              onClick={() => onRemove(s)}
-              className="text-muted-foreground hover:text-foreground transition-colors ml-0.5 leading-none"
-              aria-label={`Remove ${itemDisplayName(s)}`}
+        <div className="flex items-center gap-2 min-w-0 flex-1 overflow-x-auto">
+          {selections.map(s => (
+            <span
+              key={`${s.type}/${s.task}/${s.model}`}
+              className="inline-flex items-center gap-1.5 bg-muted text-foreground text-xs font-medium rounded-full px-3 py-1.5 shrink-0"
             >
-              <X className="h-3.5 w-3.5" />
-            </button>
-          </span>
-        ))}
+              <span className="truncate max-w-[120px] sm:max-w-[200px]">
+                {itemDisplayName(s)}
+              </span>
+              <button
+                onClick={() => onRemove(s)}
+                className="text-muted-foreground hover:text-foreground transition-colors ml-0.5 leading-none"
+                aria-label={`Remove ${itemDisplayName(s)}`}
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            </span>
+          ))}
 
-        {hasMismatch && (
-          <span className="inline-flex items-center gap-1.5 text-xs text-amber-600 dark:text-amber-400 whitespace-nowrap shrink-0">
-            <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
-            Same task required
-          </span>
-        )}
+          {hasMismatch && (
+            <span className="inline-flex items-center gap-1.5 text-xs text-amber-600 dark:text-amber-400 whitespace-nowrap shrink-0">
+              <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
+              Same task required
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="flex items-center gap-2 shrink-0">
