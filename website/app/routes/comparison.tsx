@@ -212,14 +212,14 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
             <div className="border-t border-border" />
 
             {/* Bottom strip: count on left, compare toolbar on right */}
-            <div className="flex items-center gap-3 px-4 py-2.5 min-h-[44px]">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 px-4 py-2.5">
               <span className="text-sm text-muted-foreground shrink-0">
                 Showing <span className="font-medium text-foreground">{filtered.length}</span> of {implementations.length}
               </span>
 
               {compareSelections.length > 0 && (
                 <>
-                  <div className="w-px h-4 bg-border shrink-0" />
+                  <div className="hidden sm:block w-px h-4 bg-border shrink-0" />
                   <CompareToolbar
                     selections={compareSelections}
                     onRemove={toggleCompare}
