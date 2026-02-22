@@ -109,7 +109,7 @@ export default function ComparisonCompare({ loaderData }: Route.ComponentProps) 
           </Button>
         </div>
 
-        <div className="sticky top-16 z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-2 bg-background/95 backdrop-blur-md">
+        <div className="md:sticky md:top-16 z-20 -mx-4 px-4 sm:mx-0 sm:px-0 py-2 bg-background/95 backdrop-blur-md">
           <ComparisonControls
             items={items}
             allImplementations={allImplementations}
