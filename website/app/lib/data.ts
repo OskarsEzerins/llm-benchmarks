@@ -89,9 +89,9 @@ export const loadAllBenchmarkData = async (request?: Request): Promise<Record<Be
 }
 
 export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkData>): ModelRanking[] {
+  const totalBenchmarks = Object.keys(allData).length;
   const modelScores: Record<string, {
     totalScore: number;
-    benchmarkCount: number;
     totalSuccessRate: number;
     totalQualityScore: number;
     totalTestsPassed: number;
@@ -106,7 +106,6 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
       if (!modelScores[implementation]) {
         modelScores[implementation] = {
           totalScore: 0,
-          benchmarkCount: 0,
           totalSuccessRate: 0,
           totalQualityScore: 0,
           totalTestsPassed: 0,
@@ -117,7 +116,6 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
 
       const model = modelScores[implementation];
       model.totalScore += aggregate.score;
-      model.benchmarkCount += 1;
       model.totalSuccessRate += aggregate.metrics.success_rate;
       model.totalQualityScore += aggregate.score_breakdown.quality_score;
       model.totalTestsPassed += aggregate.metrics.tests_passed;
@@ -135,12 +133,13 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
   });
 
   // Calculate averages and create rankings
+  // Divide by totalBenchmarks so missing/broken benchmarks count as 0, not as absent
   return Object.entries(modelScores)
     .map(([implementation, scores]) => ({
       implementation,
-      score: scores.totalScore / scores.benchmarkCount,
-      success_rate: scores.totalSuccessRate / scores.benchmarkCount,
-      quality_score: scores.totalQualityScore / scores.benchmarkCount,
+      score: scores.totalScore / totalBenchmarks,
+      success_rate: scores.totalSuccessRate / totalBenchmarks,
+      quality_score: scores.totalQualityScore / totalBenchmarks,
       tests_passed: scores.totalTestsPassed,
       total_tests: scores.totalTests,
       rubocop_offenses: scores.totalRubocopOffenses,
