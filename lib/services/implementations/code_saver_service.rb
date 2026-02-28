@@ -1,5 +1,6 @@
 require 'json'
 require_relative 'provider_name_service'
+require_relative 'display_name_normalizer_service'
 
 module Implementations
   class CodeSaverService
@@ -46,9 +47,15 @@ module Implementations
       File.join(implementations_dir(benchmark_id), "#{model_name}_openrouter_#{timestamp}.rb".squeeze('_'))
     end
 
+    def model_info
+      @model_info ||= RubyLLM.models.find(@model_id)
+    rescue StandardError
+      nil
+    end
+
     def model_name
-      name = if ['deepseek'].any? { |provider| @model_id.include?(provider) }
-               RubyLLM.models.find(@model_id).name.split(":").last.strip.tr('-.:() ', '_').downcase
+      name = if @model_id.include?('deepseek')
+               model_info.name.split(':').last.strip.tr('-.:() ', '_').downcase
              else
                @model_id.split('/').last.tr('-.:() ', '_').downcase
              end
@@ -57,16 +64,17 @@ module Implementations
     end
 
     def model_display_name
-      model_info = RubyLLM.models.find(@model_id)
-      name = model_info&.name || @model_id.split('/').last
-      # Strip "Provider: " prefix that some ruby_llm model names include (e.g. "Qwen: Qwen3 Coder Next")
-      name.include?(': ') ? name.split(': ', 2).last : name
+      raw_name = model_info&.name || @model_id.split('/').last
+      DisplayNameNormalizerService.normalize(
+        model_id: @model_id,
+        raw_name: raw_name,
+        provider: model_provider
+      )
     rescue StandardError
       @model_id.split('/').last
     end
 
     def model_provider
-      model_info = RubyLLM.models.find(@model_id)
       return 'Other' unless model_info
 
       provider_slug = if model_info.provider == 'openrouter'

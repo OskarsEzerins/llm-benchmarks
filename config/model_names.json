@@ -176,11 +176,11 @@
     "provider": "Google"
   },
   "gemini_2_5_flash_preview_05_20_openrouter_05_2025": {
-    "display_name": "Gemini 2.5 Flash Preview 05-20",
+    "display_name": "Gemini 2.5 Flash Preview",
     "provider": "Google"
   },
   "gemini_2_5_flash_preview_05_20_openrouter_06_2025": {
-    "display_name": "Gemini 2.5 Flash Preview 05-20",
+    "display_name": "Gemini 2.5 Flash Preview",
     "provider": "Google"
   },
   "gemini_2_5_pro_exp_chat_03_2025": {
@@ -216,19 +216,19 @@
     "provider": "Google"
   },
   "glm_4_5_openrouter_08_2025": {
-    "display_name": "GLM-4.5",
+    "display_name": "GLM 4.5",
     "provider": "Z.AI"
   },
   "glm_4_6_openrouter_10_2025": {
-    "display_name": "GLM-4.6",
+    "display_name": "GLM 4.6",
     "provider": "Z.AI"
   },
   "glm_4_7_openrouter_12_2025": {
-    "display_name": "GLM-4.7",
+    "display_name": "GLM 4.7",
     "provider": "Z.AI"
   },
   "glm_5_openrouter_02_2026": {
-    "display_name": "GLM-5",
+    "display_name": "GLM 5",
     "provider": "Z.AI"
   },
   "grok_3_beta_openrouter_05_2025": {
@@ -296,7 +296,7 @@
     "provider": "Meta"
   },
   "localai_gpt_4o_phi_2_02_2025": {
-    "display_name": "LocalAI GPT-4o Phi-2",
+    "display_name": "LocalAI GPT 4o Phi 2",
     "provider": "Other"
   },
   "magnum_v4_72b_openrouter_08_2025": {
@@ -344,199 +344,199 @@
     "provider": "Amazon"
   },
   "openai_3_5_turbo_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-3.5 Turbo",
+    "display_name": "GPT 3.5 Turbo",
     "provider": "OpenAI"
   },
   "openai_4_1_mini_openai_api_04_2025": {
-    "display_name": "OpenAI GPT-4.1 mini",
+    "display_name": "GPT 4.1 mini",
     "provider": "OpenAI"
   },
   "openai_4_1_mini_openrouter_06_2025": {
-    "display_name": "OpenAI GPT-4.1 mini",
+    "display_name": "GPT 4.1 mini",
     "provider": "OpenAI"
   },
   "openai_4_1_mini_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-4.1 mini",
+    "display_name": "GPT 4.1 mini",
     "provider": "OpenAI"
   },
   "openai_4_1_nano_openai_api_04_2025": {
-    "display_name": "OpenAI GPT-4.1 nano",
+    "display_name": "GPT 4.1 nano",
     "provider": "OpenAI"
   },
   "openai_4_1_nano_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-4.1 nano",
+    "display_name": "GPT 4.1 nano",
     "provider": "OpenAI"
   },
   "openai_4_1_openai_api_04_2025": {
-    "display_name": "OpenAI GPT-4.1",
+    "display_name": "GPT 4.1",
     "provider": "OpenAI"
   },
   "openai_4_1_openrouter_05_2025": {
-    "display_name": "OpenAI GPT-4.1",
+    "display_name": "GPT 4.1",
     "provider": "OpenAI"
   },
   "openai_4_1_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-4.1",
+    "display_name": "GPT 4.1",
     "provider": "OpenAI"
   },
   "openai_4_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-4",
+    "display_name": "GPT 4",
     "provider": "OpenAI"
   },
   "openai_4_turbo_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-4 Turbo",
+    "display_name": "GPT 4 Turbo",
     "provider": "OpenAI"
   },
   "openai_4o_mini_openrouter_06_2025": {
-    "display_name": "OpenAI GPT-4o mini",
+    "display_name": "GPT 4o mini",
     "provider": "OpenAI"
   },
   "openai_4o_mini_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-4o mini",
+    "display_name": "GPT 4o mini",
     "provider": "OpenAI"
   },
   "openai_4o_openrouter_06_2025": {
-    "display_name": "OpenAI GPT-4o",
+    "display_name": "GPT 4o",
     "provider": "OpenAI"
   },
   "openai_4o_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-4o",
+    "display_name": "GPT 4o",
     "provider": "OpenAI"
   },
   "openai_4o_web_chat_02_2025": {
-    "display_name": "OpenAI GPT-4o",
+    "display_name": "GPT 4o",
     "provider": "OpenAI"
   },
   "openai_5_1_chat_openrouter_11_2025": {
-    "display_name": "OpenAI GPT-5.1",
+    "display_name": "GPT 5.1",
     "provider": "OpenAI"
   },
   "openai_5_1_codex_mini_openrouter_11_2025": {
-    "display_name": "OpenAI GPT-5.1 Codex Mini",
+    "display_name": "GPT 5.1 Codex Mini",
     "provider": "OpenAI"
   },
   "openai_5_1_codex_openrouter_11_2025": {
-    "display_name": "OpenAI GPT-5.1 Codex",
+    "display_name": "GPT 5.1 Codex",
     "provider": "OpenAI"
   },
   "openai_5_1_openrouter_11_2025": {
-    "display_name": "OpenAI GPT-5.1",
+    "display_name": "GPT 5.1",
     "provider": "OpenAI"
   },
   "openai_5_2_chat_openrouter_12_2025": {
-    "display_name": "OpenAI GPT-5.2",
+    "display_name": "GPT 5.2",
     "provider": "OpenAI"
   },
   "openai_5_2_codex_openrouter_01_2026": {
-    "display_name": "OpenAI GPT-5.2 Codex",
+    "display_name": "GPT 5.2 Codex",
     "provider": "OpenAI"
   },
   "openai_5_2_openrouter_12_2025": {
-    "display_name": "OpenAI GPT-5.2",
+    "display_name": "GPT 5.2",
     "provider": "OpenAI"
   },
   "openai_5_3_codex_openrouter_02_2026": {
-    "display_name": "GPT-5.3-Codex",
+    "display_name": "GPT 5.3 Codex",
     "provider": "OpenAI"
   },
   "openai_5_chat_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-5",
+    "display_name": "GPT 5",
     "provider": "OpenAI"
   },
   "openai_5_codex_openrouter_10_2025": {
-    "display_name": "OpenAI GPT-5 Codex",
+    "display_name": "GPT 5 Codex",
     "provider": "OpenAI"
   },
   "openai_5_mini_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-5 mini",
+    "display_name": "GPT 5 mini",
     "provider": "OpenAI"
   },
   "openai_5_mini_openrouter_09_2025": {
-    "display_name": "OpenAI GPT-5 mini",
+    "display_name": "GPT 5 mini",
     "provider": "OpenAI"
   },
   "openai_5_nano_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-5 nano",
+    "display_name": "GPT 5 nano",
     "provider": "OpenAI"
   },
   "openai_5_nano_openrouter_09_2025": {
-    "display_name": "OpenAI GPT-5 nano",
+    "display_name": "GPT 5 nano",
     "provider": "OpenAI"
   },
   "openai_5_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-5",
+    "display_name": "GPT 5",
     "provider": "OpenAI"
   },
   "openai_5_openrouter_09_2025": {
-    "display_name": "OpenAI GPT-5",
+    "display_name": "GPT 5",
     "provider": "OpenAI"
   },
   "openai_chat_4o_latest_openrouter_08_2025": {
-    "display_name": "OpenAI GPT-4o",
+    "display_name": "GPT 4o",
     "provider": "OpenAI"
   },
   "openai_o1_mini_openrouter_08_2025": {
-    "display_name": "OpenAI o1-mini",
+    "display_name": "o1 mini",
     "provider": "OpenAI"
   },
   "openai_o1_web_chat_02_2025": {
-    "display_name": "OpenAI o1",
+    "display_name": "o1",
     "provider": "OpenAI"
   },
   "openai_o3_high_web_chat_02_2025": {
-    "display_name": "OpenAI o3 (High)",
+    "display_name": "o3 (High)",
     "provider": "OpenAI"
   },
   "openai_o3_high_web_chat_03_2025": {
-    "display_name": "OpenAI o3 (High)",
+    "display_name": "o3 (High)",
     "provider": "OpenAI"
   },
   "openai_o3_mini_high_openrouter_08_2025": {
-    "display_name": "OpenAI o3-mini (High)",
+    "display_name": "o3 mini (High)",
     "provider": "OpenAI"
   },
   "openai_o3_mini_openrouter_08_2025": {
-    "display_name": "OpenAI o3-mini",
+    "display_name": "o3 mini",
     "provider": "OpenAI"
   },
   "openai_o3_mini_web_chat_02_2025": {
-    "display_name": "OpenAI o3-mini",
+    "display_name": "o3 mini",
     "provider": "OpenAI"
   },
   "openai_o3_mini_web_chat_03_2025": {
-    "display_name": "OpenAI o3-mini",
+    "display_name": "o3 mini",
     "provider": "OpenAI"
   },
   "openai_o4_high_web_chat_04_2025": {
-    "display_name": "OpenAI o4 (High)",
+    "display_name": "o4 (High)",
     "provider": "OpenAI"
   },
   "openai_o4_mini_high_openrouter_05_2025": {
-    "display_name": "OpenAI o4-mini (High)",
+    "display_name": "o4 mini (High)",
     "provider": "OpenAI"
   },
   "openai_o4_mini_high_openrouter_08_2025": {
-    "display_name": "OpenAI o4-mini (High)",
+    "display_name": "o4 mini (High)",
     "provider": "OpenAI"
   },
   "openai_o4_mini_openrouter_06_2025": {
-    "display_name": "OpenAI o4-mini",
+    "display_name": "o4 mini",
     "provider": "OpenAI"
   },
   "openai_o4_mini_openrouter_08_2025": {
-    "display_name": "OpenAI o4-mini",
+    "display_name": "o4 mini",
     "provider": "OpenAI"
   },
   "openai_o4_mini_web_chat_04_2025": {
-    "display_name": "OpenAI o4-mini",
+    "display_name": "o4 mini",
     "provider": "OpenAI"
   },
   "openai_oss_120b_openrouter_08_2025": {
-    "display_name": "OpenAI OSS 120B",
+    "display_name": "OSS 120B",
     "provider": "OpenAI"
   },
   "openai_oss_20b_openrouter_08_2025": {
-    "display_name": "OpenAI OSS 20B",
+    "display_name": "OSS 20B",
     "provider": "OpenAI"
   },
   "qwen3_14b_openrouter_08_2025": {
