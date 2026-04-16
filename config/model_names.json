@@ -79,6 +79,10 @@
     "display_name": "Claude 4.6 Opus",
     "provider": "Anthropic"
   },
+  "claude_opus_4_7_openrouter_04_2026": {
+    "display_name": "Claude Opus 4.7",
+    "provider": "Anthropic"
+  },
   "claude_opus_4_openrouter_05_2025": {
     "display_name": "Claude 4 Opus",
     "provider": "Anthropic"
