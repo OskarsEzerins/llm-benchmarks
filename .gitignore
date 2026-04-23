@@ -7,5 +7,6 @@ vendor/bundle/
 
 .claude/settings.local.json
 .mcp.json
+plans
 
 .vercel
