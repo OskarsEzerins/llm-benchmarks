@@ -37,6 +37,7 @@ const parseItems = (itemsParam: string | null, allImplementations: Implementatio
     const entry = allImplementations.find(i => i.type === type && i.task === task && i.model === model)
     const compareItem: CompareItem = { type, task, model }
     if (entry?.display_name) compareItem.display_name = entry.display_name
+    if (entry?.metadata) compareItem.metadata = entry.metadata
     result.push(compareItem)
   }
   return result
@@ -78,6 +79,7 @@ export default function ComparisonCompare({ loaderData }: Route.ComponentProps) 
         model: i.model,
         lines: impl?.lines ?? 0,
         display_name: impl?.display_name ?? itemDisplayName(i),
+        metadata: impl?.metadata ?? i.metadata,
       }
     })
     sessionStorage.setItem('impl_compare_selections', JSON.stringify(entries))

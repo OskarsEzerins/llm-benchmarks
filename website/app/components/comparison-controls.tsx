@@ -89,7 +89,7 @@ const ModelSelector = ({ label, currentItem, allImplementations, onSelect }: Mod
               <CommandEmpty>No models found.</CommandEmpty>
               {candidates.map(i => (
                 <CommandItem
-                  key={i.model}
+                  key={`${i.type}/${i.task}/${i.model}`}
                   value={i.display_name}
                   onSelect={() => handleSelect(i.model)}
                   className="cursor-pointer"

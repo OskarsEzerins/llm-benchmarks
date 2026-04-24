@@ -75,8 +75,28 @@
     "display_name": "Claude 4.5 Opus",
     "provider": "Anthropic"
   },
+  "claude_opus_4_6_fast_openrouter_04_2026": {
+    "display_name": "Claude Opus 4 6 Fast (Unconfigured Variant)",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_6_manual_budget_2048_openrouter_04_2026": {
+    "display_name": "Claude Opus 4.6 (Thinking Budget 2K)",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_6_manual_budget_8192_openrouter_04_2026": {
+    "display_name": "Claude Opus 4.6 (Thinking Budget 8K)",
+    "provider": "Anthropic"
+  },
   "claude_opus_4_6_openrouter_02_2026": {
     "display_name": "Claude 4.6 Opus",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_7_manual_budget_2048_openrouter_04_2026": {
+    "display_name": "Claude Opus 4.7 (Thinking Budget 2K)",
+    "provider": "Anthropic"
+  },
+  "claude_opus_4_7_manual_budget_8192_openrouter_04_2026": {
+    "display_name": "Claude Opus 4.7 (Thinking Budget 8K)",
     "provider": "Anthropic"
   },
   "claude_opus_4_7_openrouter_04_2026": {
@@ -93,6 +113,14 @@
   },
   "claude_sonnet_4_5_openrouter_10_2025": {
     "display_name": "Claude 4.5 Sonnet",
+    "provider": "Anthropic"
+  },
+  "claude_sonnet_4_6_manual_budget_2048_openrouter_04_2026": {
+    "display_name": "Claude Sonnet 4.6 (Thinking Budget 2K)",
+    "provider": "Anthropic"
+  },
+  "claude_sonnet_4_6_manual_budget_8192_openrouter_04_2026": {
+    "display_name": "Claude Sonnet 4.6 (Thinking Budget 8K)",
     "provider": "Anthropic"
   },
   "claude_sonnet_4_6_openrouter_02_2026": {
@@ -445,6 +473,18 @@
   },
   "openai_5_3_codex_openrouter_02_2026": {
     "display_name": "GPT 5.3 Codex",
+    "provider": "OpenAI"
+  },
+  "openai_5_4_effort_high_openrouter_04_2026": {
+    "display_name": "GPT 5.4 (Effort High)",
+    "provider": "OpenAI"
+  },
+  "openai_5_4_effort_low_openrouter_04_2026": {
+    "display_name": "GPT 5.4 (Effort Low)",
+    "provider": "OpenAI"
+  },
+  "openai_5_4_effort_medium_openrouter_04_2026": {
+    "display_name": "GPT 5.4 (Effort Medium)",
     "provider": "OpenAI"
   },
   "openai_5_4_openrouter_03_2026": {

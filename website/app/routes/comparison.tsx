@@ -12,8 +12,10 @@ import {
   getAvailableTypes,
   getAvailableTasks,
   getAvailableFamilies,
+  getAvailableThinkingModes,
+  getAvailableReasoningEfforts,
 } from '../lib/implementations-data'
-import type { ImplementationEntry } from '../types/benchmark'
+import type { ImplementationEntry, ThinkingMode, ReasoningEffort } from '../types/benchmark'
 import { useCompareSelections } from '../lib/use-compare-selections'
 
 const DEFAULT_TYPE = 'program_fixer'
@@ -49,6 +51,8 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
   const [selectedType, setSelectedType] = useState(DEFAULT_TYPE)
   const [selectedTask, setSelectedTask] = useState(DEFAULT_TASK)
   const [selectedFamily, setSelectedFamily] = useState('all')
+  const [selectedThinkingMode, setSelectedThinkingMode] = useState('all')
+  const [selectedReasoningEffort, setSelectedReasoningEffort] = useState('all')
   const [searchInput, setSearchInput] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -59,10 +63,14 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
     const type = sessionStorage.getItem('impl_filter_type')
     const task = sessionStorage.getItem('impl_filter_task')
     const family = sessionStorage.getItem('impl_filter_family')
+    const thinkingMode = sessionStorage.getItem('impl_filter_thinking')
+    const reasoningEffort = sessionStorage.getItem('impl_filter_effort')
     const search = sessionStorage.getItem('impl_filter_search')
     if (type) setSelectedType(type)
     if (task) setSelectedTask(task)
     if (family) setSelectedFamily(family)
+    if (thinkingMode) setSelectedThinkingMode(thinkingMode)
+    if (reasoningEffort) setSelectedReasoningEffort(reasoningEffort)
     if (search) { setSearchInput(search); setSearchTerm(search) }
   }, [])
 
@@ -75,17 +83,27 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
     return () => clearTimeout(timer)
   }, [searchInput])
 
-  const hasActiveFilters = selectedType !== DEFAULT_TYPE || selectedTask !== DEFAULT_TASK || selectedFamily !== 'all' || searchTerm !== ''
+  const hasActiveFilters =
+    selectedType !== DEFAULT_TYPE ||
+    selectedTask !== DEFAULT_TASK ||
+    selectedFamily !== 'all' ||
+    selectedThinkingMode !== 'all' ||
+    selectedReasoningEffort !== 'all' ||
+    searchTerm !== ''
 
   const clearFilters = useCallback(() => {
     setSelectedType(DEFAULT_TYPE)
     setSelectedTask(DEFAULT_TASK)
     setSelectedFamily('all')
+    setSelectedThinkingMode('all')
+    setSelectedReasoningEffort('all')
     setSearchInput('')
     setSearchTerm('')
     writeStorage('impl_filter_type', DEFAULT_TYPE)
     writeStorage('impl_filter_task', DEFAULT_TASK)
     writeStorage('impl_filter_family', 'all')
+    writeStorage('impl_filter_thinking', 'all')
+    writeStorage('impl_filter_effort', 'all')
     writeStorage('impl_filter_search', '')
   }, [])
 
@@ -107,6 +125,16 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
     writeStorage('impl_filter_family', v)
   }, [])
 
+  const handleThinkingModeChange = useCallback((v: string) => {
+    setSelectedThinkingMode(v)
+    writeStorage('impl_filter_thinking', v)
+  }, [])
+
+  const handleReasoningEffortChange = useCallback((v: string) => {
+    setSelectedReasoningEffort(v)
+    writeStorage('impl_filter_effort', v)
+  }, [])
+
   const handleSearchChange = useCallback((v: string) => {
     setSearchInput(v)
     // writeStorage is called in the debounce effect
@@ -118,15 +146,19 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
     [implementations, selectedType]
   )
   const families = useMemo(() => getAvailableFamilies(implementations), [implementations])
+  const thinkingModes = useMemo(() => getAvailableThinkingModes(implementations), [implementations])
+  const effortLevels = useMemo(() => getAvailableReasoningEfforts(implementations), [implementations])
 
   const filtered = useMemo(
     () => filterImplementations(implementations, {
       type: selectedType !== 'all' ? selectedType : undefined,
       task: selectedTask !== 'all' ? selectedTask : undefined,
       family: selectedFamily !== 'all' ? selectedFamily : undefined,
+      thinkingMode: selectedThinkingMode !== 'all' ? selectedThinkingMode as ThinkingMode : undefined,
+      reasoningEffort: selectedReasoningEffort !== 'all' ? selectedReasoningEffort as ReasoningEffort : undefined,
       search: searchTerm || undefined,
     }),
-    [implementations, selectedType, selectedTask, selectedFamily, searchTerm]
+    [implementations, selectedType, selectedTask, selectedFamily, selectedThinkingMode, selectedReasoningEffort, searchTerm]
   )
 
   const uniqueTypes = useMemo(() => new Set(implementations.map(i => i.type)).size, [implementations])
@@ -195,13 +227,19 @@ export default function Comparison({ loaderData }: Route.ComponentProps) {
                 types={types}
                 tasks={tasks}
                 families={families}
+                thinkingModes={thinkingModes}
+                effortLevels={effortLevels}
                 selectedType={selectedType}
                 selectedTask={selectedTask}
                 selectedFamily={selectedFamily}
+                selectedThinkingMode={selectedThinkingMode}
+                selectedReasoningEffort={selectedReasoningEffort}
                 searchTerm={searchInput}
                 onTypeChange={handleTypeChange}
                 onTaskChange={handleTaskChange}
                 onFamilyChange={handleFamilyChange}
+                onThinkingModeChange={handleThinkingModeChange}
+                onReasoningEffortChange={handleReasoningEffortChange}
                 onSearchChange={handleSearchChange}
                 onClear={clearFilters}
                 hasActiveFilters={hasActiveFilters}

@@ -23,14 +23,14 @@ module Implementations
 
       case selection_type
       when :single
-        model_ids = [ModelSelectorService.new.select]
-        return {} unless model_ids.first
+        selections = [ModelSelectorService.new.select]
+        return {} unless selections.first
       when :multiple
-        model_ids = ModelSelectorService.new.select_multiple
-        return {} if model_ids.empty?
+        selections = ModelSelectorService.new.select_multiple
+        return {} if selections.empty?
       end
 
-      PromptProcessorService.new(model_ids, benchmark_type).process_prompts
+      PromptProcessorService.new(selections, benchmark_type).process_prompts
     end
   end
 end

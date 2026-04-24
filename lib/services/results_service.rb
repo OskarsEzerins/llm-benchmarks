@@ -2,17 +2,21 @@ require 'json'
 require 'fileutils'
 require_relative '../result_handlers/result_handler_factory'
 require_relative '../../config'
+require_relative 'implementations/model_variant_registry'
 
 class ResultsService
   def initialize(benchmark_id)
     @benchmark_id = benchmark_id
     @result_handler = ResultHandlers::ResultHandlerFactory.create_handler(@benchmark_id)
+    @variant_registry = Implementations::ModelVariantRegistry.instance
   end
 
-  # Returns { 'results' => [...all runs for this benchmark...], 'aggregates' => { impl => aggregate, ... } }
+  # Returns { 'results' => [...all runs for this benchmark...], 'aggregates' => { impl => aggregate, ... },
+  #           'implementations_meta' => { impl => metadata, ... } }
   def load
     results = []
     aggregates = {}
+    implementations_meta = {}
 
     Dir.glob("#{Config.results_dir}/*.json").each do |file|
       data = JSON.parse(File.read(file))
@@ -22,18 +26,23 @@ class ResultsService
       implementation = data['implementation']
       next unless implementation
 
+      metadata = data['implementation_metadata'] || @variant_registry.find_by_implementation(implementation)
+
       results.concat(benchmark_data['results'] || [])
       aggregates[implementation] = benchmark_data['aggregate'] if benchmark_data['aggregate']
+      implementations_meta[implementation] = metadata if metadata
     rescue JSON::ParserError
       next
     end
 
-    { 'results' => results, 'aggregates' => aggregates }
+    { 'results' => results, 'aggregates' => aggregates, 'implementations_meta' => implementations_meta }
   end
 
   def add_result(implementation, result_data, rubocop_offenses)
     impl_file = Config.implementation_results_file(implementation)
-    data = load_impl_file(impl_file, implementation)
+    metadata = @variant_registry.find_by_implementation(implementation)
+    data = load_impl_file(impl_file, implementation, metadata)
+    data['implementation_metadata'] = metadata if metadata
 
     current_result = {
       'implementation' => implementation,
@@ -60,12 +69,14 @@ class ResultsService
 
   private
 
-  def load_impl_file(file, implementation)
-    return { 'implementation' => implementation } unless File.exist?(file)
+  def load_impl_file(file, implementation, metadata = nil)
+    return base_impl_payload(implementation, metadata) unless File.exist?(file)
 
-    JSON.parse(File.read(file))
+    parsed = JSON.parse(File.read(file))
+    parsed['implementation_metadata'] ||= metadata if metadata
+    parsed
   rescue JSON::ParserError
-    { 'implementation' => implementation }
+    base_impl_payload(implementation, metadata)
   end
 
   def build_metrics(result_data, rubocop_offenses)
@@ -79,5 +90,11 @@ class ResultsService
     end
 
     base_metrics
+  end
+
+  def base_impl_payload(implementation, metadata)
+    payload = { 'implementation' => implementation }
+    payload['implementation_metadata'] = metadata if metadata
+    payload
   end
 end

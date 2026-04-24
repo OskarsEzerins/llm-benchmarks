@@ -5,7 +5,8 @@ import { Badge } from './ui/badge'
 import { Button } from './ui/button'
 import { ChevronUp, ChevronDown, Search, Filter } from 'lucide-react'
 import { formatDateShort } from '../lib/data'
-import { getDisplayName, getModelFamily } from '../lib/model-names'
+import { getBaseModelName, getDisplayName, getModelFamily, getVariantLabel } from '../lib/model-names'
+import { ModelParameterBadges } from './model-parameter-badges'
 
 interface DataTableProps {
   data: ModelRanking[]
@@ -39,10 +40,22 @@ export const DataTable: React.FC<DataTableProps> = ({
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc')
   const [searchTerm, setSearchTerm] = useState('')
   const [familyFilter, setFamilyFilter] = useState<string>('all')
+  const [thinkingFilter, setThinkingFilter] = useState<string>('all')
+  const [effortFilter, setEffortFilter] = useState<string>('all')
 
   const modelFamilies = useMemo(() => {
-    const families = new Set(data.map(model => getModelFamily(model.implementation)))
+    const families = new Set(data.map(model => getModelFamily(model.metadata)))
     return Array.from(families).sort()
+  }, [data])
+
+  const thinkingModes = useMemo(() => {
+    const modes = new Set(data.map(model => model.metadata.normalized.thinking_mode))
+    return Array.from(modes).sort()
+  }, [data])
+
+  const effortLevels = useMemo(() => {
+    const levels = new Set(data.map(model => model.metadata.normalized.reasoning_effort))
+    return Array.from(levels).sort()
   }, [data])
 
   const sortedAndFilteredData = useMemo(() => {
@@ -50,15 +63,28 @@ export const DataTable: React.FC<DataTableProps> = ({
 
     // Apply search filter
     if (searchTerm) {
+      const search = searchTerm.toLowerCase()
       filtered = filtered.filter(model =>
-        getDisplayName(model.implementation).toLowerCase().includes(searchTerm.toLowerCase()) ||
-        model.implementation.toLowerCase().includes(searchTerm.toLowerCase())
+        getDisplayName(model.implementation, model.metadata).toLowerCase().includes(search) ||
+        model.metadata.base_model_name.toLowerCase().includes(search) ||
+        model.metadata.variant_label.toLowerCase().includes(search) ||
+        model.metadata.provider.toLowerCase().includes(search) ||
+        model.metadata.param_summary.some(item => item.toLowerCase().includes(search)) ||
+        model.implementation.toLowerCase().includes(search)
       )
     }
 
     // Apply family filter
     if (familyFilter !== 'all') {
-      filtered = filtered.filter(model => getModelFamily(model.implementation) === familyFilter)
+      filtered = filtered.filter(model => getModelFamily(model.metadata) === familyFilter)
+    }
+
+    if (thinkingFilter !== 'all') {
+      filtered = filtered.filter(model => model.metadata.normalized.thinking_mode === thinkingFilter)
+    }
+
+    if (effortFilter !== 'all') {
+      filtered = filtered.filter(model => model.metadata.normalized.reasoning_effort === effortFilter)
     }
 
     // Apply sorting
@@ -67,8 +93,8 @@ export const DataTable: React.FC<DataTableProps> = ({
       let bValue: number | string | Date = b[sortField]
 
       if (sortField === 'implementation') {
-        aValue = getDisplayName(a.implementation)
-        bValue = getDisplayName(b.implementation)
+        aValue = getDisplayName(a.implementation, a.metadata)
+        bValue = getDisplayName(b.implementation, b.metadata)
       }
 
       if (sortField === 'date') {
@@ -86,7 +112,7 @@ export const DataTable: React.FC<DataTableProps> = ({
         ? (aValue as number) - (bValue as number)
         : (bValue as number) - (aValue as number)
     })
-  }, [data, sortField, sortDirection, searchTerm, familyFilter])
+  }, [data, sortField, sortDirection, searchTerm, familyFilter, thinkingFilter, effortFilter])
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -120,7 +146,7 @@ export const DataTable: React.FC<DataTableProps> = ({
       <CardHeader className="pb-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <CardTitle className="text-2xl font-bold">{title}</CardTitle>
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col lg:flex-row gap-3">
             {/* Search */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -143,6 +169,30 @@ export const DataTable: React.FC<DataTableProps> = ({
                 <option value="all">All Families</option>
                 {modelFamilies.map(family => (
                   <option key={family} value={family}>{family}</option>
+                ))}
+              </select>
+            </div>
+            <div className="relative">
+              <select
+                value={thinkingFilter}
+                onChange={(e) => setThinkingFilter(e.target.value)}
+                className="px-3 py-2 border-2 border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent appearance-none shadow-lg"
+              >
+                <option value="all">All Thinking</option>
+                {thinkingModes.map(mode => (
+                  <option key={mode} value={mode}>{mode}</option>
+                ))}
+              </select>
+            </div>
+            <div className="relative">
+              <select
+                value={effortFilter}
+                onChange={(e) => setEffortFilter(e.target.value)}
+                className="px-3 py-2 border-2 border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent appearance-none shadow-lg"
+              >
+                <option value="all">All Effort</option>
+                {effortLevels.map(level => (
+                  <option key={level} value={level}>{level}</option>
                 ))}
               </select>
             </div>
@@ -186,20 +236,26 @@ export const DataTable: React.FC<DataTableProps> = ({
                       </div>
                       <div className="min-w-0 flex-1">
                         <div className="font-medium text-foreground text-sm truncate">
-                          {getDisplayName(model.implementation)}
+                          {getBaseModelName(model.implementation, model.metadata)}
+                        </div>
+                        <div className="text-xs text-muted-foreground truncate">
+                          {getVariantLabel(model.metadata)}
                         </div>
                         <div className="text-xs text-muted-foreground sm:hidden truncate">
-                          {getModelFamily(model.implementation)} • {formatDateShort(model.date)}
+                          {getModelFamily(model.metadata)} • {formatDateShort(model.date)}
                         </div>
                         <div className="text-xs text-muted-foreground md:hidden sm:block truncate">
                           {formatDateShort(model.date)}
+                        </div>
+                        <div className="hidden xl:block mt-1">
+                          <ModelParameterBadges metadata={model.metadata} />
                         </div>
                       </div>
                     </div>
                   </td>
                   <td className="p-3 hidden sm:table-cell w-12">
                     <Badge variant="outline" className="text-xs px-1 py-0.5">
-                      {getModelFamily(model.implementation)}
+                      {getModelFamily(model.metadata)}
                     </Badge>
                   </td>
                   <td className="p-3 hidden md:table-cell w-14">

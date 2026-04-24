@@ -1,9 +1,10 @@
 import type { ModelRanking } from '../types/benchmark';
-import { getDisplayName, getModelFamily } from '../lib/model-names';
+import { getBaseModelName, getModelFamily, getVariantLabel } from '../lib/model-names';
 import { Card, CardContent, CardHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
 import { Trophy, Target, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { ModelParameterBadges } from './model-parameter-badges';
 
 interface ModelRankingCardProps {
   model: ModelRanking;
@@ -12,8 +13,9 @@ interface ModelRankingCardProps {
 }
 
 export function ModelRankingCard({ model, rank, showRank = true }: ModelRankingCardProps) {
-  const family = getModelFamily(model.implementation);
-  const formattedName = getDisplayName(model.implementation);
+  const family = getModelFamily(model.metadata);
+  const formattedName = getBaseModelName(model.implementation, model.metadata);
+  const variantLabel = getVariantLabel(model.metadata);
 
   const getScoreColor = (score: number) => {
     if (score >= 75) return 'text-emerald-600 dark:text-emerald-400';
@@ -66,9 +68,12 @@ export function ModelRankingCard({ model, rank, showRank = true }: ModelRankingC
         <h3 className="font-bold uppercase tracking-wide text-foreground text-base leading-tight mt-2 group-hover:text-primary transition-colors">
           {formattedName}
         </h3>
+        <p className="text-xs text-muted-foreground mt-1">{variantLabel}</p>
       </CardHeader>
 
       <CardContent className="space-y-4">
+        <ModelParameterBadges metadata={model.metadata} />
+
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">

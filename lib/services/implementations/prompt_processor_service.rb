@@ -1,9 +1,12 @@
 require_relative '../../../config'
+require_relative 'model_variant_registry'
+require_relative 'chat_builder_service'
 
 module Implementations
   class PromptProcessorService
-    def initialize(model_ids, benchmark_type = :all_types)
-      @model_ids = Array(model_ids)
+    def initialize(selections, benchmark_type = :all_types)
+      @registry = ModelVariantRegistry.instance
+      @implementations = Array(selections).map { |selection| @registry.resolve_selection(selection) }.compact
       @benchmark_type = benchmark_type
     end
 
@@ -16,7 +19,7 @@ module Implementations
       end
 
       puts "Processing #{target_benchmarks.size} benchmark(s) for type: #{@benchmark_type}"
-      puts "Using #{@model_ids.size} model(s): #{@model_ids.join(', ')}"
+      puts "Using #{@implementations.size} model(s): #{@implementations.map { |item| item['display_name'] }.join(', ')}"
       process_models_and_benchmarks(target_benchmarks)
     end
 
@@ -24,23 +27,23 @@ module Implementations
 
     def process_models_and_benchmarks(target_benchmarks)
       added = Hash.new { |h, k| h[k] = [] }
-      @model_ids.each do |model_id|
+      @implementations.each do |implementation|
         puts "\n#{'=' * 50}"
-        puts "Processing with model: #{model_id}"
+        puts "Processing with model: #{implementation['display_name']}"
         puts "=" * 50
-        process_benchmarks_for_model(model_id, target_benchmarks, added)
+        process_benchmarks_for_model(implementation, target_benchmarks, added)
       end
       added
     end
 
-    def process_benchmarks_for_model(model_id, target_benchmarks, added)
-      code_saver = CodeSaverService.new(model_id)
+    def process_benchmarks_for_model(implementation, target_benchmarks, added)
+      code_saver = CodeSaverService.new(implementation)
 
       target_benchmarks.each do |benchmark_id|
         next unless validate_prompt_file(benchmark_id)
-        next if skip_existing_implementation?(code_saver, model_id, benchmark_id)
+        next if skip_existing_implementation?(code_saver, implementation, benchmark_id)
 
-        slug = process_single_benchmark(model_id, benchmark_id, code_saver)
+        slug = process_single_benchmark(implementation, benchmark_id, code_saver)
         added[benchmark_id] << slug if slug
       end
     end
@@ -53,19 +56,19 @@ module Implementations
       false
     end
 
-    def skip_existing_implementation?(code_saver, model_id, benchmark_id)
+    def skip_existing_implementation?(code_saver, implementation, benchmark_id)
       return false unless code_saver.implementation_exists?(benchmark_id)
 
-      puts "Skipping #{model_id} for #{benchmark_id} - implementation already exists for this month"
+      puts "Skipping #{implementation['display_name']} for #{benchmark_id} - implementation already exists for this month"
       true
     end
 
-    def process_single_benchmark(model_id, benchmark_id, code_saver)
+    def process_single_benchmark(implementation, benchmark_id, code_saver)
       prompt_file = Config.benchmark_prompt(benchmark_id)
       puts "\nProcessing prompt from: #{prompt_file}"
 
       prompt_content = File.read(prompt_file)
-      response = RubyLLM.chat(model: model_id).ask(prompt_content)
+      response = ChatBuilderService.build(implementation).ask(prompt_content)
       content = extract_ruby_code(response.content)
 
       code_saver.save_code(benchmark_id, content)

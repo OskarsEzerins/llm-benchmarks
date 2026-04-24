@@ -1,5 +1,4 @@
-import type { BenchmarkData, BenchmarkType, ModelRanking, BenchmarkAggregate, BenchmarkResult } from '../types/benchmark'
-import { getModelFamily } from './model-names'
+import type { BenchmarkData, BenchmarkType, ModelRanking, ImplementationMetadata } from '../types/benchmark'
 
 // Date extraction and formatting utilities
 export function extractDateFromImplementation(implementation: string): Date | null {
@@ -45,6 +44,28 @@ export function formatDateShort(date: Date): string {
     year: 'numeric',
     month: '2-digit'
   }).format(date);
+}
+
+function fallbackMetadata(implementation: string): ImplementationMetadata {
+  return {
+    variant_id: `fallback::${implementation}`,
+    provider: 'Other',
+    family: 'Other',
+    base_model_id: implementation,
+    base_model_name: implementation,
+    variant_label: 'Legacy Variant',
+    display_name: implementation,
+    implementation_slug_prefix: implementation,
+    normalized: {
+      thinking_mode: 'unknown',
+      reasoning_effort: 'unknown',
+    },
+    param_summary: [],
+  }
+}
+
+function implementationMetadata(data: BenchmarkData, implementation: string): ImplementationMetadata {
+  return data.implementations_meta?.[implementation] ?? fallbackMetadata(implementation)
 }
 
 // Universal data loading using fetch API (works on both server and client)
@@ -98,6 +119,7 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
     totalTests: number;
     totalRubocopOffenses: number;
     firstTimestamp?: string;
+    metadata?: ImplementationMetadata;
   }> = {};
 
   // Aggregate scores across all benchmarks
@@ -110,7 +132,8 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
           totalQualityScore: 0,
           totalTestsPassed: 0,
           totalTests: 0,
-          totalRubocopOffenses: 0
+          totalRubocopOffenses: 0,
+          metadata: implementationMetadata(benchmarkData, implementation),
         };
       }
 
@@ -129,6 +152,8 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
           model.firstTimestamp = result.timestamp;
         }
       }
+
+      model.metadata ||= implementationMetadata(benchmarkData, implementation)
     });
   });
 
@@ -137,6 +162,7 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
   return Object.entries(modelScores)
     .map(([implementation, scores]) => ({
       implementation,
+      metadata: scores.metadata ?? fallbackMetadata(implementation),
       score: scores.totalScore / totalBenchmarks,
       success_rate: scores.totalSuccessRate / totalBenchmarks,
       quality_score: scores.totalQualityScore / totalBenchmarks,
@@ -156,6 +182,7 @@ export function getBenchmarkRankings(data: BenchmarkData): ModelRanking[] {
 
       return {
         implementation,
+        metadata: implementationMetadata(data, implementation),
         score: aggregate.score,
         success_rate: aggregate.metrics.success_rate,
         quality_score: aggregate.score_breakdown.quality_score,
@@ -202,7 +229,7 @@ export function calculateBenchmarkStats(data: BenchmarkData) {
   const modelFamilyStats: Record<string, { count: number; avgScore: number; avgSuccessRate: number }> = {};
 
   Object.entries(data.aggregates).forEach(([implementation, aggregate]) => {
-    const family = getModelFamily(implementation);
+    const family = implementationMetadata(data, implementation).provider || 'Other';
     if (!modelFamilyStats[family]) {
       modelFamilyStats[family] = { count: 0, avgScore: 0, avgSuccessRate: 0 };
     }
@@ -253,6 +280,7 @@ export function mergeRankingsAcrossBenchmarks(benchmarkRankings: ModelRanking[][
     totalTests: number;
     totalRubocopOffenses: number;
     firstDate?: Date;
+    metadata?: ImplementationMetadata;
   }> = {};
 
   // Aggregate scores across all benchmark rankings
@@ -266,7 +294,8 @@ export function mergeRankingsAcrossBenchmarks(benchmarkRankings: ModelRanking[][
           totalQualityScore: 0,
           totalTestsPassed: 0,
           totalTests: 0,
-          totalRubocopOffenses: 0
+          totalRubocopOffenses: 0,
+          metadata: ranking.metadata,
         };
       }
 
@@ -283,6 +312,8 @@ export function mergeRankingsAcrossBenchmarks(benchmarkRankings: ModelRanking[][
       if (!model.firstDate) {
         model.firstDate = ranking.date;
       }
+
+      model.metadata ||= ranking.metadata
     });
   });
 
@@ -290,6 +321,7 @@ export function mergeRankingsAcrossBenchmarks(benchmarkRankings: ModelRanking[][
   return Object.entries(modelScores)
     .map(([implementation, scores]) => ({
       implementation,
+      metadata: scores.metadata ?? fallbackMetadata(implementation),
       score: scores.totalScore / scores.benchmarkCount,
       success_rate: scores.totalSuccessRate / scores.benchmarkCount,
       quality_score: scores.totalQualityScore / scores.benchmarkCount,

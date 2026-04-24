@@ -1,13 +1,20 @@
 require 'json'
+require 'fileutils'
 require_relative 'provider_name_service'
 require_relative 'display_name_normalizer_service'
+require_relative 'model_variant_registry'
 
 module Implementations
   class CodeSaverService
     MODEL_NAMES_CONFIG = File.expand_path('../../../config/model_names.json', __dir__)
 
-    def initialize(model_id)
-      @model_id = model_id
+    def initialize(selection)
+      @metadata = if selection.is_a?(Hash)
+                    selection
+                  else
+                    ModelVariantRegistry.instance.metadata_for_raw_model(selection)
+                  end
+      @model_id = @metadata['model_id']
     end
 
     def save_code(benchmark_id, content)
@@ -15,7 +22,7 @@ module Implementations
       file_name = generate_file_name(benchmark_id)
 
       if implementation_exists?(benchmark_id)
-        puts "\nSkipping #{@model_id} for #{benchmark_id} - implementation already exists for this month"
+        puts "\nSkipping #{model_display_name} for #{benchmark_id} - implementation already exists for this month"
         return nil
       end
 
@@ -33,6 +40,8 @@ module Implementations
 
     private
 
+    attr_reader :metadata
+
     def create_implementation_dir(benchmark_id)
       dir = implementations_dir(benchmark_id)
       FileUtils.mkdir_p(dir)
@@ -44,7 +53,10 @@ module Implementations
 
     def generate_file_name(benchmark_id)
       timestamp = Time.now.strftime('%m_%Y')
-      File.join(implementations_dir(benchmark_id), "#{model_name}_openrouter_#{timestamp}.rb".squeeze('_'))
+      File.join(
+        implementations_dir(benchmark_id),
+        "#{implementation_slug_prefix}_#{source_tag}_#{timestamp}.rb".squeeze('_')
+      )
     end
 
     def model_info
@@ -53,7 +65,17 @@ module Implementations
       nil
     end
 
+    def implementation_slug_prefix
+      metadata['implementation_slug_prefix'] || model_name
+    end
+
+    def source_tag
+      metadata['source_tag'] || 'openrouter'
+    end
+
     def model_name
+      return metadata['implementation_slug_prefix'] if metadata['implementation_slug_prefix']
+
       name = if @model_id.include?('deepseek')
                model_info.name.split(':').last.strip.tr('-.:() ', '_').downcase
              else
@@ -64,6 +86,8 @@ module Implementations
     end
 
     def model_display_name
+      return metadata['display_name'] if metadata['display_name']
+
       raw_name = model_info&.name || @model_id.split('/').last
       DisplayNameNormalizerService.normalize(
         model_id: @model_id,
@@ -75,6 +99,8 @@ module Implementations
     end
 
     def model_provider
+      return metadata['provider'] if metadata['provider']
+
       return 'Other' unless model_info
 
       provider_slug = if model_info.provider == 'openrouter'

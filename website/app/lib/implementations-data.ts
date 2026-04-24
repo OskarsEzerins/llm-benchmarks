@@ -1,4 +1,4 @@
-import type { ImplementationsManifest, ImplementationEntry } from '../types/benchmark'
+import type { ImplementationsManifest, ImplementationEntry, ThinkingMode, ReasoningEffort } from '../types/benchmark'
 import { getModelFamily } from './model-names'
 
 export const loadImplementationsManifest = async (request?: Request): Promise<ImplementationsManifest | null> => {
@@ -42,6 +42,8 @@ export interface ImplementationFilters {
   task?: string
   search?: string
   family?: string
+  thinkingMode?: ThinkingMode
+  reasoningEffort?: ReasoningEffort
 }
 
 export const filterImplementations = (
@@ -62,12 +64,24 @@ export const filterImplementations = (
     const search = filters.search.toLowerCase()
     filtered = filtered.filter(impl =>
       impl.model.toLowerCase().includes(search) ||
-      impl.display_name.toLowerCase().includes(search)
+      impl.display_name.toLowerCase().includes(search) ||
+      impl.metadata?.base_model_name.toLowerCase().includes(search) ||
+      impl.metadata?.variant_label.toLowerCase().includes(search) ||
+      impl.metadata?.provider.toLowerCase().includes(search) ||
+      impl.metadata?.param_summary.some(item => item.toLowerCase().includes(search))
     )
   }
 
   if (filters.family) {
-    filtered = filtered.filter(impl => getModelFamily(impl.model) === filters.family)
+    filtered = filtered.filter(impl => getModelFamily(impl.metadata) === filters.family)
+  }
+
+  if (filters.thinkingMode) {
+    filtered = filtered.filter(impl => impl.metadata?.normalized.thinking_mode === filters.thinkingMode)
+  }
+
+  if (filters.reasoningEffort) {
+    filtered = filtered.filter(impl => impl.metadata?.normalized.reasoning_effort === filters.reasoningEffort)
   }
 
   return filtered
@@ -83,5 +97,13 @@ export const getAvailableTasks = (implementations: ImplementationEntry[], type?:
 }
 
 export const getAvailableFamilies = (implementations: ImplementationEntry[]): string[] => {
-  return [...new Set(implementations.map(impl => getModelFamily(impl.model)))].sort()
+  return [...new Set(implementations.map(impl => getModelFamily(impl.metadata)))].sort()
+}
+
+export const getAvailableThinkingModes = (implementations: ImplementationEntry[]): ThinkingMode[] => {
+  return [...new Set(implementations.map(impl => impl.metadata?.normalized.thinking_mode).filter(Boolean))] as ThinkingMode[]
+}
+
+export const getAvailableReasoningEfforts = (implementations: ImplementationEntry[]): ReasoningEffort[] => {
+  return [...new Set(implementations.map(impl => impl.metadata?.normalized.reasoning_effort).filter(Boolean))] as ReasoningEffort[]
 }

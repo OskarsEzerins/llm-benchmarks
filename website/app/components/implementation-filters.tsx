@@ -13,13 +13,19 @@ interface ImplementationFiltersProps {
   types: string[]
   tasks: string[]
   families: string[]
+  thinkingModes: string[]
+  effortLevels: string[]
   selectedType: string
   selectedTask: string
   selectedFamily: string
+  selectedThinkingMode: string
+  selectedReasoningEffort: string
   searchTerm: string
   onTypeChange: (value: string) => void
   onTaskChange: (value: string) => void
   onFamilyChange: (value: string) => void
+  onThinkingModeChange: (value: string) => void
+  onReasoningEffortChange: (value: string) => void
   onSearchChange: (value: string) => void
   onClear: () => void
   hasActiveFilters: boolean
@@ -29,13 +35,19 @@ export const ImplementationFilters = ({
   types,
   tasks,
   families,
+  thinkingModes,
+  effortLevels,
   selectedType,
   selectedTask,
   selectedFamily,
+  selectedThinkingMode,
+  selectedReasoningEffort,
   searchTerm,
   onTypeChange,
   onTaskChange,
   onFamilyChange,
+  onThinkingModeChange,
+  onReasoningEffortChange,
   onSearchChange,
   onClear,
   hasActiveFilters,
@@ -75,6 +87,32 @@ export const ImplementationFilters = ({
           <SelectItem value="all">All Families</SelectItem>
           {families.map(family => (
             <SelectItem key={family} value={family}>{family}</SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
+
+    <div className="flex flex-col sm:flex-row gap-3">
+      <Select value={selectedThinkingMode} onValueChange={onThinkingModeChange}>
+        <SelectTrigger className="w-full sm:w-[180px]">
+          <SelectValue placeholder="All Thinking" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">All Thinking</SelectItem>
+          {thinkingModes.map(mode => (
+            <SelectItem key={mode} value={mode}>{formatLabel(mode)}</SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+
+      <Select value={selectedReasoningEffort} onValueChange={onReasoningEffortChange}>
+        <SelectTrigger className="w-full sm:w-[180px]">
+          <SelectValue placeholder="All Effort" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="all">All Effort</SelectItem>
+          {effortLevels.map(level => (
+            <SelectItem key={level} value={level}>{formatLabel(level)}</SelectItem>
           ))}
         </SelectContent>
       </Select>

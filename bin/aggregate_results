@@ -9,30 +9,36 @@
 
 require 'json'
 require 'fileutils'
+require_relative '../lib/services/implementations/model_variant_registry'
 
 results_dir = File.expand_path('../results', __dir__)
 output_dir  = File.expand_path(ARGV[0] || 'website/public/data', Dir.pwd)
 FileUtils.mkdir_p(output_dir)
+variant_registry = Implementations::ModelVariantRegistry.instance
 
 # Discover benchmark IDs and collect data from all per-implementation files
 benchmark_results    = {}  # benchmark_id => { results: [], aggregates: {} }
 benchmark_aggregates = {}
+benchmark_metadata   = {}
 
 Dir.glob("#{results_dir}/*.json").each do |file|
   data = JSON.parse(File.read(file))
   implementation = data['implementation']
   next unless implementation
+  implementation_metadata = data['implementation_metadata'] || variant_registry.find_by_implementation(implementation)
 
   data.each do |key, value|
-    next if key == 'implementation'
+    next if ['implementation', 'implementation_metadata'].include?(key)
     next unless value.is_a?(Hash) && value.key?('results')
 
     benchmark_id = key
     benchmark_results[benchmark_id]    ||= []
     benchmark_aggregates[benchmark_id] ||= {}
+    benchmark_metadata[benchmark_id]   ||= {}
 
     benchmark_results[benchmark_id].concat(value['results'] || [])
     benchmark_aggregates[benchmark_id][implementation] = value['aggregate'] if value['aggregate']
+    benchmark_metadata[benchmark_id][implementation] = implementation_metadata if implementation_metadata
   end
 rescue JSON::ParserError
   next
@@ -41,7 +47,8 @@ end
 benchmark_results.each_key do |benchmark_id|
   output = {
     'results'    => benchmark_results[benchmark_id],
-    'aggregates' => benchmark_aggregates[benchmark_id]
+    'aggregates' => benchmark_aggregates[benchmark_id],
+    'implementations_meta' => benchmark_metadata[benchmark_id] || {}
   }
   output_file = File.join(output_dir, "#{benchmark_id}.json")
   File.write(output_file, JSON.pretty_generate(output))
@@ -51,27 +58,6 @@ end
 # Generate implementations manifest (metadata only, no source code)
 implementations_dir = File.expand_path('../implementations', __dir__)
 manifest_entries = []
-
-# Load display name config
-model_names_config = {}
-config_file = File.expand_path('../config/model_names.json', __dir__)
-if File.exist?(config_file)
-  model_names_config = JSON.parse(File.read(config_file))
-end
-
-# Generic fallback formatter (title-case the slug stripped of date suffix)
-def format_display_name(slug)
-  base = slug
-    .sub(/_openrouter_\d{2}_\d{4}$/, '')
-    .sub(/_openai_api_\d{2}_\d{4}$/, '')
-    .sub(/_cursor_chat_\d{2}_\d{4}$/, '')
-    .sub(/_cursor_\d{2}_\d{4}$/, '')
-    .sub(/_vscode_\d{2}_\d{4}$/, '')
-    .sub(/_web_chat_\d{2}_\d{4}$/, '')
-    .sub(/_web_\d{2}_\d{4}$/, '')
-    .sub(/_\d{2}_\d{4}$/, '')
-  base.split('_').map(&:capitalize).join(' ')
-end
 
 Dir.glob("#{implementations_dir}/**/*.rb").sort.each do |file|
   rel = file.sub("#{implementations_dir}/", '')
@@ -83,11 +69,16 @@ Dir.glob("#{implementations_dir}/**/*.rb").sort.each do |file|
   task  = parts[1]
   model = parts[2].sub(/\.rb$/, '')
   lines = File.read(file).count("\n")
-  entry = model_names_config[model]
-  display_name = entry.is_a?(Hash) ? entry['display_name'] : format_display_name(model)
-  provider     = entry.is_a?(Hash) ? entry['provider']      : 'Other'
-  manifest_entries << { type: type, task: task, model: model, lines: lines,
-                        display_name: display_name, provider: provider }
+  metadata = variant_registry.find_by_implementation(model)
+  manifest_entries << {
+    type: type,
+    task: task,
+    model: model,
+    lines: lines,
+    display_name: metadata&.dig('display_name') || model,
+    provider: metadata&.dig('provider') || 'Other',
+    metadata: metadata
+  }
 rescue StandardError
   next
 end
@@ -112,12 +103,5 @@ rescue StandardError
   next
 end
 puts "Copied #{copied_count} implementation source files"
-
-# Copy model_names.json into website/app/data/ so Vite can process it as a static ES module import.
-# It must NOT go into public/ because Vite does not allow importing files from public/ via ES module syntax.
-app_data_dir = File.expand_path('../website/app/data', __dir__)
-FileUtils.mkdir_p(app_data_dir)
-FileUtils.cp(config_file, File.join(app_data_dir, 'model_names.json'))
-puts "Copied model_names.json to #{app_data_dir}/"
 
 puts "Done. Output written to #{output_dir}/"

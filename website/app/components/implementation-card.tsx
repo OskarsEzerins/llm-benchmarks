@@ -2,8 +2,9 @@ import { FileCode } from 'lucide-react'
 import { Card, CardContent } from './ui/card'
 import { Badge } from './ui/badge'
 import { Checkbox } from './ui/checkbox'
-import { getModelFamily } from '../lib/model-names'
+import { getModelFamily, getVariantLabel } from '../lib/model-names'
 import { formatLabel } from '../lib/utils'
+import { ModelParameterBadges } from './model-parameter-badges'
 import type { ImplementationEntry } from '../types/benchmark'
 
 interface ImplementationCardProps {
@@ -19,7 +20,7 @@ export const ImplementationCard = ({
   onToggleCompare,
   compareDisabled,
 }: ImplementationCardProps) => {
-  const { type, task, model, lines, display_name } = implementation
+  const { type, task, model, lines, display_name, metadata } = implementation
 
   return (
     <Card className="group border shadow-sm hover:shadow-md transition-shadow">
@@ -30,7 +31,7 @@ export const ImplementationCard = ({
               {display_name}
             </h3>
             <p className="text-xs text-muted-foreground truncate">
-              {getModelFamily(model)}
+              {getModelFamily(metadata)} • {getVariantLabel(metadata)}
             </p>
           </div>
           <div
@@ -58,6 +59,8 @@ export const ImplementationCard = ({
             {lines} lines
           </Badge>
         </div>
+
+        <ModelParameterBadges metadata={metadata} />
       </CardContent>
     </Card>
   )

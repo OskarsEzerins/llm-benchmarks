@@ -1,6 +1,34 @@
+export type ThinkingMode = 'off' | 'adaptive' | 'manual' | 'unknown'
+export type ReasoningEffort = 'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh' | 'unknown'
+
+export interface ImplementationMetadata {
+  implementation?: string;
+  variant_id: string;
+  variant_key?: string;
+  provider: string;
+  family: string;
+  base_model_id: string;
+  model_id?: string | null;
+  base_model_name: string;
+  variant_label: string;
+  display_name: string;
+  implementation_slug_prefix: string;
+  legacy_slug_prefixes?: string[];
+  source_tag?: string;
+  params?: Record<string, unknown>;
+  normalized: {
+    thinking_mode: ThinkingMode;
+    reasoning_effort: ReasoningEffort;
+    budget_tokens?: number;
+  };
+  param_summary: string[];
+  configured_variant?: boolean;
+}
+
 export interface BenchmarkResult {
   implementation: string;
   timestamp: string;
+  implementation_metadata?: ImplementationMetadata;
   metrics: {
     rubocop_offenses: number;
     tests_passed: number;
@@ -32,10 +60,12 @@ export interface BenchmarkAggregate {
 export interface BenchmarkData {
   results: BenchmarkResult[];
   aggregates: Record<string, BenchmarkAggregate>;
+  implementations_meta: Record<string, ImplementationMetadata>;
 }
 
 export interface ModelRanking {
   implementation: string;
+  metadata: ImplementationMetadata;
   score: number;
   success_rate: number;
   quality_score: number;
@@ -61,6 +91,7 @@ export interface ImplementationEntry {
   lines: number;
   display_name: string;
   provider?: string;
+  metadata?: ImplementationMetadata;
 }
 
 export interface ImplementationsManifest {
@@ -72,4 +103,5 @@ export interface CompareItem {
   task: string;
   model: string;
   display_name?: string;
+  metadata?: ImplementationMetadata;
 }

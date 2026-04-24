@@ -37,6 +37,10 @@ module Config
     'results'
   end
 
+  def model_variants_file
+    'config/model_variants.json'
+  end
+
   def implementations_dir(benchmark_id)
     benchmark_type = benchmark_configs[benchmark_id]&.dig(:type) || :performance
     "implementations/#{benchmark_type}/#{benchmark_id}"
