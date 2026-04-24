@@ -10,6 +10,57 @@ module Implementations
     SOURCE_SUFFIX_PATTERN = /_(openrouter|openai_api|cursor_chat|cursor|vscode|web_chat|web)_\d{2}_\d{4}$|_\d{2}_\d{4}$/
     EFFORT_VALUES = %w[none minimal low medium high xhigh].freeze
     THINKING_VALUES = %w[off adaptive manual unknown].freeze
+    OPENAI_REASONING_VARIANTS = [
+      {
+        'id' => 'default_effort_none',
+        'label' => 'Default',
+        'params' => {},
+        'normalized' => { 'thinking_mode' => 'off', 'reasoning_effort' => 'none' }
+      },
+      {
+        'id' => 'effort_low',
+        'label' => 'Effort Low',
+        'slug_suffix' => 'effort_low',
+        'params' => { 'reasoning' => { 'effort' => 'low' } },
+        'normalized' => { 'thinking_mode' => 'manual', 'reasoning_effort' => 'low' }
+      },
+      {
+        'id' => 'effort_medium',
+        'label' => 'Effort Medium',
+        'slug_suffix' => 'effort_medium',
+        'params' => { 'reasoning' => { 'effort' => 'medium' } },
+        'normalized' => { 'thinking_mode' => 'manual', 'reasoning_effort' => 'medium' }
+      },
+      {
+        'id' => 'effort_high',
+        'label' => 'Effort High',
+        'slug_suffix' => 'effort_high',
+        'params' => { 'reasoning' => { 'effort' => 'high' } },
+        'normalized' => { 'thinking_mode' => 'manual', 'reasoning_effort' => 'high' }
+      }
+    ].freeze
+    ANTHROPIC_REASONING_VARIANTS = [
+      {
+        'id' => 'default_off_high',
+        'label' => 'Default',
+        'params' => {},
+        'normalized' => { 'thinking_mode' => 'off', 'reasoning_effort' => 'high' }
+      },
+      {
+        'id' => 'manual_budget_2048',
+        'label' => 'Thinking Budget 2K',
+        'slug_suffix' => 'budget_2048',
+        'params' => { 'reasoning' => { 'max_tokens' => 2048 } },
+        'normalized' => { 'thinking_mode' => 'manual', 'reasoning_effort' => 'medium', 'budget_tokens' => 2048 }
+      },
+      {
+        'id' => 'manual_budget_8192',
+        'label' => 'Thinking Budget 8K',
+        'slug_suffix' => 'budget_8192',
+        'params' => { 'reasoning' => { 'max_tokens' => 8192 } },
+        'normalized' => { 'thinking_mode' => 'manual', 'reasoning_effort' => 'high', 'budget_tokens' => 8192 }
+      }
+    ].freeze
 
     def self.instance
       @instance ||= new
@@ -49,6 +100,8 @@ module Implementations
     def resolve_selection(selection)
       case selection
       when Hash
+        return deep_dup(selection) if selection['display_name'] && selection['implementation_slug_prefix']
+
         if selection['variant_id'] || selection[:variant_id]
           find_variant(selection['variant_id'] || selection[:variant_id])
         elsif selection['model_id'] || selection[:model_id]
@@ -102,6 +155,15 @@ module Implementations
       deep_dup(legacy_metadata_for_slug(implementation))
     end
 
+    def selection_entries(models)
+      Array(models).flat_map do |model|
+        variants = variants_for_base(model.id)
+        next variants if variants.any?
+
+        auto_variants_for_model(model)
+      end.sort_by { |entry| [entry['base_model_name'], selection_sort_key(entry)] }
+    end
+
     def display_name_for_slug(implementation)
       find_by_implementation(implementation)&.dig('display_name') || implementation
     end
@@ -151,6 +213,67 @@ module Implementations
 
     def build_display_name(base_model_name, variant_label)
       "#{base_model_name} (#{variant_label})"
+    end
+
+    def auto_variants_for_model(model)
+      template = auto_variant_templates_for_model(model)
+      return [metadata_for_raw_model(model.id)] unless template
+
+      template.map do |variant|
+        build_auto_variant(model, variant)
+      end
+    end
+
+    def auto_variant_templates_for_model(model)
+      metadata = model.respond_to?(:metadata) ? model.metadata : {}
+      supported_parameters = Array(metadata['supported_parameters'])
+      return nil unless model.respond_to?(:reasoning?) && model.reasoning?
+      return nil unless supported_parameters.include?('reasoning') || supported_parameters.include?('include_reasoning')
+
+      provider_namespace = model.id.to_s.split('/').first
+
+      case provider_namespace
+      when 'openai'
+        OPENAI_REASONING_VARIANTS
+      when 'anthropic'
+        ANTHROPIC_REASONING_VARIANTS
+      else
+        nil
+      end
+    end
+
+    def build_auto_variant(model, variant)
+      base_model_name = model.respond_to?(:name) ? model.name.to_s : format_model_id_display_name(model.id)
+      provider = provider_from_model_id(model.id)
+      family = infer_family(base_model_name, provider)
+      slug_prefix_base = format_model_id_slug(model.id)
+      slug_suffix = variant['slug_suffix']
+      implementation_slug_prefix = [slug_prefix_base, slug_suffix].compact.reject(&:empty?).join('_')
+      normalized = normalize_normalized_fields(variant['normalized'] || {})
+      variant_label = variant['label']
+
+      {
+        'variant_id' => "auto::#{model.id}::#{variant.fetch('id')}",
+        'variant_key' => variant.fetch('id'),
+        'provider' => provider,
+        'family' => family,
+        'base_model_id' => model.id,
+        'model_id' => model.id,
+        'base_model_name' => base_model_name,
+        'variant_label' => variant_label,
+        'display_name' => build_display_name(base_model_name, variant_label),
+        'implementation_slug_prefix' => implementation_slug_prefix,
+        'legacy_slug_prefixes' => [slug_prefix_base],
+        'source_tag' => 'openrouter',
+        'params' => deep_dup(variant['params'] || {}),
+        'request' => {
+          'provider' => 'openrouter',
+          'params' => deep_dup(variant['params'] || {})
+        },
+        'normalized' => normalized,
+        'param_summary' => build_param_summary(normalized),
+        'configured_variant' => false
+      }
     end
 
     def normalize_normalized_fields(normalized)
@@ -307,6 +430,13 @@ module Implementations
 
     def titleize(value)
       value.to_s.split('_').map(&:capitalize).join(' ')
+    end
+
+    def selection_sort_key(entry)
+      variant_label = entry['variant_label'].to_s
+      return '000_default' if variant_label == 'Default'
+
+      variant_label
     end
   end
 end
