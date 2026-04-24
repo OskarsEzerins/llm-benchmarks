@@ -38,9 +38,9 @@ class ResultsService
     { 'results' => results, 'aggregates' => aggregates, 'implementations_meta' => implementations_meta }
   end
 
-  def add_result(implementation, result_data, rubocop_offenses)
+  def add_result(implementation, result_data, rubocop_offenses, metadata = nil)
     impl_file = Config.implementation_results_file(implementation)
-    metadata = @variant_registry.find_by_implementation(implementation)
+    metadata ||= @variant_registry.find_by_implementation(implementation)
     data = load_impl_file(impl_file, implementation, metadata)
     data['implementation_metadata'] = metadata if metadata
 

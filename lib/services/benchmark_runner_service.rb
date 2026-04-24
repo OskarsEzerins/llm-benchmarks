@@ -135,7 +135,8 @@ class BenchmarkRunnerService
     results_service.add_result(
       implementation[:name],
       result,
-      rubocop_offenses_count
+      rubocop_offenses_count,
+      implementation[:metadata]
     )
 
     # Only display results immediately for performance benchmarks

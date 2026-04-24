@@ -163,10 +163,11 @@ pnpm install
 pnpm dev  # runs bin/aggregate_results automatically via predev hook
 ```
 
-> **Adding a new benchmarkable model or preset?** Add it to `config/model_variants.json`.
-> The CLI reads that registry for parameter-aware selection, and `bin/aggregate_results`
-> carries the structured metadata through to the website automatically. `config/model_names.json`
-> still exists as a legacy fallback map for older slug-only implementations.
+> **Adding a new benchmarkable model or reasoning variant?** Run `bin/main`.
+> The CLI reads model capabilities from RubyLLM/OpenRouter, auto-generates thinking
+> variants when supported, and `bin/aggregate_results` carries the structured metadata
+> through to the website automatically. `config/model_names.json` still exists as a
+> generated fallback map for older slug-only implementations.
 
 ## Ways to Contribute
 
@@ -198,7 +199,7 @@ end
  ┣ 📂 implementations # AI's best attempts at glory
  ┃ ┣ 📂 performance   # Generated speed solutions
  ┃ ┗ 📂 program_fixer # Generated debugging fixes
- ┣ 📂 config          # Shared config (model_variants.json + legacy model_names.json fallback)
+ ┣ 📂 config          # Shared config (legacy/generated model_names.json fallback)
  ┣ 📂 lib             # Our benchmark orchestration tools
  ┣ 📂 results         # The cold, hard truth (JSON data)
  ┣ 📂 website         # 🌐 Interactive results dashboard

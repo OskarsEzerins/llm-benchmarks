@@ -116,9 +116,18 @@ module Implementations
 
     def update_model_names_config(slug)
       config = File.exist?(MODEL_NAMES_CONFIG) ? JSON.parse(File.read(MODEL_NAMES_CONFIG)) : {}
-      return if config.key?(slug)
+      if config.key?(slug)
+        return if config[slug].is_a?(Hash) && config[slug]['metadata']
 
-      config[slug] = { 'display_name' => model_display_name, 'provider' => model_provider }
+        config[slug]['metadata'] = metadata if config[slug].is_a?(Hash)
+      else
+        config[slug] = {
+          'display_name' => model_display_name,
+          'provider' => model_provider,
+          'metadata' => metadata
+        }
+      end
+
       sorted = config.sort.to_h
       File.write(MODEL_NAMES_CONFIG, JSON.pretty_generate(sorted))
       puts "Updated model_names.json: #{slug} => #{config[slug]}"

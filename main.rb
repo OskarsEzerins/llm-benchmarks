@@ -124,12 +124,16 @@ class Main
     total = added.values.sum(&:size)
     return unless @prompt.yes?("Run benchmarks for newly added implementations? (#{total} added)")
 
-    added.each do |benchmark_id, slugs|
-      next if slugs.empty?
+    added.each do |benchmark_id, entries|
+      next if entries.empty?
 
       puts "\nRunning #{format_name(benchmark_id)}..."
-      implementations = slugs.map do |slug|
-        { name: slug, file: "#{Config.implementations_dir(benchmark_id)}/#{slug}.rb" }
+      implementations = entries.map do |entry|
+        if entry.is_a?(Hash)
+          entry
+        else
+          { name: entry, file: "#{Config.implementations_dir(benchmark_id)}/#{entry}.rb" }
+        end
       end
       BenchmarkRunnerService.new(benchmark_id, implementations).run
     end

@@ -10,7 +10,7 @@ module Implementations
       @benchmark_type = benchmark_type
     end
 
-    # Returns a hash of { benchmark_id => [slug, ...] } for newly saved implementations
+    # Returns a hash of { benchmark_id => [{ name:, file:, metadata: }, ...] } for newly saved implementations
     def process_prompts
       target_benchmarks = self.target_benchmarks
       if target_benchmarks.empty?
@@ -44,8 +44,16 @@ module Implementations
         next if skip_existing_implementation?(code_saver, implementation, benchmark_id)
 
         slug = process_single_benchmark(implementation, benchmark_id, code_saver)
-        added[benchmark_id] << slug if slug
+        added[benchmark_id] << implementation_entry(benchmark_id, slug, implementation) if slug
       end
+    end
+
+    def implementation_entry(benchmark_id, slug, implementation)
+      {
+        name: slug,
+        file: "#{Config.implementations_dir(benchmark_id)}/#{slug}.rb",
+        metadata: implementation
+      }
     end
 
     def validate_prompt_file(benchmark_id)
