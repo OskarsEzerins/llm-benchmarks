@@ -1,0 +1,173 @@
+{
+  "implementation": "glm_5_1_effort_high_openrouter_04_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::z-ai/glm-5.1::effort_high",
+    "variant_key": "effort_high",
+    "provider": "Z Ai",
+    "family": "Z Ai",
+    "base_model_id": "z-ai/glm-5.1",
+    "model_id": "z-ai/glm-5.1",
+    "base_model_name": "GLM-5.1",
+    "variant_label": "Thinking High",
+    "display_name": "GLM-5.1 (Thinking High)",
+    "implementation_slug_prefix": "glm_5_1_effort_high",
+    "legacy_slug_prefixes": [
+      "glm_5_1"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "high"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "high"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: High"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "glm_5_1_effort_high_openrouter_04_2026",
+        "timestamp": "2026-04-24T21:40:29+03:00",
+        "metrics": {
+          "rubocop_offenses": 7,
+          "tests_passed": 12,
+          "total_tests": 31,
+          "success_rate": 0.3870967741935484,
+          "primary_metric": 0.3870967741935484,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 7.0,
+        "tests_passed": 12.0,
+        "total_tests": 31.0,
+        "success_rate": 0.387097,
+        "primary_metric": 0.387097,
+        "success": 1.0
+      },
+      "rubocop_offenses": 7,
+      "score": 43.44,
+      "score_breakdown": {
+        "success_score": 38.71,
+        "quality_score": 86.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "glm_5_1_effort_high_openrouter_04_2026",
+        "timestamp": "2026-04-24T21:40:29+03:00",
+        "metrics": {
+          "rubocop_offenses": 22,
+          "tests_passed": 20,
+          "total_tests": 23,
+          "success_rate": 0.8695652173913043,
+          "primary_metric": 0.8695652173913043,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 22.0,
+        "tests_passed": 20.0,
+        "total_tests": 23.0,
+        "success_rate": 0.869565,
+        "primary_metric": 0.869565,
+        "success": 1.0
+      },
+      "rubocop_offenses": 22,
+      "score": 83.86,
+      "score_breakdown": {
+        "success_score": 86.96,
+        "quality_score": 56.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "glm_5_1_effort_high_openrouter_04_2026",
+        "timestamp": "2026-04-24T21:40:30+03:00",
+        "metrics": {
+          "rubocop_offenses": 40,
+          "tests_passed": 27,
+          "total_tests": 39,
+          "success_rate": 0.6923076923076923,
+          "primary_metric": 0.6923076923076923,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 40.0,
+        "tests_passed": 27.0,
+        "total_tests": 39.0,
+        "success_rate": 0.692308,
+        "primary_metric": 0.692308,
+        "success": 1.0
+      },
+      "rubocop_offenses": 40,
+      "score": 64.31,
+      "score_breakdown": {
+        "success_score": 69.23,
+        "quality_score": 20.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "glm_5_1_effort_high_openrouter_04_2026",
+        "timestamp": "2026-04-24T21:40:30+03:00",
+        "metrics": {
+          "rubocop_offenses": 5,
+          "tests_passed": 21,
+          "total_tests": 28,
+          "success_rate": 0.75,
+          "primary_metric": 0.75,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 5.0,
+        "tests_passed": 21.0,
+        "total_tests": 28.0,
+        "success_rate": 0.75,
+        "primary_metric": 0.75,
+        "success": 1.0
+      },
+      "rubocop_offenses": 5,
+      "score": 76.5,
+      "score_breakdown": {
+        "success_score": 75.0,
+        "quality_score": 90.0
+      }
+    }
+  }
+}

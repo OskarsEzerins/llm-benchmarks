@@ -259,6 +259,48 @@
     "display_name": "GLM 4.7",
     "provider": "Z.AI"
   },
+  "glm_5_1_effort_high_openrouter_04_2026": {
+    "display_name": "GLM-5.1 (Thinking High)",
+    "provider": "Z Ai",
+    "metadata": {
+      "variant_id": "auto::z-ai/glm-5.1::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Z Ai",
+      "family": "Z Ai",
+      "base_model_id": "z-ai/glm-5.1",
+      "model_id": "z-ai/glm-5.1",
+      "base_model_name": "GLM-5.1",
+      "variant_label": "Thinking High",
+      "display_name": "GLM-5.1 (Thinking High)",
+      "implementation_slug_prefix": "glm_5_1_effort_high",
+      "legacy_slug_prefixes": [
+        "glm_5_1"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
   "glm_5_openrouter_02_2026": {
     "display_name": "GLM 5",
     "provider": "Z.AI"
