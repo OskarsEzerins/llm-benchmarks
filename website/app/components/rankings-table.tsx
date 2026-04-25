@@ -570,13 +570,19 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
                       <Rank value={overallRank} />
                     </td>
                     <td className="px-3.5 py-2.5">
-                      <div className="flex min-w-52 items-center gap-2">
-                        {sameGroup ? (
-                          <span className="text-[13px] text-[var(--c-sub)]">↳ {baseName}</span>
-                        ) : (
-                          <span className="text-sm font-bold text-[var(--c-fg)]">{baseName}</span>
-                        )}
-                        {!sameGroup && <ProviderBadge provider={provider} />}
+                      <div className="flex min-w-52 flex-col gap-1.5">
+                        <div className="flex items-center gap-2">
+                          {sameGroup ? (
+                            <span className="text-[13px] text-[var(--c-sub)]">↳ {baseName}</span>
+                          ) : (
+                            <span className="text-sm font-bold text-[var(--c-fg)]">{baseName}</span>
+                          )}
+                          {!sameGroup && <ProviderBadge provider={provider} />}
+                        </div>
+                        <div className="flex items-center gap-1.5 font-mono text-[10px] text-[var(--c-dim)] min-[860px]:hidden">
+                          <span className="font-bold uppercase tracking-[0.08em]">Config</span>
+                          <ConfigCell model={model} />
+                        </div>
                       </div>
                     </td>
                     <td className="hidden px-3.5 py-2.5 min-[860px]:table-cell">
