@@ -17,6 +17,13 @@ module Implementations
         'normalized' => { 'thinking_mode' => 'off', 'reasoning_effort' => 'none' }
       },
       {
+        'id' => 'effort_none',
+        'label' => 'Thinking None',
+        'slug_suffix' => 'effort_none',
+        'params' => { 'reasoning' => { 'effort' => 'none' } },
+        'normalized' => { 'thinking_mode' => 'off', 'reasoning_effort' => 'none' }
+      },
+      {
         'id' => 'effort_low',
         'label' => 'Thinking Low',
         'slug_suffix' => 'effort_low',
@@ -36,6 +43,13 @@ module Implementations
         'slug_suffix' => 'effort_high',
         'params' => { 'reasoning' => { 'effort' => 'high' } },
         'normalized' => { 'thinking_mode' => 'manual', 'reasoning_effort' => 'high' }
+      },
+      {
+        'id' => 'effort_xhigh',
+        'label' => 'Thinking XHigh',
+        'slug_suffix' => 'effort_xhigh',
+        'params' => { 'reasoning' => { 'effort' => 'xhigh' } },
+        'normalized' => { 'thinking_mode' => 'manual', 'reasoning_effort' => 'xhigh' }
       }
     ].freeze
 
@@ -105,12 +119,49 @@ module Implementations
     end
 
     def supports_reasoning?(model)
-      metadata = model.respond_to?(:metadata) ? model.metadata : {}
-      supported_parameters = Array(metadata['supported_parameters'])
+      supported_parameters = supported_parameters_for(model)
 
       return true if supported_parameters.include?('reasoning') || supported_parameters.include?('include_reasoning')
+      return true if metadata_capability?(model, 'reasoning')
 
-      model.respond_to?(:reasoning?) && model.reasoning?
+      %i[reasoning? supports_reasoning? thinking? supports_thinking?].any? do |method_name|
+        model.respond_to?(method_name) && model.public_send(method_name)
+      end
+    end
+
+    def supported_parameters_for(model)
+      params = metadata_value(model_metadata(model), 'supported_parameters')
+      params ||= model.public_send(:supported_parameters) if model.respond_to?(:supported_parameters)
+      Array(params).map(&:to_s)
+    rescue StandardError
+      []
+    end
+
+    def metadata_capability?(model, capability)
+      capabilities = metadata_value(model_metadata(model), 'capabilities')
+
+      case capabilities
+      when Hash
+        value = capabilities[capability.to_s] || capabilities[capability.to_sym]
+        value == true || value.to_s == 'true'
+      when Array
+        capabilities.map(&:to_s).include?(capability.to_s)
+      else
+        false
+      end
+    end
+
+    def model_metadata(model)
+      metadata = model.respond_to?(:metadata) ? model.metadata : {}
+      metadata.respond_to?(:to_h) ? metadata.to_h : metadata
+    rescue StandardError
+      {}
+    end
+
+    def metadata_value(metadata, key)
+      return unless metadata.is_a?(Hash)
+
+      metadata[key.to_s] || metadata[key.to_sym]
     end
 
     def build_auto_variant(model, variant)
@@ -336,9 +387,11 @@ module Implementations
     def selection_sort_key(entry)
       variant_label = entry['variant_label'].to_s
       return '000_default' if variant_label == 'Default'
+      return '050_none' if variant_label.end_with?('None')
       return '100_low' if variant_label.end_with?('Low')
       return '200_medium' if variant_label.end_with?('Medium')
       return '300_high' if variant_label.end_with?('High')
+      return '400_xhigh' if variant_label.end_with?('XHigh')
 
       variant_label
     end
