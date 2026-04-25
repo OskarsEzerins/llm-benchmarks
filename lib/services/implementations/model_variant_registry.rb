@@ -122,46 +122,16 @@ module Implementations
       supported_parameters = supported_parameters_for(model)
 
       return true if supported_parameters.include?('reasoning') || supported_parameters.include?('include_reasoning')
-      return true if metadata_capability?(model, 'reasoning')
 
-      %i[reasoning? supports_reasoning? thinking? supports_thinking?].any? do |method_name|
-        model.respond_to?(method_name) && model.public_send(method_name)
-      end
+      model.respond_to?(:reasoning?) && model.reasoning?
     end
 
     def supported_parameters_for(model)
-      params = metadata_value(model_metadata(model), 'supported_parameters')
-      params ||= model.public_send(:supported_parameters) if model.respond_to?(:supported_parameters)
+      metadata = model.respond_to?(:metadata) ? model.metadata : {}
+      params = metadata[:supported_parameters] || metadata['supported_parameters']
       Array(params).map(&:to_s)
     rescue StandardError
       []
-    end
-
-    def metadata_capability?(model, capability)
-      capabilities = metadata_value(model_metadata(model), 'capabilities')
-
-      case capabilities
-      when Hash
-        value = capabilities[capability.to_s] || capabilities[capability.to_sym]
-        value == true || value.to_s == 'true'
-      when Array
-        capabilities.map(&:to_s).include?(capability.to_s)
-      else
-        false
-      end
-    end
-
-    def model_metadata(model)
-      metadata = model.respond_to?(:metadata) ? model.metadata : {}
-      metadata.respond_to?(:to_h) ? metadata.to_h : metadata
-    rescue StandardError
-      {}
-    end
-
-    def metadata_value(metadata, key)
-      return unless metadata.is_a?(Hash)
-
-      metadata[key.to_s] || metadata[key.to_sym]
     end
 
     def build_auto_variant(model, variant)
