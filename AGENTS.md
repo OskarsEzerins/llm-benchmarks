@@ -101,6 +101,15 @@ To add a new model's implementations via PR:
 2. This creates implementation files under `implementations/` and a results file at `results/{implementation}.json`
 3. Open a PR — since each model has its own result file, there are no merge conflicts with concurrent PRs
 
+## Git Conventions
+
+- Always write commit messages using the Conventional Commits.
+- Use `<type>[optional scope]: <description>` as the first line, for example `fix(website): preserve overall ranks when filtering`.
+- Use `feat` for new user-facing functionality and `fix` for bug fixes.
+- Use `chore` for new model additions, "chores".
+- Other allowed types include `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`.
+- Add an optional body after a blank line when the change needs context.
+
 ## Website
 
 The `website/` directory contains a React/TypeScript frontend. See `website/CLAUDE.md` for detailed instructions. All website features must be mobile-responsive (375px+ viewports).
