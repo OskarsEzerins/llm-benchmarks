@@ -16,8 +16,8 @@ interface RankingsTableProps {
 interface RankingsStats {
   total: number
   providers: number
-  bestProvider: string
-  bestProviderAvg: string
+  newThisMonth: number
+  newThisMonthLabel: string
   latestModel: string
   latestDate: string
 }
@@ -234,13 +234,17 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
     return Array.from(new Set(data.map((model) => getProviderName(model)))).sort()
   }, [data])
 
+  const rankByImplementation = useMemo(() => {
+    return new Map(data.map((model, index) => [model.implementation, index + 1]))
+  }, [data])
+
   const stats = useMemo<RankingsStats>(() => {
     if (data.length === 0) {
       return {
         total: 0,
         providers: 0,
-        bestProvider: '—',
-        bestProviderAvg: '',
+        newThisMonth: 0,
+        newThisMonthLabel: 'models added',
         latestModel: '—',
         latestDate: '',
       }
@@ -253,20 +257,17 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
       return scores
     }, {})
 
-    const bestProvider = Object.entries(providerScores)
-      .map(([provider, scores]) => ({
-        provider,
-        average: scores.reduce((sum, score) => sum + score, 0) / scores.length,
-      }))
-      .sort((a, b) => b.average - a.average)[0]
-
     const latest = [...data].sort((a, b) => dateTime(b.date) - dateTime(a.date))[0]
+    const latestMonth = latest ? formatMonth(latest.date) : ''
+    const newThisMonth = latestMonth
+      ? data.filter((model) => formatMonth(model.date) === latestMonth).length
+      : 0
 
     return {
       total: data.length,
       providers: Object.keys(providerScores).length,
-      bestProvider: bestProvider?.provider ?? '—',
-      bestProviderAvg: bestProvider ? bestProvider.average.toFixed(1) : '',
+      newThisMonth,
+      newThisMonthLabel: `${newThisMonth === 1 ? 'model' : 'models'} added`,
       latestModel: latest ? getBaseModelName(latest.implementation, latest.metadata) : '—',
       latestDate: latest ? formatMonth(latest.date) : '',
     }
@@ -395,7 +396,7 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
           {[
             { label: 'Models Tested', value: stats.total, numeric: true },
             { label: 'Providers', value: stats.providers, numeric: true },
-            { label: 'Best Provider', value: stats.bestProvider, sub: stats.bestProviderAvg ? `avg ${stats.bestProviderAvg}` : '' },
+            { label: 'New This Month', value: stats.newThisMonth, sub: stats.newThisMonthLabel, numeric: true },
             { label: 'Latest Added', value: stats.latestModel, sub: stats.latestDate },
           ].map((item, index) => (
             <div
@@ -538,11 +539,11 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
             </thead>
             <tbody>
               {paginated.map((model, index) => {
-                const globalIndex = (page - 1) * PAGE_SIZE + index
                 const sameGroup = isSameGroup(model, index)
                 const selected = selectedModels.has(model.implementation)
                 const provider = getProviderName(model)
                 const baseName = getBaseModelName(model.implementation, model.metadata)
+                const overallRank = rankByImplementation.get(model.implementation) ?? 0
 
                 return (
                   <tr
@@ -566,7 +567,7 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
                       />
                     </td>
                     <td className="px-2 py-2.5 text-center">
-                      <Rank value={globalIndex + 1} />
+                      <Rank value={overallRank} />
                     </td>
                     <td className="px-3.5 py-2.5">
                       <div className="flex min-w-52 items-center gap-2">
