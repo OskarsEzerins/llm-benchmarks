@@ -345,6 +345,48 @@
     "display_name": "Kimi K2.5",
     "provider": "Moonshot AI"
   },
+  "kimi_k2_6_effort_high_openrouter_04_2026": {
+    "display_name": "Kimi K2.6 (Thinking High)",
+    "provider": "Moonshotai",
+    "metadata": {
+      "variant_id": "auto::moonshotai/kimi-k2.6::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Moonshotai",
+      "family": "Moonshotai",
+      "base_model_id": "moonshotai/kimi-k2.6",
+      "model_id": "moonshotai/kimi-k2.6",
+      "base_model_name": "Kimi K2.6",
+      "variant_label": "Thinking High",
+      "display_name": "Kimi K2.6 (Thinking High)",
+      "implementation_slug_prefix": "kimi_k2_6_effort_high",
+      "legacy_slug_prefixes": [
+        "kimi_k2_6"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
   "kimi_k2_6_effort_low_openrouter_04_2026": {
     "display_name": "Kimi K2.6 (Thinking Low)",
     "provider": "Moonshotai",

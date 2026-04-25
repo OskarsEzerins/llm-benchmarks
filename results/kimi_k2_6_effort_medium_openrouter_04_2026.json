@@ -1,0 +1,174 @@
+{
+  "implementation": "kimi_k2_6_effort_medium_openrouter_04_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::moonshotai/kimi-k2.6::effort_medium",
+    "variant_key": "effort_medium",
+    "provider": "Moonshotai",
+    "family": "Moonshotai",
+    "base_model_id": "moonshotai/kimi-k2.6",
+    "model_id": "moonshotai/kimi-k2.6",
+    "base_model_name": "Kimi K2.6",
+    "variant_label": "Thinking Medium",
+    "display_name": "Kimi K2.6 (Thinking Medium)",
+    "implementation_slug_prefix": "kimi_k2_6_effort_medium",
+    "legacy_slug_prefixes": [
+      "kimi_k2_6"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "medium"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "medium"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Medium"
+    ],
+    "configured_variant": false,
+    "implementation": "kimi_k2_6_effort_medium_openrouter_04_2026"
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "kimi_k2_6_effort_medium_openrouter_04_2026",
+        "timestamp": "2026-04-25T20:07:03+03:00",
+        "metrics": {
+          "rubocop_offenses": 9,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 9.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 9,
+      "score": 45.95,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 82.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "kimi_k2_6_effort_medium_openrouter_04_2026",
+        "timestamp": "2026-04-25T20:07:08+03:00",
+        "metrics": {
+          "rubocop_offenses": 15,
+          "tests_passed": 15,
+          "total_tests": 23,
+          "success_rate": 0.6521739130434783,
+          "primary_metric": 0.6521739130434783,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 15.0,
+        "tests_passed": 15.0,
+        "total_tests": 23.0,
+        "success_rate": 0.652174,
+        "primary_metric": 0.652174,
+        "success": 1.0
+      },
+      "rubocop_offenses": 15,
+      "score": 65.7,
+      "score_breakdown": {
+        "success_score": 65.22,
+        "quality_score": 70.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "kimi_k2_6_effort_medium_openrouter_04_2026",
+        "timestamp": "2026-04-25T20:07:15+03:00",
+        "metrics": {
+          "rubocop_offenses": 20,
+          "tests_passed": 19,
+          "total_tests": 39,
+          "success_rate": 0.48717948717948717,
+          "primary_metric": 0.48717948717948717,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 20.0,
+        "tests_passed": 19.0,
+        "total_tests": 39.0,
+        "success_rate": 0.487179,
+        "primary_metric": 0.487179,
+        "success": 1.0
+      },
+      "rubocop_offenses": 20,
+      "score": 49.85,
+      "score_breakdown": {
+        "success_score": 48.72,
+        "quality_score": 60.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "kimi_k2_6_effort_medium_openrouter_04_2026",
+        "timestamp": "2026-04-25T20:07:30+03:00",
+        "metrics": {
+          "rubocop_offenses": 6,
+          "tests_passed": 22,
+          "total_tests": 28,
+          "success_rate": 0.7857142857142857,
+          "primary_metric": 0.7857142857142857,
+          "success": true
+        }
+      }
+    ],
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 6.0,
+        "tests_passed": 22.0,
+        "total_tests": 28.0,
+        "success_rate": 0.785714,
+        "primary_metric": 0.785714,
+        "success": 1.0
+      },
+      "rubocop_offenses": 6,
+      "score": 79.51,
+      "score_breakdown": {
+        "success_score": 78.57,
+        "quality_score": 88.0
+      }
+    }
+  }
+}
