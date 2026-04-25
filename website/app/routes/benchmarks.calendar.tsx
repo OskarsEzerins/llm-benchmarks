@@ -2,10 +2,7 @@ import type { Route } from "./+types/benchmarks.calendar";
 import { loadBenchmarkData, getBenchmarkRankings, calculateBenchmarkStats } from '../lib/data';
 import { BenchmarkPageLayout, BenchmarkPageContent } from '../components/benchmark-page-layout'
 import { BenchmarkPageHeader } from '../components/benchmark-page-header'
-import { TopPerformerSection } from '../components/top-performer-section';
-import { DataTable } from '../components/data-table'
-import { CallToActionSection } from '../components/call-to-action-section'
-import { Separator } from '../components/ui/separator';
+import { RankingsTable } from '../components/rankings-table'
 import { Calendar } from 'lucide-react';
 
 export function meta({}: Route.MetaArgs) {
@@ -25,15 +22,13 @@ export async function loader({ request }: Route.LoaderArgs) {
   const stats = calculateBenchmarkStats(data);
 
   return {
-    data,
     rankings,
     stats,
-    topModels: rankings.slice(0, 3), // Top 3 models
   };
 }
 
 export default function CalendarBenchmark({ loaderData }: Route.ComponentProps) {
-  const { data, rankings, stats, topModels } = loaderData;
+  const { rankings, stats } = loaderData;
 
   return (
     <BenchmarkPageLayout
@@ -41,29 +36,15 @@ export default function CalendarBenchmark({ loaderData }: Route.ComponentProps) 
         <BenchmarkPageHeader
           icon={<Calendar className="h-8 w-8" />}
           title="Calendar System"
+          benchmarkType="calendar"
           stats={stats}
         />
       }
     >
       <BenchmarkPageContent>
-        {/* Primary Data Table */}
-        <section className="mb-12">
-          <DataTable
-            data={rankings}
-            title="Calendar System Benchmark - Individual Model Results"
-          />
+        <section>
+          <RankingsTable data={rankings} showStats={false} />
         </section>
-
-        <Separator className="my-12" />
-
-        <TopPerformerSection
-          topModels={topModels}
-          championTitle="Calendar Challenge Champions"
-        />
-
-        <Separator className="my-12" />
-
-        <CallToActionSection />
       </BenchmarkPageContent>
     </BenchmarkPageLayout>
   );

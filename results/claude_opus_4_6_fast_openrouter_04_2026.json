@@ -3,13 +3,13 @@
   "implementation_metadata": {
     "variant_id": "legacy::claude_opus_4_6_fast",
     "variant_key": "legacy",
-    "provider": "Other",
+    "provider": "Anthropic",
     "family": "Claude",
     "base_model_id": "claude_opus_4_6_fast",
     "model_id": null,
-    "base_model_name": "Claude Opus 4 6 Fast",
+    "base_model_name": "Claude Opus 4.6 Fast",
     "variant_label": "Legacy Variant",
-    "display_name": "Claude Opus 4 6 Fast",
+    "display_name": "Claude Opus 4.6 Fast",
     "implementation_slug_prefix": "claude_opus_4_6_fast",
     "legacy_slug_prefixes": [
       "claude_opus_4_6_fast"

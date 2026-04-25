@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import { Separator } from './ui/separator'
 import { PageLayout, PageContent } from './page-layout'
 
 interface BenchmarkPageLayoutProps {
@@ -17,16 +16,9 @@ export const BenchmarkPageLayout = ({ header, children }: BenchmarkPageLayoutPro
 )
 
 interface BenchmarkPageContentProps {
-  children: ReactNode[]
+  children: ReactNode
 }
 
 export const BenchmarkPageContent = ({ children }: BenchmarkPageContentProps) => (
-  <>
-    {children.map((child, index) => (
-      <div key={index}>
-        {child}
-        {index < children.length - 1 && <Separator />}
-      </div>
-    ))}
-  </>
+  <>{children}</>
 )

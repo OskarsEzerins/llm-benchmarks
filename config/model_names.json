@@ -8,51 +8,51 @@
     "provider": "Anthropic"
   },
   "claude_3_5_sonnet_cursor_02_2025": {
-    "display_name": "Claude 3.5 Sonnet",
+    "display_name": "Claude Sonnet 3.5",
     "provider": "Anthropic"
   },
   "claude_3_5_sonnet_openrouter_05_2025": {
-    "display_name": "Claude 3.5 Sonnet",
+    "display_name": "Claude Sonnet 3.5",
     "provider": "Anthropic"
   },
   "claude_3_5_sonnet_openrouter_06_2025": {
-    "display_name": "Claude 3.5 Sonnet",
+    "display_name": "Claude Sonnet 3.5",
     "provider": "Anthropic"
   },
   "claude_3_5_sonnet_openrouter_08_2025": {
-    "display_name": "Claude 3.5 Sonnet",
+    "display_name": "Claude Sonnet 3.5",
     "provider": "Anthropic"
   },
   "claude_3_7_sonnet_openrouter_06_2025": {
-    "display_name": "Claude 3.7 Sonnet",
+    "display_name": "Claude Sonnet 3.7",
     "provider": "Anthropic"
   },
   "claude_3_7_sonnet_openrouter_08_2025": {
-    "display_name": "Claude 3.7 Sonnet",
+    "display_name": "Claude Sonnet 3.7",
     "provider": "Anthropic"
   },
   "claude_3_7_sonnet_thinking_cursor_02_2025": {
-    "display_name": "Claude 3.7 Sonnet (Thinking)",
+    "display_name": "Claude Sonnet 3.7 (Thinking)",
     "provider": "Anthropic"
   },
   "claude_3_7_sonnet_thinking_openrouter_06_2025": {
-    "display_name": "Claude 3.7 Sonnet (Thinking)",
+    "display_name": "Claude Sonnet 3.7 (Thinking)",
     "provider": "Anthropic"
   },
   "claude_3_7_sonnet_thinking_openrouter_08_2025": {
-    "display_name": "Claude 3.7 Sonnet (Thinking)",
+    "display_name": "Claude Sonnet 3.7 (Thinking)",
     "provider": "Anthropic"
   },
   "claude_3_7_sonnet_thinking_vscode_03_2025": {
-    "display_name": "Claude 3.7 Sonnet (Thinking)",
+    "display_name": "Claude Sonnet 3.7 (Thinking)",
     "provider": "Anthropic"
   },
   "claude_3_7_sonnet_vscode_03_2025": {
-    "display_name": "Claude 3.7 Sonnet",
+    "display_name": "Claude Sonnet 3.7",
     "provider": "Anthropic"
   },
   "claude_3_7_sonnet_web_chat_02_2025": {
-    "display_name": "Claude 3.7 Sonnet",
+    "display_name": "Claude Sonnet 3.7",
     "provider": "Anthropic"
   },
   "claude_3_haiku_openrouter_08_2025": {
@@ -60,7 +60,7 @@
     "provider": "Anthropic"
   },
   "claude_4_sonnet_web_chat_05_2025": {
-    "display_name": "Claude 4 Sonnet",
+    "display_name": "Claude Sonnet 4",
     "provider": "Anthropic"
   },
   "claude_haiku_4_5_openrouter_10_2025": {
@@ -68,15 +68,15 @@
     "provider": "Anthropic"
   },
   "claude_opus_4_1_openrouter_08_2025": {
-    "display_name": "Claude 4.1 Opus",
+    "display_name": "Claude Opus 4.1",
     "provider": "Anthropic"
   },
   "claude_opus_4_5_openrouter_11_2025": {
-    "display_name": "Claude 4.5 Opus",
+    "display_name": "Claude Opus 4.5",
     "provider": "Anthropic"
   },
   "claude_opus_4_6_fast_openrouter_04_2026": {
-    "display_name": "Claude Opus 4 6 Fast (Unconfigured Variant)",
+    "display_name": "Claude Opus 4.6 Fast (Unconfigured Variant)",
     "provider": "Anthropic"
   },
   "claude_opus_4_6_manual_budget_2048_openrouter_04_2026": {
@@ -88,7 +88,7 @@
     "provider": "Anthropic"
   },
   "claude_opus_4_6_openrouter_02_2026": {
-    "display_name": "Claude 4.6 Opus",
+    "display_name": "Claude Opus 4.6",
     "provider": "Anthropic"
   },
   "claude_opus_4_7_manual_budget_2048_openrouter_04_2026": {
@@ -104,15 +104,15 @@
     "provider": "Anthropic"
   },
   "claude_opus_4_openrouter_05_2025": {
-    "display_name": "Claude 4 Opus",
+    "display_name": "Claude Opus 4",
     "provider": "Anthropic"
   },
   "claude_opus_4_openrouter_08_2025": {
-    "display_name": "Claude 4 Opus",
+    "display_name": "Claude Opus 4",
     "provider": "Anthropic"
   },
   "claude_sonnet_4_5_openrouter_10_2025": {
-    "display_name": "Claude 4.5 Sonnet",
+    "display_name": "Claude Sonnet 4.5",
     "provider": "Anthropic"
   },
   "claude_sonnet_4_6_manual_budget_2048_openrouter_04_2026": {
@@ -124,15 +124,15 @@
     "provider": "Anthropic"
   },
   "claude_sonnet_4_6_openrouter_02_2026": {
-    "display_name": "Claude 4.6 Sonnet",
+    "display_name": "Claude Sonnet 4.6",
     "provider": "Anthropic"
   },
   "claude_sonnet_4_openrouter_07_2025": {
-    "display_name": "Claude 4 Sonnet",
+    "display_name": "Claude Sonnet 4",
     "provider": "Anthropic"
   },
   "claude_sonnet_4_openrouter_08_2025": {
-    "display_name": "Claude 4 Sonnet",
+    "display_name": "Claude Sonnet 4",
     "provider": "Anthropic"
   },
   "coder_large_openrouter_08_2025": {

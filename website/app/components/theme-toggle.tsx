@@ -1,9 +1,14 @@
 import { Moon, Sun, Monitor } from "lucide-react"
 
 import { Button } from "~/components/ui/button"
+import { cn } from "~/lib/utils"
 import { useTheme } from "~/lib/theme-provider"
 
-export const ThemeToggle = () => {
+interface ThemeToggleProps {
+  className?: string
+}
+
+export const ThemeToggle = ({ className }: ThemeToggleProps) => {
   const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
@@ -38,7 +43,7 @@ export const ThemeToggle = () => {
       size="icon"
       onClick={toggleTheme}
       aria-label={getLabel()}
-      className="relative"
+      className={cn("relative h-8 w-8 border-2 border-[var(--c-fg)] bg-[var(--c-surface)] text-[var(--c-fg)] hover:bg-[var(--c-surface-2)]", className)}
     >
       {getIcon()}
       <span className="sr-only">{getLabel()}</span>
