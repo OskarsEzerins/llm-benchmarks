@@ -13,22 +13,8 @@ module Implementations
       benchmark_type = ::BenchmarkTypeSelectorService.new.select
       return {} unless benchmark_type
 
-      selection_type = @prompt.select(
-        'How would you like to select models?',
-        [
-          { name: 'Single model', value: :single },
-          { name: 'Multiple models', value: :multiple }
-        ]
-      )
-
-      case selection_type
-      when :single
-        selections = [ModelSelectorService.new.select]
-        return {} unless selections.first
-      when :multiple
-        selections = ModelSelectorService.new.select_multiple
-        return {} if selections.empty?
-      end
+      selections = ModelSelectorService.new.select_multiple
+      return {} if selections.empty?
 
       PromptProcessorService.new(selections, benchmark_type).process_prompts
     end
