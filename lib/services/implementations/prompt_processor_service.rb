@@ -1,6 +1,7 @@
 require_relative '../../../config'
 require_relative 'model_variant_registry'
 require_relative 'chat_builder_service'
+require_relative '../results_service'
 
 module Implementations
   class PromptProcessorService
@@ -76,10 +77,40 @@ module Implementations
       puts "\nProcessing prompt from: #{prompt_file}"
 
       prompt_content = File.read(prompt_file)
+      response_started_at = Time.now
+      response_started = Process.clock_gettime(Process::CLOCK_MONOTONIC)
       response = ChatBuilderService.build(implementation).ask(prompt_content)
+      response_completed_at = Time.now
+      duration_seconds = Process.clock_gettime(Process::CLOCK_MONOTONIC) - response_started
       content = extract_ruby_code(response.content)
 
-      code_saver.save_code(benchmark_id, content)
+      slug = code_saver.save_code(benchmark_id, content)
+      if slug
+        record_generation_timing(
+          benchmark_id,
+          slug,
+          implementation,
+          response_started_at,
+          response_completed_at,
+          duration_seconds
+        )
+      end
+      slug
+    end
+
+    def record_generation_timing(benchmark_id, slug, implementation, started_at, completed_at, duration_seconds)
+      ResultsService.new(benchmark_id).record_generation_timing(
+        slug,
+        {
+          'duration_seconds' => duration_seconds.round(3),
+          'started_at' => started_at.iso8601,
+          'completed_at' => completed_at.iso8601
+        },
+        implementation
+      )
+      puts "Recorded LLM generation time for #{benchmark_id}: #{duration_seconds.round(3)} seconds"
+    rescue StandardError => e
+      puts "Warning: could not record generation timing for #{benchmark_id}: #{e.message}"
     end
 
     def target_benchmarks

@@ -1,4 +1,12 @@
-import type { BenchmarkData, BenchmarkType, ModelRanking, ImplementationMetadata } from '../types/benchmark'
+import { BENCHMARK_NAMES } from '../types/benchmark'
+import type {
+  BenchmarkData,
+  BenchmarkGenerationTiming,
+  BenchmarkType,
+  ImplementationMetadata,
+  ModelGenerationTiming,
+  ModelRanking,
+} from '../types/benchmark'
 
 // Date extraction and formatting utilities
 export function extractDateFromImplementation(implementation: string): Date | null {
@@ -68,6 +76,19 @@ function implementationMetadata(data: BenchmarkData, implementation: string): Im
   return data.implementations_meta?.[implementation] ?? fallbackMetadata(implementation)
 }
 
+function modelGenerationTiming(
+  timing: BenchmarkGenerationTiming | undefined,
+  benchmarkType?: BenchmarkType,
+): ModelGenerationTiming[] {
+  if (!timing || typeof timing.duration_seconds !== 'number') return []
+
+  return [{
+    ...timing,
+    benchmark: benchmarkType,
+    benchmark_name: benchmarkType ? BENCHMARK_NAMES[benchmarkType] : undefined,
+  }]
+}
+
 // Universal data loading using fetch API (works on both server and client)
 export const loadBenchmarkData = async (benchmarkType: BenchmarkType, request?: Request): Promise<BenchmarkData | null> => {
   try {
@@ -120,10 +141,11 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
     totalRubocopOffenses: number;
     firstTimestamp?: string;
     metadata?: ImplementationMetadata;
+    generationTimings: ModelGenerationTiming[];
   }> = {};
 
   // Aggregate scores across all benchmarks
-  Object.values(allData).forEach(benchmarkData => {
+  Object.entries(allData).forEach(([benchmarkType, benchmarkData]) => {
     Object.entries(benchmarkData.aggregates).forEach(([implementation, aggregate]) => {
       if (!modelScores[implementation]) {
         modelScores[implementation] = {
@@ -134,6 +156,7 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
           totalTests: 0,
           totalRubocopOffenses: 0,
           metadata: implementationMetadata(benchmarkData, implementation),
+          generationTimings: [],
         };
       }
 
@@ -154,6 +177,12 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
       }
 
       model.metadata ||= implementationMetadata(benchmarkData, implementation)
+      model.generationTimings.push(
+        ...modelGenerationTiming(
+          benchmarkData.generation_timings?.[implementation],
+          benchmarkType as BenchmarkType,
+        ),
+      )
     });
   });
 
@@ -169,7 +198,8 @@ export function calculateTotalRankings(allData: Record<BenchmarkType, BenchmarkD
       tests_passed: scores.totalTestsPassed,
       total_tests: scores.totalTests,
       rubocop_offenses: scores.totalRubocopOffenses,
-      date: getDateForModel(implementation, scores.firstTimestamp)
+      date: getDateForModel(implementation, scores.firstTimestamp),
+      generation_timings: scores.generationTimings,
     }))
     .sort((a, b) => b.score - a.score);
 }
@@ -189,7 +219,8 @@ export function getBenchmarkRankings(data: BenchmarkData): ModelRanking[] {
         tests_passed: aggregate.metrics.tests_passed,
         total_tests: aggregate.metrics.total_tests,
         rubocop_offenses: aggregate.rubocop_offenses,
-        date: getDateForModel(implementation, result?.timestamp)
+        date: getDateForModel(implementation, result?.timestamp),
+        generation_timings: modelGenerationTiming(data.generation_timings?.[implementation]),
       };
     })
     .sort((a, b) => b.score - a.score);

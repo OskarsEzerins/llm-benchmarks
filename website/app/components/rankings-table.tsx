@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { ModelRanking } from '../types/benchmark'
+import type { ModelGenerationTiming, ModelRanking } from '../types/benchmark'
 import { cn } from '../lib/utils'
 import { getBaseModelName, getDisplayName, getModelFamily, getVariantLabel } from '../lib/model-names'
 
@@ -54,6 +54,24 @@ const formatTokens = (tokens: number): string => new Intl.NumberFormat().format(
 
 const getProviderName = (model: ModelRanking): string => model.metadata.provider || getModelFamily(model.metadata)
 
+const formatDuration = (seconds: number): string => {
+  if (!Number.isFinite(seconds) || seconds < 0) return '—'
+  if (seconds < 1) return `${Math.round(seconds * 1000)} ms`
+  if (seconds < 60) return `${seconds.toFixed(seconds < 10 ? 1 : 0)}s`
+
+  const minutes = Math.floor(seconds / 60)
+  const remainingSeconds = Math.round(seconds % 60)
+  return `${minutes}m ${remainingSeconds}s`
+}
+
+const generationTimingDetail = (timings: ModelGenerationTiming[]) => {
+  const totalSeconds = timings.reduce((total, timing) => {
+    return Number.isFinite(timing.duration_seconds) ? total + timing.duration_seconds : total
+  }, 0)
+
+  return totalSeconds > 0 ? { label: 'Total run time', value: formatDuration(totalSeconds) } : null
+}
+
 const ProviderBadge = ({ provider }: { provider: string }) => (
   <span className="inline-block whitespace-nowrap border-[1.5px] border-[var(--c-border)] px-1.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-[0.05em] text-[var(--c-sub)]">
     {provider}
@@ -84,11 +102,14 @@ const ConfigCell = ({ model }: { model: ModelRanking }) => {
   const thinkingMode = metadata.normalized.thinking_mode
   const budgetTokens = metadata.normalized.budget_tokens
   const variantLabel = getVariantLabel(metadata)
+  const generationTimings = model.generation_timings ?? []
 
   const hasEffort = reasoningEffort && reasoningEffort !== 'none' && reasoningEffort !== 'unknown'
   const hasThinking = thinkingMode && thinkingMode !== 'off' && thinkingMode !== 'unknown'
   const hasBudget = typeof budgetTokens === 'number' && budgetTokens > 0
-  const hasDetails = hasThinking || hasBudget
+  const generationTiming = generationTimingDetail(generationTimings)
+  const hasGenerationTiming = generationTiming !== null
+  const hasDetails = hasThinking || hasBudget || hasGenerationTiming
 
   if (!hasEffort && !hasDetails) {
     if (!isLegacyVariant(variantLabel)) {
@@ -102,11 +123,15 @@ const ConfigCell = ({ model }: { model: ModelRanking }) => {
     hasEffort ? { label: 'Effort', value: reasoningEffort } : null,
     hasThinking ? { label: 'Thinking', value: thinkingMode } : null,
     hasBudget ? { label: 'Budget', value: `${formatTokens(budgetTokens)} tokens` } : null,
+    generationTiming,
   ].filter((item): item is { label: string; value: string } => item !== null)
 
   return (
     <span className="relative inline-flex items-center gap-1.5 font-mono text-[11px]">
       {hasEffort && <span className="font-semibold text-[var(--c-fg)]">{reasoningEffort}</span>}
+      {!hasEffort && hasGenerationTiming && (
+        <span className="font-semibold text-[var(--c-fg)]">gen</span>
+      )}
       {hasBudget && (
         <span className="hidden text-[var(--c-sub)] xl:inline">
           · {formatTokens(budgetTokens)} tokens

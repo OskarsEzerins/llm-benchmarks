@@ -1,5 +1,6 @@
 require 'json'
 require 'fileutils'
+require 'time'
 require_relative '../result_handlers/result_handler_factory'
 require_relative '../../config'
 require_relative 'implementations/model_variant_registry'
@@ -11,12 +12,12 @@ class ResultsService
     @variant_registry = Implementations::ModelVariantRegistry.instance
   end
 
-  # Returns { 'results' => [...all runs for this benchmark...], 'aggregates' => { impl => aggregate, ... },
-  #           'implementations_meta' => { impl => metadata, ... } }
+  # Returns benchmark results plus per-implementation aggregate, metadata, and generation timing maps.
   def load
     results = []
     aggregates = {}
     implementations_meta = {}
+    generation_timings = {}
 
     Dir.glob("#{Config.results_dir}/*.json").each do |file|
       data = JSON.parse(File.read(file))
@@ -31,11 +32,17 @@ class ResultsService
       results.concat(benchmark_data['results'] || [])
       aggregates[implementation] = benchmark_data['aggregate'] if benchmark_data['aggregate']
       implementations_meta[implementation] = metadata if metadata
+      generation_timings[implementation] = benchmark_data['generation_timing'] if benchmark_data['generation_timing']
     rescue JSON::ParserError
       next
     end
 
-    { 'results' => results, 'aggregates' => aggregates, 'implementations_meta' => implementations_meta }
+    {
+      'results' => results,
+      'aggregates' => aggregates,
+      'implementations_meta' => implementations_meta,
+      'generation_timings' => generation_timings
+    }
   end
 
   def add_result(implementation, result_data, rubocop_offenses, metadata = nil)
@@ -61,6 +68,19 @@ class ResultsService
     File.write(impl_file, JSON.pretty_generate(data))
 
     { 'best_results' => [], 'aggregates' => { implementation => benchmark_data['aggregate'] } }
+  end
+
+  def record_generation_timing(implementation, timing_data, metadata = nil)
+    impl_file = Config.implementation_results_file(implementation)
+    metadata ||= @variant_registry.find_by_implementation(implementation)
+    data = load_impl_file(impl_file, implementation, metadata)
+    data['implementation_metadata'] = metadata if metadata
+
+    benchmark_data = data[@benchmark_id] ||= { 'results' => [] }
+    benchmark_data['generation_timing'] = timing_data
+
+    FileUtils.mkdir_p(File.dirname(impl_file))
+    File.write(impl_file, JSON.pretty_generate(data))
   end
 
   def calculate_best_results_by_implementation(results)

@@ -20,6 +20,7 @@ variant_registry = Implementations::ModelVariantRegistry.instance
 benchmark_results    = {}  # benchmark_id => { results: [], aggregates: {} }
 benchmark_aggregates = {}
 benchmark_metadata   = {}
+benchmark_generation = {}
 
 Dir.glob("#{results_dir}/*.json").each do |file|
   data = JSON.parse(File.read(file))
@@ -35,10 +36,12 @@ Dir.glob("#{results_dir}/*.json").each do |file|
     benchmark_results[benchmark_id]    ||= []
     benchmark_aggregates[benchmark_id] ||= {}
     benchmark_metadata[benchmark_id]   ||= {}
+    benchmark_generation[benchmark_id] ||= {}
 
     benchmark_results[benchmark_id].concat(value['results'] || [])
     benchmark_aggregates[benchmark_id][implementation] = value['aggregate'] if value['aggregate']
     benchmark_metadata[benchmark_id][implementation] = implementation_metadata if implementation_metadata
+    benchmark_generation[benchmark_id][implementation] = value['generation_timing'] if value['generation_timing']
   end
 rescue JSON::ParserError
   next
@@ -48,7 +51,8 @@ benchmark_results.each_key do |benchmark_id|
   output = {
     'results'    => benchmark_results[benchmark_id],
     'aggregates' => benchmark_aggregates[benchmark_id],
-    'implementations_meta' => benchmark_metadata[benchmark_id] || {}
+    'implementations_meta' => benchmark_metadata[benchmark_id] || {},
+    'generation_timings' => benchmark_generation[benchmark_id] || {}
   }
   output_file = File.join(output_dir, "#{benchmark_id}.json")
   File.write(output_file, JSON.pretty_generate(output))

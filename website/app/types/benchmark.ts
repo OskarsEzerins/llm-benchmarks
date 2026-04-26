@@ -39,6 +39,17 @@ export interface BenchmarkResult {
   };
 }
 
+export interface BenchmarkGenerationTiming {
+  duration_seconds: number;
+  started_at?: string;
+  completed_at?: string;
+}
+
+export interface ModelGenerationTiming extends BenchmarkGenerationTiming {
+  benchmark?: BenchmarkType;
+  benchmark_name?: string;
+}
+
 export interface BenchmarkAggregate {
   run_count: number;
   metrics: {
@@ -61,6 +72,7 @@ export interface BenchmarkData {
   results: BenchmarkResult[];
   aggregates: Record<string, BenchmarkAggregate>;
   implementations_meta: Record<string, ImplementationMetadata>;
+  generation_timings?: Record<string, BenchmarkGenerationTiming>;
 }
 
 export interface ModelRanking {
@@ -73,6 +85,7 @@ export interface ModelRanking {
   total_tests: number;
   rubocop_offenses: number;
   date: Date;
+  generation_timings?: ModelGenerationTiming[];
 }
 
 export type BenchmarkType = 'calendar' | 'parking_garage' | 'school_library' | 'vending_machine';
