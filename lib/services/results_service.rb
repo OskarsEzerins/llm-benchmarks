@@ -14,60 +14,20 @@ class ResultsService
 
   # Returns benchmark results plus per-implementation aggregate, metadata, and generation timing maps.
   def load
-    results = []
-    aggregates = {}
-    implementations_meta = {}
-    generation_timings = {}
-
-    Dir.glob("#{Config.results_dir}/*.json").each do |file|
-      data = JSON.parse(File.read(file))
-      benchmark_data = data[@benchmark_id]
-      next unless benchmark_data
-
-      implementation = data['implementation']
-      next unless implementation
-
-      metadata = data['implementation_metadata'] || @variant_registry.find_by_implementation(implementation)
-
-      results.concat(benchmark_data['results'] || [])
-      aggregates[implementation] = benchmark_data['aggregate'] if benchmark_data['aggregate']
-      implementations_meta[implementation] = metadata if metadata
-      generation_timings[implementation] = benchmark_data['generation_timing'] if benchmark_data['generation_timing']
-    rescue JSON::ParserError
-      next
+    Dir.glob("#{Config.results_dir}/*.json").each_with_object(empty_results_payload) do |file, payload|
+      merge_result_file(payload, file)
     end
-
-    {
-      'results' => results,
-      'aggregates' => aggregates,
-      'implementations_meta' => implementations_meta,
-      'generation_timings' => generation_timings
-    }
   end
 
   def add_result(implementation, result_data, rubocop_offenses, metadata = nil)
-    impl_file = Config.implementation_results_file(implementation)
-    metadata ||= @variant_registry.find_by_implementation(implementation)
-    data = load_impl_file(impl_file, implementation, metadata)
-    data['implementation_metadata'] = metadata if metadata
-
-    current_result = {
-      'implementation' => implementation,
-      'timestamp' => Time.now.iso8601,
-      'metrics' => build_metrics(result_data, rubocop_offenses)
-    }
-
-    benchmark_data = data[@benchmark_id] ||= { 'results' => [] }
-
-    benchmark_data['results'].clear if Config.benchmark_config(@benchmark_id)[:type] == :program_fixer
-
-    benchmark_data['results'] << current_result
+    context = result_context(implementation, metadata)
+    benchmark_data = benchmark_data_for(context.fetch(:data))
+    replace_program_fixer_results(benchmark_data)
+    benchmark_data['results'] << current_result(implementation, result_data, rubocop_offenses)
     benchmark_data['aggregate'] = @result_handler.calculate_implementation_metrics(benchmark_data['results'])
 
-    FileUtils.mkdir_p(File.dirname(impl_file))
-    File.write(impl_file, JSON.pretty_generate(data))
-
-    { 'best_results' => [], 'aggregates' => { implementation => benchmark_data['aggregate'] } }
+    write_impl_file(context.fetch(:file), context.fetch(:data))
+    aggregate_response(implementation, benchmark_data)
   end
 
   def record_generation_timing(implementation, timing_data, metadata = nil)
@@ -88,6 +48,70 @@ class ResultsService
   end
 
   private
+
+  def empty_results_payload
+    {
+      'results' => [],
+      'aggregates' => {},
+      'implementations_meta' => {},
+      'generation_timings' => {}
+    }
+  end
+
+  def merge_result_file(payload, file)
+    data = JSON.parse(File.read(file))
+    benchmark_data = data[@benchmark_id]
+    implementation = data['implementation']
+    return unless benchmark_data && implementation
+
+    metadata = data['implementation_metadata'] || @variant_registry.find_by_implementation(implementation)
+    payload['results'].concat(benchmark_data['results'] || [])
+    payload['aggregates'][implementation] = benchmark_data['aggregate'] if benchmark_data['aggregate']
+    payload['implementations_meta'][implementation] = metadata if metadata
+    add_generation_timing(payload, implementation, benchmark_data)
+  rescue JSON::ParserError
+    nil
+  end
+
+  def add_generation_timing(payload, implementation, benchmark_data)
+    return unless benchmark_data['generation_timing']
+
+    payload['generation_timings'][implementation] = benchmark_data['generation_timing']
+  end
+
+  def result_context(implementation, metadata)
+    impl_file = Config.implementation_results_file(implementation)
+    metadata ||= @variant_registry.find_by_implementation(implementation)
+    data = load_impl_file(impl_file, implementation, metadata)
+    data['implementation_metadata'] = metadata if metadata
+
+    { file: impl_file, data: data }
+  end
+
+  def benchmark_data_for(data)
+    data[@benchmark_id] ||= { 'results' => [] }
+  end
+
+  def replace_program_fixer_results(benchmark_data)
+    benchmark_data['results'].clear if Config.benchmark_config(@benchmark_id)[:type] == :program_fixer
+  end
+
+  def current_result(implementation, result_data, rubocop_offenses)
+    {
+      'implementation' => implementation,
+      'timestamp' => Time.now.iso8601,
+      'metrics' => build_metrics(result_data, rubocop_offenses)
+    }
+  end
+
+  def write_impl_file(file, data)
+    FileUtils.mkdir_p(File.dirname(file))
+    File.write(file, JSON.pretty_generate(data))
+  end
+
+  def aggregate_response(implementation, benchmark_data)
+    { 'best_results' => [], 'aggregates' => { implementation => benchmark_data['aggregate'] } }
+  end
 
   def load_impl_file(file, implementation, metadata = nil)
     return base_impl_payload(implementation, metadata) unless File.exist?(file)

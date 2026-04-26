@@ -70,6 +70,8 @@ bundle exec rubocop
 bundle exec rubocop --require rubocop-performance
 ```
 
+- Before finishing any Ruby code change, validate that RuboCop reports no offenses. If RuboCop cannot be run, explicitly report the blocker and do not claim the code is RuboCop-clean.
+
 ## Environment Setup
 
 - Requires Ruby 3.4+

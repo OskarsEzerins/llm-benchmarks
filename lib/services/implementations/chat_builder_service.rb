@@ -21,17 +21,24 @@ module Implementations
     private
 
     def apply_thinking(chat)
-      reasoning = raw_params['reasoning']
-      return chat unless reasoning.is_a?(Hash)
+      kwargs = thinking_kwargs
+      return chat if kwargs.empty?
 
-      effort = reasoning['effort'] || reasoning[:effort]
-      budget = reasoning['max_tokens'] || reasoning[:max_tokens] || reasoning['budget'] || reasoning[:budget]
-      return chat if effort.nil? && budget.nil?
-
-      kwargs = {}
-      kwargs[:effort] = effort.to_sym if effort
-      kwargs[:budget] = budget if budget
       chat.with_thinking(**kwargs)
+    end
+
+    def thinking_kwargs
+      reasoning = raw_params['reasoning']
+      return {} unless reasoning.is_a?(Hash)
+
+      {
+        effort: reasoning_value(reasoning, :effort)&.to_sym,
+        budget: reasoning_value(reasoning, :max_tokens) || reasoning_value(reasoning, :budget)
+      }.compact
+    end
+
+    def reasoning_value(reasoning, key)
+      reasoning[key.to_s] || reasoning[key]
     end
 
     def raw_params

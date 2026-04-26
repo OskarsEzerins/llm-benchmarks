@@ -22,7 +22,8 @@ module Implementations
       file_name = generate_file_name(benchmark_id)
 
       if implementation_exists?(benchmark_id)
-        puts "\nSkipping #{model_display_name} for #{benchmark_id} - implementation already exists for this month"
+        puts "\nSkipping #{model_display_name} for #{benchmark_id} - " \
+             'implementation already exists for this month'
         return nil
       end
 
@@ -115,24 +116,39 @@ module Implementations
     end
 
     def update_model_names_config(slug)
-      config = File.exist?(MODEL_NAMES_CONFIG) ? JSON.parse(File.read(MODEL_NAMES_CONFIG)) : {}
-      if config.key?(slug)
-        return if config[slug].is_a?(Hash) && config[slug]['metadata']
+      config = load_model_names_config
+      return unless upsert_model_name_config(config, slug)
 
-        config[slug]['metadata'] = metadata if config[slug].is_a?(Hash)
-      else
-        config[slug] = {
-          'display_name' => model_display_name,
-          'provider' => model_provider,
-          'metadata' => metadata
-        }
-      end
-
-      sorted = config.sort.to_h
-      File.write(MODEL_NAMES_CONFIG, JSON.pretty_generate(sorted))
+      write_model_names_config(config)
       puts "Updated model_names.json: #{slug} => #{config[slug]}"
     rescue StandardError => e
       puts "Warning: could not update model_names.json: #{e.message}"
+    end
+
+    def load_model_names_config
+      return {} unless File.exist?(MODEL_NAMES_CONFIG)
+
+      JSON.parse(File.read(MODEL_NAMES_CONFIG))
+    end
+
+    def upsert_model_name_config(config, slug)
+      return create_model_name_config(config, slug) unless config.key?(slug)
+      return false unless config[slug].is_a?(Hash)
+      return false if config[slug]['metadata']
+
+      config[slug]['metadata'] = metadata
+    end
+
+    def create_model_name_config(config, slug)
+      config[slug] = {
+        'display_name' => model_display_name,
+        'provider' => model_provider,
+        'metadata' => metadata
+      }
+    end
+
+    def write_model_names_config(config)
+      File.write(MODEL_NAMES_CONFIG, JSON.pretty_generate(config.sort.to_h))
     end
   end
 end

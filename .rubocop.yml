@@ -10,6 +10,7 @@ AllCops:
     - implementations/**/*
     - results/**/*
     - vendor/**/*
+    - website/**/*
 
 Style/FrozenStringLiteralComment:
   Enabled: false

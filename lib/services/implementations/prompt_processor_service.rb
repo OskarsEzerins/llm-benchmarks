@@ -7,7 +7,7 @@ module Implementations
   class PromptProcessorService
     def initialize(selections, benchmark_type = :all_types)
       @registry = ModelVariantRegistry.instance
-      @implementations = Array(selections).map { |selection| @registry.resolve_selection(selection) }.compact
+      @implementations = Array(selections).filter_map { |selection| @registry.resolve_selection(selection) }
       @benchmark_type = benchmark_type
     end
 
@@ -68,7 +68,8 @@ module Implementations
     def skip_existing_implementation?(code_saver, implementation, benchmark_id)
       return false unless code_saver.implementation_exists?(benchmark_id)
 
-      puts "Skipping #{implementation['display_name']} for #{benchmark_id} - implementation already exists for this month"
+      puts "Skipping #{implementation['display_name']} for #{benchmark_id} - " \
+           'implementation already exists for this month'
       true
     end
 
@@ -77,34 +78,37 @@ module Implementations
       puts "\nProcessing prompt from: #{prompt_file}"
 
       prompt_content = File.read(prompt_file)
-      response_started_at = Time.now
-      response_started = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-      response = ChatBuilderService.build(implementation).ask(prompt_content)
-      response_completed_at = Time.now
-      duration_seconds = Process.clock_gettime(Process::CLOCK_MONOTONIC) - response_started
+      timed_response = timed_llm_response(implementation, prompt_content)
+      response = timed_response.fetch(:response)
       content = extract_ruby_code(response.content)
 
       slug = code_saver.save_code(benchmark_id, content)
-      if slug
-        record_generation_timing(
-          benchmark_id,
-          slug,
-          implementation,
-          response_started_at,
-          response_completed_at,
-          duration_seconds
-        )
-      end
+      record_generation_timing(benchmark_id, slug, implementation, timed_response) if slug
       slug
     end
 
-    def record_generation_timing(benchmark_id, slug, implementation, started_at, completed_at, duration_seconds)
+    def timed_llm_response(implementation, prompt_content)
+      started_at = Time.now
+      started = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+      response = ChatBuilderService.build(implementation).ask(prompt_content)
+      completed_at = Time.now
+
+      {
+        response: response,
+        started_at: started_at,
+        completed_at: completed_at,
+        duration_seconds: Process.clock_gettime(Process::CLOCK_MONOTONIC) - started
+      }
+    end
+
+    def record_generation_timing(benchmark_id, slug, implementation, timed_response)
+      duration_seconds = timed_response.fetch(:duration_seconds)
       ResultsService.new(benchmark_id).record_generation_timing(
         slug,
         {
           'duration_seconds' => duration_seconds.round(3),
-          'started_at' => started_at.iso8601,
-          'completed_at' => completed_at.iso8601
+          'started_at' => timed_response.fetch(:started_at).iso8601,
+          'completed_at' => timed_response.fetch(:completed_at).iso8601
         },
         implementation
       )

@@ -4,7 +4,7 @@ class BenchmarkTypeSelectorService
   BENCHMARK_TYPE_OPTIONS = [
     { name: 'Program fixer benchmarks (fix broken code)', value: :program_fixer },
     { name: 'Performance benchmarks (speed & efficiency) [historic]', value: :performance },
-    { name: 'All benchmark types', value: :all_types },
+    { name: 'All benchmark types', value: :all_types }
   ].freeze
 
   def initialize

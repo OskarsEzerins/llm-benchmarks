@@ -2,17 +2,16 @@
 
 require 'net/http'
 require 'json'
+require 'singleton'
 
 module Implementations
   class ProviderNameService
+    include Singleton
+
     PROVIDERS_URL = 'https://openrouter.ai/api/v1/providers'
 
     def self.display_name(provider_slug)
       instance.lookup(provider_slug.to_s)
-    end
-
-    def self.instance
-      @instance ||= new
     end
 
     def initialize
