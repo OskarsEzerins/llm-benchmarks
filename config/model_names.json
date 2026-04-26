@@ -227,6 +227,48 @@
     "display_name": "Gemini 2.5 Pro Preview",
     "provider": "Google"
   },
+  "gemini_3_1_flash_lite_preview_effort_low_openrouter_04_2026": {
+    "display_name": "Gemini 3.1 Flash Lite Preview (Thinking Low)",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemini-3.1-flash-lite-preview::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Google",
+      "family": "Gemini",
+      "base_model_id": "google/gemini-3.1-flash-lite-preview",
+      "model_id": "google/gemini-3.1-flash-lite-preview",
+      "base_model_name": "Gemini 3.1 Flash Lite Preview",
+      "variant_label": "Thinking Low",
+      "display_name": "Gemini 3.1 Flash Lite Preview (Thinking Low)",
+      "implementation_slug_prefix": "gemini_3_1_flash_lite_preview_effort_low",
+      "legacy_slug_prefixes": [
+        "gemini_3_1_flash_lite_preview"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
   "gemini_3_1_pro_preview_openrouter_02_2026": {
     "display_name": "Gemini 3.1 Pro Preview",
     "provider": "Google"
