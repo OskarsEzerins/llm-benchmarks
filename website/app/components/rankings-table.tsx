@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { ModelGenerationTiming, ModelRanking } from '../types/benchmark'
 import { cn } from '../lib/utils'
 import { getBaseModelName, getDisplayName, getModelFamily, getVariantLabel } from '../lib/model-names'
@@ -97,6 +97,8 @@ const Rank = ({ value }: { value: number }) => {
 
 const ConfigCell = ({ model }: { model: ModelRanking }) => {
   const [expanded, setExpanded] = useState(false)
+  const [panelPosition, setPanelPosition] = useState<{ left: number; top: number } | null>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
   const metadata = model.metadata
   const reasoningEffort = metadata.normalized.reasoning_effort
   const thinkingMode = metadata.normalized.thinking_mode
@@ -104,12 +106,50 @@ const ConfigCell = ({ model }: { model: ModelRanking }) => {
   const variantLabel = getVariantLabel(metadata)
   const generationTimings = model.generation_timings ?? []
 
-  const hasEffort = reasoningEffort && reasoningEffort !== 'none' && reasoningEffort !== 'unknown'
+  const hasExplicitEffortNone = reasoningEffort === 'none' && metadata.variant_key === 'effort_none'
+  const hasEffort = Boolean(
+    reasoningEffort && reasoningEffort !== 'unknown' && (reasoningEffort !== 'none' || hasExplicitEffortNone),
+  )
   const hasThinking = thinkingMode && thinkingMode !== 'off' && thinkingMode !== 'unknown'
   const hasBudget = typeof budgetTokens === 'number' && budgetTokens > 0
   const generationTiming = generationTimingDetail(generationTimings)
   const hasGenerationTiming = generationTiming !== null
   const hasDetails = hasThinking || hasBudget || hasGenerationTiming
+
+  const details = [
+    hasEffort ? { label: 'Effort', value: reasoningEffort } : null,
+    hasThinking ? { label: 'Thinking', value: thinkingMode } : null,
+    hasBudget ? { label: 'Budget', value: `${formatTokens(budgetTokens)} tokens` } : null,
+    generationTiming,
+  ].filter((item): item is { label: string; value: string } => item !== null)
+
+  useEffect(() => {
+    if (!expanded) {
+      setPanelPosition(null)
+      return
+    }
+
+    const updatePanelPosition = () => {
+      const trigger = triggerRef.current
+      if (!trigger) return
+
+      const rect = trigger.getBoundingClientRect()
+      const estimatedPanelHeight = details.length * 34 + 18
+      const left = Math.min(Math.max(8, rect.left), window.innerWidth - 300)
+      const opensUp = rect.bottom + estimatedPanelHeight + 8 > window.innerHeight
+      const top = opensUp ? Math.max(8, rect.top - estimatedPanelHeight - 8) : rect.bottom + 8
+      setPanelPosition({ left, top })
+    }
+
+    updatePanelPosition()
+    window.addEventListener('resize', updatePanelPosition)
+    window.addEventListener('scroll', updatePanelPosition, true)
+
+    return () => {
+      window.removeEventListener('resize', updatePanelPosition)
+      window.removeEventListener('scroll', updatePanelPosition, true)
+    }
+  }, [details.length, expanded])
 
   if (!hasEffort && !hasDetails) {
     if (!isLegacyVariant(variantLabel)) {
@@ -119,15 +159,8 @@ const ConfigCell = ({ model }: { model: ModelRanking }) => {
     return <span className="text-[11px] text-[var(--c-dim)]">—</span>
   }
 
-  const details = [
-    hasEffort ? { label: 'Effort', value: reasoningEffort } : null,
-    hasThinking ? { label: 'Thinking', value: thinkingMode } : null,
-    hasBudget ? { label: 'Budget', value: `${formatTokens(budgetTokens)} tokens` } : null,
-    generationTiming,
-  ].filter((item): item is { label: string; value: string } => item !== null)
-
   return (
-    <span className="relative inline-flex items-center gap-1.5 font-mono text-[11px]">
+    <span className="inline-flex items-center gap-1.5 font-mono text-[11px]">
       {hasEffort && <span className="font-semibold text-[var(--c-fg)]">{reasoningEffort}</span>}
       {!hasEffort && hasGenerationTiming && (
         <span className="font-semibold text-[var(--c-fg)]">gen</span>
@@ -140,6 +173,7 @@ const ConfigCell = ({ model }: { model: ModelRanking }) => {
       {hasDetails && (
         <button
           type="button"
+          ref={triggerRef}
           className={cn(
             'inline-flex h-[18px] w-[18px] items-center justify-center border-[1.5px] border-[var(--c-border)] text-[10px] font-bold transition-colors',
             expanded ? 'bg-[var(--c-surface-2)] text-[var(--c-fg)]' : 'bg-transparent text-[var(--c-dim)]',
@@ -153,12 +187,15 @@ const ConfigCell = ({ model }: { model: ModelRanking }) => {
           {expanded ? '−' : '+'}
         </button>
       )}
-      {expanded && (
-        <span className="absolute left-0 top-full z-20 mt-1 flex min-w-40 flex-col gap-1 border-2 border-[var(--c-fg)] bg-[var(--c-surface)] px-2.5 py-1.5 shadow-[3px_3px_0_var(--c-fg)]">
+      {expanded && panelPosition && (
+        <span
+          className="fixed z-50 flex w-max min-w-64 max-w-[calc(100vw-1rem)] flex-col gap-1 border-2 border-[var(--c-fg)] bg-[var(--c-surface)] px-3 py-2 shadow-[3px_3px_0_var(--c-fg)]"
+          style={{ left: panelPosition.left, top: panelPosition.top }}
+        >
           {details.map((detail) => (
-            <span key={detail.label} className="flex justify-between gap-3">
+            <span key={detail.label} className="grid grid-cols-[max-content_max-content] justify-between gap-8 whitespace-nowrap">
               <span className="text-[10px] font-bold uppercase text-[var(--c-dim)]">{detail.label}</span>
-              <span className="font-semibold text-[var(--c-fg)]">{detail.value}</span>
+              <span className="text-right font-semibold text-[var(--c-fg)]">{detail.value}</span>
             </span>
           ))}
         </span>
@@ -351,7 +388,13 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
 
   useEffect(() => {
     setPage(1)
-  }, [providerFilter, searchTerm, selectedModels, showSelectedOnly, sortDirection, sortField])
+  }, [providerFilter, searchTerm, showSelectedOnly, sortDirection, sortField])
+
+  useEffect(() => {
+    if (page > totalPages) {
+      setPage(Math.max(1, totalPages))
+    }
+  }, [page, totalPages])
 
   const handleSort = (field: RankingsSortField) => {
     if (sortField === field) {
@@ -375,6 +418,7 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
   }, [])
 
   const clearAll = () => {
+    setSearchTerm('')
     setProviderFilter(new Set())
     setSelectedModels(new Set())
     setShowSelectedOnly(false)
@@ -454,13 +498,25 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
 
       <div className="mb-4 flex flex-col gap-2.5">
         <div className="flex flex-wrap items-center gap-2">
-          <input
-            type="text"
-            placeholder="Search models..."
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
-            className="max-w-[300px] flex-[1_1_220px] border-2 border-[var(--c-fg)] bg-[var(--c-surface)] px-3 py-2 text-[13px] text-[var(--c-fg)] outline-none placeholder:text-[var(--c-dim)]"
-          />
+          <div className="relative max-w-[300px] flex-[1_1_220px]">
+            <input
+              type="text"
+              placeholder="Search models..."
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+              className="w-full border-2 border-[var(--c-fg)] bg-[var(--c-surface)] px-3 py-2 pr-9 text-[13px] text-[var(--c-fg)] outline-none placeholder:text-[var(--c-dim)]"
+            />
+            {searchTerm && (
+              <button
+                type="button"
+                onClick={() => setSearchTerm('')}
+                className="absolute right-1.5 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center border-[1.5px] border-[var(--c-border)] bg-[var(--c-surface-2)] font-mono text-[11px] font-bold text-[var(--c-sub)]"
+                aria-label="Clear search"
+              >
+                ×
+              </button>
+            )}
+          </div>
           {selectedModels.size > 0 && (
             <button
               type="button"
@@ -475,7 +531,7 @@ export const RankingsTable = ({ data, showStats = true }: RankingsTableProps) =>
               Show {selectedModels.size} selected
             </button>
           )}
-          {(providerFilter.size > 0 || selectedModels.size > 0) && (
+          {(searchTerm || providerFilter.size > 0 || selectedModels.size > 0) && (
             <button
               type="button"
               onClick={clearAll}
