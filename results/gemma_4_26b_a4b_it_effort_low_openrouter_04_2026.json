@@ -1,0 +1,73 @@
+{
+  "implementation": "gemma_4_26b_a4b_it_effort_low_openrouter_04_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::google/gemma-4-26b-a4b-it::effort_low",
+    "variant_key": "effort_low",
+    "provider": "Google",
+    "family": "Google",
+    "base_model_id": "google/gemma-4-26b-a4b-it",
+    "model_id": "google/gemma-4-26b-a4b-it",
+    "base_model_name": "Gemma 4 26B A4B",
+    "variant_label": "Thinking Low",
+    "display_name": "Gemma 4 26B A4B (Thinking Low)",
+    "implementation_slug_prefix": "gemma_4_26b_a4b_it_effort_low",
+    "legacy_slug_prefixes": [
+      "gemma_4_26b_a4b_it"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "low"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "low"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Low"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [],
+    "generation_timing": {
+      "duration_seconds": 296.741,
+      "started_at": "2026-04-28T18:06:19+03:00",
+      "completed_at": "2026-04-28T18:11:16+03:00"
+    }
+  },
+  "calendar": {
+    "results": [],
+    "generation_timing": {
+      "duration_seconds": 62.489,
+      "started_at": "2026-04-28T18:11:16+03:00",
+      "completed_at": "2026-04-28T18:12:18+03:00"
+    }
+  },
+  "parking_garage": {
+    "results": [],
+    "generation_timing": {
+      "duration_seconds": 138.043,
+      "started_at": "2026-04-28T18:12:18+03:00",
+      "completed_at": "2026-04-28T18:14:37+03:00"
+    }
+  },
+  "school_library": {
+    "results": [],
+    "generation_timing": {
+      "duration_seconds": 171.807,
+      "started_at": "2026-04-28T18:14:37+03:00",
+      "completed_at": "2026-04-28T18:17:28+03:00"
+    }
+  }
+}

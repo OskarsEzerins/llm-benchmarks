@@ -331,6 +331,132 @@
     "display_name": "Gemma 3 4B IT",
     "provider": "Google"
   },
+  "gemma_4_26b_a4b_it_effort_low_openrouter_04_2026": {
+    "display_name": "Gemma 4 26B A4B (Thinking Low)",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemma-4-26b-a4b-it::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Google",
+      "family": "Google",
+      "base_model_id": "google/gemma-4-26b-a4b-it",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "base_model_name": "Gemma 4 26B A4B",
+      "variant_label": "Thinking Low",
+      "display_name": "Gemma 4 26B A4B (Thinking Low)",
+      "implementation_slug_prefix": "gemma_4_26b_a4b_it_effort_low",
+      "legacy_slug_prefixes": [
+        "gemma_4_26b_a4b_it"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "gemma_4_26b_a4b_it_effort_medium_openrouter_04_2026": {
+    "display_name": "Gemma 4 26B A4B (Thinking Medium)",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemma-4-26b-a4b-it::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Google",
+      "family": "Google",
+      "base_model_id": "google/gemma-4-26b-a4b-it",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "base_model_name": "Gemma 4 26B A4B",
+      "variant_label": "Thinking Medium",
+      "display_name": "Gemma 4 26B A4B (Thinking Medium)",
+      "implementation_slug_prefix": "gemma_4_26b_a4b_it_effort_medium",
+      "legacy_slug_prefixes": [
+        "gemma_4_26b_a4b_it"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "gemma_4_26b_a4b_it_effort_none_openrouter_04_2026": {
+    "display_name": "Gemma 4 26B A4B (Thinking None)",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemma-4-26b-a4b-it::effort_none",
+      "variant_key": "effort_none",
+      "provider": "Google",
+      "family": "Google",
+      "base_model_id": "google/gemma-4-26b-a4b-it",
+      "model_id": "google/gemma-4-26b-a4b-it",
+      "base_model_name": "Gemma 4 26B A4B",
+      "variant_label": "Thinking None",
+      "display_name": "Gemma 4 26B A4B (Thinking None)",
+      "implementation_slug_prefix": "gemma_4_26b_a4b_it_effort_none",
+      "legacy_slug_prefixes": [
+        "gemma_4_26b_a4b_it"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "none"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
   "glm_4_5_openrouter_08_2025": {
     "display_name": "GLM 4.5",
     "provider": "Z.AI"
