@@ -1301,6 +1301,426 @@
     "display_name": "Qwen3 14B",
     "provider": "Qwen"
   },
+  "qwen3_6_27b_effort_high_openrouter_04_2026": {
+    "display_name": "Qwen3.6 27B (Thinking High)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-27b::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-27b",
+      "model_id": "qwen/qwen3.6-27b",
+      "base_model_name": "Qwen3.6 27B",
+      "variant_label": "Thinking High",
+      "display_name": "Qwen3.6 27B (Thinking High)",
+      "implementation_slug_prefix": "qwen3_6_27b_effort_high",
+      "legacy_slug_prefixes": [
+        "qwen3_6_27b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_27b_effort_low_openrouter_04_2026": {
+    "display_name": "Qwen3.6 27B (Thinking Low)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-27b::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-27b",
+      "model_id": "qwen/qwen3.6-27b",
+      "base_model_name": "Qwen3.6 27B",
+      "variant_label": "Thinking Low",
+      "display_name": "Qwen3.6 27B (Thinking Low)",
+      "implementation_slug_prefix": "qwen3_6_27b_effort_low",
+      "legacy_slug_prefixes": [
+        "qwen3_6_27b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_27b_effort_medium_openrouter_04_2026": {
+    "display_name": "Qwen3.6 27B (Thinking Medium)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-27b::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-27b",
+      "model_id": "qwen/qwen3.6-27b",
+      "base_model_name": "Qwen3.6 27B",
+      "variant_label": "Thinking Medium",
+      "display_name": "Qwen3.6 27B (Thinking Medium)",
+      "implementation_slug_prefix": "qwen3_6_27b_effort_medium",
+      "legacy_slug_prefixes": [
+        "qwen3_6_27b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_27b_effort_none_openrouter_04_2026": {
+    "display_name": "Qwen3.6 27B (Thinking None)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-27b::effort_none",
+      "variant_key": "effort_none",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-27b",
+      "model_id": "qwen/qwen3.6-27b",
+      "base_model_name": "Qwen3.6 27B",
+      "variant_label": "Thinking None",
+      "display_name": "Qwen3.6 27B (Thinking None)",
+      "implementation_slug_prefix": "qwen3_6_27b_effort_none",
+      "legacy_slug_prefixes": [
+        "qwen3_6_27b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "none"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_27b_effort_xhigh_openrouter_04_2026": {
+    "display_name": "Qwen3.6 27B (Thinking XHigh)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-27b::effort_xhigh",
+      "variant_key": "effort_xhigh",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-27b",
+      "model_id": "qwen/qwen3.6-27b",
+      "base_model_name": "Qwen3.6 27B",
+      "variant_label": "Thinking XHigh",
+      "display_name": "Qwen3.6 27B (Thinking XHigh)",
+      "implementation_slug_prefix": "qwen3_6_27b_effort_xhigh",
+      "legacy_slug_prefixes": [
+        "qwen3_6_27b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "xhigh"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "xhigh"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "xhigh"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Xhigh"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_35b_a3b_effort_high_openrouter_04_2026": {
+    "display_name": "Qwen3.6 35B A3B (Thinking High)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-35b-a3b::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-35b-a3b",
+      "model_id": "qwen/qwen3.6-35b-a3b",
+      "base_model_name": "Qwen3.6 35B A3B",
+      "variant_label": "Thinking High",
+      "display_name": "Qwen3.6 35B A3B (Thinking High)",
+      "implementation_slug_prefix": "qwen3_6_35b_a3b_effort_high",
+      "legacy_slug_prefixes": [
+        "qwen3_6_35b_a3b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_35b_a3b_effort_low_openrouter_04_2026": {
+    "display_name": "Qwen3.6 35B A3B (Thinking Low)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-35b-a3b::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-35b-a3b",
+      "model_id": "qwen/qwen3.6-35b-a3b",
+      "base_model_name": "Qwen3.6 35B A3B",
+      "variant_label": "Thinking Low",
+      "display_name": "Qwen3.6 35B A3B (Thinking Low)",
+      "implementation_slug_prefix": "qwen3_6_35b_a3b_effort_low",
+      "legacy_slug_prefixes": [
+        "qwen3_6_35b_a3b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_35b_a3b_effort_medium_openrouter_04_2026": {
+    "display_name": "Qwen3.6 35B A3B (Thinking Medium)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-35b-a3b::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-35b-a3b",
+      "model_id": "qwen/qwen3.6-35b-a3b",
+      "base_model_name": "Qwen3.6 35B A3B",
+      "variant_label": "Thinking Medium",
+      "display_name": "Qwen3.6 35B A3B (Thinking Medium)",
+      "implementation_slug_prefix": "qwen3_6_35b_a3b_effort_medium",
+      "legacy_slug_prefixes": [
+        "qwen3_6_35b_a3b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_35b_a3b_effort_none_openrouter_04_2026": {
+    "display_name": "Qwen3.6 35B A3B (Thinking None)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-35b-a3b::effort_none",
+      "variant_key": "effort_none",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-35b-a3b",
+      "model_id": "qwen/qwen3.6-35b-a3b",
+      "base_model_name": "Qwen3.6 35B A3B",
+      "variant_label": "Thinking None",
+      "display_name": "Qwen3.6 35B A3B (Thinking None)",
+      "implementation_slug_prefix": "qwen3_6_35b_a3b_effort_none",
+      "legacy_slug_prefixes": [
+        "qwen3_6_35b_a3b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "none"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_6_35b_a3b_effort_xhigh_openrouter_04_2026": {
+    "display_name": "Qwen3.6 35B A3B (Thinking XHigh)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.6-35b-a3b::effort_xhigh",
+      "variant_key": "effort_xhigh",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.6-35b-a3b",
+      "model_id": "qwen/qwen3.6-35b-a3b",
+      "base_model_name": "Qwen3.6 35B A3B",
+      "variant_label": "Thinking XHigh",
+      "display_name": "Qwen3.6 35B A3B (Thinking XHigh)",
+      "implementation_slug_prefix": "qwen3_6_35b_a3b_effort_xhigh",
+      "legacy_slug_prefixes": [
+        "qwen3_6_35b_a3b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "xhigh"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "xhigh"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "xhigh"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Xhigh"
+      ],
+      "configured_variant": false
+    }
+  },
   "qwen3_6_plus_effort_high_openrouter_04_2026": {
     "display_name": "Qwen3.6 Plus (Thinking High)",
     "provider": "Qwen",

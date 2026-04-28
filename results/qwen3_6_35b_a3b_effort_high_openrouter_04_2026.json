@@ -1,0 +1,164 @@
+{
+  "implementation": "qwen3_6_35b_a3b_effort_high_openrouter_04_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::qwen/qwen3.6-35b-a3b::effort_high",
+    "variant_key": "effort_high",
+    "provider": "Qwen",
+    "family": "Qwen",
+    "base_model_id": "qwen/qwen3.6-35b-a3b",
+    "model_id": "qwen/qwen3.6-35b-a3b",
+    "base_model_name": "Qwen3.6 35B A3B",
+    "variant_label": "Thinking High",
+    "display_name": "Qwen3.6 35B A3B (Thinking High)",
+    "implementation_slug_prefix": "qwen3_6_35b_a3b_effort_high",
+    "legacy_slug_prefixes": [
+      "qwen3_6_35b_a3b"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "high"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "high"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: High"
+    ],
+    "configured_variant": false,
+    "implementation": "qwen3_6_35b_a3b_effort_high_openrouter_04_2026"
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "qwen3_6_35b_a3b_effort_high_openrouter_04_2026",
+        "timestamp": "2026-04-28T20:41:53+03:00",
+        "metrics": {
+          "rubocop_offenses": 8,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 31.794,
+      "started_at": "2026-04-28T20:21:42+03:00",
+      "completed_at": "2026-04-28T20:22:14+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 46.15,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 84.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [],
+    "generation_timing": {
+      "duration_seconds": 55.186,
+      "started_at": "2026-04-28T20:22:14+03:00",
+      "completed_at": "2026-04-28T20:23:09+03:00"
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "qwen3_6_35b_a3b_effort_high_openrouter_04_2026",
+        "timestamp": "2026-04-28T20:42:06+03:00",
+        "metrics": {
+          "rubocop_offenses": 24,
+          "tests_passed": 8,
+          "total_tests": 39,
+          "success_rate": 0.20512820512820512,
+          "primary_metric": 0.20512820512820512,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 43.727,
+      "started_at": "2026-04-28T20:23:09+03:00",
+      "completed_at": "2026-04-28T20:23:53+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 24.0,
+        "tests_passed": 8.0,
+        "total_tests": 39.0,
+        "success_rate": 0.205128,
+        "primary_metric": 0.205128,
+        "success": 1.0
+      },
+      "rubocop_offenses": 24,
+      "score": 23.66,
+      "score_breakdown": {
+        "success_score": 20.51,
+        "quality_score": 52.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "qwen3_6_35b_a3b_effort_high_openrouter_04_2026",
+        "timestamp": "2026-04-28T20:42:22+03:00",
+        "metrics": {
+          "rubocop_offenses": 6,
+          "tests_passed": 14,
+          "total_tests": 28,
+          "success_rate": 0.5,
+          "primary_metric": 0.5,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 69.26,
+      "started_at": "2026-04-28T20:23:53+03:00",
+      "completed_at": "2026-04-28T20:25:02+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 6.0,
+        "tests_passed": 14.0,
+        "total_tests": 28.0,
+        "success_rate": 0.5,
+        "primary_metric": 0.5,
+        "success": 1.0
+      },
+      "rubocop_offenses": 6,
+      "score": 53.8,
+      "score_breakdown": {
+        "success_score": 50.0,
+        "quality_score": 88.0
+      }
+    }
+  }
+}

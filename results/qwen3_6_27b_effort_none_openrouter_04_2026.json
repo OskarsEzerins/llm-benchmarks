@@ -1,0 +1,194 @@
+{
+  "implementation": "qwen3_6_27b_effort_none_openrouter_04_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::qwen/qwen3.6-27b::effort_none",
+    "variant_key": "effort_none",
+    "provider": "Qwen",
+    "family": "Qwen",
+    "base_model_id": "qwen/qwen3.6-27b",
+    "model_id": "qwen/qwen3.6-27b",
+    "base_model_name": "Qwen3.6 27B",
+    "variant_label": "Thinking None",
+    "display_name": "Qwen3.6 27B (Thinking None)",
+    "implementation_slug_prefix": "qwen3_6_27b_effort_none",
+    "legacy_slug_prefixes": [
+      "qwen3_6_27b"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "none"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "none"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "off",
+      "reasoning_effort": "none"
+    },
+    "param_summary": [
+      "Thinking: Off",
+      "Effort: None"
+    ],
+    "configured_variant": false,
+    "implementation": "qwen3_6_27b_effort_none_openrouter_04_2026"
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "qwen3_6_27b_effort_none_openrouter_04_2026",
+        "timestamp": "2026-04-28T20:41:54+03:00",
+        "metrics": {
+          "rubocop_offenses": 11,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 6.406,
+      "started_at": "2026-04-28T19:06:18+03:00",
+      "completed_at": "2026-04-28T19:06:25+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 11.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 11,
+      "score": 45.55,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 78.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "qwen3_6_27b_effort_none_openrouter_04_2026",
+        "timestamp": "2026-04-28T20:41:58+03:00",
+        "metrics": {
+          "rubocop_offenses": 32,
+          "tests_passed": 18,
+          "total_tests": 23,
+          "success_rate": 0.782608695652174,
+          "primary_metric": 0.782608695652174,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 39.378,
+      "started_at": "2026-04-28T19:06:25+03:00",
+      "completed_at": "2026-04-28T19:07:04+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 32.0,
+        "tests_passed": 18.0,
+        "total_tests": 23.0,
+        "success_rate": 0.782609,
+        "primary_metric": 0.782609,
+        "success": 1.0
+      },
+      "rubocop_offenses": 32,
+      "score": 74.03,
+      "score_breakdown": {
+        "success_score": 78.26,
+        "quality_score": 36.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "qwen3_6_27b_effort_none_openrouter_04_2026",
+        "timestamp": "2026-04-28T20:42:15+03:00",
+        "metrics": {
+          "rubocop_offenses": 32,
+          "tests_passed": 20,
+          "total_tests": 39,
+          "success_rate": 0.5128205128205128,
+          "primary_metric": 0.5128205128205128,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 22.028,
+      "started_at": "2026-04-28T19:07:04+03:00",
+      "completed_at": "2026-04-28T19:07:26+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 32.0,
+        "tests_passed": 20.0,
+        "total_tests": 39.0,
+        "success_rate": 0.512821,
+        "primary_metric": 0.512821,
+        "success": 1.0
+      },
+      "rubocop_offenses": 32,
+      "score": 49.75,
+      "score_breakdown": {
+        "success_score": 51.28,
+        "quality_score": 36.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "qwen3_6_27b_effort_none_openrouter_04_2026",
+        "timestamp": "2026-04-28T20:42:28+03:00",
+        "metrics": {
+          "rubocop_offenses": 11,
+          "tests_passed": 16,
+          "total_tests": 28,
+          "success_rate": 0.5714285714285714,
+          "primary_metric": 0.5714285714285714,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 14.671,
+      "started_at": "2026-04-28T19:07:26+03:00",
+      "completed_at": "2026-04-28T19:07:41+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 11.0,
+        "tests_passed": 16.0,
+        "total_tests": 28.0,
+        "success_rate": 0.571429,
+        "primary_metric": 0.571429,
+        "success": 1.0
+      },
+      "rubocop_offenses": 11,
+      "score": 59.23,
+      "score_breakdown": {
+        "success_score": 57.14,
+        "quality_score": 78.0
+      }
+    }
+  }
+}
