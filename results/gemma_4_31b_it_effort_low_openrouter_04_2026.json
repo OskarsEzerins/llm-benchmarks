@@ -1,0 +1,193 @@
+{
+  "implementation": "gemma_4_31b_it_effort_low_openrouter_04_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::google/gemma-4-31b-it::effort_low",
+    "variant_key": "effort_low",
+    "provider": "Google",
+    "family": "Google",
+    "base_model_id": "google/gemma-4-31b-it",
+    "model_id": "google/gemma-4-31b-it",
+    "base_model_name": "Gemma 4 31B",
+    "variant_label": "Thinking Low",
+    "display_name": "Gemma 4 31B (Thinking Low)",
+    "implementation_slug_prefix": "gemma_4_31b_it_effort_low",
+    "legacy_slug_prefixes": [
+      "gemma_4_31b_it"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "low"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "low"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Low"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "gemma_4_31b_it_effort_low_openrouter_04_2026",
+        "timestamp": "2026-04-29T22:10:08+03:00",
+        "metrics": {
+          "rubocop_offenses": 9,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 353.189,
+      "started_at": "2026-04-29T20:43:54+03:00",
+      "completed_at": "2026-04-29T20:49:48+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 9.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 9,
+      "score": 45.95,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 82.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "gemma_4_31b_it_effort_low_openrouter_04_2026",
+        "timestamp": "2026-04-29T22:10:09+03:00",
+        "metrics": {
+          "rubocop_offenses": 21,
+          "tests_passed": 18,
+          "total_tests": 23,
+          "success_rate": 0.782608695652174,
+          "primary_metric": 0.782608695652174,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 343.871,
+      "started_at": "2026-04-29T20:49:48+03:00",
+      "completed_at": "2026-04-29T20:55:32+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 21.0,
+        "tests_passed": 18.0,
+        "total_tests": 23.0,
+        "success_rate": 0.782609,
+        "primary_metric": 0.782609,
+        "success": 1.0
+      },
+      "rubocop_offenses": 21,
+      "score": 76.23,
+      "score_breakdown": {
+        "success_score": 78.26,
+        "quality_score": 58.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "gemma_4_31b_it_effort_low_openrouter_04_2026",
+        "timestamp": "2026-04-29T22:10:10+03:00",
+        "metrics": {
+          "rubocop_offenses": 15,
+          "tests_passed": 15,
+          "total_tests": 39,
+          "success_rate": 0.38461538461538464,
+          "primary_metric": 0.38461538461538464,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 143.178,
+      "started_at": "2026-04-29T20:55:32+03:00",
+      "completed_at": "2026-04-29T20:57:55+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 15.0,
+        "tests_passed": 15.0,
+        "total_tests": 39.0,
+        "success_rate": 0.384615,
+        "primary_metric": 0.384615,
+        "success": 1.0
+      },
+      "rubocop_offenses": 15,
+      "score": 41.61,
+      "score_breakdown": {
+        "success_score": 38.46,
+        "quality_score": 70.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "gemma_4_31b_it_effort_low_openrouter_04_2026",
+        "timestamp": "2026-04-29T22:10:11+03:00",
+        "metrics": {
+          "rubocop_offenses": 6,
+          "tests_passed": 18,
+          "total_tests": 28,
+          "success_rate": 0.6428571428571429,
+          "primary_metric": 0.6428571428571429,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 425.37,
+      "started_at": "2026-04-29T20:57:55+03:00",
+      "completed_at": "2026-04-29T21:05:00+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 6.0,
+        "tests_passed": 18.0,
+        "total_tests": 28.0,
+        "success_rate": 0.642857,
+        "primary_metric": 0.642857,
+        "success": 1.0
+      },
+      "rubocop_offenses": 6,
+      "score": 66.66,
+      "score_breakdown": {
+        "success_score": 64.29,
+        "quality_score": 88.0
+      }
+    }
+  }
+}
