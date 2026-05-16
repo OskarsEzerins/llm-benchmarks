@@ -183,6 +183,368 @@
     "display_name": "DeepSeek V3",
     "provider": "DeepSeek"
   },
+  "deepseek_v4_flash_effort_high_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Flash (Thinking High)",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-flash::effort_high",
+      "variant_key": "effort_high",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-flash",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "base_model_name": "DeepSeek V4 Flash",
+      "variant_label": "Thinking High",
+      "display_name": "DeepSeek V4 Flash (Thinking High)",
+      "implementation_slug_prefix": "deepseek_v4_flash_effort_high",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "deepseek_v4_flash_effort_low_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Flash (Thinking Low)",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-flash::effort_low",
+      "variant_key": "effort_low",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-flash",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "base_model_name": "DeepSeek V4 Flash",
+      "variant_label": "Thinking Low",
+      "display_name": "DeepSeek V4 Flash (Thinking Low)",
+      "implementation_slug_prefix": "deepseek_v4_flash_effort_low",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "deepseek_v4_flash_effort_medium_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Flash (Thinking Medium)",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-flash::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-flash",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "base_model_name": "DeepSeek V4 Flash",
+      "variant_label": "Thinking Medium",
+      "display_name": "DeepSeek V4 Flash (Thinking Medium)",
+      "implementation_slug_prefix": "deepseek_v4_flash_effort_medium",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "deepseek_v4_flash_effort_none_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Flash (Thinking None)",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-flash::effort_none",
+      "variant_key": "effort_none",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-flash",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "base_model_name": "DeepSeek V4 Flash",
+      "variant_label": "Thinking None",
+      "display_name": "DeepSeek V4 Flash (Thinking None)",
+      "implementation_slug_prefix": "deepseek_v4_flash_effort_none",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "none"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
+  "deepseek_v4_flash_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Flash",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-flash::default",
+      "variant_key": "default",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-flash",
+      "model_id": "deepseek/deepseek-v4-flash",
+      "base_model_name": "DeepSeek V4 Flash",
+      "variant_label": "Default",
+      "display_name": "DeepSeek V4 Flash",
+      "implementation_slug_prefix": "deepseek_v4_flash",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {},
+      "request": {
+        "provider": "openrouter",
+        "params": {}
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
+  "deepseek_v4_pro_effort_low_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Pro (Thinking Low)",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-pro::effort_low",
+      "variant_key": "effort_low",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-pro",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "base_model_name": "DeepSeek V4 Pro",
+      "variant_label": "Thinking Low",
+      "display_name": "DeepSeek V4 Pro (Thinking Low)",
+      "implementation_slug_prefix": "deepseek_v4_pro_effort_low",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "deepseek_v4_pro_effort_medium_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Pro (Thinking Medium)",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-pro::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-pro",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "base_model_name": "DeepSeek V4 Pro",
+      "variant_label": "Thinking Medium",
+      "display_name": "DeepSeek V4 Pro (Thinking Medium)",
+      "implementation_slug_prefix": "deepseek_v4_pro_effort_medium",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "deepseek_v4_pro_effort_none_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Pro (Thinking None)",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-pro::effort_none",
+      "variant_key": "effort_none",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-pro",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "base_model_name": "DeepSeek V4 Pro",
+      "variant_label": "Thinking None",
+      "display_name": "DeepSeek V4 Pro (Thinking None)",
+      "implementation_slug_prefix": "deepseek_v4_pro_effort_none",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "none"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "none"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
+  "deepseek_v4_pro_openrouter_05_2026": {
+    "display_name": "DeepSeek V4 Pro",
+    "provider": "DeepSeek",
+    "metadata": {
+      "variant_id": "auto::deepseek/deepseek-v4-pro::default",
+      "variant_key": "default",
+      "provider": "DeepSeek",
+      "family": "DeepSeek",
+      "base_model_id": "deepseek/deepseek-v4-pro",
+      "model_id": "deepseek/deepseek-v4-pro",
+      "base_model_name": "DeepSeek V4 Pro",
+      "variant_label": "Default",
+      "display_name": "DeepSeek V4 Pro",
+      "implementation_slug_prefix": "deepseek_v4_pro",
+      "legacy_slug_prefixes": [
+        "deepseek_v4_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {},
+      "request": {
+        "provider": "openrouter",
+        "params": {}
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
   "devstral_2512_openrouter_12_2025": {
     "display_name": "Devstral 25.12",
     "provider": "Mistral"

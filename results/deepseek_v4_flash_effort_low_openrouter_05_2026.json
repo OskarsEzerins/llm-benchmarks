@@ -1,0 +1,194 @@
+{
+  "implementation": "deepseek_v4_flash_effort_low_openrouter_05_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::deepseek/deepseek-v4-flash::effort_low",
+    "variant_key": "effort_low",
+    "provider": "DeepSeek",
+    "family": "DeepSeek",
+    "base_model_id": "deepseek/deepseek-v4-flash",
+    "model_id": "deepseek/deepseek-v4-flash",
+    "base_model_name": "DeepSeek V4 Flash",
+    "variant_label": "Thinking Low",
+    "display_name": "DeepSeek V4 Flash (Thinking Low)",
+    "implementation_slug_prefix": "deepseek_v4_flash_effort_low",
+    "legacy_slug_prefixes": [
+      "deepseek_v4_flash"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "low"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "low"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Low"
+    ],
+    "configured_variant": false,
+    "implementation": "deepseek_v4_flash_effort_low_openrouter_05_2026"
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "deepseek_v4_flash_effort_low_openrouter_05_2026",
+        "timestamp": "2026-05-16T13:01:36+03:00",
+        "metrics": {
+          "rubocop_offenses": 9,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 14.625,
+      "started_at": "2026-05-16T11:12:50+03:00",
+      "completed_at": "2026-05-16T11:13:04+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 9.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 9,
+      "score": 45.95,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 82.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "deepseek_v4_flash_effort_low_openrouter_05_2026",
+        "timestamp": "2026-05-16T13:01:38+03:00",
+        "metrics": {
+          "rubocop_offenses": 15,
+          "tests_passed": 10,
+          "total_tests": 23,
+          "success_rate": 0.43478260869565216,
+          "primary_metric": 0.43478260869565216,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 29.937,
+      "started_at": "2026-05-16T11:13:04+03:00",
+      "completed_at": "2026-05-16T11:13:34+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 15.0,
+        "tests_passed": 10.0,
+        "total_tests": 23.0,
+        "success_rate": 0.434783,
+        "primary_metric": 0.434783,
+        "success": 1.0
+      },
+      "rubocop_offenses": 15,
+      "score": 46.13,
+      "score_breakdown": {
+        "success_score": 43.48,
+        "quality_score": 70.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "deepseek_v4_flash_effort_low_openrouter_05_2026",
+        "timestamp": "2026-05-16T13:01:40+03:00",
+        "metrics": {
+          "rubocop_offenses": 22,
+          "tests_passed": 16,
+          "total_tests": 39,
+          "success_rate": 0.41025641025641024,
+          "primary_metric": 0.41025641025641024,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 63.4,
+      "started_at": "2026-05-16T11:13:34+03:00",
+      "completed_at": "2026-05-16T11:14:38+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 22.0,
+        "tests_passed": 16.0,
+        "total_tests": 39.0,
+        "success_rate": 0.410256,
+        "primary_metric": 0.410256,
+        "success": 1.0
+      },
+      "rubocop_offenses": 22,
+      "score": 42.53,
+      "score_breakdown": {
+        "success_score": 41.03,
+        "quality_score": 56.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "deepseek_v4_flash_effort_low_openrouter_05_2026",
+        "timestamp": "2026-05-16T13:01:41+03:00",
+        "metrics": {
+          "rubocop_offenses": 5,
+          "tests_passed": 16,
+          "total_tests": 28,
+          "success_rate": 0.5714285714285714,
+          "primary_metric": 0.5714285714285714,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 63.257,
+      "started_at": "2026-05-16T11:14:38+03:00",
+      "completed_at": "2026-05-16T11:15:41+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 5.0,
+        "tests_passed": 16.0,
+        "total_tests": 28.0,
+        "success_rate": 0.571429,
+        "primary_metric": 0.571429,
+        "success": 1.0
+      },
+      "rubocop_offenses": 5,
+      "score": 60.43,
+      "score_breakdown": {
+        "success_score": 57.14,
+        "quality_score": 90.0
+      }
+    }
+  }
+}
