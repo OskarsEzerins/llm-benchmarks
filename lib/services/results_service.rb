@@ -43,6 +43,17 @@ class ResultsService
     File.write(impl_file, JSON.pretty_generate(data))
   end
 
+  def result_recorded_for?(implementation)
+    impl_file = Config.implementation_results_file(implementation)
+    return false unless File.exist?(impl_file)
+
+    data = JSON.parse(File.read(impl_file))
+    results = data.dig(@benchmark_id, 'results')
+    results.is_a?(Array) && results.any?
+  rescue JSON::ParserError
+    false
+  end
+
   def calculate_best_results_by_implementation(results)
     @result_handler.calculate_best_results_by_implementation(results)
   end

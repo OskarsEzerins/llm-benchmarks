@@ -26,6 +26,7 @@ class Main
   ].freeze
 
   RUN_ALL_OPTION = { name: 'Run all benchmarks with all models', value: :all }.freeze
+  RUN_MISSING_RESULTS_OPTION = { name: 'Run benchmarks with missing results', value: :missing_results }.freeze
   RUN_SINGLE_MODEL_ALL_BENCHMARKS = { name: 'Run single model across all benchmarks', value: :single_model }.freeze
 
   def initialize
@@ -69,6 +70,8 @@ class Main
       else
         run_all_benchmarks_of_type(benchmark_type)
       end
+    when :missing_results
+      run_missing_results_for_type(benchmark_type)
     when :single_model
       SingleModelBenchmarkService.new(@prompt, benchmark_type).run
     else
@@ -82,7 +85,7 @@ class Main
 
     @prompt.select(
       "\nSelect benchmark:",
-      [RUN_ALL_OPTION, RUN_SINGLE_MODEL_ALL_BENCHMARKS] + available_benchmarks.map do |id|
+      [RUN_ALL_OPTION, RUN_MISSING_RESULTS_OPTION, RUN_SINGLE_MODEL_ALL_BENCHMARKS] + available_benchmarks.map do |id|
         { name: format_name(id), value: id }
       end,
       per_page: 20,
@@ -118,6 +121,27 @@ class Main
       implementations = selector.list_all
       BenchmarkRunnerService.new(benchmark_id, implementations).run
     end
+  end
+
+  def run_missing_results_for_type(benchmark_type)
+    benchmarks = get_benchmarks_for_type(benchmark_type)
+    total = 0
+
+    benchmarks.each do |benchmark_id|
+      selector = ImplementationSelectorService.new(Config.implementations_dir(benchmark_id))
+      implementations = selector.list_missing_results(benchmark_id)
+      if implementations.empty?
+        puts "\nSkipping #{format_name(benchmark_id)} - no missing results."
+        next
+      end
+
+      total += implementations.size
+      puts "\nRunning #{format_name(benchmark_id)} for " \
+           "#{implementations.size} implementation(s) with missing results..."
+      BenchmarkRunnerService.new(benchmark_id, implementations).run
+    end
+
+    puts "\nNo missing benchmark results found." if total.zero?
   end
 
   def run_benchmarks_for_added(added)

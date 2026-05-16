@@ -1,4 +1,5 @@
 require 'tty-prompt'
+require_relative 'results_service'
 
 class ImplementationSelectorService
   RUN_ALL_OPTION = { name: 'Run all implementations', value: :all }.freeze
@@ -24,9 +25,16 @@ class ImplementationSelectorService
     implementations = available_implementations
     ensure_implementations_exist!(implementations)
 
-    implementations.map do |name|
-      { name: name, file: implementation_path(name) }
-    end
+    implementation_entries(implementations)
+  end
+
+  def list_missing_results(benchmark_id)
+    implementations = available_implementations
+    ensure_implementations_exist!(implementations)
+
+    results_service = ResultsService.new(benchmark_id)
+    missing = implementations.reject { |name| results_service.result_recorded_for?(name) }
+    implementation_entries(missing)
   end
 
   private
@@ -44,6 +52,12 @@ class ImplementationSelectorService
     ensure_implementation_exists!(file_path)
 
     { name: name, file: file_path }
+  end
+
+  def implementation_entries(implementations)
+    implementations.map do |name|
+      { name: name, file: implementation_path(name) }
+    end
   end
 
   def ensure_implementations_exist!(implementations)

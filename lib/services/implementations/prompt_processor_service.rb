@@ -2,9 +2,13 @@ require_relative '../../../config'
 require_relative 'model_variant_registry'
 require_relative 'chat_builder_service'
 require_relative '../results_service'
+require 'fileutils'
+require 'json'
 
 module Implementations
   class PromptProcessorService
+    MODEL_NAMES_CONFIG = File.expand_path('../../../config/model_names.json', __dir__)
+
     def initialize(selections, benchmark_type = :all_types)
       @registry = ModelVariantRegistry.instance
       @implementations = Array(selections).filter_map { |selection| @registry.resolve_selection(selection) }
@@ -39,14 +43,19 @@ module Implementations
 
     def process_benchmarks_for_model(implementation, target_benchmarks, added)
       code_saver = CodeSaverService.new(implementation)
+      slug = code_saver.generated_slug
 
       target_benchmarks.each do |benchmark_id|
         next unless validate_prompt_file(benchmark_id)
         next if skip_existing_implementation?(code_saver, implementation, benchmark_id)
 
-        slug = process_single_benchmark(implementation, benchmark_id, code_saver)
-        added[benchmark_id] << implementation_entry(benchmark_id, slug, implementation) if slug
+        saved_slug = process_single_benchmark(implementation, benchmark_id, code_saver)
+        added[benchmark_id] << implementation_entry(benchmark_id, saved_slug, implementation) if saved_slug
       end
+    rescue StandardError => e
+      cleanup_failed_model(slug, target_benchmarks, added)
+      puts "\nFailed to generate #{implementation['display_name']}: #{e.class}: #{e.message}"
+      puts "Removed partial files for #{slug}; continuing with remaining models."
     end
 
     def implementation_entry(benchmark_id, slug, implementation)
@@ -129,11 +138,47 @@ module Implementations
     end
 
     def extract_ruby_code(response)
+      raise EmptyResponseError, 'LLM response content was empty' if response.nil?
+
       if response.include?('```ruby')
         response.split('```ruby').last.split('```').first.strip
       else
         response.strip
       end
     end
+
+    def cleanup_failed_model(slug, target_benchmarks, added)
+      remove_generated_files(slug, target_benchmarks)
+      remove_result_file(slug)
+      remove_model_name_metadata(slug)
+      remove_added_entries(slug, added)
+    end
+
+    def remove_generated_files(slug, target_benchmarks)
+      target_benchmarks.each do |benchmark_id|
+        FileUtils.rm_f("#{Config.implementations_dir(benchmark_id)}/#{slug}.rb")
+      end
+    end
+
+    def remove_result_file(slug)
+      FileUtils.rm_f(Config.implementation_results_file(slug))
+    end
+
+    def remove_model_name_metadata(slug)
+      return unless File.exist?(MODEL_NAMES_CONFIG)
+
+      config = JSON.parse(File.read(MODEL_NAMES_CONFIG))
+      return unless config.delete(slug)
+
+      File.write(MODEL_NAMES_CONFIG, JSON.pretty_generate(config.sort.to_h))
+    rescue JSON::ParserError => e
+      puts "Warning: could not clean model_names.json for #{slug}: #{e.message}"
+    end
+
+    def remove_added_entries(slug, added)
+      added.each_value { |entries| entries.reject! { |entry| entry[:name] == slug } }
+    end
+
+    class EmptyResponseError < StandardError; end
   end
 end

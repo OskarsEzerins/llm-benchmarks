@@ -39,6 +39,11 @@ module Implementations
       File.exist?(file_name)
     end
 
+    def generated_slug
+      timestamp = Time.now.strftime('%m_%Y')
+      "#{implementation_slug_prefix}_#{source_tag}_#{timestamp}".squeeze('_')
+    end
+
     private
 
     attr_reader :metadata
@@ -53,11 +58,7 @@ module Implementations
     end
 
     def generate_file_name(benchmark_id)
-      timestamp = Time.now.strftime('%m_%Y')
-      File.join(
-        implementations_dir(benchmark_id),
-        "#{implementation_slug_prefix}_#{source_tag}_#{timestamp}.rb".squeeze('_')
-      )
+      File.join(implementations_dir(benchmark_id), "#{generated_slug}.rb")
     end
 
     def model_info

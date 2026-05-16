@@ -34,9 +34,15 @@ class BenchmarkRunnerService
 
   def run
     puts "\nRunning benchmarks in random order..."
+    @run_summary = { succeeded: 0, failed: 0 }
     @implementations.shuffle.each do |implementation|
-      run_implementation_iterations(implementation)
+      if run_implementation_iterations(implementation)
+        @run_summary[:succeeded] += 1
+      else
+        @run_summary[:failed] += 1
+      end
     end
+    puts "\nBenchmark run complete: #{@run_summary[:succeeded]} succeeded, #{@run_summary[:failed]} failed."
 
     # For program_fixer benchmarks, display results only once at the end
     return unless @benchmark_type == :program_fixer
@@ -62,6 +68,10 @@ class BenchmarkRunnerService
     rubocop_offenses_count = RubocopEvaluationService.count_offenses(implementation[:file])
 
     save_and_display_results(implementation, best_result, rubocop_offenses_count)
+    successful_result?(implementation, best_result)
+  rescue StandardError => e
+    puts "\nFailed benchmark for #{implementation[:name]}: #{e.class}: #{e.message}"
+    false
   end
 
   def run_in_subprocess(implementation)
@@ -73,7 +83,7 @@ class BenchmarkRunnerService
       require 'bundler/setup'
       Bundler.require
 
-      result = run_single_benchmark(implementation)
+      result = safe_run_single_benchmark(implementation)
       write.write(result.to_json)
       write.close
       exit!(0)
@@ -87,6 +97,30 @@ class BenchmarkRunnerService
     execution_time = result_data[:execution_time] || result_data[:primary_metric] || 0
     puts "Execution time: #{execution_time} seconds" if @benchmark_type == :performance
     result_data
+  end
+
+  def safe_run_single_benchmark(implementation)
+    run_single_benchmark(implementation)
+  rescue StandardError => e
+    {
+      error_class: e.class.name,
+      error_message: e.message,
+      execution_time: nil,
+      primary_metric: 0,
+      success_rate: 0
+    }
+  end
+
+  def failed_result?(result)
+    result.is_a?(Hash) && result[:error_class]
+  end
+
+  def successful_result?(implementation, result)
+    return true unless failed_result?(result)
+
+    puts "\nBenchmark returned failure for #{implementation[:name]}: " \
+         "#{result[:error_class]}: #{result[:error_message]}"
+    false
   end
 
   def run_single_benchmark(implementation)
