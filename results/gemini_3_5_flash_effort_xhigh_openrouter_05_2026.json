@@ -1,0 +1,163 @@
+{
+  "implementation": "gemini_3_5_flash_effort_xhigh_openrouter_05_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::google/gemini-3.5-flash::effort_xhigh",
+    "variant_key": "effort_xhigh",
+    "provider": "Google",
+    "family": "Gemini",
+    "base_model_id": "google/gemini-3.5-flash",
+    "model_id": "google/gemini-3.5-flash",
+    "base_model_name": "Gemini 3.5 Flash",
+    "variant_label": "Thinking XHigh",
+    "display_name": "Gemini 3.5 Flash (Thinking XHigh)",
+    "implementation_slug_prefix": "gemini_3_5_flash_effort_xhigh",
+    "legacy_slug_prefixes": [
+      "gemini_3_5_flash"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "xhigh"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "xhigh"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "xhigh"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Xhigh"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "gemini_3_5_flash_effort_xhigh_openrouter_05_2026",
+        "timestamp": "2026-05-23T09:03:26+03:00",
+        "metrics": {
+          "rubocop_offenses": 8,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 12.08,
+      "started_at": "2026-05-23T08:28:36+03:00",
+      "completed_at": "2026-05-23T08:28:48+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 78.08,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 84.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "gemini_3_5_flash_effort_xhigh_openrouter_05_2026",
+        "timestamp": "2026-05-23T09:03:28+03:00",
+        "metrics": {
+          "rubocop_offenses": 16,
+          "tests_passed": 20,
+          "total_tests": 23,
+          "success_rate": 0.8695652173913043,
+          "primary_metric": 0.8695652173913043,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 44.635,
+      "started_at": "2026-05-23T08:28:48+03:00",
+      "completed_at": "2026-05-23T08:29:33+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 16.0,
+        "tests_passed": 20.0,
+        "total_tests": 23.0,
+        "success_rate": 0.869565,
+        "primary_metric": 0.869565,
+        "success": 1.0
+      },
+      "rubocop_offenses": 16,
+      "score": 85.06,
+      "score_breakdown": {
+        "success_score": 86.96,
+        "quality_score": 68.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "gemini_3_5_flash_effort_xhigh_openrouter_05_2026",
+        "timestamp": "2026-05-23T09:03:29+03:00",
+        "metrics": {
+          "rubocop_offenses": 37,
+          "tests_passed": 20,
+          "total_tests": 39,
+          "success_rate": 0.5128205128205128,
+          "primary_metric": 0.5128205128205128,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 82.826,
+      "started_at": "2026-05-23T08:29:33+03:00",
+      "completed_at": "2026-05-23T08:30:55+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 37.0,
+        "tests_passed": 20.0,
+        "total_tests": 39.0,
+        "success_rate": 0.512821,
+        "primary_metric": 0.512821,
+        "success": 1.0
+      },
+      "rubocop_offenses": 37,
+      "score": 48.75,
+      "score_breakdown": {
+        "success_score": 51.28,
+        "quality_score": 26.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [],
+    "generation_timing": {
+      "duration_seconds": 51.354,
+      "started_at": "2026-05-23T08:30:55+03:00",
+      "completed_at": "2026-05-23T08:31:47+03:00"
+    }
+  }
+}

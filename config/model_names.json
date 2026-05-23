@@ -803,6 +803,208 @@
     "display_name": "Gemini 3.1 Pro Preview",
     "provider": "Google"
   },
+  "gemini_3_5_flash_effort_high_openrouter_05_2026": {
+    "display_name": "Gemini 3.5 Flash (Thinking High)",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemini-3.5-flash::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Google",
+      "family": "Gemini",
+      "base_model_id": "google/gemini-3.5-flash",
+      "model_id": "google/gemini-3.5-flash",
+      "base_model_name": "Gemini 3.5 Flash",
+      "variant_label": "Thinking High",
+      "display_name": "Gemini 3.5 Flash (Thinking High)",
+      "implementation_slug_prefix": "gemini_3_5_flash_effort_high",
+      "legacy_slug_prefixes": [
+        "gemini_3_5_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "gemini_3_5_flash_effort_low_openrouter_05_2026": {
+    "display_name": "Gemini 3.5 Flash (Thinking Low)",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemini-3.5-flash::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Google",
+      "family": "Gemini",
+      "base_model_id": "google/gemini-3.5-flash",
+      "model_id": "google/gemini-3.5-flash",
+      "base_model_name": "Gemini 3.5 Flash",
+      "variant_label": "Thinking Low",
+      "display_name": "Gemini 3.5 Flash (Thinking Low)",
+      "implementation_slug_prefix": "gemini_3_5_flash_effort_low",
+      "legacy_slug_prefixes": [
+        "gemini_3_5_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "gemini_3_5_flash_effort_medium_openrouter_05_2026": {
+    "display_name": "Gemini 3.5 Flash (Thinking Medium)",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemini-3.5-flash::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Google",
+      "family": "Gemini",
+      "base_model_id": "google/gemini-3.5-flash",
+      "model_id": "google/gemini-3.5-flash",
+      "base_model_name": "Gemini 3.5 Flash",
+      "variant_label": "Thinking Medium",
+      "display_name": "Gemini 3.5 Flash (Thinking Medium)",
+      "implementation_slug_prefix": "gemini_3_5_flash_effort_medium",
+      "legacy_slug_prefixes": [
+        "gemini_3_5_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "gemini_3_5_flash_effort_xhigh_openrouter_05_2026": {
+    "display_name": "Gemini 3.5 Flash (Thinking XHigh)",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemini-3.5-flash::effort_xhigh",
+      "variant_key": "effort_xhigh",
+      "provider": "Google",
+      "family": "Gemini",
+      "base_model_id": "google/gemini-3.5-flash",
+      "model_id": "google/gemini-3.5-flash",
+      "base_model_name": "Gemini 3.5 Flash",
+      "variant_label": "Thinking XHigh",
+      "display_name": "Gemini 3.5 Flash (Thinking XHigh)",
+      "implementation_slug_prefix": "gemini_3_5_flash_effort_xhigh",
+      "legacy_slug_prefixes": [
+        "gemini_3_5_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "xhigh"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "xhigh"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "xhigh"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Xhigh"
+      ],
+      "configured_variant": false
+    }
+  },
+  "gemini_3_5_flash_openrouter_05_2026": {
+    "display_name": "Gemini 3.5 Flash",
+    "provider": "Google",
+    "metadata": {
+      "variant_id": "auto::google/gemini-3.5-flash::default",
+      "variant_key": "default",
+      "provider": "Google",
+      "family": "Gemini",
+      "base_model_id": "google/gemini-3.5-flash",
+      "model_id": "google/gemini-3.5-flash",
+      "base_model_name": "Gemini 3.5 Flash",
+      "variant_label": "Default",
+      "display_name": "Gemini 3.5 Flash",
+      "implementation_slug_prefix": "gemini_3_5_flash",
+      "legacy_slug_prefixes": [
+        "gemini_3_5_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {},
+      "request": {
+        "provider": "openrouter",
+        "params": {}
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
   "gemini_3_flash_preview_openrouter_12_2025": {
     "display_name": "Gemini 3 Flash Preview",
     "provider": "Google"

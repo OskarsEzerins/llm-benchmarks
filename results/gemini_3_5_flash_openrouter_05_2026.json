@@ -1,0 +1,155 @@
+{
+  "implementation": "gemini_3_5_flash_openrouter_05_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::google/gemini-3.5-flash::default",
+    "variant_key": "default",
+    "provider": "Google",
+    "family": "Gemini",
+    "base_model_id": "google/gemini-3.5-flash",
+    "model_id": "google/gemini-3.5-flash",
+    "base_model_name": "Gemini 3.5 Flash",
+    "variant_label": "Default",
+    "display_name": "Gemini 3.5 Flash",
+    "implementation_slug_prefix": "gemini_3_5_flash",
+    "legacy_slug_prefixes": [
+      "gemini_3_5_flash"
+    ],
+    "source_tag": "openrouter",
+    "params": {},
+    "request": {
+      "provider": "openrouter",
+      "params": {}
+    },
+    "normalized": {
+      "thinking_mode": "off",
+      "reasoning_effort": "none"
+    },
+    "param_summary": [
+      "Thinking: Off",
+      "Effort: None"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "gemini_3_5_flash_openrouter_05_2026",
+        "timestamp": "2026-05-23T09:03:27+03:00",
+        "metrics": {
+          "rubocop_offenses": 12,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 20.551,
+      "started_at": "2026-05-23T08:19:33+03:00",
+      "completed_at": "2026-05-23T08:19:53+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 12.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 12,
+      "score": 77.28,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 76.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "gemini_3_5_flash_openrouter_05_2026",
+        "timestamp": "2026-05-23T09:03:28+03:00",
+        "metrics": {
+          "rubocop_offenses": 25,
+          "tests_passed": 15,
+          "total_tests": 23,
+          "success_rate": 0.6521739130434783,
+          "primary_metric": 0.6521739130434783,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 41.411,
+      "started_at": "2026-05-23T08:19:53+03:00",
+      "completed_at": "2026-05-23T08:20:35+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 25.0,
+        "tests_passed": 15.0,
+        "total_tests": 23.0,
+        "success_rate": 0.652174,
+        "primary_metric": 0.652174,
+        "success": 1.0
+      },
+      "rubocop_offenses": 25,
+      "score": 63.7,
+      "score_breakdown": {
+        "success_score": 65.22,
+        "quality_score": 50.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "gemini_3_5_flash_openrouter_05_2026",
+        "timestamp": "2026-05-23T09:03:28+03:00",
+        "metrics": {
+          "rubocop_offenses": 22,
+          "tests_passed": 20,
+          "total_tests": 39,
+          "success_rate": 0.5128205128205128,
+          "primary_metric": 0.5128205128205128,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 84.987,
+      "started_at": "2026-05-23T08:20:35+03:00",
+      "completed_at": "2026-05-23T08:22:00+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 22.0,
+        "tests_passed": 20.0,
+        "total_tests": 39.0,
+        "success_rate": 0.512821,
+        "primary_metric": 0.512821,
+        "success": 1.0
+      },
+      "rubocop_offenses": 22,
+      "score": 51.75,
+      "score_breakdown": {
+        "success_score": 51.28,
+        "quality_score": 56.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [],
+    "generation_timing": {
+      "duration_seconds": 57.93,
+      "started_at": "2026-05-23T08:22:00+03:00",
+      "completed_at": "2026-05-23T08:22:58+03:00"
+    }
+  }
+}
