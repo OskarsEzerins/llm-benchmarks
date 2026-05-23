@@ -91,6 +91,132 @@
     "display_name": "Claude Opus 4.6",
     "provider": "Anthropic"
   },
+  "claude_opus_4_7_effort_high_openrouter_05_2026": {
+    "display_name": "Claude Opus 4.7 (Thinking High)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-opus-4.7::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-opus-4.7",
+      "model_id": "anthropic/claude-opus-4.7",
+      "base_model_name": "Claude Opus 4.7",
+      "variant_label": "Thinking High",
+      "display_name": "Claude Opus 4.7 (Thinking High)",
+      "implementation_slug_prefix": "claude_opus_4_7_effort_high",
+      "legacy_slug_prefixes": [
+        "claude_opus_4_7"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "claude_opus_4_7_effort_low_openrouter_05_2026": {
+    "display_name": "Claude Opus 4.7 (Thinking Low)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-opus-4.7::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-opus-4.7",
+      "model_id": "anthropic/claude-opus-4.7",
+      "base_model_name": "Claude Opus 4.7",
+      "variant_label": "Thinking Low",
+      "display_name": "Claude Opus 4.7 (Thinking Low)",
+      "implementation_slug_prefix": "claude_opus_4_7_effort_low",
+      "legacy_slug_prefixes": [
+        "claude_opus_4_7"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "claude_opus_4_7_effort_medium_openrouter_05_2026": {
+    "display_name": "Claude Opus 4.7 (Thinking Medium)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-opus-4.7::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-opus-4.7",
+      "model_id": "anthropic/claude-opus-4.7",
+      "base_model_name": "Claude Opus 4.7",
+      "variant_label": "Thinking Medium",
+      "display_name": "Claude Opus 4.7 (Thinking Medium)",
+      "implementation_slug_prefix": "claude_opus_4_7_effort_medium",
+      "legacy_slug_prefixes": [
+        "claude_opus_4_7"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
   "claude_opus_4_7_manual_budget_2048_openrouter_04_2026": {
     "display_name": "Claude Opus 4.7 (Thinking Budget 2K)",
     "provider": "Anthropic"
