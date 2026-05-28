@@ -1,0 +1,193 @@
+{
+  "implementation": "claude_opus_4_8_effort_high_openrouter_05_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::anthropic/claude-opus-4.8::effort_high",
+    "variant_key": "effort_high",
+    "provider": "Anthropic",
+    "family": "Claude",
+    "base_model_id": "anthropic/claude-opus-4.8",
+    "model_id": "anthropic/claude-opus-4.8",
+    "base_model_name": "Claude Opus 4.8",
+    "variant_label": "Thinking High",
+    "display_name": "Claude Opus 4.8 (Thinking High)",
+    "implementation_slug_prefix": "claude_opus_4_8_effort_high",
+    "legacy_slug_prefixes": [
+      "claude_opus_4_8"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "high"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "high"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: High"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "claude_opus_4_8_effort_high_openrouter_05_2026",
+        "timestamp": "2026-05-28T22:10:56+03:00",
+        "metrics": {
+          "rubocop_offenses": 9,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 9.797,
+      "started_at": "2026-05-28T21:58:36+03:00",
+      "completed_at": "2026-05-28T21:58:46+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 9.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 9,
+      "score": 77.88,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 82.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "claude_opus_4_8_effort_high_openrouter_05_2026",
+        "timestamp": "2026-05-28T22:10:58+03:00",
+        "metrics": {
+          "rubocop_offenses": 17,
+          "tests_passed": 20,
+          "total_tests": 23,
+          "success_rate": 0.8695652173913043,
+          "primary_metric": 0.8695652173913043,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 26.622,
+      "started_at": "2026-05-28T21:58:46+03:00",
+      "completed_at": "2026-05-28T21:59:12+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 17.0,
+        "tests_passed": 20.0,
+        "total_tests": 23.0,
+        "success_rate": 0.869565,
+        "primary_metric": 0.869565,
+        "success": 1.0
+      },
+      "rubocop_offenses": 17,
+      "score": 84.86,
+      "score_breakdown": {
+        "success_score": 86.96,
+        "quality_score": 66.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "claude_opus_4_8_effort_high_openrouter_05_2026",
+        "timestamp": "2026-05-28T22:10:58+03:00",
+        "metrics": {
+          "rubocop_offenses": 24,
+          "tests_passed": 20,
+          "total_tests": 39,
+          "success_rate": 0.5128205128205128,
+          "primary_metric": 0.5128205128205128,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 54.478,
+      "started_at": "2026-05-28T21:59:12+03:00",
+      "completed_at": "2026-05-28T22:00:07+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 24.0,
+        "tests_passed": 20.0,
+        "total_tests": 39.0,
+        "success_rate": 0.512821,
+        "primary_metric": 0.512821,
+        "success": 1.0
+      },
+      "rubocop_offenses": 24,
+      "score": 51.35,
+      "score_breakdown": {
+        "success_score": 51.28,
+        "quality_score": 52.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "claude_opus_4_8_effort_high_openrouter_05_2026",
+        "timestamp": "2026-05-28T22:10:59+03:00",
+        "metrics": {
+          "rubocop_offenses": 5,
+          "tests_passed": 21,
+          "total_tests": 28,
+          "success_rate": 0.75,
+          "primary_metric": 0.75,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 46.792,
+      "started_at": "2026-05-28T22:00:07+03:00",
+      "completed_at": "2026-05-28T22:00:54+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 5.0,
+        "tests_passed": 21.0,
+        "total_tests": 28.0,
+        "success_rate": 0.75,
+        "primary_metric": 0.75,
+        "success": 1.0
+      },
+      "rubocop_offenses": 5,
+      "score": 76.5,
+      "score_breakdown": {
+        "success_score": 75.0,
+        "quality_score": 90.0
+      }
+    }
+  }
+}
