@@ -63,6 +63,132 @@
     "display_name": "Claude Sonnet 4",
     "provider": "Anthropic"
   },
+  "claude_fable_5_effort_high_openrouter_06_2026": {
+    "display_name": "Claude Fable 5 (Thinking High)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-fable-5::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-fable-5",
+      "model_id": "anthropic/claude-fable-5",
+      "base_model_name": "Claude Fable 5",
+      "variant_label": "Thinking High",
+      "display_name": "Claude Fable 5 (Thinking High)",
+      "implementation_slug_prefix": "claude_fable_5_effort_high",
+      "legacy_slug_prefixes": [
+        "claude_fable_5"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "claude_fable_5_effort_low_openrouter_06_2026": {
+    "display_name": "Claude Fable 5 (Thinking Low)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-fable-5::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-fable-5",
+      "model_id": "anthropic/claude-fable-5",
+      "base_model_name": "Claude Fable 5",
+      "variant_label": "Thinking Low",
+      "display_name": "Claude Fable 5 (Thinking Low)",
+      "implementation_slug_prefix": "claude_fable_5_effort_low",
+      "legacy_slug_prefixes": [
+        "claude_fable_5"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "claude_fable_5_effort_medium_openrouter_06_2026": {
+    "display_name": "Claude Fable 5 (Thinking Medium)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-fable-5::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-fable-5",
+      "model_id": "anthropic/claude-fable-5",
+      "base_model_name": "Claude Fable 5",
+      "variant_label": "Thinking Medium",
+      "display_name": "Claude Fable 5 (Thinking Medium)",
+      "implementation_slug_prefix": "claude_fable_5_effort_medium",
+      "legacy_slug_prefixes": [
+        "claude_fable_5"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
   "claude_haiku_4_5_openrouter_10_2025": {
     "display_name": "Claude 4.5 Haiku",
     "provider": "Anthropic"
