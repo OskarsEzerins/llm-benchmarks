@@ -1815,6 +1815,166 @@
       "configured_variant": false
     }
   },
+  "glm_5_2_effort_high_openrouter_06_2026": {
+    "display_name": "GLM 5.2 (Thinking High)",
+    "provider": "Z Ai",
+    "metadata": {
+      "variant_id": "auto::z-ai/glm-5.2::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Z Ai",
+      "family": "Z Ai",
+      "base_model_id": "z-ai/glm-5.2",
+      "model_id": "z-ai/glm-5.2",
+      "base_model_name": "GLM 5.2",
+      "variant_label": "Thinking High",
+      "display_name": "GLM 5.2 (Thinking High)",
+      "implementation_slug_prefix": "glm_5_2_effort_high",
+      "legacy_slug_prefixes": [
+        "glm_5_2"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "glm_5_2_effort_low_openrouter_06_2026": {
+    "display_name": "GLM 5.2 (Thinking Low)",
+    "provider": "Z Ai",
+    "metadata": {
+      "variant_id": "auto::z-ai/glm-5.2::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Z Ai",
+      "family": "Z Ai",
+      "base_model_id": "z-ai/glm-5.2",
+      "model_id": "z-ai/glm-5.2",
+      "base_model_name": "GLM 5.2",
+      "variant_label": "Thinking Low",
+      "display_name": "GLM 5.2 (Thinking Low)",
+      "implementation_slug_prefix": "glm_5_2_effort_low",
+      "legacy_slug_prefixes": [
+        "glm_5_2"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "glm_5_2_effort_medium_openrouter_06_2026": {
+    "display_name": "GLM 5.2 (Thinking Medium)",
+    "provider": "Z Ai",
+    "metadata": {
+      "variant_id": "auto::z-ai/glm-5.2::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Z Ai",
+      "family": "Z Ai",
+      "base_model_id": "z-ai/glm-5.2",
+      "model_id": "z-ai/glm-5.2",
+      "base_model_name": "GLM 5.2",
+      "variant_label": "Thinking Medium",
+      "display_name": "GLM 5.2 (Thinking Medium)",
+      "implementation_slug_prefix": "glm_5_2_effort_medium",
+      "legacy_slug_prefixes": [
+        "glm_5_2"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "glm_5_2_openrouter_06_2026": {
+    "display_name": "GLM 5.2",
+    "provider": "Z Ai",
+    "metadata": {
+      "variant_id": "auto::z-ai/glm-5.2::default",
+      "variant_key": "default",
+      "provider": "Z Ai",
+      "family": "Z Ai",
+      "base_model_id": "z-ai/glm-5.2",
+      "model_id": "z-ai/glm-5.2",
+      "base_model_name": "GLM 5.2",
+      "variant_label": "Default",
+      "display_name": "GLM 5.2",
+      "implementation_slug_prefix": "glm_5_2",
+      "legacy_slug_prefixes": [
+        "glm_5_2"
+      ],
+      "source_tag": "openrouter",
+      "params": {},
+      "request": {
+        "provider": "openrouter",
+        "params": {}
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
   "glm_5_openrouter_02_2026": {
     "display_name": "GLM 5",
     "provider": "Z.AI"
