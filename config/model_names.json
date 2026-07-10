@@ -3065,6 +3065,678 @@
       "configured_variant": false
     }
   },
+  "openai_5_6_luna_effort_high_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Luna (Thinking High)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-luna::effort_high",
+      "variant_key": "effort_high",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-luna",
+      "model_id": "openai/gpt-5.6-luna",
+      "base_model_name": "GPT-5.6 Luna",
+      "variant_label": "Thinking High",
+      "display_name": "GPT-5.6 Luna (Thinking High)",
+      "implementation_slug_prefix": "openai_5_6_luna_effort_high",
+      "legacy_slug_prefixes": [
+        "openai_5_6_luna"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_luna_effort_low_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Luna (Thinking Low)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-luna::effort_low",
+      "variant_key": "effort_low",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-luna",
+      "model_id": "openai/gpt-5.6-luna",
+      "base_model_name": "GPT-5.6 Luna",
+      "variant_label": "Thinking Low",
+      "display_name": "GPT-5.6 Luna (Thinking Low)",
+      "implementation_slug_prefix": "openai_5_6_luna_effort_low",
+      "legacy_slug_prefixes": [
+        "openai_5_6_luna"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_luna_effort_medium_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Luna (Thinking Medium)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-luna::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-luna",
+      "model_id": "openai/gpt-5.6-luna",
+      "base_model_name": "GPT-5.6 Luna",
+      "variant_label": "Thinking Medium",
+      "display_name": "GPT-5.6 Luna (Thinking Medium)",
+      "implementation_slug_prefix": "openai_5_6_luna_effort_medium",
+      "legacy_slug_prefixes": [
+        "openai_5_6_luna"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_luna_pro_effort_low_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Luna Pro (Thinking Low)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-luna-pro::effort_low",
+      "variant_key": "effort_low",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-luna-pro",
+      "model_id": "openai/gpt-5.6-luna-pro",
+      "base_model_name": "GPT-5.6 Luna Pro",
+      "variant_label": "Thinking Low",
+      "display_name": "GPT-5.6 Luna Pro (Thinking Low)",
+      "implementation_slug_prefix": "openai_5_6_luna_pro_effort_low",
+      "legacy_slug_prefixes": [
+        "openai_5_6_luna_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_luna_pro_effort_medium_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Luna Pro (Thinking Medium)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-luna-pro::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-luna-pro",
+      "model_id": "openai/gpt-5.6-luna-pro",
+      "base_model_name": "GPT-5.6 Luna Pro",
+      "variant_label": "Thinking Medium",
+      "display_name": "GPT-5.6 Luna Pro (Thinking Medium)",
+      "implementation_slug_prefix": "openai_5_6_luna_pro_effort_medium",
+      "legacy_slug_prefixes": [
+        "openai_5_6_luna_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_sol_effort_high_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Sol (Thinking High)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-sol::effort_high",
+      "variant_key": "effort_high",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-sol",
+      "model_id": "openai/gpt-5.6-sol",
+      "base_model_name": "GPT-5.6 Sol",
+      "variant_label": "Thinking High",
+      "display_name": "GPT-5.6 Sol (Thinking High)",
+      "implementation_slug_prefix": "openai_5_6_sol_effort_high",
+      "legacy_slug_prefixes": [
+        "openai_5_6_sol"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_sol_effort_low_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Sol (Thinking Low)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-sol::effort_low",
+      "variant_key": "effort_low",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-sol",
+      "model_id": "openai/gpt-5.6-sol",
+      "base_model_name": "GPT-5.6 Sol",
+      "variant_label": "Thinking Low",
+      "display_name": "GPT-5.6 Sol (Thinking Low)",
+      "implementation_slug_prefix": "openai_5_6_sol_effort_low",
+      "legacy_slug_prefixes": [
+        "openai_5_6_sol"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_sol_effort_medium_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Sol (Thinking Medium)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-sol::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-sol",
+      "model_id": "openai/gpt-5.6-sol",
+      "base_model_name": "GPT-5.6 Sol",
+      "variant_label": "Thinking Medium",
+      "display_name": "GPT-5.6 Sol (Thinking Medium)",
+      "implementation_slug_prefix": "openai_5_6_sol_effort_medium",
+      "legacy_slug_prefixes": [
+        "openai_5_6_sol"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_sol_pro_effort_low_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Sol Pro (Thinking Low)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-sol-pro::effort_low",
+      "variant_key": "effort_low",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-sol-pro",
+      "model_id": "openai/gpt-5.6-sol-pro",
+      "base_model_name": "GPT-5.6 Sol Pro",
+      "variant_label": "Thinking Low",
+      "display_name": "GPT-5.6 Sol Pro (Thinking Low)",
+      "implementation_slug_prefix": "openai_5_6_sol_pro_effort_low",
+      "legacy_slug_prefixes": [
+        "openai_5_6_sol_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_sol_pro_effort_medium_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Sol Pro (Thinking Medium)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-sol-pro::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-sol-pro",
+      "model_id": "openai/gpt-5.6-sol-pro",
+      "base_model_name": "GPT-5.6 Sol Pro",
+      "variant_label": "Thinking Medium",
+      "display_name": "GPT-5.6 Sol Pro (Thinking Medium)",
+      "implementation_slug_prefix": "openai_5_6_sol_pro_effort_medium",
+      "legacy_slug_prefixes": [
+        "openai_5_6_sol_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_terra_effort_high_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Terra (Thinking High)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-terra::effort_high",
+      "variant_key": "effort_high",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-terra",
+      "model_id": "openai/gpt-5.6-terra",
+      "base_model_name": "GPT-5.6 Terra",
+      "variant_label": "Thinking High",
+      "display_name": "GPT-5.6 Terra (Thinking High)",
+      "implementation_slug_prefix": "openai_5_6_terra_effort_high",
+      "legacy_slug_prefixes": [
+        "openai_5_6_terra"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_terra_effort_low_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Terra (Thinking Low)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-terra::effort_low",
+      "variant_key": "effort_low",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-terra",
+      "model_id": "openai/gpt-5.6-terra",
+      "base_model_name": "GPT-5.6 Terra",
+      "variant_label": "Thinking Low",
+      "display_name": "GPT-5.6 Terra (Thinking Low)",
+      "implementation_slug_prefix": "openai_5_6_terra_effort_low",
+      "legacy_slug_prefixes": [
+        "openai_5_6_terra"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_terra_effort_medium_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Terra (Thinking Medium)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-terra::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-terra",
+      "model_id": "openai/gpt-5.6-terra",
+      "base_model_name": "GPT-5.6 Terra",
+      "variant_label": "Thinking Medium",
+      "display_name": "GPT-5.6 Terra (Thinking Medium)",
+      "implementation_slug_prefix": "openai_5_6_terra_effort_medium",
+      "legacy_slug_prefixes": [
+        "openai_5_6_terra"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_terra_pro_effort_low_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Terra Pro (Thinking Low)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-terra-pro::effort_low",
+      "variant_key": "effort_low",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-terra-pro",
+      "model_id": "openai/gpt-5.6-terra-pro",
+      "base_model_name": "GPT-5.6 Terra Pro",
+      "variant_label": "Thinking Low",
+      "display_name": "GPT-5.6 Terra Pro (Thinking Low)",
+      "implementation_slug_prefix": "openai_5_6_terra_pro_effort_low",
+      "legacy_slug_prefixes": [
+        "openai_5_6_terra_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_terra_pro_effort_medium_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Terra Pro (Thinking Medium)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-terra-pro::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-terra-pro",
+      "model_id": "openai/gpt-5.6-terra-pro",
+      "base_model_name": "GPT-5.6 Terra Pro",
+      "variant_label": "Thinking Medium",
+      "display_name": "GPT-5.6 Terra Pro (Thinking Medium)",
+      "implementation_slug_prefix": "openai_5_6_terra_pro_effort_medium",
+      "legacy_slug_prefixes": [
+        "openai_5_6_terra_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_5_6_terra_pro_effort_xhigh_openrouter_07_2026": {
+    "display_name": "GPT-5.6 Terra Pro (Thinking XHigh)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-5.6-terra-pro::effort_xhigh",
+      "variant_key": "effort_xhigh",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-5.6-terra-pro",
+      "model_id": "openai/gpt-5.6-terra-pro",
+      "base_model_name": "GPT-5.6 Terra Pro",
+      "variant_label": "Thinking XHigh",
+      "display_name": "GPT-5.6 Terra Pro (Thinking XHigh)",
+      "implementation_slug_prefix": "openai_5_6_terra_pro_effort_xhigh",
+      "legacy_slug_prefixes": [
+        "openai_5_6_terra_pro"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "xhigh"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "xhigh"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "xhigh"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Xhigh"
+      ],
+      "configured_variant": false
+    }
+  },
   "openai_5_chat_openrouter_08_2025": {
     "display_name": "GPT 5",
     "provider": "OpenAI"
