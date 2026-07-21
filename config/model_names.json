@@ -2315,6 +2315,132 @@
     "display_name": "Grok 4.1 Fast",
     "provider": "xAI"
   },
+  "grok_4_5_effort_high_openrouter_07_2026": {
+    "display_name": "Grok 4.5 (Thinking High)",
+    "provider": "xAI",
+    "metadata": {
+      "variant_id": "auto::x-ai/grok-4.5::effort_high",
+      "variant_key": "effort_high",
+      "provider": "xAI",
+      "family": "xAI",
+      "base_model_id": "x-ai/grok-4.5",
+      "model_id": "x-ai/grok-4.5",
+      "base_model_name": "Grok 4.5",
+      "variant_label": "Thinking High",
+      "display_name": "Grok 4.5 (Thinking High)",
+      "implementation_slug_prefix": "grok_4_5_effort_high",
+      "legacy_slug_prefixes": [
+        "grok_4_5"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "grok_4_5_effort_low_openrouter_07_2026": {
+    "display_name": "Grok 4.5 (Thinking Low)",
+    "provider": "xAI",
+    "metadata": {
+      "variant_id": "auto::x-ai/grok-4.5::effort_low",
+      "variant_key": "effort_low",
+      "provider": "xAI",
+      "family": "xAI",
+      "base_model_id": "x-ai/grok-4.5",
+      "model_id": "x-ai/grok-4.5",
+      "base_model_name": "Grok 4.5",
+      "variant_label": "Thinking Low",
+      "display_name": "Grok 4.5 (Thinking Low)",
+      "implementation_slug_prefix": "grok_4_5_effort_low",
+      "legacy_slug_prefixes": [
+        "grok_4_5"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "grok_4_5_effort_medium_openrouter_07_2026": {
+    "display_name": "Grok 4.5 (Thinking Medium)",
+    "provider": "xAI",
+    "metadata": {
+      "variant_id": "auto::x-ai/grok-4.5::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "xAI",
+      "family": "xAI",
+      "base_model_id": "x-ai/grok-4.5",
+      "model_id": "x-ai/grok-4.5",
+      "base_model_name": "Grok 4.5",
+      "variant_label": "Thinking Medium",
+      "display_name": "Grok 4.5 (Thinking Medium)",
+      "implementation_slug_prefix": "grok_4_5_effort_medium",
+      "legacy_slug_prefixes": [
+        "grok_4_5"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
   "grok_4_fast_openrouter_10_2025": {
     "display_name": "Grok 4 Fast",
     "provider": "xAI"
@@ -2560,6 +2686,132 @@
   "kimi_k2_thinking_openrouter_12_2025": {
     "display_name": "Kimi K2 Thinking",
     "provider": "Moonshot AI"
+  },
+  "kimi_k3_effort_high_openrouter_07_2026": {
+    "display_name": "Kimi K3 (Thinking High)",
+    "provider": "Moonshotai",
+    "metadata": {
+      "variant_id": "auto::moonshotai/kimi-k3::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Moonshotai",
+      "family": "Moonshotai",
+      "base_model_id": "moonshotai/kimi-k3",
+      "model_id": "moonshotai/kimi-k3",
+      "base_model_name": "Kimi K3",
+      "variant_label": "Thinking High",
+      "display_name": "Kimi K3 (Thinking High)",
+      "implementation_slug_prefix": "kimi_k3_effort_high",
+      "legacy_slug_prefixes": [
+        "kimi_k3"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "kimi_k3_effort_low_openrouter_07_2026": {
+    "display_name": "Kimi K3 (Thinking Low)",
+    "provider": "Moonshotai",
+    "metadata": {
+      "variant_id": "auto::moonshotai/kimi-k3::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Moonshotai",
+      "family": "Moonshotai",
+      "base_model_id": "moonshotai/kimi-k3",
+      "model_id": "moonshotai/kimi-k3",
+      "base_model_name": "Kimi K3",
+      "variant_label": "Thinking Low",
+      "display_name": "Kimi K3 (Thinking Low)",
+      "implementation_slug_prefix": "kimi_k3_effort_low",
+      "legacy_slug_prefixes": [
+        "kimi_k3"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "kimi_k3_effort_medium_openrouter_07_2026": {
+    "display_name": "Kimi K3 (Thinking Medium)",
+    "provider": "Moonshotai",
+    "metadata": {
+      "variant_id": "auto::moonshotai/kimi-k3::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Moonshotai",
+      "family": "Moonshotai",
+      "base_model_id": "moonshotai/kimi-k3",
+      "model_id": "moonshotai/kimi-k3",
+      "base_model_name": "Kimi K3",
+      "variant_label": "Thinking Medium",
+      "display_name": "Kimi K3 (Thinking Medium)",
+      "implementation_slug_prefix": "kimi_k3_effort_medium",
+      "legacy_slug_prefixes": [
+        "kimi_k3"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
   },
   "llama_4_maverick_openrouter_05_2025": {
     "display_name": "Llama 4 Maverick",

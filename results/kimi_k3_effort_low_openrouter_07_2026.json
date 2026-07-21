@@ -1,0 +1,193 @@
+{
+  "implementation": "kimi_k3_effort_low_openrouter_07_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::moonshotai/kimi-k3::effort_low",
+    "variant_key": "effort_low",
+    "provider": "Moonshotai",
+    "family": "Moonshotai",
+    "base_model_id": "moonshotai/kimi-k3",
+    "model_id": "moonshotai/kimi-k3",
+    "base_model_name": "Kimi K3",
+    "variant_label": "Thinking Low",
+    "display_name": "Kimi K3 (Thinking Low)",
+    "implementation_slug_prefix": "kimi_k3_effort_low",
+    "legacy_slug_prefixes": [
+      "kimi_k3"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "low"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "low"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Low"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "kimi_k3_effort_low_openrouter_07_2026",
+        "timestamp": "2026-07-21T21:32:32+03:00",
+        "metrics": {
+          "rubocop_offenses": 8,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 15.488,
+      "started_at": "2026-07-21T20:44:13+03:00",
+      "completed_at": "2026-07-21T20:44:28+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 78.08,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 84.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "kimi_k3_effort_low_openrouter_07_2026",
+        "timestamp": "2026-07-21T21:32:34+03:00",
+        "metrics": {
+          "rubocop_offenses": 29,
+          "tests_passed": 20,
+          "total_tests": 23,
+          "success_rate": 0.8695652173913043,
+          "primary_metric": 0.8695652173913043,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 54.409,
+      "started_at": "2026-07-21T20:44:28+03:00",
+      "completed_at": "2026-07-21T20:45:22+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 29.0,
+        "tests_passed": 20.0,
+        "total_tests": 23.0,
+        "success_rate": 0.869565,
+        "primary_metric": 0.869565,
+        "success": 1.0
+      },
+      "rubocop_offenses": 29,
+      "score": 82.46,
+      "score_breakdown": {
+        "success_score": 86.96,
+        "quality_score": 42.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "kimi_k3_effort_low_openrouter_07_2026",
+        "timestamp": "2026-07-21T21:32:34+03:00",
+        "metrics": {
+          "rubocop_offenses": 8,
+          "tests_passed": 16,
+          "total_tests": 39,
+          "success_rate": 0.41025641025641024,
+          "primary_metric": 0.41025641025641024,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 153.374,
+      "started_at": "2026-07-21T20:45:22+03:00",
+      "completed_at": "2026-07-21T20:47:56+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 16.0,
+        "total_tests": 39.0,
+        "success_rate": 0.410256,
+        "primary_metric": 0.410256,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 45.33,
+      "score_breakdown": {
+        "success_score": 41.03,
+        "quality_score": 84.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "kimi_k3_effort_low_openrouter_07_2026",
+        "timestamp": "2026-07-21T21:32:35+03:00",
+        "metrics": {
+          "rubocop_offenses": 4,
+          "tests_passed": 16,
+          "total_tests": 28,
+          "success_rate": 0.5714285714285714,
+          "primary_metric": 0.5714285714285714,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 36.617,
+      "started_at": "2026-07-21T20:47:56+03:00",
+      "completed_at": "2026-07-21T20:48:32+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 4.0,
+        "tests_passed": 16.0,
+        "total_tests": 28.0,
+        "success_rate": 0.571429,
+        "primary_metric": 0.571429,
+        "success": 1.0
+      },
+      "rubocop_offenses": 4,
+      "score": 60.63,
+      "score_breakdown": {
+        "success_score": 57.14,
+        "quality_score": 92.0
+      }
+    }
+  }
+}

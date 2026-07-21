@@ -1,0 +1,193 @@
+{
+  "implementation": "grok_4_5_effort_medium_openrouter_07_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::x-ai/grok-4.5::effort_medium",
+    "variant_key": "effort_medium",
+    "provider": "xAI",
+    "family": "xAI",
+    "base_model_id": "x-ai/grok-4.5",
+    "model_id": "x-ai/grok-4.5",
+    "base_model_name": "Grok 4.5",
+    "variant_label": "Thinking Medium",
+    "display_name": "Grok 4.5 (Thinking Medium)",
+    "implementation_slug_prefix": "grok_4_5_effort_medium",
+    "legacy_slug_prefixes": [
+      "grok_4_5"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "medium"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "medium"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Medium"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "grok_4_5_effort_medium_openrouter_07_2026",
+        "timestamp": "2026-07-21T21:32:33+03:00",
+        "metrics": {
+          "rubocop_offenses": 9,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 7.952,
+      "started_at": "2026-07-21T21:04:44+03:00",
+      "completed_at": "2026-07-21T21:04:52+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 9.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 9,
+      "score": 45.95,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 82.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "grok_4_5_effort_medium_openrouter_07_2026",
+        "timestamp": "2026-07-21T21:32:34+03:00",
+        "metrics": {
+          "rubocop_offenses": 23,
+          "tests_passed": 19,
+          "total_tests": 23,
+          "success_rate": 0.8260869565217391,
+          "primary_metric": 0.8260869565217391,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 42.946,
+      "started_at": "2026-07-21T21:04:52+03:00",
+      "completed_at": "2026-07-21T21:05:35+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 23.0,
+        "tests_passed": 19.0,
+        "total_tests": 23.0,
+        "success_rate": 0.826087,
+        "primary_metric": 0.826087,
+        "success": 1.0
+      },
+      "rubocop_offenses": 23,
+      "score": 79.75,
+      "score_breakdown": {
+        "success_score": 82.61,
+        "quality_score": 54.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "grok_4_5_effort_medium_openrouter_07_2026",
+        "timestamp": "2026-07-21T21:32:35+03:00",
+        "metrics": {
+          "rubocop_offenses": 30,
+          "tests_passed": 20,
+          "total_tests": 39,
+          "success_rate": 0.5128205128205128,
+          "primary_metric": 0.5128205128205128,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 24.136,
+      "started_at": "2026-07-21T21:05:35+03:00",
+      "completed_at": "2026-07-21T21:05:59+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 30.0,
+        "tests_passed": 20.0,
+        "total_tests": 39.0,
+        "success_rate": 0.512821,
+        "primary_metric": 0.512821,
+        "success": 1.0
+      },
+      "rubocop_offenses": 30,
+      "score": 50.15,
+      "score_breakdown": {
+        "success_score": 51.28,
+        "quality_score": 40.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "grok_4_5_effort_medium_openrouter_07_2026",
+        "timestamp": "2026-07-21T21:32:35+03:00",
+        "metrics": {
+          "rubocop_offenses": 11,
+          "tests_passed": 16,
+          "total_tests": 28,
+          "success_rate": 0.5714285714285714,
+          "primary_metric": 0.5714285714285714,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 18.732,
+      "started_at": "2026-07-21T21:05:59+03:00",
+      "completed_at": "2026-07-21T21:06:17+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 11.0,
+        "tests_passed": 16.0,
+        "total_tests": 28.0,
+        "success_rate": 0.571429,
+        "primary_metric": 0.571429,
+        "success": 1.0
+      },
+      "rubocop_offenses": 11,
+      "score": 59.23,
+      "score_breakdown": {
+        "success_score": 57.14,
+        "quality_score": 78.0
+      }
+    }
+  }
+}
