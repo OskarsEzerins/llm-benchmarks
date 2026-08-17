@@ -4975,6 +4975,208 @@
       "configured_variant": false
     }
   },
+  "qwen3_8_27b_effort_low_openrouter_08_2026": {
+    "display_name": "Qwen3.8 27B (Thinking Low)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.8-27b::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.8-27b",
+      "model_id": "qwen/qwen3.8-27b",
+      "base_model_name": "Qwen3.8 27B",
+      "variant_label": "Thinking Low",
+      "display_name": "Qwen3.8 27B (Thinking Low)",
+      "implementation_slug_prefix": "qwen3_8_27b_effort_low",
+      "legacy_slug_prefixes": [
+        "qwen3_8_27b"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_8_max_effort_low_openrouter_08_2026": {
+    "display_name": "Qwen3.8 Max (Thinking Low)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.8-max::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.8-max",
+      "model_id": "qwen/qwen3.8-max",
+      "base_model_name": "Qwen3.8 Max",
+      "variant_label": "Thinking Low",
+      "display_name": "Qwen3.8 Max (Thinking Low)",
+      "implementation_slug_prefix": "qwen3_8_max_effort_low",
+      "legacy_slug_prefixes": [
+        "qwen3_8_max"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_8_max_effort_medium_openrouter_08_2026": {
+    "display_name": "Qwen3.8 Max (Thinking Medium)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.8-max::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.8-max",
+      "model_id": "qwen/qwen3.8-max",
+      "base_model_name": "Qwen3.8 Max",
+      "variant_label": "Thinking Medium",
+      "display_name": "Qwen3.8 Max (Thinking Medium)",
+      "implementation_slug_prefix": "qwen3_8_max_effort_medium",
+      "legacy_slug_prefixes": [
+        "qwen3_8_max"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_8_max_effort_xhigh_openrouter_08_2026": {
+    "display_name": "Qwen3.8 Max (Thinking XHigh)",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.8-max::effort_xhigh",
+      "variant_key": "effort_xhigh",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.8-max",
+      "model_id": "qwen/qwen3.8-max",
+      "base_model_name": "Qwen3.8 Max",
+      "variant_label": "Thinking XHigh",
+      "display_name": "Qwen3.8 Max (Thinking XHigh)",
+      "implementation_slug_prefix": "qwen3_8_max_effort_xhigh",
+      "legacy_slug_prefixes": [
+        "qwen3_8_max"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "xhigh"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "xhigh"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "xhigh"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Xhigh"
+      ],
+      "configured_variant": false
+    }
+  },
+  "qwen3_8_max_openrouter_08_2026": {
+    "display_name": "Qwen3.8 Max",
+    "provider": "Qwen",
+    "metadata": {
+      "variant_id": "auto::qwen/qwen3.8-max::default",
+      "variant_key": "default",
+      "provider": "Qwen",
+      "family": "Qwen",
+      "base_model_id": "qwen/qwen3.8-max",
+      "model_id": "qwen/qwen3.8-max",
+      "base_model_name": "Qwen3.8 Max",
+      "variant_label": "Default",
+      "display_name": "Qwen3.8 Max",
+      "implementation_slug_prefix": "qwen3_8_max",
+      "legacy_slug_prefixes": [
+        "qwen3_8_max"
+      ],
+      "source_tag": "openrouter",
+      "params": {},
+      "request": {
+        "provider": "openrouter",
+        "params": {}
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
   "qwen3_coder_next_openrouter_02_2026": {
     "display_name": "Qwen3 Coder Next",
     "provider": "Qwen"
