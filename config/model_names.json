@@ -63,6 +63,166 @@
     "display_name": "Claude Sonnet 4",
     "provider": "Anthropic"
   },
+  "claude_fable_5_1_effort_high_openrouter_09_2026": {
+    "display_name": "Claude Fable 5.1 (Thinking High)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-fable-5.1::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-fable-5.1",
+      "model_id": "anthropic/claude-fable-5.1",
+      "base_model_name": "Claude Fable 5.1",
+      "variant_label": "Thinking High",
+      "display_name": "Claude Fable 5.1 (Thinking High)",
+      "implementation_slug_prefix": "claude_fable_5_1_effort_high",
+      "legacy_slug_prefixes": [
+        "claude_fable_5_1"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "claude_fable_5_1_effort_low_openrouter_09_2026": {
+    "display_name": "Claude Fable 5.1 (Thinking Low)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-fable-5.1::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-fable-5.1",
+      "model_id": "anthropic/claude-fable-5.1",
+      "base_model_name": "Claude Fable 5.1",
+      "variant_label": "Thinking Low",
+      "display_name": "Claude Fable 5.1 (Thinking Low)",
+      "implementation_slug_prefix": "claude_fable_5_1_effort_low",
+      "legacy_slug_prefixes": [
+        "claude_fable_5_1"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "claude_fable_5_1_effort_medium_openrouter_09_2026": {
+    "display_name": "Claude Fable 5.1 (Thinking Medium)",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-fable-5.1::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-fable-5.1",
+      "model_id": "anthropic/claude-fable-5.1",
+      "base_model_name": "Claude Fable 5.1",
+      "variant_label": "Thinking Medium",
+      "display_name": "Claude Fable 5.1 (Thinking Medium)",
+      "implementation_slug_prefix": "claude_fable_5_1_effort_medium",
+      "legacy_slug_prefixes": [
+        "claude_fable_5_1"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "claude_fable_5_1_openrouter_09_2026": {
+    "display_name": "Claude Fable 5.1",
+    "provider": "Anthropic",
+    "metadata": {
+      "variant_id": "auto::anthropic/claude-fable-5.1::default",
+      "variant_key": "default",
+      "provider": "Anthropic",
+      "family": "Claude",
+      "base_model_id": "anthropic/claude-fable-5.1",
+      "model_id": "anthropic/claude-fable-5.1",
+      "base_model_name": "Claude Fable 5.1",
+      "variant_label": "Default",
+      "display_name": "Claude Fable 5.1",
+      "implementation_slug_prefix": "claude_fable_5_1",
+      "legacy_slug_prefixes": [
+        "claude_fable_5_1"
+      ],
+      "source_tag": "openrouter",
+      "params": {},
+      "request": {
+        "provider": "openrouter",
+        "params": {}
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
   "claude_fable_5_effort_high_openrouter_06_2026": {
     "display_name": "Claude Fable 5 (Thinking High)",
     "provider": "Anthropic",
@@ -4272,6 +4432,166 @@
   "openai_5_openrouter_09_2025": {
     "display_name": "GPT 5",
     "provider": "OpenAI"
+  },
+  "openai_6_astra_effort_high_openrouter_09_2026": {
+    "display_name": "GPT-6 Astra (Thinking High)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-6-astra::effort_high",
+      "variant_key": "effort_high",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-6-astra",
+      "model_id": "openai/gpt-6-astra",
+      "base_model_name": "GPT-6 Astra",
+      "variant_label": "Thinking High",
+      "display_name": "GPT-6 Astra (Thinking High)",
+      "implementation_slug_prefix": "openai_6_astra_effort_high",
+      "legacy_slug_prefixes": [
+        "openai_6_astra"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_6_astra_effort_low_openrouter_09_2026": {
+    "display_name": "GPT-6 Astra (Thinking Low)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-6-astra::effort_low",
+      "variant_key": "effort_low",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-6-astra",
+      "model_id": "openai/gpt-6-astra",
+      "base_model_name": "GPT-6 Astra",
+      "variant_label": "Thinking Low",
+      "display_name": "GPT-6 Astra (Thinking Low)",
+      "implementation_slug_prefix": "openai_6_astra_effort_low",
+      "legacy_slug_prefixes": [
+        "openai_6_astra"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_6_astra_effort_medium_openrouter_09_2026": {
+    "display_name": "GPT-6 Astra (Thinking Medium)",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-6-astra::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-6-astra",
+      "model_id": "openai/gpt-6-astra",
+      "base_model_name": "GPT-6 Astra",
+      "variant_label": "Thinking Medium",
+      "display_name": "GPT-6 Astra (Thinking Medium)",
+      "implementation_slug_prefix": "openai_6_astra_effort_medium",
+      "legacy_slug_prefixes": [
+        "openai_6_astra"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "openai_6_astra_openrouter_09_2026": {
+    "display_name": "GPT-6 Astra",
+    "provider": "OpenAI",
+    "metadata": {
+      "variant_id": "auto::openai/gpt-6-astra::default",
+      "variant_key": "default",
+      "provider": "OpenAI",
+      "family": "OpenAI",
+      "base_model_id": "openai/gpt-6-astra",
+      "model_id": "openai/gpt-6-astra",
+      "base_model_name": "GPT-6 Astra",
+      "variant_label": "Default",
+      "display_name": "GPT-6 Astra",
+      "implementation_slug_prefix": "openai_6_astra",
+      "legacy_slug_prefixes": [
+        "openai_6_astra"
+      ],
+      "source_tag": "openrouter",
+      "params": {},
+      "request": {
+        "provider": "openrouter",
+        "params": {}
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
   },
   "openai_chat_4o_latest_openrouter_08_2025": {
     "display_name": "GPT 4o",
