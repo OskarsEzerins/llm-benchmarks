@@ -3143,6 +3143,166 @@
     "display_name": "Mistral (Web)",
     "provider": "Mistral"
   },
+  "muse_spark_1_3_effort_high_openrouter_09_2026": {
+    "display_name": "Muse Spark 1.3 (Thinking High)",
+    "provider": "Meta",
+    "metadata": {
+      "variant_id": "auto::meta/muse-spark-1.3::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Meta",
+      "family": "Meta",
+      "base_model_id": "meta/muse-spark-1.3",
+      "model_id": "meta/muse-spark-1.3",
+      "base_model_name": "Muse Spark 1.3",
+      "variant_label": "Thinking High",
+      "display_name": "Muse Spark 1.3 (Thinking High)",
+      "implementation_slug_prefix": "muse_spark_1_3_effort_high",
+      "legacy_slug_prefixes": [
+        "muse_spark_1_3"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "muse_spark_1_3_effort_low_openrouter_09_2026": {
+    "display_name": "Muse Spark 1.3 (Thinking Low)",
+    "provider": "Meta",
+    "metadata": {
+      "variant_id": "auto::meta/muse-spark-1.3::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Meta",
+      "family": "Meta",
+      "base_model_id": "meta/muse-spark-1.3",
+      "model_id": "meta/muse-spark-1.3",
+      "base_model_name": "Muse Spark 1.3",
+      "variant_label": "Thinking Low",
+      "display_name": "Muse Spark 1.3 (Thinking Low)",
+      "implementation_slug_prefix": "muse_spark_1_3_effort_low",
+      "legacy_slug_prefixes": [
+        "muse_spark_1_3"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "muse_spark_1_3_effort_medium_openrouter_09_2026": {
+    "display_name": "Muse Spark 1.3 (Thinking Medium)",
+    "provider": "Meta",
+    "metadata": {
+      "variant_id": "auto::meta/muse-spark-1.3::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Meta",
+      "family": "Meta",
+      "base_model_id": "meta/muse-spark-1.3",
+      "model_id": "meta/muse-spark-1.3",
+      "base_model_name": "Muse Spark 1.3",
+      "variant_label": "Thinking Medium",
+      "display_name": "Muse Spark 1.3 (Thinking Medium)",
+      "implementation_slug_prefix": "muse_spark_1_3_effort_medium",
+      "legacy_slug_prefixes": [
+        "muse_spark_1_3"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
+  "muse_spark_1_3_openrouter_09_2026": {
+    "display_name": "Muse Spark 1.3",
+    "provider": "Meta",
+    "metadata": {
+      "variant_id": "auto::meta/muse-spark-1.3::default",
+      "variant_key": "default",
+      "provider": "Meta",
+      "family": "Meta",
+      "base_model_id": "meta/muse-spark-1.3",
+      "model_id": "meta/muse-spark-1.3",
+      "base_model_name": "Muse Spark 1.3",
+      "variant_label": "Default",
+      "display_name": "Muse Spark 1.3",
+      "implementation_slug_prefix": "muse_spark_1_3",
+      "legacy_slug_prefixes": [
+        "muse_spark_1_3"
+      ],
+      "source_tag": "openrouter",
+      "params": {},
+      "request": {
+        "provider": "openrouter",
+        "params": {}
+      },
+      "normalized": {
+        "thinking_mode": "off",
+        "reasoning_effort": "none"
+      },
+      "param_summary": [
+        "Thinking: Off",
+        "Effort: None"
+      ],
+      "configured_variant": false
+    }
+  },
   "nova_2_lite_v1_openrouter_02_2026": {
     "display_name": "Nova 2 Lite V1",
     "provider": "Amazon"

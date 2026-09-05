@@ -1,0 +1,185 @@
+{
+  "implementation": "muse_spark_1_3_openrouter_09_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::meta/muse-spark-1.3::default",
+    "variant_key": "default",
+    "provider": "Meta",
+    "family": "Meta",
+    "base_model_id": "meta/muse-spark-1.3",
+    "model_id": "meta/muse-spark-1.3",
+    "base_model_name": "Muse Spark 1.3",
+    "variant_label": "Default",
+    "display_name": "Muse Spark 1.3",
+    "implementation_slug_prefix": "muse_spark_1_3",
+    "legacy_slug_prefixes": [
+      "muse_spark_1_3"
+    ],
+    "source_tag": "openrouter",
+    "params": {},
+    "request": {
+      "provider": "openrouter",
+      "params": {}
+    },
+    "normalized": {
+      "thinking_mode": "off",
+      "reasoning_effort": "none"
+    },
+    "param_summary": [
+      "Thinking: Off",
+      "Effort: None"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "muse_spark_1_3_openrouter_09_2026",
+        "timestamp": "2026-09-05T17:51:38+03:00",
+        "metrics": {
+          "rubocop_offenses": 19,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 24.749,
+      "started_at": "2026-09-05T17:25:41+03:00",
+      "completed_at": "2026-09-05T17:26:05+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 19.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 19,
+      "score": 75.88,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 62.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "muse_spark_1_3_openrouter_09_2026",
+        "timestamp": "2026-09-05T17:51:38+03:00",
+        "metrics": {
+          "rubocop_offenses": 23,
+          "tests_passed": 19,
+          "total_tests": 23,
+          "success_rate": 0.8260869565217391,
+          "primary_metric": 0.8260869565217391,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 53.765,
+      "started_at": "2026-09-05T17:26:05+03:00",
+      "completed_at": "2026-09-05T17:26:59+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 23.0,
+        "tests_passed": 19.0,
+        "total_tests": 23.0,
+        "success_rate": 0.826087,
+        "primary_metric": 0.826087,
+        "success": 1.0
+      },
+      "rubocop_offenses": 23,
+      "score": 79.75,
+      "score_breakdown": {
+        "success_score": 82.61,
+        "quality_score": 54.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "muse_spark_1_3_openrouter_09_2026",
+        "timestamp": "2026-09-05T17:51:39+03:00",
+        "metrics": {
+          "rubocop_offenses": 78,
+          "tests_passed": 20,
+          "total_tests": 39,
+          "success_rate": 0.5128205128205128,
+          "primary_metric": 0.5128205128205128,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 52.182,
+      "started_at": "2026-09-05T17:26:59+03:00",
+      "completed_at": "2026-09-05T17:27:51+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 78.0,
+        "tests_passed": 20.0,
+        "total_tests": 39.0,
+        "success_rate": 0.512821,
+        "primary_metric": 0.512821,
+        "success": 1.0
+      },
+      "rubocop_offenses": 78,
+      "score": 46.15,
+      "score_breakdown": {
+        "success_score": 51.28,
+        "quality_score": 0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "muse_spark_1_3_openrouter_09_2026",
+        "timestamp": "2026-09-05T17:51:40+03:00",
+        "metrics": {
+          "rubocop_offenses": 21,
+          "tests_passed": 16,
+          "total_tests": 28,
+          "success_rate": 0.5714285714285714,
+          "primary_metric": 0.5714285714285714,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 66.103,
+      "started_at": "2026-09-05T17:27:51+03:00",
+      "completed_at": "2026-09-05T17:28:58+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 21.0,
+        "tests_passed": 16.0,
+        "total_tests": 28.0,
+        "success_rate": 0.571429,
+        "primary_metric": 0.571429,
+        "success": 1.0
+      },
+      "rubocop_offenses": 21,
+      "score": 57.23,
+      "score_breakdown": {
+        "success_score": 57.14,
+        "quality_score": 58.0
+      }
+    }
+  }
+}
