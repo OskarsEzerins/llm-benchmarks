@@ -3105,6 +3105,132 @@
       "configured_variant": false
     }
   },
+  "grok_4_7_effort_high_openrouter_09_2026": {
+    "display_name": "Grok 4.7 (Thinking High)",
+    "provider": "xAI",
+    "metadata": {
+      "variant_id": "auto::x-ai/grok-4.7::effort_high",
+      "variant_key": "effort_high",
+      "provider": "xAI",
+      "family": "xAI",
+      "base_model_id": "x-ai/grok-4.7",
+      "model_id": "x-ai/grok-4.7",
+      "base_model_name": "Grok 4.7",
+      "variant_label": "Thinking High",
+      "display_name": "Grok 4.7 (Thinking High)",
+      "implementation_slug_prefix": "grok_4_7_effort_high",
+      "legacy_slug_prefixes": [
+        "grok_4_7"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "grok_4_7_effort_low_openrouter_09_2026": {
+    "display_name": "Grok 4.7 (Thinking Low)",
+    "provider": "xAI",
+    "metadata": {
+      "variant_id": "auto::x-ai/grok-4.7::effort_low",
+      "variant_key": "effort_low",
+      "provider": "xAI",
+      "family": "xAI",
+      "base_model_id": "x-ai/grok-4.7",
+      "model_id": "x-ai/grok-4.7",
+      "base_model_name": "Grok 4.7",
+      "variant_label": "Thinking Low",
+      "display_name": "Grok 4.7 (Thinking Low)",
+      "implementation_slug_prefix": "grok_4_7_effort_low",
+      "legacy_slug_prefixes": [
+        "grok_4_7"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "grok_4_7_effort_medium_openrouter_09_2026": {
+    "display_name": "Grok 4.7 (Thinking Medium)",
+    "provider": "xAI",
+    "metadata": {
+      "variant_id": "auto::x-ai/grok-4.7::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "xAI",
+      "family": "xAI",
+      "base_model_id": "x-ai/grok-4.7",
+      "model_id": "x-ai/grok-4.7",
+      "base_model_name": "Grok 4.7",
+      "variant_label": "Thinking Medium",
+      "display_name": "Grok 4.7 (Thinking Medium)",
+      "implementation_slug_prefix": "grok_4_7_effort_medium",
+      "legacy_slug_prefixes": [
+        "grok_4_7"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
   "grok_4_fast_openrouter_10_2025": {
     "display_name": "Grok 4 Fast",
     "provider": "xAI"
