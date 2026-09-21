@@ -1,0 +1,163 @@
+{
+  "implementation": "glm_5_3_flashx_effort_high_openrouter_09_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::z-ai/glm-5.3-flashx::effort_high",
+    "variant_key": "effort_high",
+    "provider": "Z Ai",
+    "family": "Z Ai",
+    "base_model_id": "z-ai/glm-5.3-flashx",
+    "model_id": "z-ai/glm-5.3-flashx",
+    "base_model_name": "GLM 5.3 FlashX",
+    "variant_label": "Thinking High",
+    "display_name": "GLM 5.3 FlashX (Thinking High)",
+    "implementation_slug_prefix": "glm_5_3_flashx_effort_high",
+    "legacy_slug_prefixes": [
+      "glm_5_3_flashx"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "high"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "high"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: High"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "glm_5_3_flashx_effort_high_openrouter_09_2026",
+        "timestamp": "2026-09-21T21:22:25+03:00",
+        "metrics": {
+          "rubocop_offenses": 7,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 3.243,
+      "started_at": "2026-09-21T21:05:50+03:00",
+      "completed_at": "2026-09-21T21:05:53+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 7.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 7,
+      "score": 78.28,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 86.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "glm_5_3_flashx_effort_high_openrouter_09_2026",
+        "timestamp": "2026-09-21T21:22:25+03:00",
+        "metrics": {
+          "rubocop_offenses": 15,
+          "tests_passed": 22,
+          "total_tests": 23,
+          "success_rate": 0.9565217391304348,
+          "primary_metric": 0.9565217391304348,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 10.722,
+      "started_at": "2026-09-21T21:05:53+03:00",
+      "completed_at": "2026-09-21T21:06:04+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 15.0,
+        "tests_passed": 22.0,
+        "total_tests": 23.0,
+        "success_rate": 0.956522,
+        "primary_metric": 0.956522,
+        "success": 1.0
+      },
+      "rubocop_offenses": 15,
+      "score": 93.09,
+      "score_breakdown": {
+        "success_score": 95.65,
+        "quality_score": 70.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "glm_5_3_flashx_effort_high_openrouter_09_2026",
+        "timestamp": "2026-09-21T21:22:25+03:00",
+        "metrics": {
+          "rubocop_offenses": 21,
+          "tests_passed": 19,
+          "total_tests": 39,
+          "success_rate": 0.48717948717948717,
+          "primary_metric": 0.48717948717948717,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 25.799,
+      "started_at": "2026-09-21T21:06:04+03:00",
+      "completed_at": "2026-09-21T21:06:30+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 21.0,
+        "tests_passed": 19.0,
+        "total_tests": 39.0,
+        "success_rate": 0.487179,
+        "primary_metric": 0.487179,
+        "success": 1.0
+      },
+      "rubocop_offenses": 21,
+      "score": 49.65,
+      "score_breakdown": {
+        "success_score": 48.72,
+        "quality_score": 58.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [],
+    "generation_timing": {
+      "duration_seconds": 18.615,
+      "started_at": "2026-09-21T21:06:30+03:00",
+      "completed_at": "2026-09-21T21:06:48+03:00"
+    }
+  }
+}

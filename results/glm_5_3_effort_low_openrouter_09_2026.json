@@ -1,0 +1,194 @@
+{
+  "implementation": "glm_5_3_effort_low_openrouter_09_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::z-ai/glm-5.3::effort_low",
+    "variant_key": "effort_low",
+    "provider": "Z Ai",
+    "family": "Z Ai",
+    "base_model_id": "z-ai/glm-5.3",
+    "model_id": "z-ai/glm-5.3",
+    "base_model_name": "GLM 5.3",
+    "variant_label": "Thinking Low",
+    "display_name": "GLM 5.3 (Thinking Low)",
+    "implementation_slug_prefix": "glm_5_3_effort_low",
+    "legacy_slug_prefixes": [
+      "glm_5_3"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "low"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "low"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Low"
+    ],
+    "configured_variant": false,
+    "implementation": "glm_5_3_effort_low_openrouter_09_2026"
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "glm_5_3_effort_low_openrouter_09_2026",
+        "timestamp": "2026-09-21T21:22:24+03:00",
+        "metrics": {
+          "rubocop_offenses": 9,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 4.944,
+      "started_at": "2026-09-21T20:57:46+03:00",
+      "completed_at": "2026-09-21T20:57:51+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 9.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 9,
+      "score": 45.95,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 82.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "glm_5_3_effort_low_openrouter_09_2026",
+        "timestamp": "2026-09-21T21:22:25+03:00",
+        "metrics": {
+          "rubocop_offenses": 16,
+          "tests_passed": 19,
+          "total_tests": 23,
+          "success_rate": 0.8260869565217391,
+          "primary_metric": 0.8260869565217391,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 5.879,
+      "started_at": "2026-09-21T20:57:51+03:00",
+      "completed_at": "2026-09-21T20:57:57+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 16.0,
+        "tests_passed": 19.0,
+        "total_tests": 23.0,
+        "success_rate": 0.826087,
+        "primary_metric": 0.826087,
+        "success": 1.0
+      },
+      "rubocop_offenses": 16,
+      "score": 81.15,
+      "score_breakdown": {
+        "success_score": 82.61,
+        "quality_score": 68.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "glm_5_3_effort_low_openrouter_09_2026",
+        "timestamp": "2026-09-21T21:22:25+03:00",
+        "metrics": {
+          "rubocop_offenses": 27,
+          "tests_passed": 23,
+          "total_tests": 39,
+          "success_rate": 0.5897435897435898,
+          "primary_metric": 0.5897435897435898,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 16.891,
+      "started_at": "2026-09-21T20:57:57+03:00",
+      "completed_at": "2026-09-21T20:58:13+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 27.0,
+        "tests_passed": 23.0,
+        "total_tests": 39.0,
+        "success_rate": 0.589744,
+        "primary_metric": 0.589744,
+        "success": 1.0
+      },
+      "rubocop_offenses": 27,
+      "score": 57.67,
+      "score_breakdown": {
+        "success_score": 58.97,
+        "quality_score": 46.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "glm_5_3_effort_low_openrouter_09_2026",
+        "timestamp": "2026-09-21T21:25:22+03:00",
+        "metrics": {
+          "rubocop_offenses": 7,
+          "tests_passed": 20,
+          "total_tests": 28,
+          "success_rate": 0.7142857142857143,
+          "primary_metric": 0.7142857142857143,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 14.439,
+      "started_at": "2026-09-21T20:58:13+03:00",
+      "completed_at": "2026-09-21T20:58:28+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 7.0,
+        "tests_passed": 20.0,
+        "total_tests": 28.0,
+        "success_rate": 0.714286,
+        "primary_metric": 0.714286,
+        "success": 1.0
+      },
+      "rubocop_offenses": 7,
+      "score": 72.89,
+      "score_breakdown": {
+        "success_score": 71.43,
+        "quality_score": 86.0
+      }
+    }
+  }
+}
