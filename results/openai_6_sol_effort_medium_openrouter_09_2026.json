@@ -1,0 +1,193 @@
+{
+  "implementation": "openai_6_sol_effort_medium_openrouter_09_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::openai/gpt-6-sol::effort_medium",
+    "variant_key": "effort_medium",
+    "provider": "OpenAI",
+    "family": "OpenAI",
+    "base_model_id": "openai/gpt-6-sol",
+    "model_id": "openai/gpt-6-sol",
+    "base_model_name": "GPT-6 Sol",
+    "variant_label": "Thinking Medium",
+    "display_name": "GPT-6 Sol (Thinking Medium)",
+    "implementation_slug_prefix": "openai_6_sol_effort_medium",
+    "legacy_slug_prefixes": [
+      "openai_6_sol"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "medium"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "medium"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Medium"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "openai_6_sol_effort_medium_openrouter_09_2026",
+        "timestamp": "2026-09-24T20:19:10+03:00",
+        "metrics": {
+          "rubocop_offenses": 6,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 11.138,
+      "started_at": "2026-09-22T22:12:31+03:00",
+      "completed_at": "2026-09-22T22:12:42+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 6.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 6,
+      "score": 78.48,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 88.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "openai_6_sol_effort_medium_openrouter_09_2026",
+        "timestamp": "2026-09-24T20:19:10+03:00",
+        "metrics": {
+          "rubocop_offenses": 6,
+          "tests_passed": 19,
+          "total_tests": 23,
+          "success_rate": 0.8260869565217391,
+          "primary_metric": 0.8260869565217391,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 11.147,
+      "started_at": "2026-09-22T22:12:42+03:00",
+      "completed_at": "2026-09-22T22:12:53+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 6.0,
+        "tests_passed": 19.0,
+        "total_tests": 23.0,
+        "success_rate": 0.826087,
+        "primary_metric": 0.826087,
+        "success": 1.0
+      },
+      "rubocop_offenses": 6,
+      "score": 83.15,
+      "score_breakdown": {
+        "success_score": 82.61,
+        "quality_score": 88.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "openai_6_sol_effort_medium_openrouter_09_2026",
+        "timestamp": "2026-09-24T20:19:10+03:00",
+        "metrics": {
+          "rubocop_offenses": 7,
+          "tests_passed": 30,
+          "total_tests": 39,
+          "success_rate": 0.7692307692307693,
+          "primary_metric": 0.7692307692307693,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 20.727,
+      "started_at": "2026-09-22T22:12:53+03:00",
+      "completed_at": "2026-09-22T22:13:14+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 7.0,
+        "tests_passed": 30.0,
+        "total_tests": 39.0,
+        "success_rate": 0.769231,
+        "primary_metric": 0.769231,
+        "success": 1.0
+      },
+      "rubocop_offenses": 7,
+      "score": 77.83,
+      "score_breakdown": {
+        "success_score": 76.92,
+        "quality_score": 86.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "openai_6_sol_effort_medium_openrouter_09_2026",
+        "timestamp": "2026-09-24T20:19:10+03:00",
+        "metrics": {
+          "rubocop_offenses": 4,
+          "tests_passed": 21,
+          "total_tests": 28,
+          "success_rate": 0.75,
+          "primary_metric": 0.75,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 15.822,
+      "started_at": "2026-09-22T22:13:14+03:00",
+      "completed_at": "2026-09-22T22:13:30+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 4.0,
+        "tests_passed": 21.0,
+        "total_tests": 28.0,
+        "success_rate": 0.75,
+        "primary_metric": 0.75,
+        "success": 1.0
+      },
+      "rubocop_offenses": 4,
+      "score": 76.7,
+      "score_breakdown": {
+        "success_score": 75.0,
+        "quality_score": 92.0
+      }
+    }
+  }
+}
