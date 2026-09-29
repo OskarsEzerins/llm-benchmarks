@@ -1,0 +1,185 @@
+{
+  "implementation": "claude_sonnet_5_5_openrouter_09_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::anthropic/claude-sonnet-5.5::default",
+    "variant_key": "default",
+    "provider": "Anthropic",
+    "family": "Claude",
+    "base_model_id": "anthropic/claude-sonnet-5.5",
+    "model_id": "anthropic/claude-sonnet-5.5",
+    "base_model_name": "Claude Sonnet 5.5",
+    "variant_label": "Default",
+    "display_name": "Claude Sonnet 5.5",
+    "implementation_slug_prefix": "claude_sonnet_5_5",
+    "legacy_slug_prefixes": [
+      "claude_sonnet_5_5"
+    ],
+    "source_tag": "openrouter",
+    "params": {},
+    "request": {
+      "provider": "openrouter",
+      "params": {}
+    },
+    "normalized": {
+      "thinking_mode": "off",
+      "reasoning_effort": "none"
+    },
+    "param_summary": [
+      "Thinking: Off",
+      "Effort: None"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_5_5_openrouter_09_2026",
+        "timestamp": "2026-09-29T20:12:50+03:00",
+        "metrics": {
+          "rubocop_offenses": 8,
+          "tests_passed": 24,
+          "total_tests": 31,
+          "success_rate": 0.7741935483870968,
+          "primary_metric": 0.7741935483870968,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 5.764,
+      "started_at": "2026-09-29T19:45:53+03:00",
+      "completed_at": "2026-09-29T19:45:59+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 24.0,
+        "total_tests": 31.0,
+        "success_rate": 0.774194,
+        "primary_metric": 0.774194,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 78.08,
+      "score_breakdown": {
+        "success_score": 77.42,
+        "quality_score": 84.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_5_5_openrouter_09_2026",
+        "timestamp": "2026-09-29T20:12:50+03:00",
+        "metrics": {
+          "rubocop_offenses": 20,
+          "tests_passed": 18,
+          "total_tests": 23,
+          "success_rate": 0.782608695652174,
+          "primary_metric": 0.782608695652174,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 12.811,
+      "started_at": "2026-09-29T19:45:59+03:00",
+      "completed_at": "2026-09-29T19:46:11+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 20.0,
+        "tests_passed": 18.0,
+        "total_tests": 23.0,
+        "success_rate": 0.782609,
+        "primary_metric": 0.782609,
+        "success": 1.0
+      },
+      "rubocop_offenses": 20,
+      "score": 76.43,
+      "score_breakdown": {
+        "success_score": 78.26,
+        "quality_score": 60.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_5_5_openrouter_09_2026",
+        "timestamp": "2026-09-29T20:12:50+03:00",
+        "metrics": {
+          "rubocop_offenses": 34,
+          "tests_passed": 24,
+          "total_tests": 39,
+          "success_rate": 0.6153846153846154,
+          "primary_metric": 0.6153846153846154,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 36.648,
+      "started_at": "2026-09-29T19:46:12+03:00",
+      "completed_at": "2026-09-29T19:46:48+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 34.0,
+        "tests_passed": 24.0,
+        "total_tests": 39.0,
+        "success_rate": 0.615385,
+        "primary_metric": 0.615385,
+        "success": 1.0
+      },
+      "rubocop_offenses": 34,
+      "score": 58.59,
+      "score_breakdown": {
+        "success_score": 61.54,
+        "quality_score": 32.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "claude_sonnet_5_5_openrouter_09_2026",
+        "timestamp": "2026-09-29T20:12:50+03:00",
+        "metrics": {
+          "rubocop_offenses": 4,
+          "tests_passed": 22,
+          "total_tests": 28,
+          "success_rate": 0.7857142857142857,
+          "primary_metric": 0.7857142857142857,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 26.95,
+      "started_at": "2026-09-29T19:46:48+03:00",
+      "completed_at": "2026-09-29T19:47:15+03:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 4.0,
+        "tests_passed": 22.0,
+        "total_tests": 28.0,
+        "success_rate": 0.785714,
+        "primary_metric": 0.785714,
+        "success": 1.0
+      },
+      "rubocop_offenses": 4,
+      "score": 79.91,
+      "score_breakdown": {
+        "success_score": 78.57,
+        "quality_score": 92.0
+      }
+    }
+  }
+}
