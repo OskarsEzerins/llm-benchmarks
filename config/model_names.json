@@ -4119,6 +4119,132 @@
     "display_name": "Magnum V4 72B",
     "provider": "NousResearch"
   },
+  "mimo_v2_6_flash_effort_high_openrouter_10_2026": {
+    "display_name": "MiMo-V2.6-Flash (Thinking High)",
+    "provider": "Xiaomi",
+    "metadata": {
+      "variant_id": "auto::xiaomi/mimo-v2.6-flash::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Xiaomi",
+      "family": "Xiaomi",
+      "base_model_id": "xiaomi/mimo-v2.6-flash",
+      "model_id": "xiaomi/mimo-v2.6-flash",
+      "base_model_name": "MiMo-V2.6-Flash",
+      "variant_label": "Thinking High",
+      "display_name": "MiMo-V2.6-Flash (Thinking High)",
+      "implementation_slug_prefix": "mimo_v2_6_flash_effort_high",
+      "legacy_slug_prefixes": [
+        "mimo_v2_6_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "mimo_v2_6_flash_effort_low_openrouter_10_2026": {
+    "display_name": "MiMo-V2.6-Flash (Thinking Low)",
+    "provider": "Xiaomi",
+    "metadata": {
+      "variant_id": "auto::xiaomi/mimo-v2.6-flash::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Xiaomi",
+      "family": "Xiaomi",
+      "base_model_id": "xiaomi/mimo-v2.6-flash",
+      "model_id": "xiaomi/mimo-v2.6-flash",
+      "base_model_name": "MiMo-V2.6-Flash",
+      "variant_label": "Thinking Low",
+      "display_name": "MiMo-V2.6-Flash (Thinking Low)",
+      "implementation_slug_prefix": "mimo_v2_6_flash_effort_low",
+      "legacy_slug_prefixes": [
+        "mimo_v2_6_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "mimo_v2_6_flash_effort_medium_openrouter_10_2026": {
+    "display_name": "MiMo-V2.6-Flash (Thinking Medium)",
+    "provider": "Xiaomi",
+    "metadata": {
+      "variant_id": "auto::xiaomi/mimo-v2.6-flash::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Xiaomi",
+      "family": "Xiaomi",
+      "base_model_id": "xiaomi/mimo-v2.6-flash",
+      "model_id": "xiaomi/mimo-v2.6-flash",
+      "base_model_name": "MiMo-V2.6-Flash",
+      "variant_label": "Thinking Medium",
+      "display_name": "MiMo-V2.6-Flash (Thinking Medium)",
+      "implementation_slug_prefix": "mimo_v2_6_flash_effort_medium",
+      "legacy_slug_prefixes": [
+        "mimo_v2_6_flash"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
   "mimo_v2_flash_free_openrouter_12_2025": {
     "display_name": "MIMO V2 Flash",
     "provider": "Minimax"

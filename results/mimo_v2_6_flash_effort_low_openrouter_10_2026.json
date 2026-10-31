@@ -1,0 +1,193 @@
+{
+  "implementation": "mimo_v2_6_flash_effort_low_openrouter_10_2026",
+  "implementation_metadata": {
+    "variant_id": "auto::xiaomi/mimo-v2.6-flash::effort_low",
+    "variant_key": "effort_low",
+    "provider": "Xiaomi",
+    "family": "Xiaomi",
+    "base_model_id": "xiaomi/mimo-v2.6-flash",
+    "model_id": "xiaomi/mimo-v2.6-flash",
+    "base_model_name": "MiMo-V2.6-Flash",
+    "variant_label": "Thinking Low",
+    "display_name": "MiMo-V2.6-Flash (Thinking Low)",
+    "implementation_slug_prefix": "mimo_v2_6_flash_effort_low",
+    "legacy_slug_prefixes": [
+      "mimo_v2_6_flash"
+    ],
+    "source_tag": "openrouter",
+    "params": {
+      "reasoning": {
+        "effort": "low"
+      }
+    },
+    "request": {
+      "provider": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      }
+    },
+    "normalized": {
+      "thinking_mode": "manual",
+      "reasoning_effort": "low"
+    },
+    "param_summary": [
+      "Thinking: Manual",
+      "Effort: Low"
+    ],
+    "configured_variant": false
+  },
+  "vending_machine": {
+    "results": [
+      {
+        "implementation": "mimo_v2_6_flash_effort_low_openrouter_10_2026",
+        "timestamp": "2026-10-31T18:07:00+02:00",
+        "metrics": {
+          "rubocop_offenses": 11,
+          "tests_passed": 13,
+          "total_tests": 31,
+          "success_rate": 0.41935483870967744,
+          "primary_metric": 0.41935483870967744,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 3.801,
+      "started_at": "2026-10-31T17:56:42+02:00",
+      "completed_at": "2026-10-31T17:56:46+02:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 11.0,
+        "tests_passed": 13.0,
+        "total_tests": 31.0,
+        "success_rate": 0.419355,
+        "primary_metric": 0.419355,
+        "success": 1.0
+      },
+      "rubocop_offenses": 11,
+      "score": 45.55,
+      "score_breakdown": {
+        "success_score": 41.94,
+        "quality_score": 78.0
+      }
+    }
+  },
+  "calendar": {
+    "results": [
+      {
+        "implementation": "mimo_v2_6_flash_effort_low_openrouter_10_2026",
+        "timestamp": "2026-10-31T18:07:00+02:00",
+        "metrics": {
+          "rubocop_offenses": 17,
+          "tests_passed": 18,
+          "total_tests": 23,
+          "success_rate": 0.782608695652174,
+          "primary_metric": 0.782608695652174,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 103.225,
+      "started_at": "2026-10-31T17:56:46+02:00",
+      "completed_at": "2026-10-31T17:58:29+02:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 17.0,
+        "tests_passed": 18.0,
+        "total_tests": 23.0,
+        "success_rate": 0.782609,
+        "primary_metric": 0.782609,
+        "success": 1.0
+      },
+      "rubocop_offenses": 17,
+      "score": 77.03,
+      "score_breakdown": {
+        "success_score": 78.26,
+        "quality_score": 66.0
+      }
+    }
+  },
+  "parking_garage": {
+    "results": [
+      {
+        "implementation": "mimo_v2_6_flash_effort_low_openrouter_10_2026",
+        "timestamp": "2026-10-31T18:07:00+02:00",
+        "metrics": {
+          "rubocop_offenses": 24,
+          "tests_passed": 27,
+          "total_tests": 39,
+          "success_rate": 0.6923076923076923,
+          "primary_metric": 0.6923076923076923,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 108.424,
+      "started_at": "2026-10-31T17:58:29+02:00",
+      "completed_at": "2026-10-31T18:00:18+02:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 24.0,
+        "tests_passed": 27.0,
+        "total_tests": 39.0,
+        "success_rate": 0.692308,
+        "primary_metric": 0.692308,
+        "success": 1.0
+      },
+      "rubocop_offenses": 24,
+      "score": 67.51,
+      "score_breakdown": {
+        "success_score": 69.23,
+        "quality_score": 52.0
+      }
+    }
+  },
+  "school_library": {
+    "results": [
+      {
+        "implementation": "mimo_v2_6_flash_effort_low_openrouter_10_2026",
+        "timestamp": "2026-10-31T18:07:00+02:00",
+        "metrics": {
+          "rubocop_offenses": 8,
+          "tests_passed": 22,
+          "total_tests": 28,
+          "success_rate": 0.7857142857142857,
+          "primary_metric": 0.7857142857142857,
+          "success": true
+        }
+      }
+    ],
+    "generation_timing": {
+      "duration_seconds": 86.305,
+      "started_at": "2026-10-31T18:00:18+02:00",
+      "completed_at": "2026-10-31T18:01:44+02:00"
+    },
+    "aggregate": {
+      "run_count": 1,
+      "metrics": {
+        "rubocop_offenses": 8.0,
+        "tests_passed": 22.0,
+        "total_tests": 28.0,
+        "success_rate": 0.785714,
+        "primary_metric": 0.785714,
+        "success": 1.0
+      },
+      "rubocop_offenses": 8,
+      "score": 79.11,
+      "score_breakdown": {
+        "success_score": 78.57,
+        "quality_score": 84.0
+      }
+    }
+  }
+}
