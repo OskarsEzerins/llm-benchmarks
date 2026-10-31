@@ -3961,6 +3961,132 @@
       "configured_variant": false
     }
   },
+  "kimi_k2_7_code_effort_high_openrouter_10_2026": {
+    "display_name": "Kimi K2.7 Code (Thinking High)",
+    "provider": "Moonshotai",
+    "metadata": {
+      "variant_id": "auto::moonshotai/kimi-k2.7-code::effort_high",
+      "variant_key": "effort_high",
+      "provider": "Moonshotai",
+      "family": "Moonshotai",
+      "base_model_id": "moonshotai/kimi-k2.7-code",
+      "model_id": "moonshotai/kimi-k2.7-code",
+      "base_model_name": "Kimi K2.7 Code",
+      "variant_label": "Thinking High",
+      "display_name": "Kimi K2.7 Code (Thinking High)",
+      "implementation_slug_prefix": "kimi_k2_7_code_effort_high",
+      "legacy_slug_prefixes": [
+        "kimi_k2_7_code"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "high"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: High"
+      ],
+      "configured_variant": false
+    }
+  },
+  "kimi_k2_7_code_effort_low_openrouter_10_2026": {
+    "display_name": "Kimi K2.7 Code (Thinking Low)",
+    "provider": "Moonshotai",
+    "metadata": {
+      "variant_id": "auto::moonshotai/kimi-k2.7-code::effort_low",
+      "variant_key": "effort_low",
+      "provider": "Moonshotai",
+      "family": "Moonshotai",
+      "base_model_id": "moonshotai/kimi-k2.7-code",
+      "model_id": "moonshotai/kimi-k2.7-code",
+      "base_model_name": "Kimi K2.7 Code",
+      "variant_label": "Thinking Low",
+      "display_name": "Kimi K2.7 Code (Thinking Low)",
+      "implementation_slug_prefix": "kimi_k2_7_code_effort_low",
+      "legacy_slug_prefixes": [
+        "kimi_k2_7_code"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "low"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "low"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Low"
+      ],
+      "configured_variant": false
+    }
+  },
+  "kimi_k2_7_code_effort_medium_openrouter_10_2026": {
+    "display_name": "Kimi K2.7 Code (Thinking Medium)",
+    "provider": "Moonshotai",
+    "metadata": {
+      "variant_id": "auto::moonshotai/kimi-k2.7-code::effort_medium",
+      "variant_key": "effort_medium",
+      "provider": "Moonshotai",
+      "family": "Moonshotai",
+      "base_model_id": "moonshotai/kimi-k2.7-code",
+      "model_id": "moonshotai/kimi-k2.7-code",
+      "base_model_name": "Kimi K2.7 Code",
+      "variant_label": "Thinking Medium",
+      "display_name": "Kimi K2.7 Code (Thinking Medium)",
+      "implementation_slug_prefix": "kimi_k2_7_code_effort_medium",
+      "legacy_slug_prefixes": [
+        "kimi_k2_7_code"
+      ],
+      "source_tag": "openrouter",
+      "params": {
+        "reasoning": {
+          "effort": "medium"
+        }
+      },
+      "request": {
+        "provider": "openrouter",
+        "params": {
+          "reasoning": {
+            "effort": "medium"
+          }
+        }
+      },
+      "normalized": {
+        "thinking_mode": "manual",
+        "reasoning_effort": "medium"
+      },
+      "param_summary": [
+        "Thinking: Manual",
+        "Effort: Medium"
+      ],
+      "configured_variant": false
+    }
+  },
   "kimi_k2_openrouter_07_2025": {
     "display_name": "Kimi K2",
     "provider": "Moonshot AI"
